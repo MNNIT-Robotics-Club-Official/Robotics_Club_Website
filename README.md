@@ -4,11 +4,11 @@
 If already installed python follow next steps
 
 ### Preferably use Python virtual env for development
-1. open Powershell terminal in an empty folder (Shift+ right click) and run  `python -m venv robo` where robo is the environment name(can be anything)
-2. then run `.\robo\Scripts\activate` , this will activate the environment(green text in the beginning of every line will appear)
-    if runnig scripts is not allowed then go into admin mode by `start-process PowerShell -verb runas `
-    then `Set-ExecutionPolicy RemoteSigned` to allow running scripts
-    to roll back enter `Set-ExecutionPolicy Restricted`
+1. open Powershell terminal in an empty folder (Shift+ right click) and run  `python -m venv robo` where robo is the environment name(can be anything).
+2. then run `.\robo\Scripts\activate` , this will activate the environment(green text in the beginning of every line will appear)<br />
+    If runnig scripts is not allowed then go into admin mode by `start-process PowerShell -verb runas `<br />
+    then `Set-ExecutionPolicy RemoteSigned` to allow running scripts<br />
+    to roll back enter `Set-ExecutionPolicy Restricted`.
 3. then install Django inside this environment with this command `pip install Django`
 4. then clone the git repo `git clone https://github.com/MNNIT-Robotics-Club-Official/Robotics_Club_Website.git`
 5. `cd Robotics_Club_Website`
