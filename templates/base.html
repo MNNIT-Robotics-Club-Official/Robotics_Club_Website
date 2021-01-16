@@ -1,82 +1,97 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- To add another css file, use below format and change file name -->
-    <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js'%}"></script>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- To add another css file, use below format and change file name -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
 
 
-    <!-- To add another js file, use below format and change file name -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
+  <!-- To add another js file, use below format and change file name -->
+  <script src="{% static 'js/jquery/jquery-3.5.1.slim.min.js'%}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
 
-    <title>{% block title %}{% endblock %}</title>
+  <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
 
-    {% block head %}
-    {% endblock %}
-  </head>
+  <title>{% block title %}{% endblock %}</title>
+
+  {% block head %}
+  {% endblock %}
+</head>
 
 
-  <body>
+<body>
 
-    <nav class="site-header sticky-top py-1 bg-dark">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-          <a class="py-2" href="#" aria-label="Product">
-            <img src="{% static 'img/logo.jpg' %}" alt="" width="50" height="30"></a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Projects</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Gallery</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Events</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Alumini</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Sponsers</a>
-          <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+
+
+
+
+  {% block body %}
+  {% endblock %}
+
+  {% block extra-body %}
+  {% endblock %}
+
+  <!-- FOOTER  -->
+  <footer class="bg-primary text-white text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <img src="{% static 'img/logo.jpg' %}" alt="" style="height:260px" class="img-responsive">
         </div>
-      </nav>
-      
+        <!--Grid column-->
 
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
 
+          <ul class="list-unstyled mb-0">
+            <li> <a href="#" class="text-white">Home</a></li>
+            <li> <a href="#about" class="text-white">About us</a></li>
+            <li> <a href="#" class="text-white">MNNIT</a></li>
+            <li> <a href="#" class="text-white">Terms of service</a></li>
+            <li> <a href="#" class="text-white">Privacy policy</a></li>
+          </ul>
+        </div>
+        <!--Grid column-->
 
-    {% block body %}
-    {% endblock %}
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <!-- <h5 class="text-uppercase mb-0">Links</h5> -->
 
-    {% block extra-body %}
-    {% endblock %}
-
-      <!-- FOOTER  -->
-    <footer class="bg-primary text-white text-center text-lg-start">
-        <!-- Grid container -->
-        <div class="container p-4">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <img src="{% static 'img/logo.jpg' %}"  alt=""style="height:260px" class="img-responsive">
-            </div>
-            <!--Grid column-->
-      
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-      
-              <ul class="list-unstyled mb-0">
-                <li> <a href="#" class="text-white">Home</a></li>
-              <li> <a href="#about" class="text-white">About us</a></li>
-              <li> <a href="#" class="text-white">MNNIT</a></li>
-              <li> <a href="#" class="text-white">Terms of service</a></li>
-              <li> <a href="#" class="text-white">Privacy policy</a></li>
-              </ul>
-            </div>
-            <!--Grid column-->
-      
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <!-- <h5 class="text-uppercase mb-0">Links</h5> -->
-      
-              <ul class="list-unstyled">
-                <h4>Contact Us</h4>
+          <ul class="list-unstyled">
+            <h4>Contact Us</h4>
             <p>
               Robotics Lab <br>
               Near boys SAC,MNNIT Allahabad<br>
@@ -91,21 +106,21 @@
               <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
         </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2020 Copyright:
-          <a class="text-white" href="#">RoboticsClub MNNIT</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-  </body>
-  
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-white" href="#">RoboticsClub MNNIT</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
 
 </html>
