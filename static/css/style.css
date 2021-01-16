@@ -1,5 +1,7 @@
-
-
+/* 
+Header - Navbar 
+Starts
+*/
 .navbar{
     background-color: #fff;
 }
@@ -21,3 +23,44 @@ color: #e76668;
 #navbarNavDropdown .navbar-nav .active a{
   color:  #e03a3c;
 }
+
+/* 
+Header - Navbar 
+Ends
+*/
+
+/*
+Footer
+starts
+*/
+footer{
+  display: block;
+  background-color: black;
+}
+
+footer .line{
+  border-bottom: 3px solid white;
+}
+
+footer h5{
+  color: #f83e41;
+}
+
+footer li h5{
+  color: #f83336;
+}
+
+footer li a{
+  
+  color: #edf2f4;
+}
+
+footer li{
+  
+  color: #edf2f4;
+}
+
+/*
+Footer
+Ends
+*/
