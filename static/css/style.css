@@ -1,0 +1,23 @@
+
+
+.navbar{
+    background-color: #fff;
+}
+
+#navbarNavDropdown .nav-item a{
+    font-family: "Open Sans", sans-serif;
+    color:#111111;
+}
+
+#navbarNavDropdown #donate a{
+  font-weight: 600;
+  color: #d90429;
+}
+
+#navbarNavDropdown .nav-item a:hover{
+color: #e76668;
+}
+
+#navbarNavDropdown .navbar-nav .active a{
+  color:  #e03a3c;
+}

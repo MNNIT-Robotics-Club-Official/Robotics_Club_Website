@@ -5,15 +5,22 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- To add another css file, use below format and change file name -->
+  <!-- To add another js file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
 
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
-
-
-
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
   <title>{% block title %}{% endblock %}</title>
 
   {% block head %}
@@ -23,30 +30,49 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
+        height="50"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+    <div class="collapse navbar-collapse justify-content-end px-3" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active px-3">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Gallery</a>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item dropdown px-3">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Events
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Avishkar</a>
+            <a class="dropdown-item" href="#">Prosang</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Others</a>
+          </div>
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item px-3" id="donate">
+          <a class="nav-link" href="#">Donate</a>
         </li>
       </ul>
-
     </div>
   </nav>
-
-
 
 
   {% block body %}
@@ -115,7 +141,6 @@
     </div>
     <!-- Copyright -->
   </footer>
-  <!-- To add another js file, use below format and change file name -->
   <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
   <script src="{% static 'js/jquery/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
