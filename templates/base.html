@@ -21,7 +21,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
-
   <title>{% block title %}{% endblock %}</title>
 
   {% block head %}
@@ -30,7 +29,6 @@
 
 
 <body>
-
 
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
@@ -75,6 +73,7 @@
       </ul>
     </div>
   </nav>
+
 
   {% block body %}
   {% endblock %}
@@ -142,8 +141,6 @@
     </div>
     <!-- Copyright -->
   </footer>
-
-  <!-- To add another css file, use below format and change file name -->
   <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
   <script src="{% static 'js/jquery/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
