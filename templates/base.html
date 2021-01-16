@@ -10,6 +10,7 @@
   <!-- To add another js file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
 
   <!-- Google Fonts -->
   <link
@@ -82,7 +83,7 @@
   {% endblock %}
 
   <!-- FOOTER  -->
-  <footer class="bg-primary text-white text-center text-lg-start">
+  <footer class="bg-dark text-white text-center text-lg-start">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
@@ -141,9 +142,30 @@
     </div>
     <!-- Copyright -->
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
   <script src="{% static 'js/jquery/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+  <script>
+    var wow = new WOW(
+      {
+        boxClass: 'wow',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset: 0,          // distance to the element when triggering the animation (default is 0)
+        mobile: true,       // trigger animations on mobile devices (default is true)
+        live: true,       // act on asynchronously loaded content (default is true)
+        callback: function (box) {
+          // the callback is fired every time an animation is started
+          // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+      }
+    );
+    wow.init();
+  </script>
+
+  {% block last %}
+  {% endblock %}
 
 </body>
 
