@@ -1,7 +1,7 @@
 # Robotics_Club_Website
 
 ## For Windows 
-If already installed python follow next steps
+If already installed python follow next steps:
 
 ### Preferably use Python virtual env for development
 1. open Powershell terminal in an empty folder (Shift+ right click) and run  `python -m venv robo` where robo is the environment name(can be anything).
