@@ -35,6 +35,58 @@ Ends
 */
 
 /*
+Alumni Starts
+*/
+
+/* Our Alumni */
+#alumniTeam .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid
+}
+
+/* Batch */
+#alumniTeam .d-flex h3{
+  color: #16324f;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 2px;
+}
+
+/* Name & Branch Background */
+#alumniTeam .row .d-flex{
+  background-color: #e03a3c;
+  opacity: 85%;
+}
+
+#alumniTeam .row .d-flex ul{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+/* Name & Branch */
+#alumniTeam .card .d-flex li{
+  margin-top: 10px;
+  padding-bottom: 12px;
+  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  line-height: 10px;
+  margin-bottom: -7px;
+  text-align: center;
+}
+
+/*
+Alumni Ends
+*/
+
+/*
 Footer
 starts
 */
