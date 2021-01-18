@@ -21,3 +21,14 @@ color: #e76668;
 #navbarNavDropdown .navbar-nav .active a{
   color:  #e03a3c;
 }
+
+/* .carousel-caption{
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+} */
+.carousel-caption {
+  transform: translateY(-50%);
+  bottom: 0;
+  top: 50%;
+}
