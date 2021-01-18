@@ -64,14 +64,22 @@ Alumni Starts
   opacity: 85%;
 }
 
+#alumniTeam .row .d-flex ul{
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
 /* Name & Branch */
-#alumniTeam .card span{
+#alumniTeam .card .d-flex li{
   margin-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 12px;
   font-size: 1.3em;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: #fff;
+  line-height: 10px;
+  margin-bottom: -7px;
+  text-align: center;
 }
 
 /*
