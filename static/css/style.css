@@ -1,23 +1,30 @@
-
-
-.navbar{
+/* 
+Header - Navbar 
+Starts
+*/
+/* NavBar Background Color (1 Change in reboot.css) */
+.navbar{ 
     background-color: #fff;
 }
 
+/* Nav Items */
 #navbarNavDropdown .nav-item a{
     font-family: "Open Sans", sans-serif;
     color:#111111;
 }
 
+/* Donate Link */
 #navbarNavDropdown #donate a{
   font-weight: 600;
   color: #d90429;
 }
 
+/* Nav Items Hover */
 #navbarNavDropdown .nav-item a:hover{
 color: #e76668;
 }
 
+/* Current Active Page */
 #navbarNavDropdown .navbar-nav .active a{
   color:  #e03a3c;
 }
@@ -32,3 +39,47 @@ color: #e76668;
   bottom: 0;
   top: 50%;
 }
+/* 
+Header - Navbar 
+Ends
+*/
+
+/*
+Footer
+starts
+*/
+/* Footer Background Color */
+footer{
+  display: block;
+  background-color: black;
+}
+
+/*Heading Underline */
+footer .line{
+  border-bottom: 3px solid white;
+}
+
+/* Headings */
+footer h5{
+  color: #f83e41;
+}
+
+/* Robotics Lab Heading */
+footer li h5{
+  color: #f83336;
+}
+
+/* List Items */
+footer li a{
+  color: #edf2f4;
+}
+
+/* Location and Email */
+footer li{ 
+  color: #edf2f4;
+}
+
+/*
+Footer
+Ends
+*/
