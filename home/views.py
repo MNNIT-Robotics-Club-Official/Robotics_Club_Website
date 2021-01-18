@@ -7,3 +7,6 @@ def index(request):
 
 def alumni(request):
     return render(request, 'alumni.html')
+
+def faculty(request):
+    return render(request, 'faculty.html')
