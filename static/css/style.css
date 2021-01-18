@@ -35,6 +35,48 @@ Ends
 */
 
 /*
+Alumni Starts
+*/
+#alumniTeam .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid
+}
+
+#alumniTeam .d-flex h3{
+  color: #16324f;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 2px;
+}
+
+#alumniTeam .row .d-flex{
+  background-color: #e03a3c;
+opacity: 85%;
+}
+
+#alumniTeam .card span{
+  margin-top: 10px;
+  padding-bottom: 5px;
+  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+#alumniTeam .card .card-body{
+  /* margin: 0; */
+}
+/*
+Alumni Ends
+*/
+
+/*
 Footer
 starts
 */
