@@ -37,6 +37,8 @@ Ends
 /*
 Alumni Starts
 */
+
+/* Our Alumni */
 #alumniTeam .d-flex h2{
   color: #333;
   font-weight: bold;
@@ -47,6 +49,7 @@ Alumni Starts
   border-bottom:#e03a3c 5px solid
 }
 
+/* Batch */
 #alumniTeam .d-flex h3{
   color: #16324f;
   font-size: 26px;
@@ -55,11 +58,13 @@ Alumni Starts
   word-spacing: 2px;
 }
 
+/* Name & Branch Background */
 #alumniTeam .row .d-flex{
   background-color: #e03a3c;
-opacity: 85%;
+  opacity: 85%;
 }
 
+/* Name & Branch */
 #alumniTeam .card span{
   margin-top: 10px;
   padding-bottom: 5px;
@@ -69,9 +74,6 @@ opacity: 85%;
   color: #fff;
 }
 
-#alumniTeam .card .card-body{
-  /* margin: 0; */
-}
 /*
 Alumni Ends
 */
