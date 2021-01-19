@@ -138,6 +138,31 @@ Faculty Ends
 */
 
 /*gallery starts*/
+
+#gallery .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid
+}
+
+#gallery .d-flex h3{
+  color: #16324f;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 2px;
+  margin-left: 20px;
+}
+
+.gallery .gallery-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .gallery .gallery-item {
   margin-bottom: 30px;
 }
