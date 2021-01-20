@@ -6,13 +6,7 @@ Robotics Club MNNIT
 {% endblock %}
 
 {% block head %}
-<style>
-    .carousel-caption {
-  transform: translateY(-20%);
-  bottom: 0;
-  top: 52%;
-}
-</style>
+<link rel="stylesheet" href="{% static 'css/index.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
@@ -41,7 +35,7 @@ Robotics Club MNNIT
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <div class="carousel-item">
-            <img src="{% static 'img/r25.jpg' %}" alt="" width="1900px" height="650px" style="width: 100%;">
+            <img src="{% static 'img/r30.jpg' %}" alt="" width="1900px" height="650px" style="width: 100%;">
             <!-- <div class="carousel-caption d-none d-md-block">
                 <h3>Third Slide</h3>
                 <p>This is a description for the third slide.</p>
@@ -58,11 +52,12 @@ Robotics Club MNNIT
     </a>
 </div>
 <!-- Section Heading -->
-<section class="py-5" style="background: linear-gradient(#e66465, #9198e5);">
+<section class="py-5" style="background: linear-gradient(#e66465, #9198e5);" id="About">
     <div class="container">
-        <h1>About Us</h1>
+        <h1 class="section-title">About Us</h1>
         <!-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-        <p class="wow fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit eius veritatis, architecto
+        <p class="wow fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit velit eius
+            veritatis, architecto
             vitae, et illo ab impedit saepe consectetur odio veniam eum debitis sapiente amet earum adipisci officiis
             dolorem magnam nihil alias ipsum vero libero minima. Blanditiis dolor et tenetur aut libero repellendus
             ullam aperiam, corrupti corporis, ipsum, possimus voluptatem vel? Incidunt repellendus voluptates ipsa velit
@@ -81,9 +76,9 @@ Robotics Club MNNIT
 </section>
 <!-- Portfolio Section -->
 <div class="container mt-5">
-    <h2>Featured Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
     <div class="row mb-4 wow pulse">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-4 p-2 col-sm-6 portfolio-item">
             <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
@@ -98,7 +93,7 @@ Robotics Club MNNIT
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-4 p-2 col-sm-6 portfolio-item">
             <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
@@ -111,7 +106,7 @@ Robotics Club MNNIT
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-4 p-2 col-sm-6 portfolio-item">
             <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                 <div class="card-body">
@@ -128,7 +123,7 @@ Robotics Club MNNIT
     </div>
 
 
-    <h2>Themes Worked Upon:</h2>
+    <!-- <h2>Themes Worked Upon:</h2>
     <div class="row">
         <div class="col-lg-6 mb-3">
           <ul class="wow fadeInUp" style="font-size: large;">
@@ -144,10 +139,77 @@ Robotics Club MNNIT
         <div class="col-lg-6 mb-3">
           <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
         </div>
-      </div>
+      </div> -->
+</div>
 
 
-    <h2 class="mt-5 mb-4">Our Past Sponsers</h2>
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg ">
+    <div class="container wow fadeInUp">
+        <div class="section-title">
+            <h2>Themes</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.1s">
+                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                    <h4><a href="#">Machine Learning</a></h4>
+                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                        cupiditate non provident</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+                    <i class="fa fa-video-camera" aria-hidden="true"></i>
+                    <h4><a href="#">Computer Vision</a></h4>
+                    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                        tarad limino ata</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.3s">
+                    <i class="fa fa-car" aria-hidden="true"></i>
+                    <h4><a href="#">Control System And Path Planning</a></h4>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                    <h4><a href="#">Internet Of Things</a></h4>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.5s">
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                    <h4><a href="#">Automations</a></h4>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                        deleniti atque</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.6s">
+                    <i class="fa fa-android" aria-hidden="true"></i>
+                    <h4><a href="#">Robot Operating System(ROS)</a></h4>
+                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
+                        est eligendi</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Services Section -->
+
+<div class="container">
+
+    <h2 class="mt-5 mb-4 section-title">Our Past Sponsers</h2>
     <div class="row wow fadeInRight">
         <div class="col-lg-2 col-sm-4 mb-4">
             <img class="img-fluid" src="http://placehold.it/500x300" alt="">
@@ -169,5 +231,7 @@ Robotics Club MNNIT
         </div>
     </div>
 </div>
+</div>
+
 
 {% endblock %}
