@@ -1,3 +1,31 @@
+/* Preloader Starts here */
+/* Preloader */
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(82, 61, 61);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.disappear {
+  animation: vanish 4s forwards;
+}
+@keyframes vanish {
+  100%{
+    opacity:0;
+    /* visibility: hidden; */
+    display: none;
+  }
+}
+
+/* Preloader Ends here */
+
 /* 
 Header - Navbar 
 Starts
@@ -43,6 +71,7 @@ color: #e76668;
 Header - Navbar 
 Ends
 */
+
 
 /*
 Footer
