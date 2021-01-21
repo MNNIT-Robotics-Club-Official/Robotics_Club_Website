@@ -10,6 +10,11 @@
   <!-- To add another css file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <!-- <script src="https://use.fontawesome.com/5164159442.js"></script> -->
+  <!-- <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.css' %}"> -->
 
   <!-- Google Fonts -->
   <link
@@ -22,16 +27,25 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
   <title>{% block title %}{% endblock %}</title>
-
+  
   {% block head %}
   {% endblock %}
 </head>
 
 
-<body>
+<!-- <body style="padding-top: 78px;"> -->
+  <body>
+  <!-- Preloader Start -->
+  <!-- <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div> -->
+  <div class="loader">
+    <img src="/static/img/tenor.gif" alt="">
+  </div>
+  <!-- End Preloader -->
 
   <!-- header start -->
-  <header class="sticky-top">
+  <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
           height="50"></a>
@@ -46,7 +60,7 @@
             <a class="nav-link" href="{% url 'home:index' %}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#About">About</a>
           </li>
           <li class="nav-item px-3">
             <a class="nav-link" href="#">Gallery</a>
@@ -95,8 +109,8 @@
   {% endblock %}
 
   <!-- FOOTER  -->
-  <footer class="pt-4 my-md-5 pt-md-5 border-top px-2" id="footer">
-    <div class="row">
+  <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
+    <div class="row mr-0 ml-0">
       <div class="col-12 col-md">
         <img class="mb-2 mx-4" src="{% static 'img/logo.jpg' %}" alt="" width="147" height="174.67">
         <small class="d-block mb-3 text-muted mx-4">© RoboticsClub MNNIT</small>
@@ -136,11 +150,34 @@
     </div>
   </footer>
   <!-- FOOTER ENDS -->
-
+  
   <!-- To add another js file, use below format and change file name -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
   <script src="{% static 'js/jquery/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'js/base.js'%}"></script>
+  <!-- <script>
+    var wow = new WOW(
+      {
+        boxClass: 'wow',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset: 0,          // distance to the element when triggering the animation (default is 0)
+        mobile: true,       // trigger animations on mobile devices (default is true)
+        live: true,       // act on asynchronously loaded content (default is true)
+        callback: function (box) {
+          // the callback is fired every time an animation is started
+          // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+      }
+    );
+    wow.init();
+  </script> -->
+
+
+  {% block last %}
+  {% endblock %}
 
 </body>
 
