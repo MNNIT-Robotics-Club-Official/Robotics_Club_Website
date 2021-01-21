@@ -1,3 +1,31 @@
+/* Preloader Starts here */
+/* Preloader */
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(82, 61, 61);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.disappear {
+  animation: vanish 4s forwards;
+}
+@keyframes vanish {
+  100%{
+    opacity:0;
+    /* visibility: hidden; */
+    display: none;
+  }
+}
+
+/* Preloader Ends here */
+
 /* 
 Header - Navbar 
 Starts
@@ -29,10 +57,21 @@ color: #e76668;
   color:  #e03a3c;
 }
 
+/* .carousel-caption{
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+} */
+.carousel-caption {
+  transform: translateY(-50%);
+  bottom: 0;
+  top: 50%;
+}
 /* 
 Header - Navbar 
 Ends
 */
+
 
 /*
 Alumni Starts
@@ -144,7 +183,7 @@ starts
 /* Footer Background Color */
 footer{
   display: block;
-  background-color: black;
+  background-color: #1b1b1b;
 }
 
 /*Heading Underline */
