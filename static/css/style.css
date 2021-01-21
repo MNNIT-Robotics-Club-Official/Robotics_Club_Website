@@ -14,12 +14,12 @@
 }
 
 .disappear {
-  animation: vanish 4s forwards;
+  animation: vanish 2s forwards;
 }
 @keyframes vanish {
   100%{
     opacity:0;
-    /* visibility: hidden; */
+    visibility: hidden;
     display: none;
   }
 }
