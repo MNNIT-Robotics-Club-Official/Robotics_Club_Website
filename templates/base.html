@@ -33,10 +33,19 @@
 </head>
 
 
-<body>
+<!-- <body style="padding-top: 78px;"> -->
+  <body>
+  <!-- Preloader Start -->
+  <!-- <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div> -->
+  <div class="loader">
+    <img src="/static/img/tenor.gif" alt="">
+  </div>
+  <!-- End Preloader -->
 
   <!-- header start -->
-  <header class="sticky-top">
+  <header class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
           height="50"></a>
@@ -91,7 +100,7 @@
 
   <!-- FOOTER  -->
   <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
-    <div class="row">
+    <div class="row mr-0 ml-0">
       <div class="col-12 col-md">
         <img class="mb-2 mx-4" src="{% static 'img/logo.jpg' %}" alt="" width="147" height="174.67">
         <small class="d-block mb-3 text-muted mx-4">© RoboticsClub MNNIT</small>
@@ -137,7 +146,8 @@
   <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
   <script src="{% static 'js/jquery/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-  <script>
+  <script src="{% static 'js/base.js'%}"></script>
+  <!-- <script>
     var wow = new WOW(
       {
         boxClass: 'wow',      // animated element css class (default is wow)
@@ -153,7 +163,7 @@
       }
     );
     wow.init();
-  </script>
+  </script> -->
 
 
   {% block last %}

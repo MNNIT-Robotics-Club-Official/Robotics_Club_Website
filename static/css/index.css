@@ -2,7 +2,14 @@
     transform: translateY(-20%);
     bottom: 0;
     top: 52%;
+
+  }
+  
+.carousel-img {
+  width: 100%;
+  height: 90vh;
 }
+
 section {
     padding: 60px 0;
     overflow: hidden;
