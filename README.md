@@ -21,3 +21,20 @@ If already installed python follow next steps:
 3. `cd Robotics_Club_Website`
 4. run `python manage.py runserver`
 5. goto server http://127.0.0.1:8000/
+
+
+## Workflow -
+
+1. [x] Homepage
+2. [x] Gallery
+3. [x] Alumni
+4. [x] Faculty
+
+
+1. [ ] Achievement
+2. [ ] Projects
+3. [ ] Events
+4. [ ] Login
+5. [ ] Donate
+6. [ ] Testimonial
+7. [ ] Blog
