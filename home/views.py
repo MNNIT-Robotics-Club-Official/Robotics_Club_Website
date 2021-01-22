@@ -10,3 +10,6 @@ def alumni(request):
 
 def faculty(request):
     return render(request, 'faculty.html')
+
+def gallery(request):
+    return render(request, 'gallery.html')
