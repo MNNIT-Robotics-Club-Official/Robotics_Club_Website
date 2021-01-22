@@ -167,36 +167,6 @@ Faculty Ends
   margin-bottom: 30px;
 }
 
-.gallery #gallery-flters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-  text-align: center;
-}
-
-.gallery #gallery-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 15px 10px 15px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #444444;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  border-radius: 3px;
-}
-
-.gallery #gallery-flters li:hover, .gallery #gallery-flters li.filter-active {
-  color: #fff;
-  background: #e03a3c;
-}
-
-.gallery #gallery-flters li:last-child {
-  margin-right: 0;
-}
-
 .gallery .gallery-wrap {
   transition: 0.3s;
   position: relative;
@@ -244,32 +214,6 @@ Faculty Ends
   font-weight: 600;
 }
 
-.gallery .gallery-wrap .gallery-info p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-  font-style: italic;
-}
-
-.gallery .gallery-wrap .gallery-links {
-  text-align: center;
-  z-index: 4;
-}
-
-.gallery .gallery-wrap .gallery-links a {
-  color: rgba(255, 255, 255, 0.4);
-  margin: 0 5px 0 0;
-  font-size: 28px;
-  display: inline-block;
-  transition: 0.3s;
-}
-
-.gallery .gallery-wrap .gallery-links a:hover {
-  color: #fff;
-}
-
 .gallery .gallery-wrap:hover::before {
   opacity: 1;
 }
@@ -285,91 +229,8 @@ Faculty Ends
 
 /*gallery-details starts*/
 
-.gallery-details {
-  padding-top: 40px;
-}
 
-.gallery-details .gallery-details-container {
-  position: relative;
-}
-
-.gallery-details .gallery-details-carousel {
-  position: relative;
-  z-index: 1;
-}
-
-.gallery-details .gallery-details-carousel .owl-nav, .gallery-details .gallery-details-carousel .owl-dots {
-  margin-top: 5px;
-  text-align: left;
-}
-
-.gallery-details .gallery-details-carousel .owl-dot {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ddd !important;
-}
-
-.gallery-details .gallery-details-carousel .owl-dot.active {
-  background-color: #e03a3c !important;
-}
-
-.gallery-details .gallery-info {
-  padding: 30px;
-  position: absolute;
-  right: 0;
-  bottom: -70px;
-  background: #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.gallery-details .gallery-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-.gallery-details .gallery-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.gallery-details .gallery-info ul li + li {
-  margin-top: 10px;
-}
-
-.gallery-details .gallery-description {
-  padding-top: 50px;
-}
-
-.gallery-details .gallery-description h2 {
-  width: 50%;
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.gallery-details .gallery-description p {
-  padding: 0 0 0 0;
-}
-
-@media (max-width: 768px) {
-  .gallery-details .gallery-description h2 {
-    width: 100%;
-  }
-  .gallery-details .gallery-info {
-    position: static;
-    margin-top: 30px;
-  }
-}
-
-/*gallery ends*/
+/*gallery-details ends*/
 
 /*
 Footer
