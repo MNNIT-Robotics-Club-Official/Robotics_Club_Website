@@ -12,7 +12,6 @@ var wow = new WOW(
         scrollContainer: null // optional scroll container selector, otherwise use window
     }
 );
-wow.init();
 
 // $(window).on('load', function () { // makes sure the whole site is loaded 
 //     $('#status').fadeOut(); // will first fade out the loading animation 
@@ -24,6 +23,7 @@ var loader = document.querySelector(".loader");
 window.addEventListener("load",vanish);
 
 function vanish(){
+    wow.init();
     // loader.fadeOut("slow");
     // preloader.fadeOut("slow");
     // bod.css({'overflow': 'visible'});
