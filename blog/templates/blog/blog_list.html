@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Blogs
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="">Blogs</h2>
+    </div>
+        {% for post in bloglist %}
+        <div class="row p-2 justify-content-center">
+                <div class="card w-75">
+                    <div class="card-header">
+                        <a href="{% url 'blog_detail' pk=post.pk %}" class="stretched-link">{{ post.title }}</a>
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Content : {{ post.content|truncatewords_html:8}}</p>
+                            <footer class="blockquote-footer">Author:<cite title="Source Title">{{ post.author }}</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+        </div>
+     {% endfor %}
+    </div>
+{% endblock %}

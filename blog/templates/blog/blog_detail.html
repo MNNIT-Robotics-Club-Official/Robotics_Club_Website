@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title%}
+    {{ blog.title }}
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <div class="row justify-content-center pb-3">
+        <h2>{{ blog.title }}</h2>
+    </div>
+     <div class="row justify-content-center pb-3">
+        <p>{{ blog.author }} |</p>
+        <p> {{ blog.date }}</p>
+    </div>
+        <div class="row col-md-offset-6 justify-content-center p-md-5">
+            <div class="card w-75">
+                <div class="card-body border-dark">
+                    {{ blog.content |safe |linebreaks}}
+                </div>
+            </div>
+        </div>
+        {% ifnotequal blog.vidlink  "" %}
+    <div class="row col-md-offset-6 justify-content-center p-md-5">
+    <iframe width="720" height="480"
+    src="{{ blog.vidlink }}">
+    </iframe>
+    </div>
+    {% endifnotequal %}
+    </div>
+{% endblock %}
