@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
   <!-- <script src="https://use.fontawesome.com/5164159442.js"></script> -->
   <!-- <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.css' %}"> -->
 
@@ -27,49 +28,50 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
   <title>{% block title %}{% endblock %}</title>
-  
+
   {% block head %}
   {% endblock %}
 </head>
 
 
-<!-- <body style="padding-top: 78px;"> -->
+<body style="padding-top: 78px;">
+
   <body>
-  <!-- Preloader Start -->
-  <!-- <div id="preloader">
+    <!-- Preloader Start -->
+    <!-- <div id="preloader">
     <div id="status">&nbsp;</div>
   </div> -->
-  <div class="loader">
-    <img src="/static/img/tenor.gif" alt="">
-  </div>
-  <!-- End Preloader -->
-
-  <!-- header start -->
-  <header class="fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
+    <div class="loader">
+      <img src="/static/img/tenor.gif" alt="">
+    </div>
+    <!-- End Preloader -->
+    
+    <!-- header start -->
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
           height="50"></a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end px-3" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active px-3">
-            <a class="nav-link" href="{% url 'home:index' %}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link" href="#About">About</a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link" href="/gallery">Gallery</a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
-          </li>
-          <li class="nav-item dropdown px-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end px-3" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active px-3">
+              <a class="nav-link" href="{% url 'home:index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#About">About</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
+            </li>
+            <li class="nav-item dropdown px-3">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Events
             </a>
@@ -80,88 +82,88 @@
               <a class="dropdown-item" href="#">Others</a>
             </div>
           </li>
-          <li class="nav-item dropdown px-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            <li class="nav-item dropdown px-3">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Team
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/alumni">Alumni</a>
-              <a class="dropdown-item" href="/faculty">Coordinator</a>
-            </div>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item px-3" id="donate">
-            <a class="nav-link" href="#">Donate</a>
-          </li>
-        </ul>
+                Team
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/alumni">Alumni</a>
+                <a class="dropdown-item" href="/faculty">Coordinator</a>
+              </div>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item px-3" id="donate">
+              <a class="nav-link" href="#">Donate</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- header end -->
+    
+    {% block body %}
+    {% endblock %}
+    
+    {% block extra-body %}
+    {% endblock %}
+    
+    <!-- FOOTER  -->
+    <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
+      <div class="row mr-0 ml-0">
+        <div class="col-12 col-md">
+          <img class="mb-2 mx-4" src="{% static 'img/logo.jpg' %}" alt="" width="147" height="174.67">
+          <small class="d-block mb-3 text-muted mx-4">© RoboticsClub MNNIT</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5><span class="line">Us</span>eful Links</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="" href="{% url 'home:index' %}">Home</a></li>
+            <li><a class="" href="#">About Us</a></li>
+            <li><a class="" href="#">MNNIT</a></li>
+            <li><a class="" href="#">Terms of Services</a></li>
+            <li><a class="" href="#">Private Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5><span class="line">Co</span>ntribution</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="" href="{% url 'project_list' %}">Projects</a></li>
+            <li><a class="" href="#">Blog</a></li>
+            <li><a class="" href="/gallery">Gallery</a></li>
+            <li><a class="" href="#">Videos</a></li>
+            <li><a class="" href="/alumni">Alumni</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md mr-3">
+          <!-- <h5><span class="line">Ro</span>bitcs Lab</h5> -->
+          <ul class="list-unstyled text-small">
+            <li>
+              <h5>Robotics Lab</h5>
+            </li>
+            <li>Near boys SAC, MNNIT</li>
+            <li>Allahabad</li>
+            <li>Prayagraj</li>
+            <li><strong>Email : </strong>roboticsclub@mnnit.ac.in</li>
+          </ul>
+        </div>
       </div>
-    </nav>
-  </header>
-  <!-- header end -->
-
-  {% block body %}
-  {% endblock %}
-
-  {% block extra-body %}
-  {% endblock %}
-
-  <!-- FOOTER  -->
-  <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
-    <div class="row mr-0 ml-0">
-      <div class="col-12 col-md">
-        <img class="mb-2 mx-4" src="{% static 'img/logo.jpg' %}" alt="" width="147" height="174.67">
-        <small class="d-block mb-3 text-muted mx-4">© RoboticsClub MNNIT</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5><span class="line">Us</span>eful Links</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="" href="{% url 'home:index' %}">Home</a></li>
-          <li><a class="" href="#">About Us</a></li>
-          <li><a class="" href="#">MNNIT</a></li>
-          <li><a class="" href="#">Terms of Services</a></li>
-          <li><a class="" href="#">Private Policy</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5><span class="line">Co</span>ntribution</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="" href="{% url 'project_list' %}">Projects</a></li>
-          <li><a class="" href="#">Blog</a></li>
-          <li><a class="" href="/gallery">Gallery</a></li>
-          <li><a class="" href="#">Videos</a></li>
-          <li><a class="" href="/alumni">Alumni</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md mr-3">
-        <!-- <h5><span class="line">Ro</span>bitcs Lab</h5> -->
-        <ul class="list-unstyled text-small">
-          <li>
-            <h5>Robotics Lab</h5>
-          </li>
-          <li>Near boys SAC, MNNIT</li>
-          <li>Allahabad</li>
-          <li>Prayagraj</li>
-          <li><strong>Email : </strong>roboticsclub@mnnit.ac.in</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <!-- FOOTER ENDS -->
-  
-  <!-- To add another js file, use below format and change file name -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-  <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
-  <!-- <script src="{% static 'js/jquery/popper.min.js'%}"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-  <script src="{% static 'js/base.js'%}"></script>
-  <!-- <script>
-    var wow = new WOW(
-      {
-        boxClass: 'wow',      // animated element css class (default is wow)
+    </footer>
+    <!-- FOOTER ENDS -->
+    
+    <!-- To add another js file, use below format and change file name -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
+    <script src="{% static 'js/jquery/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'js/base.js'%}"></script>
+    <!-- <script>
+      var wow = new WOW(
+        {
+          boxClass: 'wow',      // animated element css class (default is wow)
         animateClass: 'animated', // animation css class (default is animated)
         offset: 0,          // distance to the element when triggering the animation (default is 0)
         mobile: true,       // trigger animations on mobile devices (default is true)
@@ -177,10 +179,10 @@
   </script> -->
 
 
-  {% block last %}
-  {% endblock %}
+    {% block last %}
+    {% endblock %}
 
-</body>
+  </body>
 
 
 </html>
