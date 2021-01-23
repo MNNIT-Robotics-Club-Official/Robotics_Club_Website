@@ -51,8 +51,8 @@
     <!-- header start -->
     <header class="fixed-top">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"><img src="{% static 'img/logo.jpg' %}" alt="RoboClub Logo" width="42.08"
-            height="50"></a>
+        <a class="navbar-brand" href="#"><img src="{% static 'img/NewRoboClub.png' %}" alt="RoboClub Logo"
+            width="138.14" height="50"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,10 +64,7 @@
               <a class="nav-link" href="{% url 'home:index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#About">About</a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link" href="/gallery">Gallery</a>
+              <a class="nav-link" href="{% url 'home:gallery' %}">Gallery</a>
             </li>
             <li class="nav-item px-3">
               <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
@@ -90,8 +87,18 @@
                 Team
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/alumni">Alumni</a>
-                <a class="dropdown-item" href="/faculty">Coordinator</a>
+                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
+                <a class="dropdown-item" href="{% url 'home:faculty' %}">Coordinator</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown px-3">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Achievement</a>
+                <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
               </div>
             </li>
             <li class="nav-item px-3">
@@ -124,7 +131,7 @@
           <ul class="list-unstyled text-small">
             <li><a class="" href="{% url 'home:index' %}">Home</a></li>
             <li><a class="" href="#">About Us</a></li>
-            <li><a class="" href="#">MNNIT</a></li>
+            <li><a class="" href="http://www.mnnit.ac.in/">MNNIT</a></li>
             <li><a class="" href="#">Terms of Services</a></li>
             <li><a class="" href="#">Private Policy</a></li>
           </ul>
@@ -134,9 +141,9 @@
           <ul class="list-unstyled text-small">
             <li><a class="" href="{% url 'project_list' %}">Projects</a></li>
             <li><a class="" href="#">Blog</a></li>
-            <li><a class="" href="/gallery">Gallery</a></li>
+            <li><a class="" href="{% url 'home:gallery' %}">Gallery</a></li>
             <li><a class="" href="#">Videos</a></li>
-            <li><a class="" href="/alumni">Alumni</a></li>
+            <li><a class="" href="{% url 'home:alumni' %}">Alumni</a></li>
           </ul>
         </div>
         <div class="col-6 col-md mr-3">
@@ -161,6 +168,7 @@
     <script src="{% static 'js/jquery/popper.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
     <script src="{% static 'js/base.js'%}"></script>
+    <script src="{% static 'js/style.js'%}"></script>
     <!-- <script>
     var wow = new WOW(
       {
