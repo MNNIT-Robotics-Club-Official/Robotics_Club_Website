@@ -16,3 +16,6 @@ def gallery(request):
 
 def testimonial(request):
     return render(request, 'testimonial.html')
+
+def achievement(request):
+    return render(request, 'achievement.html')
