@@ -29,12 +29,11 @@ If already installed python follow next steps:
 2. [x] Gallery
 3. [x] Alumni
 4. [x] Faculty
-
+5. [x] Testimonial
 
 1. [ ] Achievement
 2. [ ] Projects
 3. [ ] Events
 4. [ ] Login
 5. [ ] Donate
-6. [ ] Testimonial
-7. [ ] Blog
+6. [ ] Blog

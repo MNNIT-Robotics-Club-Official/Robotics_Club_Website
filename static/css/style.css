@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(82, 61, 61);
+  background: #000;
   height: 100%;
   width: 100%;
   display: flex;
@@ -270,6 +270,38 @@ Faculty Ends
 
 
 /*gallery-details ends*/
+
+/*
+Testimonial
+starts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+.testimonials{position: relative;background-repeat: no-repeat;background-size: cover;padding:10px 0;font-family:'Poppins', sans-serif}
+.testimonials::before{content:'';position: absolute;right:0;left:0;top:0;bottom:0;}
+.testimonials .testi .item {background: #fff;padding: 40px 30px;border-radius:15px; border: rgb(58, 58, 58) solid 1px;}
+.testimonials .testi .item .profile {display:flex;padding-left: 15px;}
+.testimonials .testi .item .profile img {border-radius: 100%;width:100px;height:100px;object-fit:cover}
+.testimonials .testi .item .profile .information {padding-left:20px;margin-bottom:15px;}
+.testimonials .testi .item .profile .information p {font-size: 24px;margin: 0px auto 0px;color: #16324f;font-weight: 900;line-height: 1;}
+.testimonials .testi .item .profile .information span {color: #e76668;font-weight: bold;margin-top: -4px;line-height: 1.8em;font-size: 15px;}
+.testimonials .testi .item>p {margin-bottom: 15px;font-size: 16px;line-height: 1.6em;display: block;z-index: 2;font-style: italic;color: #5A3733;text-align: center;}
+.testimonials .testi .item .icon {text-align: center;}
+.testimonials .testi .item .icon i {font-size: 32px;color: #e03a3c;}
+
+/* Heading */
+.testimonials .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid
+}
+/*
+Testimonial
+Ends
+*/
 
 /*
 Footer
