@@ -16,3 +16,6 @@ def gallery(request):
 
 def avishkar(request):
     return render(request, 'avishkar.html')
+    
+def testimonial(request):
+    return render(request, 'testimonial.html')
