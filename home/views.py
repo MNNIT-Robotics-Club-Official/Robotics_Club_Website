@@ -13,3 +13,6 @@ def faculty(request):
 
 def gallery(request):
     return render(request, 'gallery.html')
+
+def avishkar(request):
+    return render(request, 'avishkar.html')
