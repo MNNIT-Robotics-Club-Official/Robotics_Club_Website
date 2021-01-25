@@ -31,9 +31,9 @@ If already installed python follow next steps:
 4. [x] Faculty
 5. [x] Testimonial
 6. [x] Achievement
- 
+7. [x] Events
+
 1. [ ] Projects
-2. [ ] Events
-3. [ ] Login
-4. [ ] Donate
-5. [ ] Blog
+2. [ ] Login
+3. [ ] Donate
+4. [ ] Blog
