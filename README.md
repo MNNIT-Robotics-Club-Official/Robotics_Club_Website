@@ -30,10 +30,10 @@ If already installed python follow next steps:
 3. [x] Alumni
 4. [x] Faculty
 5. [x] Testimonial
-
-1. [ ] Achievement
-2. [ ] Projects
-3. [ ] Events
-4. [ ] Login
-5. [ ] Donate
-6. [ ] Blog
+6. [x] Achievement
+ 
+1. [ ] Projects
+2. [ ] Events
+3. [ ] Login
+4. [ ] Donate
+5. [ ] Blog

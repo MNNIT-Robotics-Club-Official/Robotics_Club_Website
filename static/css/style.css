@@ -284,7 +284,7 @@ starts
 .testimonials .testi .item .profile .information {padding-left:20px;margin-bottom:15px;}
 .testimonials .testi .item .profile .information p {font-size: 24px;margin: 0px auto 0px;color: #16324f;font-weight: 900;line-height: 1;}
 .testimonials .testi .item .profile .information span {color: #e76668;font-weight: bold;margin-top: -4px;line-height: 1.8em;font-size: 15px;}
-.testimonials .testi .item>p {margin-bottom: 15px;font-size: 16px;line-height: 1.6em;display: block;z-index: 2;font-style: italic;color: #5A3733;text-align: center;}
+.testimonials .testi .item>p {margin-bottom: 15px;font-size: 16px;line-height: 1.6em;display: block;z-index: 2;color: #5A3733;text-align: center;}
 .testimonials .testi .item .icon {text-align: center;}
 .testimonials .testi .item .icon i {font-size: 32px;color: #e03a3c;}
 
@@ -300,6 +300,16 @@ starts
 }
 /*
 Testimonial
+Ends
+*/
+
+/*
+Achievement
+starts
+*/
+
+/*
+Achievement
 Ends
 */
 
