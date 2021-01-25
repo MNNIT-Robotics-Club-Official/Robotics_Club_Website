@@ -14,6 +14,12 @@ def faculty(request):
 def gallery(request):
     return render(request, 'gallery.html')
 
+def avishkar(request):
+    return render(request, 'avishkar.html')
+
+def prosang(request):
+    return render(request, 'prosang.html')
+    
 def testimonial(request):
     return render(request, 'testimonial.html')
 
