@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMP_DIR_project=os.path.join(BASE_DIR,'project/templates')
 TEMP_DIR_blog=os.path.join(BASE_DIR,'blog/templates')
+TEMP_DIR_component=os.path.join(BASE_DIR,'component/templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'home',
     'project',
     'blog',
+    'user',
+    'component',
     'crispy_forms',
 ]
 
@@ -60,8 +63,10 @@ ROOT_URLCONF = 'RoboClub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),TEMP_DIR_project,
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 TEMP_DIR_project,
                  TEMP_DIR_blog,
+                 TEMP_DIR_component,
                  ],
 
         'APP_DIRS': True,
@@ -141,3 +146,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home:index'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL='home:index'
