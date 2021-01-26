@@ -24,9 +24,18 @@ Robotics Club MNNIT
                         <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
                         <h4>Tool Name</h4>
                         <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
+
+                            <input class="form-control-sm mr-2" type="text" placeholder="Quantity" aria-label="Quantity"
+                                maxlength="4" size="4">
+                            <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Requested</a>
+                                    <a class="dropdown-item" href="#">Issued By</a>
+                                </div>
+                            </div>
                         </form>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                     </div>
