@@ -10,6 +10,7 @@
   <!-- To add another css file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -21,8 +22,8 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
@@ -49,7 +50,7 @@
 
     </div>
     <!-- End Preloader -->
-    
+
     <!-- header start -->
     <header class="fixed-top" id="topbar">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -71,24 +72,27 @@
             <li class="nav-item {% if request.resolver_match.view_name == 'home:gallery' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'home:gallery' %}">Gallery</a>
             </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'project:project_list' %}active{% endif %} px-3">
+            <li
+              class="nav-item {% if request.resolver_match.view_name == 'project:project_list' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'project:project_list' %}">Projects</a>
             </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:avishkar' %}active{% endif %} {% if request.resolver_match.view_name == 'home:prosang' %}active{% endif %} dropdown px-3">
+            <li
+              class="nav-item {% if request.resolver_match.view_name == 'home:avishkar' %}active{% endif %} {% if request.resolver_match.view_name == 'home:prosang' %}active{% endif %} dropdown px-3">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Events
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/avishkar">Avishkar</a>
-              <a class="dropdown-item" href="/prosang">Prosang</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Others</a>
-            </div>
-          </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %} {% if request.resolver_match.view_name == 'home:faculty' %}active{% endif %} dropdown px-3">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Events
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/avishkar">Avishkar</a>
+                <a class="dropdown-item" href="/prosang">Prosang</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Others</a>
+              </div>
+            </li>
+            <li
+              class="nav-item {% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %} {% if request.resolver_match.view_name == 'home:faculty' %}active{% endif %} dropdown px-3">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Team
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -104,6 +108,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{% url 'home:achievement' %}">Achievement</a>
                 <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
+                <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
               </div>
             </li>
             <li class="nav-item px-3">
@@ -117,13 +122,13 @@
       </nav>
     </header>
     <!-- header end -->
-    
+
     {% block body %}
     {% endblock %}
-    
+
     {% block extra-body %}
     {% endblock %}
-    
+
     <!-- FOOTER  -->
     <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
       <div class="row mr-0 ml-0">
@@ -166,10 +171,12 @@
       </div>
     </footer>
     <!-- FOOTER ENDS -->
-    
+
     <!-- To add another js file, use below format and change file name -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
     <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
     <script src="{% static 'js/jquery/popper.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
