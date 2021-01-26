@@ -107,7 +107,7 @@
               </div>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{% url 'user:user_page' %}">Login</a>
             </li>
             <li class="nav-item px-3" id="donate">
               <a class="nav-link" href="#">Donate</a>
@@ -117,6 +117,19 @@
       </nav>
     </header>
     <!-- header end -->
+
+    <!-- Django messages -->
+    {% if messages %}
+  <!-- <strong>Messages:</strong> -->
+  <div class="alert alert-primary mb-0" role="alert">
+    <ul>
+      {% for message in messages %}
+      <li>{{message}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+    <!-- Django messages ends -->
     
     {% block body %}
     {% endblock %}
