@@ -490,7 +490,7 @@ footer li{
 footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background:#16324f;
+  background: #EC3134;
   color: #eee;
   line-height: 1;
   padding: 8px 0;
@@ -503,7 +503,7 @@ footer .social-links a {
 }
 
 footer .social-links a:hover, a:active, a:focus {
-  color: #e03a3c;
+  color: #000;
   outline: none;
   text-decoration: none;
 }
