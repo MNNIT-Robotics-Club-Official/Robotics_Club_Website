@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'add_component' %}">Add Component</a>
+<li>
+{% for comp in comp %}
+
+    <ul>{{ comp.name }} | {{ comp.max_num }} | {{ comp.issued_num }} | <a href="{% url 'delete_component' pk=comp.pk%}">Delete component</a> | <a href="{% url 'update_component' pk=comp.pk%}">Edit component</a></ul>
+
+{% endfor %}
+</li>
+</body>
+</html>
