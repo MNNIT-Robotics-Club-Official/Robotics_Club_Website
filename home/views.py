@@ -14,5 +14,8 @@ def faculty(request):
 def gallery(request):
     return render(request, 'gallery.html')
 
+def donate(request):
+    return render(request, 'donate.html')
+
 def testimonial(request):
     return render(request, 'testimonial.html')

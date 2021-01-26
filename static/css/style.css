@@ -62,15 +62,12 @@ color: #e76668;
   transform: translateY(-50%);
   bottom: initial;
 } */
-.carousel-caption {
-  transform: translateY(-50%);
-  bottom: 0;
-  top: 50%;
-}
+
 /* 
 Header - Navbar 
 Ends
 */
+
 
 
 /*
@@ -176,6 +173,163 @@ Faculty Starts
 Faculty Ends
 */
 
+/*donate starts*/
+#donat .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid;
+}
+
+#donat .d-flex h3{
+  color: #16324f;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 2px;
+  margin-left: 10px;
+}
+
+.donat .info-box {
+  color: #444444;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 20px 0 30px 0;
+  border-radius: 4px;
+}
+
+.donat .info-box .bank-details{
+  background-color: #F7F7F7;
+  color: #333;
+  font-weight: bold;
+  margin: 20px;
+  padding: 20px;
+}
+
+.donat .icon-box {
+  font-size: 150px;
+  color: #CCCCCC;
+  border-radius: 50%;
+  padding: 8px;
+  text-align: center;
+}
+
+.donat .bank-details .acc-details{
+  color: black;
+  margin: 20px;
+  padding: 30px;
+  font-weight: normal;
+}
+
+.donat .info-box .upi-details{
+  background-color: #F7F7F7;
+  color: #333;
+  font-weight: bold;
+  margin: 20px;
+  padding: 20px;
+}
+
+.donat .upi-details .upi-no{
+  color: black;
+  margin: 20px;
+  padding: 30px;
+  font-weight: normal;
+}
+
+.donat .qr-code{
+  background-color: white;
+  height: 300px;
+  min-height: 200px;
+  position: relative;
+  border: white solid 1px;
+  border-radius: 10px;
+  font-size: 10px;
+  color: #b4b4b4;
+  text-align: center;
+}
+
+.donat .qr-code-img{
+  height: 60%;
+  position:relative;
+  margin-top: 0%;
+}
+
+.donat .upi-logo{
+  margin-top: 5px;
+  height: 6%;
+}
+/*donate ends*/
+
+/*donate msg starts*/
+.carousel-img {
+  width: 15%;
+  height: 15%;
+  }
+
+#message .carousel-indicators li{
+  background-color: #16324f;
+}
+
+.carousel-icon i{
+  color: #16324f;
+  font-size: 30px;
+}
+
+#message .d-flex h3{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 2px solid;
+}
+
+.message-box {
+	position: relative;
+	padding: 60px;
+  margin-top: -40px;
+  text-align: center;
+}
+
+.message-box h3 {
+	margin-top: 15px;
+  margin-bottom: 25px;
+  color: #16324f;
+  font-size: 25px;
+	font-weight: bold;
+}
+
+.message-box h4 {
+	margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+.message-box p {
+  line-height: 1.875;
+  padding: 30px;
+}
+
+.message-box:after {
+	content: '';
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	bottom: 0;
+	top: 103px;
+	background-color: #f6f6f6;
+	border: 1px solid rgba(251, 90, 13, .1);
+	border-radius: 10px;
+  z-index: -1;
+}
+/*donate msg ends*/
+
+
 /*gallery starts*/
 
 #gallery .d-flex h2{
@@ -266,11 +420,6 @@ Faculty Ends
 }
 /*gallery ends*/
 
-/*gallery-details starts*/
-
-
-/*gallery-details ends*/
-
 /*
 Testimonial
 starts
@@ -336,6 +485,27 @@ footer li a{
 /* Location and Email */
 footer li{ 
   color: #edf2f4;
+}
+
+footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background:#16324f;
+  color: #eee;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+footer .social-links a:hover, a:active, a:focus {
+  color: #e03a3c;
+  outline: none;
+  text-decoration: none;
 }
 
 /*
