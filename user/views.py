@@ -35,5 +35,9 @@ def loginUser(request):
 
     return render(request,'login.html')
 
+def logoutUser(request):
+    logout(request)
+    return redirect('home:index')
+
 def userPage(request):
     return redirect('user:login_page')
