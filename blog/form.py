@@ -4,4 +4,4 @@ from .models import Blog
 class BlogForm(forms.ModelForm):
     class Meta:
         model=Blog
-        fields=['title','author','content','vidlink']
+        fields=['title','content','vidlink']
