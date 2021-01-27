@@ -1,17 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="{% url 'add_component' %}">Add Component</a>
-<li>
-{% for comp in comp %}
-
-    <ul>{{ comp.name }} | {{ comp.max_num }} | {{ comp.issued_num }} | <a href="{% url 'delete_component' pk=comp.pk%}">Delete component</a> | <a href="{% url 'update_component' pk=comp.pk%}">Edit component</a></ul>
-
-{% endfor %}
-</li>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block body %}
+    <a href="{% url 'add_component' %}">Add Component</a>
+<div id="test123">
+{% include 'component/test_part.html' %}
+</div>
+{% endblock %}
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function (event) {
+        $(document).on('click', '#appbtn', function(event) {
+            event.preventDefault()
+            var cid = $("#handle").attr('pk');
+            var user = $("#handle").attr('user');
+            var r_type =$(this).attr('r_type');
+            $.ajax({
+                url: '{% url 'handle_request' %}',
+                type: 'get',
+                data: {
+                    id: cid,
+                    r_type: r_type,
+                    user: user,
+                },
+                success: function (data) {
+                    $('#test123').html(data['html'])
+                    {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
+                    {#$('#modal-default').modal('show');#}
+                }
+            })
+        })
+    })
+    </script>
+{% endblock %}

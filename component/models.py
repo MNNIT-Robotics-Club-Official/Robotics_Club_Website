@@ -19,13 +19,16 @@ class Component(models.Model):
     def available(self):
         return self.max_num-self.issued_num
 
-# class Request(models.Model):
-#     request_user=models.ForeignKey(User,on_delete=models.CASCADE)
-#     component=models.ForeignKey(Component,on_delete=models.CASCADE)
-#     request_num=models.IntegerField(default=0)
-#
-#     def __str__(self):
-#         return self.component.name
+Status=((0,"Pending"),(1,"Accepted"),(2,"Rejected"))
+
+class Request(models.Model):
+    request_user=models.ForeignKey(User,on_delete=models.CASCADE)
+    component=models.ForeignKey(Component,on_delete=models.CASCADE)
+    status=models.IntegerField(choices=Status,default=0)
+    request_num=models.IntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.component.name}-{self.request_user.username}'
 
 
 
