@@ -53,7 +53,7 @@
     <!-- header start -->
     <header class="fixed-top" id="topbar">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"><img src="{% static 'img/RoboClubNewCrop.png' %}" alt="RoboClub Logo"
+        <a class="navbar-brand" href="{% url 'home:index' %}"><img src="{% static 'img/RoboClubNewCrop.png' %}" alt="RoboClub Logo"
             width="184.25" height="50"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -125,11 +125,9 @@
     <!-- Django messages -->
     {% if messages %}
   <div class="alert alert-primary mb-0" role="alert">
-    <ul>
       {% for message in messages %}
       <li>{{message}}</li>
       {% endfor %}
-    </ul>
   </div>
   {% endif %}
     <!-- Django messages ends -->
