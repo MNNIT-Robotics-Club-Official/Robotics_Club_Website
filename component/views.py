@@ -4,6 +4,7 @@ from .forms import ComponenentForm,UpdateComponentForm,RequestForm
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from django.contrib import messages
 from django.core.exceptions import ValidationError
 # Create your views here.
 def test(request,id):
@@ -69,17 +70,24 @@ def handlerequest(request):
     comp = Component.objects.get(pk=cid)
     user = User.objects.get(username__exact=user)
     req = Request.objects.get(request_user=user, component=comp)
+
     if type=='0': #approve
         req.status = 1
         add=req.request_num
-        req.save()
-        comp.issued_num=comp.issued_num+add
-        comp.save()
+        if add>comp.available():
+            messages.success(request, "Not enough component!")
+        else:
+            req.save()
+            comp.issued_num=comp.issued_num+add
+            comp.save()
+            messages.success(request, "request accepted successfully")
     elif type=='1': #reject
-        req.status=2
-        add=req.request_num
         req.delete()
-        comp.issued_num=comp.issued_num-add
+    elif type=='2':
+        add = req.request_num
+        if (req.status == 1):
+            comp.issued_num = comp.issued_num - add
+        req.delete()
         comp.save()
     else:
         print("this should not be happening")
@@ -97,6 +105,11 @@ def createrequest(request):
         cid=request.POST.get('cid')
         component=Component.objects.get(pk=cid)
         req_num=request.POST.get('req_num')
-        req= Request(request_num=req_num,request_user=request.user,component=component)
-        req.save()
-    return JsonResponse({'data':'cool'})
+        if Request.objects.filter(request_user=request.user,component=component).exists():
+            return JsonResponse({'request':'0'})
+        elif int(req_num) > component.available():
+            return JsonResponse({'request':'1'})
+        else:
+            req = Request(request_num=req_num, request_user=request.user, component=component)
+            req.save()
+        return JsonResponse({'data':'cool'})
