@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block title %}
     Robotics Club MNNIT
 {% endblock %}
@@ -23,77 +23,99 @@
                             <div class="feature-block">
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
-                                <form class="form-inline mb-3 justify-content-center">
+                                <div class="form-inline mb-3 justify-content-center">
 
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                           aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 crequest" type="submit">Request</button>
+                                    {#                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"#}
+                                    {#                                           aria-label="Quantity" style="width: 100px;">#}
+                                    <div id="#reqform">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" data-toggle="modal" data-target="#exampleModal"
+                                                cid="{{ component.pk }}" uid="{{ request.user.pk }}">
+                                            Request
+                                        </button>
+                                    </div>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item test" data-id="{{ component.pk }}">Requests</a>
+                                            <a class="dropdown-item" data-id="">Requests</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
                     {% endfor %}
-                    {% include 'component/test_modal.html' %}
+
+                    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
                 </div>
             </div>
         </section><!-- End Features Section -->
 
         <br>
     </section>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="{% url 'create_request' %}" id="post-form">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Blog Post</legend>
+                {{ form }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" id="reqpost">Post</button>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block script %}
-    <script type="text/javascript">
-    $(document).ready(function () {
-        $(".test").click(function () {
-            var id = $(this).data('id');
-            $.ajax({
-                url: '{% url 'component_list' %}',
-                type: 'get',
-                data: {
-                    id: id
-                },
-                success: function (data) {
-                    $('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));
-                    $('#modal-default').modal('show');
-                }
-            })
-        })
-    })
-</script>
-    <script type="text/javascript">
-    $(".modal-dialog").ready(function () {
-        $(".appbtn").click(function () {
-            var cid = $(this).data('id');
-            var user = $(".ul").attr('id');
-            $.ajax({
-                url: '{% url 'handle_request' %}',
-                type: 'post',
-                data: {
-                    id: cid,
-                    r_type: 0,
-                    user: user,
-                },
-                success: function (data) {
-                    console.log(user)
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".test").click(function () {
+                    var cid = $(this).attr('cid');
                     console.log(cid)
-                    console.log("success")
-                    {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
-                    {#$('#modal-default').modal('show');#}
-                }
+                    $("#post-form").submit(function (event){
+                        event.preventDefault();
+
+                        $.ajax({
+                        url: '{% url 'create_request' %}',
+                        type: 'POST',
+                        data: {
+                            'cid': cid,
+                            'req_num' : $('#request_number').val(),
+                            'csrfmiddlewaretoken': '{{csrf_token}}'
+                        },
+                        success: function (data) {
+                            console.log("success")
+                            {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
+                            {#$('#modal-default').modal('show');#}
+                        }
+                    })
+                    })
+
+                })
             })
-        })
-    })
-    </script>
+        </script>
+
+
+
 
 {% endblock %}

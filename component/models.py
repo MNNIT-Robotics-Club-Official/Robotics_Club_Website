@@ -32,6 +32,7 @@ class Request(models.Model):
 
 
 
+
 # @receiver(m2m_changed, sender=Component, dispatch_uid="issued_num_count")
 # def update_issued(sender, instance, **kwargs):
 #     print(sender.issued_members.count())
