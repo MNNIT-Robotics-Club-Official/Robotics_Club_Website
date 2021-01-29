@@ -1,0 +1,39 @@
+/*
+Notice Starts
+*/
+
+/* Notice Board */
+#notice .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid
+  }
+
+  #notice .card h5{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #16324f;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+  }
+
+  #notice .card p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.2em;
+    display: block;
+    color: #333;
+  }
+
+  #notice .card p>a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    color: #e03a3c;
+  }
