@@ -1,34 +1,48 @@
 {% extends 'base.html' %}
 {% block body %}
+
     <a href="{% url 'add_component' %}">Add Component</a>
-<div id="test123">
-{% include 'component/test_part.html' %}
-</div>
+    <div id="test123">
+        {% include 'component/test_part.html' %}
+    </div>
 {% endblock %}
 {% block script %}
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- <script type="text/javascript">
-    $(document).ready(function (event) {
-        $(document).on('click', '#appbtn', function(event) {
-            event.preventDefault()
-            var cid = $("#handle").attr('pk');
-            var user = $("#handle").attr('user');
-            var r_type =$(this).attr('r_type');
-            $.ajax({
-                url: '{% url 'handle_request' %}',
-                type: 'get',
-                data: {
-                    id: cid,
-                    r_type: r_type,
-                    user: user,
-                },
-                success: function (data) {
-                    $('#test123').html(data['html'])
-                    {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
-                    {#$('#modal-default').modal('show');#}
-                }
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#appbtn', function (event) {
+                event.preventDefault()
+                var r_type = $(this).attr('r_type');
+                var user = $(this).attr('user');
+                var cid = $(this).attr('pk');
+                {#if (r_type == 1||r_type==0)#}
+                {#{var user = $("#handle").attr('user');#}
+                {#    var cid = $("#handle").attr('pk');}#}
+                {#else#}
+                {#{   var user = $("#rhandle").attr('user');#}
+                {#    var cid = $("#rhandle").attr('pk');}#}
+                $.ajax({
+                    url: '{% url 'handle_request' %}',
+                    type: 'get',
+                    data: {
+                        id: cid,
+                        r_type: r_type,
+                        user: user,
+                    },
+                    success: function (data) {
+                        $('#test123').html(data['html'])
+                        {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
+                        {#$('#modal-default').modal('show');#}
+                    }
+                })
             })
         })
-    })
+    </script>
+    <script type="text/javascript">
+        var message_ele = document.getElementById("message_container");
+
+        setTimeout(function () {
+            message_ele.style.display = "none";
+        }, 3000);
     </script>
 {% endblock %}
