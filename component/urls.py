@@ -8,4 +8,5 @@ urlpatterns=[
     path('delete/<pk>/',views.deletecomponent,name='delete_component'),
     path('update/<pk>/',views.updatecomponent,name='update_component'),
     path('handle/',views.handlerequest,name='handle_request'),
+    path('createrequest/',views.createrequest,name='create_request'),
 ]
