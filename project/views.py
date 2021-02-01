@@ -7,7 +7,12 @@ def list(request):
     context['prolist']=Project.objects.all()
     return render(request,'project/projects.html',context)
 
-def detail(request,pk):
+# def detail(request,pk):
+#     context={}
+#     context['project']=Project.objects.get(pk=pk)
+#     return render(request,'project/projects_detail.html',context)
+
+def detail(request):
     context={}
-    context['project']=Project.objects.get(pk=pk)
+    context['prolist']=Project.objects.all()
     return render(request,'project/projects_detail.html',context)

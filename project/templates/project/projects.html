@@ -6,46 +6,56 @@ Projects
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/avishkar.css' %} " type="text/css">
+<link rel="stylesheet" href="{% static 'css/project.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
 <section class="project" id="project">
 
     <div class="container">
-        <div class="section-title pb-5">
+        <div class="section-title pb-2">
             <div class="d-flex justify-content-center my-3">
                 <h2 class="">OUR PROJECTS</h2>
             </div>
             <!-- <br> -->
-            <p class="text-center">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
         </div>
-</section>
 
-<!-- Events section -->
-<section id="events" class="events">
-    <div class="container">
         <div class="row">
-
+        
             <!--start for-->
-            <div class="col-md-4 d-flex align-items-stretch wow fadeInUp" data-wow-delay="0.1s">
+            {#{% for project in prolist %}#}
+            <div class="col-md-4">
+                <a href="/projects/details">
                 <div class="card">
-                    <div class="card-img">
-                        <img src="/static/img/Linefollow2.jpg" alt="...">
+                    <div class="card-image">
+                        <img class="card-img-top" src="{% static 'img/r9.jpg'%}" alt="">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{% url 'project/projects_detail' pk=project.pk %}">Path Following Robot</a></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat</p>
+                        <h5 class="card-title">LED Matrix</h5>
+                        <p class="card-text">
+                          <b class="text-muted">AIM:</b>
+                          To make the small monitors which are used in daily life devices more useful, efficient, omnipresent and portable.
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="fa fa-calendar"></i> Status : Completed</p>
+                                <p><i class="fa fa-tags"></i>Tags: 
+                                    <a href="#" class="badge badge-pill badge-danger">Tag1</a>
+                                    <a href="#" class="badge badge-pill badge-danger">Tag2</a>
+                                    <a href="#" class="badge badge-pill badge-danger">Tag3</a>
+                                </p>
+                            </small>
+                        </p>
                     </div>
                 </div>
+                </a>
             </div>
+        
             <!--end for-->
-            
+            {#{% endfor %}#}
         </div>
     </div>
 </section>
+<br>
 
 {% endblock %}
