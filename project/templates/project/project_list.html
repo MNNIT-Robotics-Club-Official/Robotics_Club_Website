@@ -28,7 +28,7 @@
     <h5 class="card-title">{{ project.title }}</h5>
        <h6>Status:{{ project.get_status_display }}</h6>
 {#    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
-    <a href="{% url 'project_detail' pk=project.pk %}" class="btn btn-primary">Read More</a>
+    <a href="{% url 'project:project_detail' pk=project.pk %}" class="btn btn-primary">Read More</a>
   </div>
 </div>
     </div>

@@ -17,13 +17,6 @@ def test(request,id):
 
 def componentlist(request):
     context = {}
-    # if request.is_ajax():
-    #     if request.method == 'GET':
-    #         id = request.GET.get('cid')
-    #         form = RequestForm()
-    #         context['component'] = form
-    #     else:
-    #         pass
     context['components'] = Component.objects.all()
     context['form'] = RequestForm()
     return render(request, 'component/component_list.html', context)
@@ -54,7 +47,7 @@ def updatecomponent(request,pk):
         if request.method == 'POST':
             form = UpdateComponentForm(request.POST,instance=component)
             form.save()
-            return redirect('test')
+            return redirect('component_list')
         else:
             form = UpdateComponentForm(instance=component)
             context['form'] = form
@@ -105,11 +98,26 @@ def createrequest(request):
         cid=request.POST.get('cid')
         component=Component.objects.get(pk=cid)
         req_num=request.POST.get('req_num')
+        if int(req_num) < 0:
+            return JsonResponse({'request':'2'})
         if Request.objects.filter(request_user=request.user,component=component).exists():
-            return JsonResponse({'request':'0'})
+            req = Request.objects.get(request_user=request.user, component=component)
+            if req.status==0:
+                if int(req_num) > component.available():
+                    messages.success(request, "Not Enough components!")
+                else:
+                    req.request_num=req_num
+                    req.save()
+                    messages.success(request, "Request Updated Successfully!")
+            else:
+                messages.success(request, "Request Already Accepted!")
         elif int(req_num) > component.available():
-            return JsonResponse({'request':'1'})
+            messages.success(request, "Not Enough Components!")
         else:
             req = Request(request_num=req_num, request_user=request.user, component=component)
             req.save()
-        return JsonResponse({'data':'cool'})
+            messages.success(request, "Request Sent Successfully!")
+        html = render_to_string('spinnets/message.html', context, request=request)
+        return JsonResponse({'html': html}, status=200)
+    else:
+        return HttpResponse("woops")
