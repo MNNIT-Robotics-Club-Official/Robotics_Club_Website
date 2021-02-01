@@ -15,12 +15,6 @@
                 var r_type = $(this).attr('r_type');
                 var user = $(this).attr('user');
                 var cid = $(this).attr('pk');
-                {#if (r_type == 1||r_type==0)#}
-                {#{var user = $("#handle").attr('user');#}
-                {#    var cid = $("#handle").attr('pk');}#}
-                {#else#}
-                {#{   var user = $("#rhandle").attr('user');#}
-                {#    var cid = $("#rhandle").attr('pk');}#}
                 $.ajax({
                     url: '{% url 'handle_request' %}',
                     type: 'get',
@@ -31,8 +25,6 @@
                     },
                     success: function (data) {
                         $('#test123').html(data['html'])
-                        {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
-                        {#$('#modal-default').modal('show');#}
                     }
                 })
             })

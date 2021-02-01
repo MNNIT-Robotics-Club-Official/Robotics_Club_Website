@@ -1,11 +1,5 @@
  <div id="message_container">
-    {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
+    {% include 'spinnets/message.html' %}
 </div>
 <h1>Pending Request</h1>
 {% for comp in request %}
