@@ -1,9 +1,11 @@
 from django.shortcuts import render,HttpResponse,redirect
 from .models import Component,Request
-from .forms import ComponenentForm,UpdateComponentForm
+from .forms import ComponenentForm,UpdateComponentForm,RequestForm
 from django.contrib.auth.models import User
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from django.contrib import messages
+from django.core.exceptions import ValidationError
 # Create your views here.
 def test(request,id):
     context={}
@@ -15,11 +17,8 @@ def test(request,id):
 
 def componentlist(request):
     context = {}
-    if request.is_ajax():
-        id=request.GET.get('id')
-        component=Request.objects.filter(component_id=id).filter(status=0)
-        context['component'] = component
     context['components'] = Component.objects.all()
+    context['form'] = RequestForm()
     return render(request, 'component/component_list.html', context)
 
 def addcomponent(request):
@@ -28,7 +27,7 @@ def addcomponent(request):
         if request.method == 'POST':
             form = ComponenentForm(request.POST)
             form.save()
-            return redirect('test')
+            return redirect('component_list')
         else:
             form = ComponenentForm()
             context['form'] = form
@@ -48,7 +47,7 @@ def updatecomponent(request,pk):
         if request.method == 'POST':
             form = UpdateComponentForm(request.POST,instance=component)
             form.save()
-            return redirect('test')
+            return redirect('component_list')
         else:
             form = UpdateComponentForm(instance=component)
             context['form'] = form
@@ -61,15 +60,28 @@ def handlerequest(request):
     cid=request.GET.get('id')
     user=request.GET.get('user')
     type=request.GET.get('r_type')
-    comp = Component.objects.get(pk=cid)  # getting object of group
+    comp = Component.objects.get(pk=cid)
     user = User.objects.get(username__exact=user)
     req = Request.objects.get(request_user=user, component=comp)
+
     if type=='0': #approve
         req.status = 1
-        req.save()
+        add=req.request_num
+        if add>comp.available():
+            messages.success(request, "Not enough component!")
+        else:
+            req.save()
+            comp.issued_num=comp.issued_num+add
+            comp.save()
+            messages.success(request, "request accepted successfully")
     elif type=='1': #reject
-        req.status=2
         req.delete()
+    elif type=='2':
+        add = req.request_num
+        if (req.status == 1):
+            comp.issued_num = comp.issued_num - add
+        req.delete()
+        comp.save()
     else:
         print("this should not be happening")
     context['request'] = Request.objects.filter(component=comp).filter(status=0)
@@ -81,5 +93,31 @@ def handlerequest(request):
         return HttpResponse("This is unexpected :(")
 
 def createrequest(request):
-
-    return HttpResponse("Sorry You don't have permission :)")
+    context={}
+    if request.is_ajax():
+        cid=request.POST.get('cid')
+        component=Component.objects.get(pk=cid)
+        req_num=request.POST.get('req_num')
+        if int(req_num) < 0:
+            return JsonResponse({'request':'2'})
+        if Request.objects.filter(request_user=request.user,component=component).exists():
+            req = Request.objects.get(request_user=request.user, component=component)
+            if req.status==0:
+                if int(req_num) > component.available():
+                    messages.success(request, "Not Enough components!")
+                else:
+                    req.request_num=req_num
+                    req.save()
+                    messages.success(request, "Request Updated Successfully!")
+            else:
+                messages.success(request, "Request Already Accepted!")
+        elif int(req_num) > component.available():
+            messages.success(request, "Not Enough Components!")
+        else:
+            req = Request(request_num=req_num, request_user=request.user, component=component)
+            req.save()
+            messages.success(request, "Request Sent Successfully!")
+        html = render_to_string('spinnets/message.html', context, request=request)
+        return JsonResponse({'html': html}, status=200)
+    else:
+        return HttpResponse("woops")

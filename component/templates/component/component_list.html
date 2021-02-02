@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block title %}
     Robotics Club MNNIT
 {% endblock %}
 
 {% block body %}
-
+    <div id="message_container">
+{% include 'spinnets/message.html' %}
+    </div>
     <section id="components">
         <div class="d-flex justify-content-center my-3">
             <h2 class="">COMPONENTS</h2>
@@ -23,27 +25,34 @@
                             <div class="feature-block">
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
-                                <form class="form-inline mb-3 justify-content-center">
 
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
                                            aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 crequest" type="submit">Request</button>
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
                                                 aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item test" data-id="{{ component.pk }}">Requests</a>
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
                     {% endfor %}
-                    {% include 'component/test_modal.html' %}
+
+
                 </div>
             </div>
         </section><!-- End Features Section -->
@@ -53,47 +62,30 @@
 
 {% endblock %}
 {% block script %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $(".test").click(function () {
-            var id = $(this).data('id');
-            $.ajax({
-                url: '{% url 'component_list' %}',
-                type: 'get',
-                data: {
-                    id: id
-                },
-                success: function (data) {
-                    $('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));
-                    $('#modal-default').modal('show');
-                }
-            })
+        $(document).ready(function () {
+           $("form").on('submit', function (event) {
+                        event.preventDefault();
+                        var cid=$(this).attr('cid');
+                        $.ajax({
+                            url: '{% url 'create_request' %}',
+                            type: 'POST',
+                            data: {
+                                'cid': cid,
+                                'req_num': $(this).children("#request_number").val(),
+                                'csrfmiddlewaretoken': '{{csrf_token}}'
+                            },
+                            success: function (data) {
+                                $("#message_container").html(data['html']);
+                            }
+                        })
+                    })
         })
-    })
-</script>
-    <script type="text/javascript">
-    $(".modal-dialog").ready(function () {
-        $(".appbtn").click(function () {
-            var cid = $(this).data('id');
-            var user = $(".ul").attr('id');
-            $.ajax({
-                url: '{% url 'handle_request' %}',
-                type: 'post',
-                data: {
-                    id: cid,
-                    r_type: 0,
-                    user: user,
-                },
-                success: function (data) {
-                    console.log(user)
-                    console.log(cid)
-                    console.log("success")
-                    {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
-                    {#$('#modal-default').modal('show');#}
-                }
-            })
-        })
-    })
     </script>
+
+
+
+
 
 {% endblock %}
