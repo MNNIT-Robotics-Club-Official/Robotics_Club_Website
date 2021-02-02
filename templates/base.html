@@ -54,8 +54,8 @@
     <!-- header start -->
     <header class="fixed-top" id="topbar">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#"><img src="{% static 'img/RoboClubNewCrop.png' %}" alt="RoboClub Logo"
-            width="184.25" height="50"></a>
+        <a class="navbar-brand" href="{% url 'home:index' %}"><img src="{% static 'img/RoboClubNewCrop.png' %}"
+            alt="RoboClub Logo" width="184.25" height="50"></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,8 +96,8 @@
                 Team
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 <a class="dropdown-item" href="{% url 'home:faculty' %}">Coordinator</a>
+                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
               </div>
             </li>
             <li class="nav-item dropdown px-3">
@@ -109,6 +109,7 @@
                 <a class="dropdown-item" href="{% url 'home:achievement' %}">Achievement</a>
                 <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
                 <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
+                <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">TSAW</a>
               </div>
             </li>
             <li class="nav-item px-3">
