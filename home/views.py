@@ -29,5 +29,3 @@ def testimonial(request):
 def achievement(request):
     return render(request, 'achievement.html')
 
-def notice(request):
-    return render(request, 'notice.html')
