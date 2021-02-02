@@ -18,6 +18,15 @@ starts
     height: 100%;
     width: 100%;
   }
+
+  #features .container .nav .nav-item a{
+    color:#e76668;
+  }
+
+  #features .container .nav .nav-item .active{
+    color:#e03a3c;
+    font-weight: 500;
+  }
   
   #features .feature-block {
     background: #fff none repeat scroll 0 0;

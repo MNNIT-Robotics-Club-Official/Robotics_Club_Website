@@ -12,129 +12,253 @@ Robotics Club MNNIT
         <h2 class="">COMPONENTS</h2>
     </div>
 
-    <!-- ======= Features Section ======= -->
+    <!-- ======= Components Section [components has been replaced by features] ======= -->
     <section id="features" class="padd-section text-center">
 
         <div class="container" data-aos="fade-up">
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tool-tab" data-toggle="tab" href="#tool" role="tab"
+                        aria-controls="tool" aria-selected="true">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="motor-tab" data-toggle="tab" href="#motor" role="tab" aria-controls="motor"
+                        aria-selected="false">Motors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other"
+                        aria-selected="false">Others</a>
+                </li>
+            </ul>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
 
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity" style="width: 100px;">
-                            <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Requests</a>
-                                    <a class="dropdown-item" href="#">Issued By</a>
-                                </div>
+            <div class="tab-content" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="tool" role="tabpanel" aria-labelledby="tool-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                             </div>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="motor" role="tabpanel" aria-labelledby="motor-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-                </div>
 
             </div>
+
         </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Components Section -->
 
     <br>
 </section>
