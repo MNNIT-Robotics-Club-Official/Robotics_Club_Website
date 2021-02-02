@@ -58,7 +58,7 @@
         $(".test").click(function () {
             var id = $(this).data('id');
             $.ajax({
-                url: '{% url 'component_list' %}',
+                url: '{% url "component_list" %}',
                 type: 'get',
                 data: {
                     id: id
@@ -77,7 +77,7 @@
             var cid = $(this).data('id');
             var user = $(".ul").attr('id');
             $.ajax({
-                url: '{% url 'handle_request' %}',
+                url: '{% url "handle_request" %}',
                 type: 'post',
                 data: {
                     id: cid,
@@ -88,8 +88,8 @@
                     console.log(user)
                     console.log(cid)
                     console.log("success")
-                    {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
-                    {#$('#modal-default').modal('show');#}
+                    // {#$('#modal-default .modal-dialog').html($('#modal-default .modal-dialog', data));#}
+                    // {#$('#modal-default').modal('show');#}
                 }
             })
         })

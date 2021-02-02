@@ -28,7 +28,7 @@ def addcomponent(request):
         if request.method == 'POST':
             form = ComponenentForm(request.POST)
             form.save()
-            return redirect('test')
+            return redirect('component_list')
         else:
             form = ComponenentForm()
             context['form'] = form
@@ -48,7 +48,7 @@ def updatecomponent(request,pk):
         if request.method == 'POST':
             form = UpdateComponentForm(request.POST,instance=component)
             form.save()
-            return redirect('test')
+            return redirect('component_list')
         else:
             form = UpdateComponentForm(instance=component)
             context['form'] = form
