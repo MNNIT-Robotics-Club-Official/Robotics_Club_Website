@@ -7,4 +7,5 @@ urlpatterns=[
     path('form/',views.createblog,name='blog_form'),
     path('delete/<int:pk>/',views.deleteblog,name='blog_delete'),
     path('update/<int:pk>/',views.updateblog,name='blog_update'),
+    path('approve/<int:pk>/',views.approveblog,name='approve'),
 ]
