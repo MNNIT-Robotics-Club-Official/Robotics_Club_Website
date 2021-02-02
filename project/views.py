@@ -1,18 +1,39 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 from .models import Project
-
+from .forms import ProjectForm
 # Create your views here.
 def list(request):
     context={}
-    context['prolist']=Project.objects.all()
-    return render(request,'project/projects.html',context)
+    context['projects']=Project.objects.all()
+    return render(request,'project/project_list.html',context)
 
-# def detail(request,pk):
-#     context={}
-#     context['project']=Project.objects.get(pk=pk)
-#     return render(request,'project/projects_detail.html',context)
-
-def detail(request):
+def detail(request,pk):
     context={}
-    context['prolist']=Project.objects.all()
-    return render(request,'project/projects_detail.html',context)
+    context['project']=Project.objects.get(pk=pk)
+    return render(request,'project/project_detail.html',context)
+
+def delete(request,pk):
+    pro=Project.objects.get(pk=pk)
+    pro.delete()
+    return redirect('project:list')
+
+def update(request,pk):
+    context = {}
+    pro=Project.objects.get(pk=pk)
+    if request.method == 'GET':
+        context['form'] = ProjectForm(instance=pro)
+        return render(request, 'project/project_form.html', context)
+    else:
+        form = ProjectForm(request.POST,instance=pro)
+        form.save()
+        return redirect('project:list')
+
+def create(request):
+    context={}
+    if request.method=='GET':
+        context['form']=ProjectForm()
+        return render(request,'project/project_form.html',context)
+    else:
+        form=ProjectForm(request.POST)
+        form.save()
+        return redirect('project:list')
