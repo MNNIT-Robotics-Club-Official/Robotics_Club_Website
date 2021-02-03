@@ -15,8 +15,10 @@ Robotics Club MNNIT
     <!-- ======= Components Section [components has been replaced by features] ======= -->
     <section id="features" class="padd-section text-center">
 
+        <!-- Creating container for Tabs and Components -->
         <div class="container" data-aos="fade-up">
 
+            <!-- Defining Tabs -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="tool-tab" data-toggle="tab" href="#tool" role="tab"
@@ -32,22 +34,32 @@ Robotics Club MNNIT
                 </li>
             </ul>
 
-
+            <!-- Specifing contents of tabs -->
             <div class="tab-content" id="myTabContent">
 
+                <!-- Specifing contents of each tab-->
                 <div class="tab-pane fade show active" id="tool" role="tabpanel" aria-labelledby="tool-tab">
 
+                    <!-- Declaring row class for placing components in grid -->
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
+                        <!-- Component Details -->
                         <div class="col-md-6 col-lg-4">
+                            <!-- Defining Block for single component -->
                             <div class="feature-block filter-profile">
+                                <!-- Image of Component -->
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <!-- Component Name -->
                                 <h4>Tool Name</h4>
+                                <!-- Form for Purchasing -->
                                 <form class="form-inline mb-3 justify-content-center">
 
+                                    <!-- Input field for Quantity -->
                                     <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
                                         aria-label="Quantity" style="width: 100px;">
+                                    <!-- Button for buying -->
                                     <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <!-- Dropdown Button -->
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
@@ -57,6 +69,7 @@ Robotics Club MNNIT
                                         </div>
                                     </div>
                                 </form>
+                                <!-- Description of Component -->
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                             </div>
                         </div>
