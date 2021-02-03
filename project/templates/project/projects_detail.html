@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{{ project.title }}
+TITLE
 {% endblock %}
 
 {% block head %}
@@ -17,19 +17,19 @@
         <div class="col-lg-12">
             <div class="section-title">
                 <div class="d-flex justify-content-start my-3">
-                    <h1>{{ project.title }}</h2>
+                    <h1 class="">LED Matrix</h2>
                 </div>
             </div>
-            <p><i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
-            <p><i class="fa fa-tags"></i> Tags:
+            <p><i class="fa fa-calendar"></i> Status : Completed</p>
+            <p><i class="fa fa-tags"></i> Tags: 
                 <a href="#" class="badge badge-pill badge-danger">Tag1</a>
                 <a href="#" class="badge badge-pill badge-danger">Tag2</a>
                 <a href="#" class="badge badge-pill badge-danger">Tag3</a>
             </p>
-             <div class="">
-                    <a href="{% url 'project:update' project.pk %}"><button type="button" class="btn btn-primary">Update</button>
-                    <a href="{% url 'project:delete' project.pk %}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-             </div>
+                <div class="row">
+                    <button>Update</button>
+                    <button>Delete</button>
+                </div>
             <hr>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -63,7 +63,7 @@
             <hr>
         <div class="aim wow fadeInUp">
             <h3 class="lead">AIM</h3>
-            <p>{{ project.aim }}</p>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
             <br/>
             <hr>
         <div class="comp wow fadeInUp">
@@ -81,40 +81,61 @@
             <hr>
         <div class="desc wow fadeInUp">
             <h3 class="lead">DESCRIPTION</h3>
-           <p>{{ project.detail }}</p>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
             <br/>
             <hr>
         </div>
         </div>
     </div>
-
+    
     <div class="row">
         <div class="col-lg-8 wow pulse">
             <div class="vid">
-                <iframe width="520" height="370" src="{{ project.vidlink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="520" height="370" src="https://www.youtube.com/embed/j2p2Bb6HyOw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
         <div class="members col-lg-4 wow fadeInUp">
             <h3 class="lead">MEMBERS</h3>
             <ul class="list-group list-group-flush">
-                {% for member in project.members.all %}
                 <li class="list-group-item">
-                    {{ member.username }}
+                    Gaurav Kumar
                     <br>
                     <small>Electronics and Communication Engg., Batch 2k22</small>
                 </li>
-                {% endfor %}
+                <li class="list-group-item">
+                    Gaurav Kumar
+                    <br>
+                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                </li>
+                <li class="list-group-item">
+                    Gaurav Kumar
+                    <br>
+                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                </li>
+                <li class="list-group-item">
+                    Gaurav Kumar
+                    <br>
+                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                </li>
+                <li class="list-group-item">
+                    Gaurav Kumar
+                    <br>
+                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                </li>
             </ul>
         </div>
     </div>
     <hr>
-    <i class="fa fa-github"></i> <a href = "{{ project.github }}"> Github Link to the Project </a>
+    <i class="fa fa-github"></i> <a href = "//www.github.com"> Github Link to the Project </a>
     <hr>
+            
+        
 
-
-
-
+    
 </section>
 
 {% endblock %}

@@ -1,11 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.db.models.signals import post_save,m2m_changed
 from django.dispatch import receiver
+
+COMPONENT_TYPE=((0,"Miscellaneous"),(1,"Board"))
 
 class Component(models.Model):
     name=models.CharField(max_length=128,unique=False,blank=False)
     detail=models.TextField()
+    type=models.IntegerField(choices=COMPONENT_TYPE,default=0)
     max_num=models.IntegerField(default=0)
     issued_num=models.IntegerField(default=0)
     issued_members=models.ManyToManyField(User,blank=True)
@@ -26,11 +30,17 @@ class Request(models.Model):
     component=models.ForeignKey(Component,on_delete=models.CASCADE)
     status=models.IntegerField(choices=Status,default=0)
     request_num=models.IntegerField(default=0)
+    user_confirmation=models.BooleanField(default=False)
+    time_confirmation=models.TimeField(auto_created=False)
+    reason=models.TextField(max_length=128,default="",null=True)
 
     def __str__(self):
         return f'{self.component.name}-{self.request_user.username}'
 
-
+    def accepted_by_user(self):
+        self.user_confirmation=True
+        self.time_confirmation=timezone.now()
+        self.save()
 
 # @receiver(m2m_changed, sender=Component, dispatch_uid="issued_num_count")
 # def update_issued(sender, instance, **kwargs):

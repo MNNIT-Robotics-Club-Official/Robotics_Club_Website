@@ -25,7 +25,7 @@
                 <!--start for-->
                 {% for project in projects %}
                     <div class="col-md-4">
-                        <a href="{% url 'project:detail' project.pk %}">
+                        <a href="{% url 'project:project_detail' project.pk %}">
                             <div class="card">
                                 <div class="card-image">
                                     <img class="card-img-top" src="{% static 'img/r9.jpg' %}" alt="">
@@ -34,7 +34,8 @@
                                     <h5 class="card-title">{{ project.title }}</h5>
                                     <p class="card-text">
                                         <b class="text-muted">AIM:</b>
-                                        {{ project.aim }}
+                                        To make the small monitors which are used in daily life devices more useful,
+                                        efficient, omnipresent and portable.
                                     </p>
                                     <p class="card-text">
                                         <small class="text-muted">
