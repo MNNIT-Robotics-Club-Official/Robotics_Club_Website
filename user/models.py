@@ -12,3 +12,5 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.first_name}-{self.regnum}'
 
+    def save(self, *args, **kwargs):
+        super(Profile, self).save(*args, **kwargs)
