@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style2.css' %} " type="text/css">
+  <!-- <link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css"> -->
   <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -72,9 +73,8 @@
             <li class="nav-item {% if request.resolver_match.view_name == 'home:gallery' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'home:gallery' %}">Gallery</a>
             </li>
-            <li
-              class="nav-item {% if request.resolver_match.view_name == 'project:project_list' %}active{% endif %} px-3">
-              <a class="nav-link" href="{% url 'project:project_list' %}">Projects</a>
+            <li class="nav-item {% if request.resolver_match.view_name == 'project:list' %}active{% endif %} px-3">
+              <a class="nav-link" href="{% url 'project:list' %}">Projects</a>
             </li>
             <li
               class="nav-item {% if request.resolver_match.view_name == 'home:avishkar' %}active{% endif %} {% if request.resolver_match.view_name == 'home:prosang' %}active{% endif %} dropdown px-3">
@@ -110,13 +110,18 @@
                 <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
                 <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
                 <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">TSAW</a>
+                <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice Board</a>
               </div>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#">Login</a>
+              {% if user.is_authenticated %}
+              <a class="nav-link" href="{% url 'user:logout_page' %}">Logout</a>
+              {% else %}
+              <a class="nav-link" href="{% url 'user:user_page' %}">Login</a>
+              {% endif %}
             </li>
             <li class="nav-item px-3" id="donate">
-              <a class="nav-link" href="#">Donate</a>
+              <a class="nav-link" href="{% url 'home:donate' %}">Donate</a>
             </li>
           </ul>
         </div>
@@ -124,6 +129,15 @@
     </header>
     <!-- header end -->
 
+    <!-- Django messages -->
+    {% if messages %}
+    <div class="alert alert-primary mb-0" role="alert">
+      {% for message in messages %}
+      <li>{{message}}</li>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <!-- Django messages ends -->
     {% block body %}
     {% endblock %}
 
@@ -150,7 +164,7 @@
         <div class="col-6 col-md">
           <h5><span class="line">Co</span>ntribution</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="" href="{% url 'project:project_list' %}">Projects</a></li>
+            <li><a class="" href="{% url 'project:list' %}">Projects</a></li>
             <li><a class="" href="#">Blog</a></li>
             <li><a class="" href="{% url 'home:gallery' %}">Gallery</a></li>
             <li><a class="" href="#">Videos</a></li>
@@ -168,12 +182,21 @@
             <li>Prayagraj</li>
             <li><strong>Email : </strong>roboticsclub@mnnit.ac.in</li>
           </ul>
+          <div class="social-links">
+            <a href="https://www.facebook.com/avishkar.robotics" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/roboticsclubmnnit/" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCsHbcNUhK5dMWgtsxNNfm7A" class="youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in" class="linkedin"><i class="fa fa-envelope"></i></a>
+          </div>
         </div>
       </div>
     </footer>
     <!-- FOOTER ENDS -->
 
     <!-- To add another js file, use below format and change file name -->
+    {% block script %}
+    {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -182,6 +205,7 @@
     <script src="{% static 'js/jquery/popper.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
     <script src="{% static 'js/base.js'%}"></script>
+
     <!-- <script>
       var wow = new WOW(
         {

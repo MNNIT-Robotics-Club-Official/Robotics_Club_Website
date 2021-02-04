@@ -20,6 +20,9 @@ def avishkar(request):
 def prosang(request):
     return render(request, 'prosang.html')
     
+def donate(request):
+    return render(request, 'donate.html')
+
 def testimonial(request):
     return render(request, 'testimonial.html')
 

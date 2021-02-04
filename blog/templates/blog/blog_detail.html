@@ -11,6 +11,15 @@
         <p>{{ blog.author }} |</p>
         <p> {{ blog.date }}</p>
     </div>
+    {% if blog.author == request.user %}
+    <div class="row justify-content-center pb-2">
+        <a href="{% url 'blog_delete' pk=blog.pk %}"><button type="button" class="btn btn-danger">Delete Blog</button></a>
+        <a href="{% url 'blog_update' pk=blog.pk %}"><button type="button" class="btn btn-primary">Edit Blog</button></a>
+        {% if not blog.approved %}
+        <a href="{% url 'approve' pk=blog.pk %}"><button type="button" class="btn btn-primary">Approve Blog</button></a>
+        {% endif %}
+    </div>
+    {% endif %}
         <div class="row col-md-offset-6 justify-content-center p-md-5">
             <div class="card w-75">
                 <div class="card-body border-dark">

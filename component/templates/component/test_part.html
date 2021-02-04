@@ -1,0 +1,29 @@
+ <div id="message_container">
+    {% include 'spinnets/message.html' %}
+</div>
+<h1>Pending Request</h1>
+{% for comp in request %}
+
+    <div id="handle">
+    <ul>{{ comp.request_user.username }} |
+        <button type="button" id="appbtn" class="btn-primary" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}" r_type=0>
+        Approve
+        </button>
+        <button type="button" id="appbtn" class="btn-primary" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}"  r_type=1>
+        Decline
+        </button>
+    </ul>
+    </div>
+
+{% endfor %}
+<h1>Accepted Request</h1>
+{% for comp in approved %}
+    <div id="rhandle">
+    <ul>{{comp.request_user.username }}
+        </button>
+        <button type="button" id="appbtn" class="btn-primary" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}" r_type=2>
+        Remove Issuer
+        </button></ul>
+    </div>
+{% endfor %}
+
