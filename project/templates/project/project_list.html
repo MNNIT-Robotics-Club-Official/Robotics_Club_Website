@@ -40,9 +40,9 @@
                                         <small class="text-muted">
                                             <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
                                     <p><i class="fa fa-tags"></i>Tags:
-                                        <a href="#" class="badge badge-pill badge-danger">Tag1</a>
-                                        <a href="#" class="badge badge-pill badge-danger">Tag2</a>
-                                        <a href="#" class="badge badge-pill badge-danger">Tag3</a>
+                                        {% for tag in project.tags.all %}
+                                        <a href="{% url 'project:filter' tag%}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                                        {% endfor %}
                                     </p>
                                     </small>
                                     </p>

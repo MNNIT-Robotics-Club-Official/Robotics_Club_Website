@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div id="test123">
+        {% include 'user/user_list.html' %}
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '#appbtn', function (event) {
+                event.preventDefault()
+                var r_type = $(this).attr('r_type');
+                var user = $(this).attr('user');
+                $.ajax({
+                    url: '{% url 'user:change_role' %}',
+                    type: 'post',
+                    data: {
+                        r_type: r_type,
+                        user: user,
+                        'csrfmiddlewaretoken': '{{csrf_token}}'
+                    },
+                    success: function (data) {
+                        $('#test123').html(data['html'])
+                    }
+                })
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        var message_ele = document.getElementById("message_container");
+
+        setTimeout(function () {
+            message_ele.style.display = "none";
+        }, 3000);
+    </script>
+{% endblock %}

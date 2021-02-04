@@ -7,6 +7,12 @@ def list(request):
     context['projects']=Project.objects.all()
     return render(request,'project/project_list.html',context)
 
+def filter(request,tag):
+    context={}
+    context['projects']=Project.objects.filter(tags__name__in=[tag])
+    #print(context['project'].count())
+    return render(request,'project/project_list.html',context)
+
 def detail(request,pk):
     context={}
     context['project']=Project.objects.get(pk=pk)
@@ -35,5 +41,8 @@ def create(request):
         return render(request,'project/project_form.html',context)
     else:
         form=ProjectForm(request.POST)
-        form.save()
+        if form.is_valid():
+            obj=form.save(commit=False)
+            obj.save()
+            form.save_m2m()
         return redirect('project:list')

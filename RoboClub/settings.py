@@ -15,11 +15,14 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 TEMP_DIR_project=os.path.join(BASE_DIR,'project/templates')
 TEMP_DIR_blog=os.path.join(BASE_DIR,'blog/templates')
 TEMP_DIR_component=os.path.join(BASE_DIR,'component/templates')
+
+TEMP_DIR_user=os.path.join(BASE_DIR,'user/templates')
+
 TEMP_DIR_news=os.path.join(BASE_DIR,'news/templates')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -47,6 +50,9 @@ INSTALLED_APPS = [
     'user',
     'component',
     'crispy_forms',
+
+    'taggit',
+
     'news',
 
 ]
@@ -70,7 +76,11 @@ TEMPLATES = [
                  TEMP_DIR_project,
                  TEMP_DIR_blog,
                  TEMP_DIR_component,
+
+                 TEMP_DIR_user,
+
                  TEMP_DIR_news,
+
                  ],
 
         'APP_DIRS': True,
