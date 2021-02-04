@@ -37,3 +37,6 @@ If already installed python follow next steps:
 2. [ ] Login
 3. [x] Donate
 4. [ ] Blog
+5. [ ] Workshop
+6. [ ] Notice Board
+7. [ ] Components
