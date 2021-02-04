@@ -9,4 +9,5 @@ urlpatterns=[
     path('register/',views.register,name='register_page'),
     path('logout/',views.logoutUser,name='logout_page'),
     path('roles/',views.changerole,name='change_role'),
+    path('compreq/',views.comprequest,name='component_request'),
 ]

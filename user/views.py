@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from component.models import Request
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from .models import Profile
@@ -68,3 +69,15 @@ def changerole(request):
             return JsonResponse({'html': html})
     else:
         return render(request,'user/role_change.html',context)
+
+def comprequest(request):
+    context={}
+    prequests=Request.objects.filter(request_user=request.user).filter(status=0)
+    arequests=Request.objects.filter(request_user=request.user).filter(status=1)
+    context['prequests']=prequests
+    context['arequests']=arequests
+    if request.method=='POST':
+        cid=request.POST.get('id')
+        req=Request.objects.get(component_id=cid,request_user=request.user)
+        req.accepted_by_user()
+    return render(request, 'user/comp_request.html', context)

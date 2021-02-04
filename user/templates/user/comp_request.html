@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Pending Requests</h1>
+{% for request in prequests %}
+    <li>
+        {{ request.component.name }} | {{ request.request_num }} |
+    </li>
+{% endfor %}
+
+<h2>Accept your Requests</h2>
+<div id="test123">
+    {% for request in arequests %}
+        <li>{{ request.component.name }} | {{ request.request_num }} |
+            {% if not request.user_confirmation %}
+                <button class="btn btn-primary" id="appbtn" cid="{{ request.component.pk }}">Confirm Issue Recieve
+                </button>
+                {% else %}
+                <p>Request is already accepted by user on:{{ request.time_confirmation }}</p>
+            {% endif %}
+        </li>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('click', '#appbtn', function (event) {
+                event.preventDefault();
+                var cid = $(this).attr('cid');
+                $.ajax({
+                    url: '{% url 'user:component_request' %}',
+                    type: 'post',
+                    data: {
+                        id: cid,
+                        'csrfmiddlewaretoken': '{{csrf_token}}'
+                    },
+                    success: function (data) {
+                        var new_version = $('<div></div>').append(data);
+                        var new_result = new_version.find('#test123');
+                        $('#test123').html(new_result.html())
+                    }
+                })
+            })
+        })
+    </script>
+{% endblock %}
