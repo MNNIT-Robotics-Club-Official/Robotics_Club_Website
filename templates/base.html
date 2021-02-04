@@ -10,7 +10,8 @@
   <!-- To add another css file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
-  <link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %} " type="text/css">
+  <!-- <link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css"> -->
   <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -95,8 +96,8 @@
                 Team
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 <a class="dropdown-item" href="{% url 'home:faculty' %}">Coordinator</a>
+                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
               </div>
             </li>
             <li class="nav-item dropdown px-3">
@@ -107,6 +108,8 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{% url 'home:achievement' %}">Achievement</a>
                 <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
+                <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
+                <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">TSAW</a>
                 <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice Board</a>
               </div>
             </li>
@@ -135,7 +138,6 @@
     </div>
     {% endif %}
     <!-- Django messages ends -->
-
     {% block body %}
     {% endblock %}
 
