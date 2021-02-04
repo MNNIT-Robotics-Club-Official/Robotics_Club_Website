@@ -22,9 +22,9 @@
             </div>
             <p><i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
             <p><i class="fa fa-tags"></i> Tags:
-                <a href="#" class="badge badge-pill badge-danger">Tag1</a>
-                <a href="#" class="badge badge-pill badge-danger">Tag2</a>
-                <a href="#" class="badge badge-pill badge-danger">Tag3</a>
+                {% for tag in project.tags.all %}
+                <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                {% endfor %}
             </p>
              <div class="">
                     <a href="{% url 'project:update' project.pk %}"><button type="button" class="btn btn-primary">Update</button>

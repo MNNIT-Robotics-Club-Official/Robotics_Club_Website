@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager
 
 # Create your models here.
 Status=((0,"Ongoing"),(1,"Completed"),(2,"Abandoned"))
@@ -11,6 +12,7 @@ class Project(models.Model):
     detail=models.TextField(blank=False)
     status=models.IntegerField(choices=Status,default=0)
     members=models.ManyToManyField(User)
+    tags=TaggableManager()
 
     def __str__(self):
         return self.title
