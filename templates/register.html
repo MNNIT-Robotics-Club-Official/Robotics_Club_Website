@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user.css' %} " type="text/css">
+{% endblock %}
+{% block body %}
+     <!-- <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Register</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+{#                Need An Account? <a class="ml-2" href="#">Sign Up Now</a>#}
+            </small>
+        </div>
+    </div> -->
+
+    <div class="container box h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <h3 id="form-title">REGISTER ACCOUNT</h3>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+    
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            {{form.username}}
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-envelope-square"></i></span>
+                            </div>
+                            {{form.email}}
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                            {{form.password1}}
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                            {{form.password2}}
+                        </div>
+    
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <input class="btn login_btn" type="submit" value="Register Account">
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
+                        Already have an account? <a href="{% url 'user:login_page' %}" class="ml-2">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //Query All input fields
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = 'Username..';
+        form_fields[2].placeholder = 'Email..';
+        form_fields[3].placeholder = 'Enter password...';
+        form_fields[4].placeholder = 'Re-enter Password...';
+    
+    
+        for (var field in form_fields) {
+            form_fields[field].className += ' form-control'
+        }
+    </script>
+{% endblock %}

@@ -6,6 +6,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <h2 class="">Blogs</h2>
+            <br>
+            <a href="{% url 'blog_form'%}"><button type="button" class="btn btn-primary">Create Blog</button></a>
     </div>
         {% for post in bloglist %}
         <div class="row p-2 justify-content-center">

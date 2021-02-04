@@ -1,39 +1,61 @@
 {% extends "base.html" %}
 {% load static %}
-    {% block title %}
-        Projects List
-    {% endblock %}
-    {% block head %}
-        <style>
-        .card-img-top {
-            width: 100%;
-            height: 34vh;
-            {#object-fit: contain;#}
-         }
-        .card{
-            padding: 1px;
-        }
-    </style>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    {% endblock %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/project.css' %} " type="text/css">
+{% endblock %}
+
 {% block body %}
-<div class="container">
-    <h2 class="text-center p-2">OUR PREVIOUS WORK</h2>
-<div class="row offset-lg-0">
-{% for project in prolist %}
-<div class="col-4 p-2">
-<div class="card border-dark bg-light mb-3" style="width: 24rem;">
-  <img src="{% static "img/logo.jpg" %}" class="card-img-top" alt="...">
-  <div class="card-body text-dark">
-    <h5 class="card-title">{{ project.title }}</h5>
-       <h6>Status:{{ project.get_status_display }}</h6>
-{#    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
-    <a href="{% url 'project_detail' pk=project.pk %}" class="btn btn-primary">Read More</a>
-  </div>
-</div>
-    </div>
-{% endfor %}
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <section class="project" id="project">
+
+        <div class="container">
+            <div class="section-title pb-2">
+                <div class="d-flex justify-content-center my-3">
+                    <h2 class="">OUR PROJECTS</h2>
+                </div>
+                <!-- <br> -->
+            </div>
+
+            <div class="row">
+
+                <!--start for-->
+                {% for project in projects %}
+                    <div class="col-md-4">
+                        <a href="{% url 'project:detail' project.pk %}">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/r9.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ project.title }}</h5>
+                                    <p class="card-text">
+                                        <b class="text-muted">AIM:</b>
+                                        {{ project.aim }}
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
+                                    <p><i class="fa fa-tags"></i>Tags:
+                                        <a href="#" class="badge badge-pill badge-danger">Tag1</a>
+                                        <a href="#" class="badge badge-pill badge-danger">Tag2</a>
+                                        <a href="#" class="badge badge-pill badge-danger">Tag3</a>
+                                    </p>
+                                    </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--end for-->
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <br>
+
 {% endblock %}
