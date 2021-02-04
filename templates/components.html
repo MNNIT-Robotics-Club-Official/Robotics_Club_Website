@@ -21,12 +21,39 @@ Robotics Club MNNIT
             <!-- Defining Tabs -->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="tool-tab" data-toggle="tab" href="#tool" role="tab"
-                        aria-controls="tool" aria-selected="true">Tools</a>
+                    <a class="nav-link active" id="battery-tab" data-toggle="tab" href="#battery" role="tab"
+                        aria-controls="battery" aria-selected="true">Batteries and Chargers
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="motor-tab" data-toggle="tab" href="#motor" role="tab" aria-controls="motor"
-                        aria-selected="false">Motors</a>
+                    <a class="nav-link" id="board-tab" data-toggle="tab" href="#board" role="tab" aria-controls="board"
+                        aria-selected="false">Development Boards
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="driver-tab" data-toggle="tab" href="#driver" role="tab"
+                        aria-controls="driver" aria-selected="false">Drivers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="etool-tab" data-toggle="tab" href="#etool" role="tab" aria-controls="etool"
+                        aria-selected="false">Electronic Tools
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mtool-tab" data-toggle="tab" href="#mtool" role="tab" aria-controls="mtool"
+                        aria-selected="false">Mechanical Tools
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="kit-tab" data-toggle="tab" href="#kit" role="tab" aria-controls="kit"
+                        aria-selected="false">Robotics Kits
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sensor-tab" data-toggle="tab" href="#sensor" role="tab"
+                        aria-controls="sensor" aria-selected="false">Sensors
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other"
@@ -38,7 +65,7 @@ Robotics Club MNNIT
             <div class="tab-content" id="myTabContent">
 
                 <!-- Specifing contents of each tab-->
-                <div class="tab-pane fade show active" id="tool" role="tabpanel" aria-labelledby="tool-tab">
+                <div class="tab-pane fade show active" id="battery" role="tabpanel" aria-labelledby="battery-tab">
 
                     <!-- Declaring row class for placing components in grid -->
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -74,32 +101,10 @@ Robotics Club MNNIT
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block filter-profile">
-                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>Tool Name</h4>
-                                <form class="form-inline mb-3 justify-content-center">
-
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                        aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Request</a>
-                                            <a class="dropdown-item" href="#">Issued By</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="motor" role="tabpanel" aria-labelledby="motor-tab">
+                <div class="tab-pane fade" id="board" role="tabpanel" aria-labelledby="board-tab">
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
@@ -125,6 +130,13 @@ Robotics Club MNNIT
                             </div>
                         </div>
 
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
                         <div class="col-md-6 col-lg-4">
                             <div class="feature-block filter-profile">
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
@@ -146,6 +158,100 @@ Robotics Club MNNIT
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                             </div>
                         </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="etool" role="tabpanel" aria-labelledby="etool-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="mtool" role="tabpanel" aria-labelledby="mtool-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="kit" role="tabpanel" aria-labelledby="kit-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block filter-profile">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>Tool Name</h4>
+                                <form class="form-inline mb-3 justify-content-center">
+
+                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
+                                        aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Request</a>
+                                            <a class="dropdown-item" href="#">Issued By</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="sensor" role="tabpanel" aria-labelledby="sensor-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
 
                         <div class="col-md-6 col-lg-4">
                             <div class="feature-block filter-profile">
@@ -198,81 +304,14 @@ Robotics Club MNNIT
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block filter-profile">
-                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>Tool Name</h4>
-                                <form class="form-inline mb-3 justify-content-center">
-
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                        aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Request</a>
-                                            <a class="dropdown-item" href="#">Issued By</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block filter-profile">
-                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>Tool Name</h4>
-                                <form class="form-inline mb-3 justify-content-center">
-
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                        aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Request</a>
-                                            <a class="dropdown-item" href="#">Issued By</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block filter-profile">
-                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>Tool Name</h4>
-                                <form class="form-inline mb-3 justify-content-center">
-
-                                    <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                        aria-label="Quantity" style="width: 100px;">
-                                    <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Request</a>
-                                            <a class="dropdown-item" href="#">Issued By</a>
-                                        </div>
-                                    </div>
-                                </form>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
 
             </div>
 
         </div>
     </section><!-- End Components Section -->
-  
+
     <!-- ======= Features Section ======= -->
     <!--<section id="features" class="padd-section text-center">
 
@@ -396,7 +435,7 @@ Robotics Club MNNIT
             </div>
         </div>
     </section> -->
-<!-- End Features Section -->
+    <!-- End Features Section -->
     <br>
 </section>
 
