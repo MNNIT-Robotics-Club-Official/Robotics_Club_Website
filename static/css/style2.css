@@ -3,6 +3,7 @@ Components
 starts
 */
 
+/* Component Heading */
 #components .d-flex h2{
     color: #333;
     font-weight: bold;
@@ -13,12 +14,27 @@ starts
     border-bottom:#e03a3c 5px solid;
   }
   
+
+  /* Setting container for tabs+components */
   #features {
     display: inline-block;
     height: 100%;
     width: 100%;
   }
+
+
+  /* Color of the tabs */
+  #features .container .nav .nav-item a{
+    color:#e76668;
+  }
+
+  /* Active tab */
+  #features .container .nav .nav-item .active{
+    color:#e03a3c;
+    font-weight: 500;
+  }
   
+  /* Block of single component */
   #features .feature-block {
     background: #fff none repeat scroll 0 0;
     padding: 30px 20px;
@@ -26,17 +42,24 @@ starts
     transition: all 0.5s ease-in-out 0s;
   }
 
+
+  /* Component Image */
+
   #features .feature-block img{
     height: 90px;
     width: 90px;
     object-fit: cover;
   }
   
+
+  /* Hovering Effect of Block */
   #features .feature-block:hover {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease-in-out 0s;
   }
   
+
+  /* Name of the Component */
   #features .feature-block h4 {
     margin-bottom: 20px;
     font-size: 1.25rem;
@@ -45,6 +68,7 @@ starts
     color: #16324f;
   }
   
+  /* Description of Component */
   #features .feature-block p {
     margin-bottom: 0;
     font-size: 1rem;
