@@ -1,0 +1,84 @@
+/*
+Workshop
+starts
+*/
+
+#workshop .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid;
+  }
+
+  /* Batch */
+#workshop .d-flex h3{
+  color: #16324f;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 2px;
+}
+
+#workshop .card .row img{
+  background-color: #f8f9fa;
+  z-index: 99;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+
+#workshop .card .row h5{
+  font-family: 'Poppins',sans-serif;
+  font-size: 24px;
+  margin: 0px auto 0px;
+  color: #16324f;
+  font-weight: 700;
+}
+
+#workshop .card .row .card-body{
+  padding: 0.75em;
+}
+
+#workshop .card .row .card-body p{
+  color: #e65658;
+  font-weight: 600;
+  margin-top: -4px;
+  line-height: 1.5em;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+#workshop .card .row .card-body table td>span{
+  color: #16324f;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#workshop .card .row .card-body a>p{
+  color: #e03a3c;
+  font-weight: 600;
+  margin-top: 4px;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+#workshop .card .row .card-body a:hover{
+  text-decoration: none;
+}
+
+#workshop .card .row .card-body small{
+  font-family: 'Roboto',sans-serif;
+  font-size: 0.8em;
+  color: #5A3733;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+  
+  /*
+  Workshop
+  ends
+  */
+  

@@ -28,3 +28,6 @@ def testimonial(request):
 
 def achievement(request):
     return render(request, 'achievement.html')
+
+def workshop(request):
+    return render(request, 'workshop.html')
