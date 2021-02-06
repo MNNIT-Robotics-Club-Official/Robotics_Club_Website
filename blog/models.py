@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager    #changed
 
 from django.utils import timezone
 
@@ -11,6 +12,8 @@ class Blog(models.Model):
     content=models.TextField()
     date=models.DateField()
     vidlink=models.URLField(blank=True,unique=False)
+    tags=TaggableManager()              #changed
+    imagelink=models.URLField(blank=False,unique=False)  #changed
 
     def __str__(self):
         return f'{self.title}-{self.author}'

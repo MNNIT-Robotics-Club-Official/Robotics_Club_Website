@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'user',
     'component',
     'crispy_forms',
+    'taggit',    #changed
 ]
 
 MIDDLEWARE = [

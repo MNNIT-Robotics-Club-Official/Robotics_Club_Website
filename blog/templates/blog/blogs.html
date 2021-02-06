@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %} " type="text/css">
+{% endblock %}
+
+{% block body %}
+<section class="blog" id="blog">
+
+    <div class="container">
+        <div class="section-title pb-2">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">BLOGS</h2>
+            </div>
+            <!-- <br> -->
+        </div>
+
+        <div class="row">
+        
+            <!--start for-->
+            {% for post in bloglist %}
+            <div class="col-md-4">
+                <a href="{% url 'blog_detail' pk=post.pk %}">
+                <div class="card wow fadeInUp">
+                    <div class="card-image" id="pic">
+                        <img class="card-img-top" src="{{post.imagelink}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        
+                        <!-- first 1-2 lines from content-->
+                        <div class="card-text" id="intro">
+                            {{ post.content|safe|truncatewords_html:15}}
+                            <br><small class="text-muted">
+                                Click to Read More...
+                            </small>
+                        </div>
+                        <hr>
+                        <div class="card-text" id="details">
+                            <small class="text-muted">
+                                <p><i class="fa fa-user"></i> by {{ post.author }}</p>
+                                <p><i class="fa fa-calendar"></i> {{ post.date }}</p>
+                                <p><i class="fa fa-tags"></i>Tags: 
+                                    <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>
+                                    <a href="#" class="badge badge-pill badge-danger">Tag2</a>
+                                    <a href="#" class="badge badge-pill badge-danger">Tag3</a> -->
+                                    {% for tag in post.tags.all %}
+                                        <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
+                                    {% endfor %}
+                                </p>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        
+            <!--end for-->
+            {% endfor %}
+        </div>
+        
+        <div >
+        <a class="d-flex justify-content-center" href="{% url 'blog_form'%}"><button type="button" class="blogbtn" id="writebtn">Write a Blog</button></a>
+        </div>
+    </div>
+</section>
+<br>
+
+<script>
+    function show()
+    {
+        document.getElementById("intro").style.display = "block";
+        document.getElementById("details").style.display = "none";
+        document.getElementById("pic").style.display = "none";
+    }
+
+    function hide()
+    {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("details").style.display = "block";
+        document.getElementById("pic").style.display = "block";
+    }
+</script>
+
+{% endblock %}

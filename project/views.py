@@ -14,5 +14,5 @@ def list(request):
 
 def detail(request):
     context={}
-    context['prolist']=Project.objects.all()
+    context['project']=Project.objects.all()
     return render(request,'project/projects_detail.html',context)
