@@ -31,3 +31,6 @@ def achievement(request):
 
 def components(request):
     return render(request, 'components.html')
+
+def permission(request):
+    return render(request, 'permission.html')
