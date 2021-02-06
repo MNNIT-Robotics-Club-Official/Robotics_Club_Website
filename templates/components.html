@@ -12,131 +12,401 @@ Robotics Club MNNIT
         <h2 class="">COMPONENTS</h2>
     </div>
 
-    <!-- ======= Features Section ======= -->
+    <!-- ======= Components Section [components has been replaced by features] ======= -->
     <section id="features" class="padd-section text-center">
 
+        <!-- Creating container for Tabs and Components -->
         <div class="container" data-aos="fade-up">
 
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <!-- Defining Tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="battery-tab" data-toggle="tab" href="#battery" role="tab"
+                        aria-controls="battery" aria-selected="true">Batteries and Chargers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="board-tab" data-toggle="tab" href="#board" role="tab" aria-controls="board"
+                        aria-selected="false">Development Boards
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="driver-tab" data-toggle="tab" href="#driver" role="tab"
+                        aria-controls="driver" aria-selected="false">Drivers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="etool-tab" data-toggle="tab" href="#etool" role="tab" aria-controls="etool"
+                        aria-selected="false">Electronic Tools
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mtool-tab" data-toggle="tab" href="#mtool" role="tab" aria-controls="mtool"
+                        aria-selected="false">Mechanical Tools
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="kit-tab" data-toggle="tab" href="#kit" role="tab" aria-controls="kit"
+                        aria-selected="false">Robotics Kits
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sensor-tab" data-toggle="tab" href="#sensor" role="tab"
+                        aria-controls="sensor" aria-selected="false">Sensors
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other"
+                        aria-selected="false">Others</a>
+                </li>
+            </ul>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
+            <!-- Specifing contents of tabs -->
+            <div class="tab-content" id="myTabContent">
 
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity" style="width: 100px;">
-                            <button class="btn btn-danger my-2 my-sm-0 mr-2" type="submit">Buy</button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Requests</a>
-                                    <a class="dropdown-item" href="#">Issued By</a>
+                <!-- Specifing contents of each tab-->
+                <div class="tab-pane fade show active" id="battery" role="tabpanel" aria-labelledby="battery-tab">
+
+                    <!-- Declaring row class for placing components in grid -->
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_0 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
                             </div>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="board" role="tabpanel" aria-labelledby="board-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_1 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_2 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="etool" role="tabpanel" aria-labelledby="etool-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                       {% for component in components_3 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="mtool" role="tabpanel" aria-labelledby="mtool-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_4 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="kit" role="tabpanel" aria-labelledby="kit-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                       {% for component in components_5 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="sensor" role="tabpanel" aria-labelledby="sensor-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_6 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-block">
-                        <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
-                        <h4>Tool Name</h4>
-                        <form class="form-inline mb-3 justify-content-center">
-                            <input class="form-control-sm mr-2" type="number" placeholder="Quantity"
-                                aria-label="Quantity">
-                            <button class="btn btn-danger my-2 my-sm-0" type="submit">Buy</button>
-                        </form>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+
+                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                        {% for component in components_7 %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="feature-block">
+                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <h4>{{ component.name }}</h4>
+
+                                <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
+                                           aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                            Request
+                                        </button>
+
+                                    </form>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-danger dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false"></button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ component.detail }}</p>
+                                <p>Available : {{ component.available }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
                     </div>
                 </div>
 
             </div>
+
         </div>
-    </section><!-- End Features Section -->
+    </section><!-- End Components Section -->
+
 
     <br>
 </section>
 
+{% endblock %}
+{% block script %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $("form").on('submit', function (event) {
+                        event.preventDefault();
+                        var cid=$(this).attr('cid');
+                        $.ajax({
+                            url: '{% url 'create_request' %}',
+                            type: 'POST',
+                            data: {
+                                'cid': cid,
+                                'req_num': $(this).children("#request_number").val(),
+                                'csrfmiddlewaretoken': '{{csrf_token}}'
+                            },
+                            success: function (data) {
+                                $("#message_container").html(data['html']);
+                            }
+                        })
+                    })
+        })
+    </script>
 {% endblock %}
