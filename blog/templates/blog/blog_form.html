@@ -3,18 +3,81 @@
 {% load static %}
 
 {% block title %}
-    Blog Create
+    Write the Blog...
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %} " type="text/css">
+<script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
 {% endblock %}
 
 {% block body %}
-    <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
+    <section class="blog-form" id="blog-form">
+        <div class="container">
+            <div class="section-title pb-2">
+                <div class="d-flex justify-content-center my-3">
+                    <h2 class="">Write The Blog...</h2>
+                </div>
+            </div>
+            <!-- <div class="d-flex justify-content-end pb-3">
+                <h5>..by {{request.user.username}}</h5>
+            </div> -->
+            <form method="POST">
+                {% csrf_token %}
+                    
+                    <!-- <div class="form-group">
+                        {{form | crispy}}
+                    </div> -->
+                    <div class="form-group wow fadeInUp">
+                        <label>Author*</label>
+                        <input class="form-control" type="text" disabled value="{{request.user.username}}">
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Title*</label> 
+                        {{form.title}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Intro Image Link*</label> 
+                        {{form.imagelink}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Content*<div class="text-muted">
+                            (Please write 2-3 lines of unformatted introductory paragraph in the beginning)
+                        </div></label> 
+                        <!-- {{form.content}} -->
+                        <!-- <textarea name="content" ></textarea> -->
+                        {{form.content}}
+                        
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Tags*<div class="text-muted">
+                            (Separate the tags by commas)
+                        </div></label> 
+                        
+                        {{form.tags}}
+                    </div>
+                   
+                    <div class="form-group wow fadeInUp">  
+                        <label>Video Link</label> 
+                        {{form.vidlink}}
+                    </div>
+                    
+                    <div class="form-group d-flex justify-content-center wow fadeInUp">
+                        <button class="blogbtn" id="postbtn" type="submit">Post</button>
+                    </div> 
+                
+            <!-- <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Blog Post</legend>
                 {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Post</button>
-            </div>
-        </form>
+            </fieldset>-->
+           
+            </form>
+        </div>
+        <br>
+        <br>
+    </section>
+
+    <script>
+        CKEDITOR.replace("content");
+    </script>
 {% endblock %}
