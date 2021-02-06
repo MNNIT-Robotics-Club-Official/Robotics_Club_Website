@@ -9,13 +9,19 @@ from .form import BlogForm
 def list(request):
     context={}
     context['bloglist']=Blog.objects.all()
-    return render(request,'blog/blog_list.html',context)
+    return render(request,'blog/blogs.html',context)    #changed
+
+# @login_required    #added
+# def detail(request):
+#     context={}
+#     context['blog']=Blog.objects.all()
+#     return render(request,'blog/blog_details.html',context)    
 
 @login_required
 def detail(request,pk):
     context={}
     context['blog']=Blog.objects.get(pk=pk)
-    return render(request,'blog/blog_detail.html',context)
+    return render(request,'blog/blog_details.html',context)    #changed
 
 @login_required
 def createblog(request):
