@@ -17,7 +17,14 @@ def test(request,id):
 
 def componentlist(request):
     context = {}
-    context['components'] = Component.objects.all()
+    context['components_0'] = Component.objects.filter(type=0)
+    context['components_1'] = Component.objects.filter(type=1)
+    context['components_2'] = Component.objects.filter(type=2)
+    context['components_3'] = Component.objects.filter(type=3)
+    context['components_4'] = Component.objects.filter(type=4)
+    context['components_5'] = Component.objects.filter(type=5)
+    context['components_6'] = Component.objects.filter(type=6)
+    context['components_7'] = Component.objects.filter(type=7)
     context['form'] = RequestForm()
     return render(request, 'component/component_list.html', context)
 
@@ -121,3 +128,4 @@ def createrequest(request):
         return JsonResponse({'html': html}, status=200)
     else:
         return HttpResponse("woops")
+

@@ -13,7 +13,8 @@ class Blog(models.Model):
     date=models.DateField()
     vidlink=models.URLField(blank=True,unique=False)
     tags=TaggableManager()              #changed
-    imagelink=models.URLField(blank=False,unique=False)  #changed
+    imagelink=models.URLField(blank=False,unique=False)  
+    approved=models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title}-{self.author}'
@@ -26,3 +27,7 @@ class Blog(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog_detail',kwargs={'pk':self.pk})
+
+    def approve(self):
+        self.approved=True
+        self.save()
