@@ -9,19 +9,19 @@ from .form import BlogForm
 def list(request):
     context={}
     context['bloglist']=Blog.objects.filter(approved=True)
-    return render(request,'blog/blog_list.html',context)
+    return render(request, 'blog/blog_list.html', context)
 
 @login_required
 def detail(request,pk):
     context={}
     blog=Blog.objects.get(pk=pk)
     if blog.approved == False:
-        if blog.author == request.user or request.user.is_superuser():
+        if blog.author == request.user or request.user.profile.role>=2:
             pass
         else:
             return HttpResponse("You are not authorised")
     context['blog']=blog
-    return render(request,'blog/blog_detail.html',context)
+    return render(request, 'blog/blog_detail.html', context)
 
 @login_required
 def createblog(request):
