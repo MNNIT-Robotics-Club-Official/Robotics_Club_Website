@@ -18,9 +18,11 @@ RoboticsClub-Notice
     <div class="d-flex justify-content-center my-3">
         <h2 class="">NOTICE BOARD</h2>
     </div>
+    {% if user.is_superuser %}
     <div class="row justify-content-center">
         <a href="{% url 'news:news_form' %}"><button type="button" class="btn btn-danger mx-2">Create Notice</button></a>
 </div>
+{% endif %}
 <br>
     {% for news in newslist %}
     <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
