@@ -5,8 +5,15 @@
 RoboticsClub-Notice
 {% endblock %}
 
-{% block body %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css">
+{% endblock %}
 
+
+{% block body %}
+<div id="message_container">
+    {% include 'spinnets/message.html' %}
+    </div>
 <section id="notice">
     <div class="d-flex justify-content-center my-3">
         <h2 class="">NOTICE BOARD</h2>

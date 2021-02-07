@@ -81,3 +81,6 @@ def comprequest(request):
         req=Request.objects.get(component_id=cid,request_user=request.user)
         req.accepted_by_user()
     return render(request, 'user/comp_request.html', context)
+
+def adminPage(request):
+    return render(request,'admin_dashboard.html')
