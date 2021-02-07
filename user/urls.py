@@ -10,4 +10,5 @@ urlpatterns=[
     path('logout/',views.logoutUser,name='logout_page'),
     path('roles/',views.changerole,name='change_role'),
     path('compreq/',views.comprequest,name='component_request'),
+    path('admin/',views.adminPage,name='admin_page'),
 ]
