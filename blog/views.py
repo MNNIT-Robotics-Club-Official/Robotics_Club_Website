@@ -27,7 +27,7 @@ def detail(request,pk):
 def createblog(request):
     context={}
     if request.method=='POST':
-        form=BlogForm(request.POST)
+        form=BlogForm(request.POST,request.FILES)
         form.instance.author=request.user
         form.save()
         return redirect('blog_list')
@@ -53,7 +53,7 @@ def updateblog(request,pk):
             context['form']=form
             return render(request, 'blog/blog_form.html', context)
         else:
-            form=BlogForm(request.POST,instance=blog)
+            form=BlogForm(request.POST,request.FILES,instance=blog)
             form.instance.author=request.user
             form.instance.approved=False
             form.save()
