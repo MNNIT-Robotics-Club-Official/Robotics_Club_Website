@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'taggit',    
     'news',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Create/Update Project</legend>
