@@ -31,3 +31,6 @@ def achievement(request):
 
 def components(request):
     return render(request, 'components.html')
+
+def user_dashboard(request):
+    return render(request, 'user_dashboard.html')
