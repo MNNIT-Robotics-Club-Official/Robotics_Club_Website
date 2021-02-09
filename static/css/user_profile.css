@@ -22,6 +22,11 @@
       padding-left: 0.2em;
   }
 
+  .user .table{
+border: #ddd 2px solid;
+text-align: center;
+  }
+
   .user form label{
       font-family: 'Roboto',sans-serif;
       color: #e03a3c;
