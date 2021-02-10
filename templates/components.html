@@ -77,21 +77,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -116,21 +116,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -154,21 +154,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -177,7 +177,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -186,28 +186,28 @@ Robotics Club MNNIT
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                       {% for component in components_3 %}
+                        {% for component in components_3 %}
                         <div class="col-md-6 col-lg-4">
                             <div class="feature-block">
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -232,21 +232,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -255,7 +255,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -264,28 +264,28 @@ Robotics Club MNNIT
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                       {% for component in components_5 %}
+                        {% for component in components_5 %}
                         <div class="col-md-6 col-lg-4">
                             <div class="feature-block">
                                 <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -294,7 +294,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -310,21 +310,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -333,7 +333,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -349,21 +349,21 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <form action="" cid="{{ component.pk }}">
+                                        {% csrf_token %}
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
                                     </form>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
+                                            <a class="dropdown-item"
+                                                href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
@@ -372,7 +372,7 @@ Robotics Club MNNIT
                                 <p>Available : {{ component.available }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -388,25 +388,25 @@ Robotics Club MNNIT
 
 {% endblock %}
 {% block script %}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-           $("form").on('submit', function (event) {
-                        event.preventDefault();
-                        var cid=$(this).attr('cid');
-                        $.ajax({
-                            url: '{% url 'create_request' %}',
-                            type: 'POST',
-                            data: {
-                                'cid': cid,
-                                'req_num': $(this).children("#request_number").val(),
-                                'csrfmiddlewaretoken': '{{csrf_token}}'
-                            },
-                            success: function (data) {
-                                $("#message_container").html(data['html']);
-                            }
-                        })
-                    })
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("form").on('submit', function (event) {
+            event.preventDefault();
+            var cid = $(this).attr('cid');
+            $.ajax({
+                url: '{% url 'create_request' %}',
+                type: 'POST',
+                data: {
+                    'cid': cid,
+                    'req_num': $(this).children("#request_number").val(),
+                    'csrfmiddlewaretoken': '{{csrf_token}}'
+                },
+                success: function (data) {
+                    $("#message_container").html(data['html']);
+                }
+            })
         })
-    </script>
+    })
+</script>
 {% endblock %}
