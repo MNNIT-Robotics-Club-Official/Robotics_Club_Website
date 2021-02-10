@@ -34,3 +34,6 @@ def components(request):
 
 def permission(request):
     return render(request, 'permission.html')
+  
+def workshop(request):
+    return render(request, 'workshop.html')
