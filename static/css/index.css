@@ -104,3 +104,143 @@ section {
     line-height: 24px;
     font-size: 14px;
   }
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 90vh;
+  background: url("../img/r37.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 82px;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#hero img{
+  max-height: 8vw; position:absolute;
+  float:right;
+  right:1em;
+  bottom:1em;
+  z-index:2;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #e03a3c;
+  border: 2px solid #e03a3c;
+}
+
+#hero .btn-get-started:hover {
+  background: transparent;
+  border-color: #fff;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    text-align: center;
+    padding-top: 58px;
+  }
+  #hero h1 {
+    font-size: 28px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #hero img{
+    min-height: 15vw;
+  }
+}
+
+@media (max-width: 576px) {
+  #hero img{
+    min-height: 25vw;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+  /* #coverImg .container{
+    padding: 0;
+    margin: 0;
+  }
+
+  #coverImg img{
+  width: 100%;
+  object-fit: cover;
+  } */
+
+  #project{
+    padding-top: 0;
+  }
+
+  #project h2 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  #project h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #e03a3c;
+    bottom: 0;
+    left: calc(50% - 25px);
+  }
+
+  #project .card h4>a{
+    color: #16324f;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 600;
+  }
+
+  #project .card p{
+    font-family: 'Roboto',sans-serif;
+    color: #444;
+  }
+
+/* #college{
+  padding-top: 0;
+}
+
+  #college img{
+    max-height: 30vw;
+  } */
