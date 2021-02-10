@@ -90,3 +90,80 @@ starts
   ends
   */
   
+  /* Workshop Form starts here */
+
+.workshop-form .container{
+  border: 1px solid  #e9ecef;
+  border-radius: 20px;
+}
+
+#workshop-form .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid;
+  margin-bottom: 0%;
+  }
+
+#workshop-form label{
+  margin-top: 15px;
+  color: #e03a3c;
+  font-style: italic;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+.workshop-form .form-control{
+  border-radius:1rem;
+}
+
+.workshop-form form{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.workshop-form .text-muted{
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 0;
+  display: inline;
+}
+
+.workshopbtn{
+  height: 100%;
+  margin: 10px;
+  border: none;
+  border-radius: 1rem;
+  padding: 1%;
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+}
+
+#postbtn{
+  width: 10%;
+}
+
+#writebtn{
+  width: 100%;
+}
+
+#updatebtn{
+  width: 30%;
+  background: grey;
+}
+
+#deletebtn{
+  width: 30%;
+}
+
+.workshopbtn:hover{
+  background: crimson !important; 
+}
+
+  /* Workshop Form ends here */
