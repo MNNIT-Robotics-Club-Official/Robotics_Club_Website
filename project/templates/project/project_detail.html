@@ -17,7 +17,7 @@
         <div class="col-lg-12">
             <div class="section-title">
                 <div class="d-flex justify-content-start my-3">
-                    <h1>{{ project.title }}</h2>
+                    <h2>{{ project.title }}</h2>
                 </div>
             </div>
             <p><i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
@@ -34,21 +34,11 @@
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide One - Set the background image for this slide in the line below -->
                     <div class="carousel-item active">
-                        <img class="carousel-img" src="{% static 'img/r37.jpg' %}" alt="" width="1900px" height="650px">
-                    </div>
-                    <!-- Slide Two - Set the background image for this slide in the line below -->
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="{% static 'img/r10.jpg' %}" alt="" width="1900px" height="650px">
-                    </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="{% static 'img/r30.jpg' %}" alt="" width="1900px" height="650px">
+                        <img class="carousel-img" src="{{ project.image.url }}" alt="" width="1900px" height="650px">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
