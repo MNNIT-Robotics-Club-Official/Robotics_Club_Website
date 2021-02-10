@@ -13,28 +13,31 @@ RoboticsClub-Notice
 {% block body %}
 <div id="message_container">
     {% include 'spinnets/message.html' %}
-    </div>
+</div>
 <section id="notice">
     <div class="d-flex justify-content-center my-3">
         <h2 class="">NOTICE BOARD</h2>
     </div>
     {% if user.is_superuser %}
     <div class="d-flex justify-content-center">
-        <a href="{% url 'news:news_form' %}"><button type="button" class="btn btn-danger mx-2">Create Notice</button></a>
-</div>
-{% endif %}
-<br>
+        <a href="{% url 'news:news_form' %}"><button type="button" class="btn btn-danger mx-2 noticebtn" id="writebtn">Create
+                Notice</button></a>
+    </div>
+    {% endif %}
+    <br>
     {% for news in newslist %}
     <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
 
         <div class="card-body">
             <h5 class="card-title mb-2 mt-1">{{news.title}}</h5>
             <p class="card-text mb-2">{{news.content}}</p>
-            <p><a href="{{news.link}}">Link To MNNIT</a></p>
+            <p><a href="{{news.link}}">Read More...</a></p>
             <p class="card-text"><small class="text-muted">Created on {{news.date}}</small></p>
             {% if user.is_superuser %}
-            <a href="{% url 'news:news_update' pk=news.pk %}"><button type="button" class="btn btn-primary btn-sm mx-2">Update Notice</button></a>
-            <a href="{% url 'news:news_delete' pk=news.pk %}"><button type="button" class="btn btn-danger btn-sm mx-2">Delete Notice</button></a>
+            <a href="{% url 'news:news_update' pk=news.pk %}"><button type="button"
+                    class="btn btn-primary btn-sm mx-2 noticebtn">Update Notice</button></a>
+            <a href="{% url 'news:news_delete' pk=news.pk %}"><button type="button"
+                    class="btn btn-danger btn-sm mx-2 noticebtn">Delete Notice</button></a>
             {% endif %}
         </div>
 
