@@ -29,5 +29,11 @@ def testimonial(request):
 def achievement(request):
     return render(request, 'achievement.html')
 
+def components(request):
+    return render(request, 'components.html')
+
+def permission(request):
+    return render(request, 'permission.html')
+  
 def workshop(request):
     return render(request, 'workshop.html')
