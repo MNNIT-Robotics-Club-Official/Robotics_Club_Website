@@ -5,6 +5,10 @@
 Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+{% endblock %}
+
 {% block body %}
 <div id="message_container">
 {% include 'spinnets/message.html' %}
@@ -397,7 +401,7 @@ Robotics Club MNNIT
                         event.preventDefault();
                         var cid=$(this).attr('cid');
                         $.ajax({
-                            url: '{% url 'create_request' %}',
+                            url: '{% url "create_request" %}',
                             type: 'POST',
                             data: {
                                 'cid': cid,

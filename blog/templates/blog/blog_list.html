@@ -28,7 +28,7 @@ Blogs
                 <a href="{% url 'blog_detail' pk=post.pk %}">
                 <div class="card wow fadeInUp">
                     <div class="card-image" id="pic">
-                        <img class="card-img-top" src="{{post.imagelink}}" alt="">
+                        <img class="card-img-top" src="{{post.image.url}}" alt="">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{post.title}}</h5>
