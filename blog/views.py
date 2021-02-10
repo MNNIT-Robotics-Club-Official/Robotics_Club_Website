@@ -3,33 +3,35 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .models import Blog
 from .form import BlogForm
+from django.contrib import messages
 
 # Create your views here.
 @login_required
 def list(request):
     context={}
     context['bloglist']=Blog.objects.filter(approved=True)
-    return render(request,'blog/blog_list.html',context)
+    return render(request, 'blog/blog_list.html', context)
 
 @login_required
 def detail(request,pk):
     context={}
     blog=Blog.objects.get(pk=pk)
     if blog.approved == False:
-        if blog.author == request.user or request.user.is_superuser():
+        if blog.author == request.user or request.user.profile.role>=2:
             pass
         else:
             return HttpResponse("You are not authorised")
     context['blog']=blog
-    return render(request,'blog/blog_detail.html',context)
+    return render(request, 'blog/blog_detail.html', context)
 
 @login_required
 def createblog(request):
     context={}
     if request.method=='POST':
-        form=BlogForm(request.POST)
+        form=BlogForm(request.POST,request.FILES)
         form.instance.author=request.user
         form.save()
+        messages.info(request,"Please Wait for Blog to be approved")
         return redirect('blog_list')
     else:
         form=BlogForm()
@@ -53,7 +55,7 @@ def updateblog(request,pk):
             context['form']=form
             return render(request, 'blog/blog_form.html', context)
         else:
-            form=BlogForm(request.POST,instance=blog)
+            form=BlogForm(request.POST,request.FILES,instance=blog)
             form.instance.author=request.user
             form.instance.approved=False
             form.save()

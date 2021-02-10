@@ -9,16 +9,22 @@
 
   <!-- To add another css file, use below format and change file name -->
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} " type="text/css">
+  <!-- <link rel="stylesheet" href="{% static 'css/index.css' %} " type="text/css"> -->
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/style2.css' %} " type="text/css">
-  <link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css">
-  <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
+  <!--<link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css">-->
+  <link rel="stylesheet" href="{% static 'css/permission.css' %} " type="text/css">
+  <!-- <link rel="stylesheet" href="{% static 'css/style3.css' %} " type="text/css"> -->
 
+  <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    type="text/css">
+  type="text/css">
   <!-- <script src="https://use.fontawesome.com/5164159442.js"></script> -->
   <!-- <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.css' %}"> -->
-
+  
+  {% block head %}
+  {% endblock %}
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -33,8 +39,6 @@
   <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
   <title>{% block title %}{% endblock %}</title>
 
-  {% block head %}
-  {% endblock %}
 </head>
 
 
@@ -48,7 +52,6 @@
 
     <div class="loader">
       <img src="/static/img/tenor.gif" alt="">
-
     </div>
     <!-- End Preloader -->
 
@@ -96,8 +99,8 @@
                 Team
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 <a class="dropdown-item" href="{% url 'home:faculty' %}">Coordinator</a>
+                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
               </div>
             </li>
             <li class="nav-item dropdown px-3">
@@ -108,7 +111,11 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="{% url 'home:achievement' %}">Achievement</a>
                 <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
+                <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
+                <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">TSAW</a>
+                <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice Board</a>
                 <a class="dropdown-item" href="{% url 'home:workshop' %}">Workshop</a>
+
               </div>
             </li>
             <li class="nav-item px-3">
@@ -197,13 +204,14 @@
     <!-- FOOTER ENDS -->
 
     <!-- To add another js file, use below format and change file name -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     {% block script %}
     {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"></script>
-    <script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>
+    <!--<script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>-->
     <script src="{% static 'js/jquery/popper.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
     <script src="{% static 'js/base.js'%}"></script>
