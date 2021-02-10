@@ -19,7 +19,7 @@ RoboticsClub-Notice
         <h2 class="">NOTICE BOARD</h2>
     </div>
     {% if user.is_superuser %}
-    <div class="row justify-content-center">
+    <div class="d-flex justify-content-center">
         <a href="{% url 'news:news_form' %}"><button type="button" class="btn btn-danger mx-2">Create Notice</button></a>
 </div>
 {% endif %}
