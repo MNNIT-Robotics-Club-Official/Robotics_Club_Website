@@ -78,9 +78,11 @@ Robotics Club MNNIT
                         </tbody>
                     </table>
                     <!-- Link for discription of Workshop -->
+                    {% if workshop.link %}
                     <a href="{{workshop.link}}" download="{{workshop.link}}" target="_blank">
                         <p class="card-text">Download Brochure</p>
                     </a>
+                    {% endif %}
 
                     <br>
                     <!-- Date of posting -->
@@ -151,9 +153,11 @@ Robotics Club MNNIT
                         </tbody>
                     </table>
                     <!-- Link for discription of Workshop -->
+                    {% if workshop.link %}
                     <a href="{{workshop.link}}" download="{{workshop.link}}" target="_blank">
                         <p class="card-text">Download Brochure</p>
                     </a>
+                    {% endif %}
 
                     <br>
                     <!-- Date of posting -->
