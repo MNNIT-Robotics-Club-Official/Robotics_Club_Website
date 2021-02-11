@@ -17,7 +17,7 @@ class Blog(models.Model):
     content=models.TextField()
     date=models.DateField()
     vidlink=models.URLField(blank=True,unique=False)
-    tags=TaggableManager()              #changed
+    tags=TaggableManager(blank=True)              #changed
     image = models.ImageField(default='default-blog.png', upload_to=user_directory_path)
     approved=models.BooleanField(default=False)
 

@@ -1,0 +1,28 @@
+<div class="table-responsive p-1">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="font-weight-bold">Blog Title</th>
+                                                <th class="font-weight-bold">Author</th>
+                                                <th class="font-weight-bold">Created at</th>
+                                            <th class="font-weight-bold">Accept</th>
+                                            <th class="font-weight-bold">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for blog in blogs %}
+                                        <tr>
+                                            <td><a href="">{{blog.title}}</a></td>
+                                            <td>{{ blog.author }}</td>
+                                            <td>{{ blog.date }}</td>
+                                            <td>
+                                                <button type="button" id="blogbtn" class="btn badge badge-success p-2" bid="{{ blog.pk }}" r_type="0">Approve</button>
+                                                </td>
+                                                <td>
+                                                <button type="button" id="blogbtn" class="btn badge badge-danger p-2" bid="{{ blog.pk }}" r_type="1">Delete</button>
+                                                </td>
+                                        </tr>
+                                        {% endfor %}
+                                                </tbody>
+                                            </table>
+                            </div>

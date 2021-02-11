@@ -67,6 +67,7 @@ def handlerequest(request):
     cid=request.GET.get('id')
     user=request.GET.get('user')
     type=request.GET.get('r_type')
+    status=request.GET.get('status')
     comp = Component.objects.get(pk=cid)
     user = User.objects.get(username__exact=user)
     req = Request.objects.get(request_user=user, component=comp)
@@ -91,10 +92,14 @@ def handlerequest(request):
         comp.save()
     else:
         print("this should not be happening")
-    context['request'] = Request.objects.filter(component=comp).filter(status=0)
-    context['approved'] = Request.objects.filter(component=comp).filter(status=1)
     if request.is_ajax():
-        html = render_to_string('Component/test_part.html', context, request=request)
+        if status=='1':
+            context['request'] = Request.objects.filter(component=comp).filter(status=0)
+            context['approved'] = Request.objects.filter(component=comp).filter(status=1)
+            html = render_to_string('Component/test_part.html', context, request=request)
+        else:
+            context['requests'] = Request.objects.filter(status=0)
+            html = render_to_string('user/admin_comp.html', context, request=request)
         return JsonResponse({'html':html},status=200)
     else:
         return HttpResponse("This is unexpected :(")
