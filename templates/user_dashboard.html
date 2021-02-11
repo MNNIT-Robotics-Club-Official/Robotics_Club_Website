@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Robotics Club MNNIT
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user_profile.css' %} " type="text/css">
+{% endblock %}
+{% block body %}
+
+<!--donate section-->
+<section id="user" class="user">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">User Profile Page <i class="fa fa-user"></i></h2>
+            </div>
+        </div>
+
+        <div class="info-box p-4">
+            <h4 class="card-title mb-3 pl-0">Personal Details</h4>
+            <form>
+                <fieldset disabled>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Username</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="nibba">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputReg">Registration Number</label>
+                            <input type="number" class="form-control" id="inputreg" placeholder="2020xxxx">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <fieldset disabled>
+
+                            <label for="inputG">G-Suit ID</label>
+                            <input type="email" class="form-control" id="inputG" placeholder="xxxx@mnnit.ac.in">
+
+                        </fieldset>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email ID</label>
+                        <input type="email" class="form-control" id="inputEmail"
+                            placeholder="Enter your personal Email address">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputBranch">Branch</label>
+                        <input type="text" class="form-control" id="inputBranch" placeholder="Enter your Branch">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputContact">Contact Number</label>
+                        <input type="telephone" class="form-control" id="inputContact"
+                            placeholder="Enter your Contact Number">
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-outline-success mr-2">Save Changes</button>
+                <button type="submit" class="btn btn-outline-info">Reset</button>
+            </form>
+        </div>
+
+        <br><br>
+
+        <div class="info-box">
+            <!-- Blog Request section starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Pending Blogs</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Blog Title</th>
+
+                                            <th class="font-weight-bold">Created at</th>
+
+                                            <th class="font-weight-bold">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Accepted
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Pending
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Rejected
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Removed
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Blog Request section Ends -->
+
+
+            <!-- Projects Request section Starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Pending Projects</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Project Title</th>
+
+                                            <th class="font-weight-bold">Created at</th>
+
+                                            <th class="font-weight-bold">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Accepted
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Pending
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Rejected
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Removed
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Projects Request section Ends -->
+
+
+            <!-- Components Request section Starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Components Requests</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Component</th>
+
+                                            <th class="font-weight-bold">Quantity</th>
+                                            <th class="font-weight-bold">Status</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="">Arduino</a></td>
+
+                                            <td>3</td>
+                                            <td>Issued</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Arduino</a></td>
+
+                                            <td>5</td>
+                                            <td>Returned</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Arduino</a></td>
+
+                                            <td>2</td>
+                                            <td>Rejected</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td><a href="">Arduino</a></td>
+
+                                            <td>4</td>
+                                            <td>Out of Stock</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Components Request section Ends -->
+
+        </div>
+    </div>
+    <!-- Miscellaneous Request section Ends -->
+</section>
+
+</div>
+
+</section>
+<br>
+<br>
+
+{% endblock %}
