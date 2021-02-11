@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .models import Blog
 from .form import BlogForm
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 from django.contrib import messages
 
 # Create your views here.
@@ -63,7 +65,21 @@ def updateblog(request,pk):
     else:
         return HttpResponse("sorry you dont have permission :)")
 
-def approveblog(request,pk):
-    blog=Blog.objects.get(pk=pk)
-    blog.approve()
-    return redirect('blog_detail',pk=pk)
+def approveblog(request):
+    if request.user.profile.role > 1:
+        pk=request.GET.get('id')
+        r_type=request.GET.get('r_type')
+        if request.is_ajax():
+            blog = Blog.objects.get(pk=pk)
+            if r_type=='0':
+                blog.approve()
+                blog.save()
+            else:
+                blog.delete()
+            context={}
+            context['blogs']=Blog.objects.filter(approved=False)
+            html = render_to_string('user/admin_blog.html', context, request=request)
+            return JsonResponse({'html':html},status=200)
+        return redirect('blog_detail',pk=pk)
+    else:
+        return redirect('home:permission')

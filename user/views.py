@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from component.models import Request
 from django.template.loader import render_to_string
 from django.http import JsonResponse
+from component.models import Request
+from blog.models import Blog
 from .models import Profile
 # Create your views here.
 
@@ -83,4 +85,7 @@ def comprequest(request):
     return render(request, 'user/comp_request.html', context)
 
 def adminPage(request):
-    return render(request,'admin_dashboard.html')
+    context={}
+    context['requests']=Request.objects.filter(status=0)
+    context['blogs']=Blog.objects.filter(approved=False)
+    return render(request, 'user/admin_dashboard.html', context)

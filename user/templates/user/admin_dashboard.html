@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Robotics Club MNNIT
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/admin_page.css' %} " type="text/css">
+{% endblock %}
+{% block body %}
+
+<!--donate section-->
+<section id="donat" class="donat">
+    <div class="container">
+
+        <div class="section-title">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">Admin Dashboard <i class="fa fa-user"></i></h2>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <!-- Blog Request section starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Pending Blogs</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+                                <button type="button" id="Create" class="btn btn-danger ml-auto mb-sm-0"><a href="#"
+                                    class="text-white">Create Blog</a></button>
+                                </div>
+                                <div id="testblog">
+                                    {% include 'user/admin_blog.html' %}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Blog Request section Ends -->
+
+
+            <!-- Projects Request section Starts -->
+{#            <div class="row">#}
+{#                <div class="col-md-12 grid-margin stretch-card">#}
+{#                    <div class="card border-0">#}
+{#                        <div class="card-body border-0">#}
+{#                            <div class="d-sm-flex align-items-center mb-4">#}
+{#                                <h4 class="card-title mb-sm-0">Pending Projects</h4>#}
+{#                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->#}
+{#                                <button type="button" id="Createproj" class="btn btn-danger ml-auto mb-sm-0"><a href="#"#}
+{#                                    class="text-white">Create Project</a></button>#}
+{#                                </div>#}
+{#                                <div class="table-responsive p-1">#}
+{#                                    <table class="table">#}
+{#                                        <thead>#}
+{#                                            <tr>#}
+{#                                                <th class="font-weight-bold">Project Title</th>#}
+{#                                                <th class="font-weight-bold">Author</th>#}
+{#                                                <th class="font-weight-bold">Created at</th>#}
+{#                                                <th class="font-weight-bold">Accept</th>#}
+{#                                                <th class="font-weight-bold">Delete</th>#}
+{#                                            </tr>#}
+{#                                        </thead>#}
+{#                                        <tbody>#}
+{#                                            <tr>#}
+{#                                                <td><a href="">Lost in Space</a></td>#}
+{#                                                <td>Katie Holmes</td>#}
+{#                                                <td>04 Jun 2019</td>#}
+{#                                                <td>#}
+{#                                                    <div class="badge badge-success p-2"><a href=""#}
+{#                                                        class="text-white">Approve</a></div>#}
+{#                                                    </td>#}
+{#                                                    <td>#}
+{#                                                        <div class="badge badge-danger p-2"><a href=""#}
+{#                                                            class="text-white">Delete</a></div>#}
+{#                                                        </td>#}
+{#                                                    </tr>#}
+{#                                                    <tr>#}
+{#                                                        <td><a href="">Lost in Space</a></td>#}
+{#                                                        <td>Katie Holmes</td>#}
+{#                                            <td>04 Jun 2019</td>#}
+{#                                            <td>#}
+{#                                                <div class="badge badge-success p-2"><a href=""#}
+{#                                                    class="text-white">Approve</a></div>#}
+{#                                                </td>#}
+{#                                            <td>#}
+{#                                                <div class="badge badge-danger p-2"><a href=""#}
+{#                                                    class="text-white">Delete</a></div>#}
+{#                                                </td>#}
+{#                                            </tr>#}
+{#                                            <tr>#}
+{#                                            <td><a href="">Lost in Space</a></td>#}
+{#                                            <td>Katie Holmes</td>#}
+{#                                            <td>04 Jun 2019</td>#}
+{#                                            <td>#}
+{#                                                <div class="badge badge-success p-2"><a href=""#}
+{#                                                    class="text-white">Approve</a></div>#}
+{#                                                </td>#}
+{#                                                <td>#}
+{#                                                    <div class="badge badge-danger p-2"><a href=""#}
+{#                                                        class="text-white">Delete</a></div>#}
+{#                                                    </td>#}
+{#                                                </tr>#}
+{#                                                <tr>#}
+{#                                                    <td><a href="">Lost in Space</a></td>#}
+{#                                                    <td>Katie Holmes</td>#}
+{#                                                    <td>04 Jun 2019</td>#}
+{#                                                    <td>#}
+{#                                                <div class="badge badge-success p-2"><a href=""#}
+{#                                                    class="text-white">Approve</a></div>#}
+{#                                                </td>#}
+{#                                                <td>#}
+{#                                                    <div class="badge badge-danger p-2"><a href=""#}
+{#                                                        class="text-white">Delete</a></div>#}
+{#                                                    </td>#}
+{#                                                </tr>#}
+{#                                            </tbody>#}
+{#                                        </table>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- Projects Request section Ends -->#}
+
+
+            <!-- Components Request section Starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Components Requests</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+                                <button type="button" id="Createcomp" class="btn btn-danger ml-auto mb-sm-0"><a href="#"
+                                    class="text-white">Add Component</a></button>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Components Request section Ends -->
+            <div id="test123">
+            {% include 'user/admin_comp.html' %}
+            </div>
+            <!-- Miscellaneous Request section Starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Miscellaneous Tasks</h4>
+                            </div>
+                            <div class="container">
+                                <button type="button" id="Createcomp" class="btn btn-danger ml-auto mb-sm-0"><a href="{% url 'news:news_form' %}"
+                                    class="text-white">Create Notice</a></button>
+                                    <button type="button" id="Createcomp" class="btn btn-danger ml-auto mb-sm-0"><a href="#"
+                                        class="text-white">Create Workshop</a></button>
+                                        <button type="button" id="Createcomp" class="btn btn-danger ml-auto mb-sm-0"><a href="{% url 'user:change_role' %}"
+                                            class="text-white">Manage User Permissions</a></button>
+                                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Miscellaneous Request section Ends -->
+</section>
+
+</div>
+
+</section>
+<br>
+<br>
+
+{% endblock %}
+
+{% block script%}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#appbtn', function (event) {
+                event.preventDefault()
+                var r_type = $(this).attr('r_type');
+                var user = $(this).attr('user');
+                var cid = $(this).attr('pk');
+                var status = 0;
+                $.ajax({
+                    url: '{% url "handle_request" %}',
+                    type: 'get',
+                    data: {
+                        id: cid,
+                        r_type: r_type,
+                        user: user,
+                        status: status,
+                    },
+                    success: function (data) {
+                        $('#test123').html(data['html'])
+                    }
+                })
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#blogbtn', function (event) {
+                event.preventDefault()
+                var r_type = $(this).attr('r_type');
+                var bid = $(this).attr('bid');
+                $.ajax({
+                    url: '{% url "approve" %}',
+                    type: 'get',
+                    data: {
+                        id: bid,
+                        r_type: r_type,
+                    },
+                    success: function (data) {
+                        $('#testblog').html(data['html'])
+                    }
+                })
+            })
+        })
+    </script>
+{% endblock %}
