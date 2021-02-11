@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Robotics Club MNNIT
+{% endblock %}
+
+{% block body %}
+
+<section id="permission">
+    <p>YOU DON'T HAVE PERMISSION TO VISIT THIS PAGE. CLICK <a href="{% url 'home:index' %}">HERE</a> TO GO BACK TO MAIN
+        PAGE.</p>
+    <img src="{% static 'img/stop.jpg' %}" alt="stop">
+</section>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Workshop Form
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/workshop.css' %} " type="text/css">
+{% endblock %}
+
+{% block body %}
+<!-- <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Workshop Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form> -->
+<section class="workshop-form" id="workshop-form">
+    <div class="container">
+        <div class="section-title pb-2">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">Create New Workshop...</h2>
+            </div>
+        </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group wow fadeInUp">
+                <label>Title*</label>
+                {{form.title}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Venue*</label>
+                {{form.venue}}
+
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Date*<div class="text-muted">
+                        (Please write in format yyyy-mm-dd)
+                    </div></label>
+                {{form.date}}
+
+            </div>
+
+            <div class="form-group wow fadeInUp">
+                <label>Brochure Pdf/Docs</label>
+                {{form.link}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Image*<div class="text-muted">
+                        (Preferably Brochure poster)
+                    </div></label>
+                {{form.image}}
+            </div>
+
+            <div class="form-group d-flex justify-content-center wow fadeInUp">
+                <button class="workshopbtn" id="postbtn" type="submit">Post</button>
+            </div>
+
+        </form>
+    </div>
+    <br>
+    <br>
+</section>
+{% endblock %}
