@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from .models import Blog
 from .form import BlogForm
+from django.contrib import messages
 
 # Create your views here.
 @login_required
@@ -30,6 +31,7 @@ def createblog(request):
         form=BlogForm(request.POST,request.FILES)
         form.instance.author=request.user
         form.save()
+        messages.info(request,"Please Wait for Blog to be approved")
         return redirect('blog_list')
     else:
         form=BlogForm()
