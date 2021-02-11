@@ -9,10 +9,27 @@
     padding: 5%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-.login-form-1 h3{
+.box h3{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
     text-align: center;
     color: #333;
 }
+
+.switch{
+    color: #fff;
+}
+
+.switch button{
+    margin-top: -3px;
+    font-size: 0.9em;
+}
+
+.switch a{
+    /* color: #333; */
+    font-weight: 600;
+}
+
 .login-container form{
     padding: 10%;
 }
@@ -35,14 +52,11 @@
     text-decoration: none;
 }
 
-.box{
-    padding: 160px;
-}
 .user_card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: linear-gradient(#e14040, #ef8585);
+    background: #e76668;
     position: relative;
     display: flex;
     justify-content: center;
@@ -64,15 +78,6 @@
     
 }
 
-.login_btn {
-    width: 100%;
-    background: #e33232 !important;
-    color: white !important;
-}
-.login_btn:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
-}
 .login_container {
     padding: 0 2rem;
 }
