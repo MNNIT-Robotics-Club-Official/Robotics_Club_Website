@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'taggit',    
     'news',
+    'workshop',
     'django_cleanup.apps.CleanupConfig',
 ]
 
