@@ -41,7 +41,8 @@
                                             <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
                                     <p><i class="fa fa-tags"></i>Tags:
                                         {% for tag in project.tags.all %}
-                                        <a href="{% url 'project:filter' tag%}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                                            <a href="{% url 'project:filter' tag %}"
+                                               class="badge badge-pill badge-danger">{{ tag }}</a>
                                         {% endfor %}
                                     </p>
                                     </small>
@@ -55,6 +56,29 @@
                 {% endfor %}
             </div>
         </div>
+    <div class="row justify-content-center">
+        {% if projects %}
+            <ul class="pagination">
+                {% if projects.has_previous %}
+                    <li><a href="?page={{ projects.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in projects.paginator.page_range %}
+                    {% if projects.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if projects.has_next %}
+                    <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
     </section>
     <br>
 

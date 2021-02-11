@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.core.paginator import Paginator
 from .models import Blog
 from .form import BlogForm
 from django.template.loader import render_to_string
@@ -11,7 +12,13 @@ from django.contrib import messages
 @login_required
 def list(request):
     context={}
-    context['bloglist']=Blog.objects.filter(approved=True)
+    blog_all=Blog.objects.filter(approved=True).order_by('-id')
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(blog_all, 12)
+    blogs = paginator.page(page)
+    context['bloglist']=blogs
+
     return render(request, 'blog/blog_list.html', context)
 
 @login_required

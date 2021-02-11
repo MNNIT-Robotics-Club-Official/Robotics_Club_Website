@@ -1,10 +1,15 @@
 from django.shortcuts import render,redirect
 from project.models import Project
 from .forms import ProjectForm
+from django.core.paginator import Paginator
 # Create your views here.
 def list(request):
     context={}
-    context['projects'] = Project.objects.all()
+    project_all=Project.objects.all()
+    page=request.GET.get('page')
+    paginator=Paginator(project_all,12)
+    projects=paginator.get_page(page)
+    context['projects'] = projects
     return render(request, 'project/project_list.html', context)
 
 def filter (request,tag) :
