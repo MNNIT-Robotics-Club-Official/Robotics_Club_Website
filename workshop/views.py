@@ -1,4 +1,3 @@
-from django.db.models.fields.files import ImageField
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
@@ -56,7 +55,7 @@ def updateWorkshop(request,pk):
                 form.save()
                 return redirect('workshop:workshop_page')
             else:
-                messages.info(request,"Invalid form, Please fill correctly")
+                messages.info(request,"Invalid Input!!, Please fill correctly")
                 return render(request,'workshop/workshop_form.html',{'form':form})
     else:
         messages.info(request,"Sorry you dont have permission")
