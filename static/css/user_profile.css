@@ -1,0 +1,46 @@
+#user .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid;
+  }
+  
+  .user .info-box {
+    color: #444444;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 20px 0 30px 0;
+    border-radius: 4px;
+  } 
+
+  .user h4{
+      color: #16324f;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      padding-left: 0.2em;
+  }
+
+  .user .table{
+border: #ddd 2px solid;
+text-align: center;
+  }
+
+  .user form label{
+      font-family: 'Roboto',sans-serif;
+      color: #e03a3c;
+  }
+
+  .user table th{
+      font-family: 'Roboto',sans-serif;
+  }
+
+  .user table td{
+color: #16324f;
+  }
+  
+  .user td>a{
+    color: #e03a3c;
+    font-weight: 500;
+  }
