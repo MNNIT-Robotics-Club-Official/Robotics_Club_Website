@@ -1,17 +1,21 @@
-from django.shortcuts import render,redirect,reverse
-from .models import Project
+from django.shortcuts import render,redirect
+from project.models import Project
 from .forms import ProjectForm
+from django.core.paginator import Paginator
 # Create your views here.
 def list(request):
     context={}
-    context['projects']=Project.objects.all()
-    return render(request,'project/project_list.html',context)
+    project_all=Project.objects.all()
+    page=request.GET.get('page')
+    paginator=Paginator(project_all,12)
+    projects=paginator.get_page(page)
+    context['projects'] = projects
+    return render(request, 'project/project_list.html', context)
 
-def filter(request,tag):
+def filter (request,tag) :
     context={}
     context['projects']=Project.objects.filter(tags__name__in=[tag])
-    #print(context['project'].count())
-    return render(request,'project/project_list.html',context)
+    return render(request, 'project/project_list.html', context)
 
 def detail(request,pk):
     context={}
@@ -30,8 +34,11 @@ def update(request,pk):
         context['form'] = ProjectForm(instance=pro)
         return render(request, 'project/project_form.html', context)
     else:
-        form = ProjectForm(request.POST,instance=pro)
-        form.save()
+        form = ProjectForm(request.POST,request.FILES,instance=pro)
+        if form.is_valid():
+            obj=form.save(commit=False)
+            obj.save()
+            form.save_m2m()
         return redirect('project:list')
 
 def create(request):
@@ -40,9 +47,9 @@ def create(request):
         context['form']=ProjectForm()
         return render(request,'project/project_form.html',context)
     else:
-        form=ProjectForm(request.POST)
+        form=ProjectForm(request.POST,request.FILES)
         if form.is_valid():
-            obj=form.save(commit=False)
+            obj = form.save(commit=False)
             obj.save()
             form.save_m2m()
         return redirect('project:list')

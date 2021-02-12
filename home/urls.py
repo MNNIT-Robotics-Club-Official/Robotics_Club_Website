@@ -15,4 +15,5 @@ urlpatterns = [
     path('achievement/', views.achievement, name='achievement'),
     path('components/', views.components, name='components'),
     path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
+    path('permission/', views.permission, name='permission'),
 ]

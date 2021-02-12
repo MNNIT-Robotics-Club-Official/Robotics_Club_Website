@@ -1,0 +1,122 @@
+/*
+Notice Starts
+*/
+
+/* Notice Board */
+#notice .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid
+  }
+
+  #notice .card h5{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #16324f;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+  }
+
+  #notice .card p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.2em;
+    display: block;
+    color: #333;
+  }
+
+  #notice .card p>a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    color: #e03a3c;
+  }
+
+  /*
+Notice Ends
+*/
+
+/* Notice Form starts */
+
+.notice-form .container{
+  border: 1px solid  #e9ecef;
+  border-radius: 20px;
+}
+
+#notice-form .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid;
+  margin-bottom: 0%;
+  }
+
+#notice-form label{
+  margin-top: 15px;
+  color: #e03a3c;
+  font-style: italic;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+.notice-form .form-control{
+  border-radius:1rem;
+}
+
+.notice-form form{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.notice-form .text-muted{
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 0;
+  display: inline;
+}
+
+ .noticebtn {
+   height: 100%;
+  margin: 10px;
+  border: none;
+  border-radius: 1rem;
+  padding: 1%;
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+}
+
+#postbtn{
+  width: 10%;
+}
+
+#writebtn{
+  width: 100%;
+}
+
+#updatebtn{
+  width: 30%;
+  background: grey;
+}
+
+#deletebtn{
+  width: 30%;
+}
+
+.noticebtn:hover{
+  background: crimson !important; 
+}
+
+
+/* Notice Form ends */

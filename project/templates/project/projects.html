@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/project.css' %} " type="text/css">
+{% endblock %}
+
+{% block body %}
+    <section class="project" id="project">
+
+        <div class="container">
+            <div class="section-title pb-2">
+                <div class="d-flex justify-content-center my-3">
+                    <h2 class="">OUR PROJECTS</h2>
+                </div>
+                <!-- <br> -->
+            </div>
+
+            <div class="row">
+
+                <!--start for-->
+                {% for project in projects %}
+                    <div class="col-md-4">
+                        <a href="{% url 'project:project_detail' project.pk %}">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/r9.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ project.title }}</h5>
+                                    <p class="card-text">
+                                        <b class="text-muted">AIM:</b>
+                                        To make the small monitors which are used in daily life devices more useful,
+                                        efficient, omnipresent and portable.
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
+                                    <p><i class="fa fa-tags"></i>Tags:
+                                        <a href="#" class="badge badge-pill badge-danger">Tag1</a>
+                                        <a href="#" class="badge badge-pill badge-danger">Tag2</a>
+                                        <a href="#" class="badge badge-pill badge-danger">Tag3</a>
+                                    </p>
+                                    </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--end for-->
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <br>
+
+{% endblock %}
