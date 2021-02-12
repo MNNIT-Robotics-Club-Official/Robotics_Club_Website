@@ -160,3 +160,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'home:index'
 LOGIN_URL = 'user:login_page'
 LOGOUT_REDIRECT_URL='home:index'
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'divanimax@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
