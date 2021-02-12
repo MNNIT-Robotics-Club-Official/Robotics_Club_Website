@@ -34,3 +34,6 @@ def components(request):
 
 def user_dashboard(request):
     return render(request, 'user_dashboard.html')
+  
+def permission(request):
+    return render(request, 'permission.html')

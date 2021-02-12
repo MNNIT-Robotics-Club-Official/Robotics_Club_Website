@@ -14,7 +14,7 @@ class UpdateComponentForm(forms.ModelForm):
 class RequestForm(forms.ModelForm):
     class Meta:
         model=Request
-        fields=['request_num']
+        fields=['request_num','reason']
 
         widgets = {
             'request_num': forms.TextInput(attrs={

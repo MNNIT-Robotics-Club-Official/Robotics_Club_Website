@@ -15,6 +15,7 @@
                 var r_type = $(this).attr('r_type');
                 var user = $(this).attr('user');
                 var cid = $(this).attr('pk');
+                var status = 1;
                 $.ajax({
                     url: '{% url "handle_request" %}',
                     type: 'get',
@@ -22,6 +23,7 @@
                         id: cid,
                         r_type: r_type,
                         user: user,
+                        status:status,
                     },
                     success: function (data) {
                         $('#test123').html(data['html'])

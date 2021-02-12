@@ -1,0 +1,38 @@
+<div id="message_container">
+    {% include 'spinnets/message.html' %}
+</div>
+<div class="table-responsive p-1">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="font-weight-bold">Component</th>
+                                                <th class="font-weight-bold">Issuer</th>
+                                                <th class="font-weight-bold">Quantity</th>
+                                                <th class="font-weight-bold">In Stock</th>
+                                                <th class="font-weight-bold">Reason</th>
+                                                 <th class="font-weight-bold">Accept</th>
+                                                <th class="font-weight-bold">Delete</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for req in requests %}
+                                            <tr>
+                                                <td><a href="">{{ req.component }}</a></td>
+                                                <td>{{ req.request_user }}</td>
+                                                <td>{{ req.request_num }}</td>
+                                                <td>{{ req.component.available }}</td>
+                                                <td>{{ req.reason }}</td>
+                                                <td>
+                                                <button type="button" class="btn badge badge-success p-2 text-white" id="appbtn" pk="{{ req.component.pk }}" user="{{req.request_user.username }}"  r_type=0>
+                                                    Approve</button>
+                                                </td>
+                                                <td>
+                                                <button type="button" class="btn badge badge-danger p-2 text-white" id="appbtn" pk="{{ req.component.pk }}" user="{{req.request_user.username }}"  r_type=1>
+                                                    Delete</button>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
