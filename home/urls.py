@@ -16,4 +16,6 @@ urlpatterns = [
     path('components/', views.components, name='components'),
     path('user_dashboard/', views.user_dashboard, name='user_dashboard'),
     path('permission/', views.permission, name='permission'),
+    path('web/', views.web, name='web'),
+    path('outreach/', views.outreach, name='outreach'),
 ]
