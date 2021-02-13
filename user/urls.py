@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from . import views
 
 app_name = 'user'
@@ -11,4 +12,5 @@ urlpatterns=[
     path('roles/',views.changerole,name='change_role'),
     path('compreq/',views.comprequest,name='component_request'),
     path('admin/',views.adminPage,name='admin_page'),
-]
+    path('activate/<uidb64>/<token>/', views.activate, name='activate'),
+    ]
