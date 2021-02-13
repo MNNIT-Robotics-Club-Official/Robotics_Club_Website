@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user_profile.css' %} " type="text/css">
+{% endblock %}
+{% block body %}
+
+<!--donate section-->
+<section id="user" class="user">
+
+    <div class="container">
+
+        <div class="section-title">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">User Profile Page <i class="fa fa-user"></i></h2>
+            </div>
+        </div>
+
+        <div class="info-box p-4">
+            <h4 class="card-title mb-3 pl-0">Personal Details</h4>
+            <fieldset disabled>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Username</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="{{user.username}}">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="inputReg">Registration Number</label>
+                        <input type="number" class="form-control" id="inputreg" placeholder="{{user.profile.regnum}}">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset disabled>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputName">First Name</label>
+                        <input type="text" class="form-control" id="inputName"
+                            placeholder="{{user.profile.first_name}}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputName">Last Name</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="{{user.profile.last_name}}">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset disabled>
+
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <fieldset disabled>
+
+                            <label for="inputG">G-Suit ID</label>
+                            <input type="email" class="form-control" id="inputG" placeholder="{{user.email}}">
+
+                        </fieldset>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputBranch">Branch</label>
+                        <input type="text" class="form-control" id="inputBranch"
+                            placeholder="{{user.profile.get_branch_display}}">
+                    </div>
+
+                </div>
+            </fieldset>
+
+
+            <button type="button" id="Create" class="btn btn-danger ml-auto mb-sm-0"><a
+                    href="{% url 'user:profile_form' %}" class="text-white">Edit Profile</a></button>
+        </div>
+
+        <br><br>
+
+        <div class="info-box">
+            {% if blogs %}
+            <!-- Blog Request section starts -->
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Blogs</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Blog Title</th>
+
+                                            <th class="font-weight-bold">Created at</th>
+
+                                            <th class="font-weight-bold">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for blog in blogs %}
+                                        <tr>
+                                            <td><a href="{% url 'blog_detail' pk=blog.pk %}">{{blog.title}}</a></td>
+                                            
+                                            <td>{{blog.date}}</td>
+                                            
+                                            <td>
+                                                {% if blog.approved %}
+                                                Accepted
+                                                {% else %}
+                                                Pending  
+                                                {% endif %}
+                                                
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        <!--<tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+
+                                            <td>
+                                                Removed
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% endif %}
+            <!-- Blog Request section Ends -->
+
+
+            <!-- Projects Request section Starts -->
+            {% if projects %}
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Projects</h4>
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Project Title</th>
+                                            
+                                            <th class="font-weight-bold">Aim</th>
+                                            
+                                            <th class="font-weight-bold">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for project in projects %}
+                                        <tr>
+                                            <td><a href="{% url 'project:detail' pk=project.pk %}">{{project.title}}</a></td>
+                                            
+                                            <td>{{project.aim}}</td>
+                                            
+                                            <td>
+                                                {{project.get_status_display}}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        <!--<tr>
+                                            <td><a href="">Lost in Space</a></td>
+
+                                            <td>04 Jun 2019</td>
+                                            
+                                            <td>
+                                                Rejected
+                                            </td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!-- Projects Request section Ends -->
+            
+            
+            <!-- Components Request section Starts -->
+            {% if components %}
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="card border-0">
+                        <div class="card-body border-0">
+                            <div class="d-sm-flex align-items-center mb-4">
+                                <h4 class="card-title mb-sm-0">Components Requests</h4>
+                                <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+                                
+                            </div>
+                            <div class="table-responsive p-1">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="font-weight-bold">Component</th>
+                                            <th class="font-weight-bold">Quantity</th>
+                                            <th class="font-weight-bold">Status</th>
+                                            <th class="font-weight-bold">Date of Confirmation/Rejection</th>
+                                            <th class="font-weight-bold">Your Confirmation</th>
+                                            
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for component_user in components %}
+                                        <tr>
+                                            <td>{{component_user.component.name}}</td>
+
+                                            <td>{{component_user.request_num}}</td>
+                                            <td>{{component_user.get_status_display}}</td>
+
+                                            {% if component_user.status %}
+                                            <td>{{component_user.time_confirmation}}</td>
+                                            {% else %}
+                                            <td>Not Yet Reviewed</td>
+                                            {% endif %}
+
+                                            {% if component_user.status %}
+                                            <td>{{component_user.user_confirmation}}</td>
+                                            {% else %}
+                                            <td>Not Yet Reviewed</td>
+                                            {% endif %}
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <!-- Components Request section Ends -->
+            
+        </div>
+        <button type="button" id="Create" class="btn btn-danger float-right mb-sm-0"><a
+            href="{% url 'user:logout_page' %}" class="text-white">Logout</a></button>
+    </div>
+</section>
+
+</div>
+
+</section>
+<br>
+<br>
+
+{% endblock %}
