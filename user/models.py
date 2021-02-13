@@ -9,14 +9,14 @@ Rank = ((0, "Temporary Ban"), (1, "Member"), (2, "Coordinator"), (3, "Head"))
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(blank=False,max_length=256,unique=False)
-    last_name = models.CharField(blank=True,max_length=256,unique=False)
-    regnum = models.IntegerField(blank=True,null=True)
-    branch=models.IntegerField(choices=Branch,blank=True,null=True)
+    first_name = models.CharField(blank=False, max_length=256, unique=False)
+    last_name = models.CharField(blank=True, max_length=256, unique=False)
+    regnum = models.IntegerField(blank=True, null=True)
+    branch = models.IntegerField(choices=Branch, blank=True, null=True)
     role = models.IntegerField(choices=Rank, default=1)
 
     def __str__(self):
         return f'{self.user.username}-{self.user.pk}'
 
     def save(self, *args, **kwargs):
-        super(Profile,self).save(*args,**kwargs)
+        super(Profile, self).save(*args, **kwargs)
