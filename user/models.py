@@ -6,6 +6,7 @@ Branch = ((0, "Biotechnology"), (1, "Civil Engineering"), (2, "Electrical Engine
 
 Rank = ((0, "Temporary Ban"), (1, "Member"), (2, "Coordinator"), (3, "Head"))
 
+User._meta.get_field('email')._unique = True
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
