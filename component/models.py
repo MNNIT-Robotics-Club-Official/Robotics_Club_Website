@@ -9,9 +9,9 @@ COMPONENT_TYPE=((0,"Batteries and Chargers"),(1,"Development Boards"),(2,"Driver
 class Component(models.Model):
     name=models.CharField(max_length=128,unique=False,blank=False)
     detail=models.TextField(blank=True)
-    type=models.IntegerField(choices=COMPONENT_TYPE,default=0)
+    type=models.IntegerField(choices=COMPONENT_TYPE,default=7)
     max_num=models.IntegerField(default=0)
-    issued_num=models.IntegerField(default=7)
+    issued_num=models.IntegerField(default=0)
     issued_members=models.ManyToManyField(User,blank=True)
 
     def __str__(self):
