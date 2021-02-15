@@ -16,6 +16,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
+from RoboClub.decorators import has_role_head,has_role_head_or_coordinator
 # Create your views here.
 
 def register(request):
@@ -86,9 +87,11 @@ def loginUser(request):
 
     return render(request,'login.html')
 
+
 def logoutUser(request):
     logout(request)
     return redirect('home:index')
+
 
 def userPage(request):
     return redirect('user:login_page')
