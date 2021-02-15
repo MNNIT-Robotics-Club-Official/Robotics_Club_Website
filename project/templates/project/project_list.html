@@ -19,7 +19,13 @@
                 </div>
                 <!-- <br> -->
             </div>
-
+            {% if user.is_superuser %}
+            <div class="d-flex justify-content-center">
+                <a href="{% url 'project:create' %}"><button type="button" class="btn btn-danger mx-2 workshopbtn" id="writebtn">Create
+                        Project</button></a>
+            </div>
+            {% endif %}
+            <br>
             <div class="row">
 
                 <!--start for-->
