@@ -19,9 +19,6 @@ def avishkar(request):
 
 def prosang(request):
     return render(request, 'prosang.html')
-    
-def donate(request):
-    return render(request, 'donate.html')
 
 def testimonial(request):
     return render(request, 'testimonial.html')
@@ -29,12 +26,6 @@ def testimonial(request):
 def achievement(request):
     return render(request, 'achievement.html')
 
-def components(request):
-    return render(request, 'components.html')
-
-def user_dashboard(request):
-    return render(request, 'user_dashboard.html')
-  
 def permission(request):
     return render(request, 'permission.html')
   
