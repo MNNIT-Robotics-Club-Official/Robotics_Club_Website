@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'news',
     'workshop',
     'django_cleanup.apps.CleanupConfig',
-    'gunicorn-20.0.4.dist-info',
 ]
 
 MIDDLEWARE = [
