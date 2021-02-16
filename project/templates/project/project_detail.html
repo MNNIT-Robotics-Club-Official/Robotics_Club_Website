@@ -56,16 +56,20 @@
             <p>{{ project.aim }}</p>
             <br/>
             <hr>
+        {% if tech %}
         <div class="comp wow fadeInUp">
             <h3 class="lead">COMPONENTS AND TECHNOLOGIES USED</h3>
             <ul class="list-inline">
-                <li class="list-inline-item"><p> Arduino Uno </p></li>
-                <li class="list-inline-item"><p> PCB </p></li>
+                {% for object in tech %}
+                <li class="list-inline-item"><p> {{object}}</p></li>
+                <!-- <li class="list-inline-item"><p> PCB </p></li>
                 <li class="list-inline-item"><p> Jumper Wires </p></li>
                 <li class="list-inline-item"><p> LED Matrix </p></li>
-                <li class="list-inline-item">...</li>
+                <li class="list-inline-item">...</li> -->
+                {% endfor %}
             </ul>
         </div>
+        {% endif %}
             <br/>
         </div>
             <hr>
@@ -92,14 +96,16 @@
                 <li class="list-group-item">
                     {{ member.username }}
                     <br>
-                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                    <!-- <small>{{member.profile.get_branch_display}}, Batch 2k22</small> -->
+                    <small>{{member.profile.get_branch_display}}</small>
+                    <small>{{member.profile.regnum}}</small>
                 </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
     <hr>
-    <i class="fa fa-github"></i> <a href = "{{ project.github }}"> Github Link to the Project </a>
+    <i class="fa fa-github"></i> <a href = "{{ project.github }}" target="_blank"> Github Link to the Project </a>
     <hr>
 
 
