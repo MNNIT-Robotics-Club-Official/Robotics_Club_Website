@@ -30,9 +30,9 @@ TEMP_DIR_news=os.path.join(BASE_DIR,'news/templates')
 SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://roboticsmnnit.herokuapp.com/']
+ALLOWED_HOSTS = ['roboticsmnnit.herokuapp.com']
 
 
 # Application definition
