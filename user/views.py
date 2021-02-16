@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserProfileForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
-from component.models import Request
+from component.models import Request,Component
 from django.template.loader import render_to_string
 from django.http import JsonResponse
-from component.models import Request
 from blog.models import Blog
+from project.models import Project
 from django.contrib.auth import get_user_model
 from .models import Profile
 from django.utils.encoding import force_bytes
@@ -19,38 +19,51 @@ from django.core.mail import EmailMessage
 # Create your views here.
 
 def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            to_email = form.cleaned_data.get('email')
-            if not to_email.find("@mnnit.ac.in")==-1:
-                user.is_active = False
-                user.save()
-                current_site = get_current_site(request)
-                mail_subject = 'Activate your account.'
-                message = render_to_string('user/acc_active_email.html', {
-                    'user': user,
-                    'domain': current_site.domain,
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                    'token': default_token_generator.make_token(user),
-                })
-                email = EmailMessage(
-                    mail_subject, message, to=[to_email]
-                )
-                email.send()
-                messages.success(request, f'Please confirm your email address to complete the registration')
-                return redirect('user:login_page')
+    if not request.user.is_authenticated:
+        if request.method == 'POST':
+            form = UserRegisterForm(request.POST)
+            if form.is_valid():
+                user = form.save(commit=False)
+                to_email = form.cleaned_data.get('email')
+                if not to_email.find("@mnnit.ac.in")==-1:
+                    user.is_active = False
+                    user.save()
+                    current_site = get_current_site(request)
+                    mail_subject = 'Activate your account.'
+                    message = render_to_string('user/acc_active_email.html', {
+                        'user': user,
+                        'domain': current_site.domain,
+                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                        'token': default_token_generator.make_token(user),
+                    })
+                    email = EmailMessage(
+                        mail_subject, message, to=[to_email]
+                    )
+                    email.send()
+                    messages.success(request, f'Please check your email to complete the registration')
+                    return redirect('user:login_page')
+                else:
+                    messages.success(request, f'Kindly enter your gsuite id')
+                    return redirect('user:register_page')
             else:
-                messages.success(request, f'Kindly enter your gsuite id')
+                password1 = form.data['password1']
+                password2 = form.data['password2']
+                for msg in form.errors.as_data():
+                    if msg == 'email':
+                        messages.error(request, f"Email Already Exists")
+                    else:
+                        messages.error(request, f"{form.errors[msg]}")
+                    if msg == 'password2' and password1 == password2:
+                        messages.error(request, f"Selected password is not strong enough")
+                    elif msg == 'password2' and password1 != password2:
+                        messages.error(request, f"Password and Confirmation Password do not match")
+                        
                 return redirect('user:register_page')
         else:
-            # messages.info(request, "Invalid Registration")
-            for msg in form.error_messages:
-                messages.error(request, f"{msg}: {form.error_messages[msg]}")
+            form = UserRegisterForm()
+        return render(request, 'register.html', {'form': form})
     else:
-        form = UserRegisterForm()
-    return render(request, 'register.html', {'form': form})
+        return redirect('home:index')
 
 
 def loginUser(request):
@@ -113,11 +126,43 @@ def comprequest(request):
         req.accepted_by_user()
     return render(request, 'user/comp_request.html', context)
 
+@login_required
 def adminPage(request):
     context={}
     context['requests']=Request.objects.filter(status=0)
     context['blogs']=Blog.objects.filter(approved=False)
     return render(request, 'user/admin_dashboard.html', context)
+
+def userProfileCreation(request):
+    try:
+        profile = request.user.profile
+    except Profile.DoesNotExist:
+        profile = Profile(user=request.user)
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST,instance=profile)
+        if form.is_valid():
+            profile.save()
+            messages.success(request, f'Your Profile has been updated')
+            return redirect('user:profile_page')        
+        else:
+            for msg in form.error_messages:
+                messages.error(request, f"{msg}: {form.error_messages[msg]}")
+            return redirect('user:profile_form')
+    else:
+        form = UserProfileForm()
+    return render(request, 'user/profile_form.html', {'form': form})
+
+@login_required
+def userProfile(request):
+    if not request.user.is_superuser:
+        context = {}
+        context['blogs'] = Blog.objects.filter(author=request.user).order_by('approved')
+        context['projects'] = Project.objects.filter(members=request.user).order_by('status')
+        context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
+        return render(request,'user/user_dashboard.html',context)
+    else:
+        return redirect('user:admin_page')
+
 
 def activate(request, uidb64, token):
     try:
