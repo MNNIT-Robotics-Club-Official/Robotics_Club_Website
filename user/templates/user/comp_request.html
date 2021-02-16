@@ -28,7 +28,7 @@
                 event.preventDefault();
                 var cid = $(this).attr('cid');
                 $.ajax({
-                    url: '{% url 'user:component_request' %}',
+                    url: '{% url "user:component_request" %}',
                     type: 'post',
                     data: {
                         id: cid,

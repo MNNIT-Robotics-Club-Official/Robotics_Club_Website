@@ -81,8 +81,7 @@
             <li class="nav-item {% if request.resolver_match.view_name == 'blog_list' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'blog_list' %}">Blogs<span class="sr-only">(current)</span></a>
             </li>
-            <li
-              class="nav-item dropdown px-3">
+            <li class="nav-item dropdown px-3">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Events
@@ -104,8 +103,7 @@
             <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li>
-            <li
-              class="nav-item dropdown px-3">
+            <li class="nav-item dropdown px-3">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Team
@@ -118,10 +116,10 @@
                   <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumini</a>
                 </li>
                 <li class="">
-                  <a class="dropdown-item" href="">Web Team</a>
+                  <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
                 </li>
                 <li class="">
-                  <a class="dropdown-item" href="">Outreach Team</a>
+                  <a class="dropdown-item" href="{% url 'home:outreach' %}">Outreach Team</a>
                 </li>
               </ul>
             </li>
@@ -152,15 +150,16 @@
                 </li>
                 {% endif %}
                 <li>
-                  <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">Spinoffs(TSAW)</a>
+                  <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">Spinoffs (TSAW)</a>
                 </li>
               </ul>
             </li>
             <li class="nav-item px-3" id="donate">
               {% if user.is_authenticated %}
-              <a class="nav-link" href="{% url 'user:logout_page' %}">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              <a class="nav-link" href="{% url 'user:profile_page' %}">Profile <i class="fa fa-user" aria-hidden="true"></i></a>
               {% else %}
-              <a class="nav-link" href="{% url 'user:user_page' %}">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+              <a class="nav-link" href="{% url 'user:user_page' %}">Login <i class="fa fa-sign-in"
+                  aria-hidden="true"></i></a>
               {% endif %}
             </li>
             <!-- <a class="nav-link" href="{% url 'home:donate' %}">Donate</a> -->
