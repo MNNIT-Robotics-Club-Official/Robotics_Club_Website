@@ -88,6 +88,7 @@ def loginUser(request):
     return render(request,'login.html')
 
 
+@login_required
 def logoutUser(request):
     logout(request)
     return redirect('home:index')
@@ -97,6 +98,7 @@ def userPage(request):
     return redirect('user:login_page')
 
 
+@has_role_head
 def changerole(request):
     context = {}
     context['heads'] = User.objects.filter(profile__role=3)
@@ -129,13 +131,14 @@ def comprequest(request):
         req.accepted_by_user()
     return render(request, 'user/comp_request.html', context)
 
-@login_required
+@has_role_head_or_coordinator
 def adminPage(request):
     context={}
     context['requests']=Request.objects.filter(status=0)
     context['blogs']=Blog.objects.filter(approved=False)
     return render(request, 'user/admin_dashboard.html', context)
 
+@login_required
 def userProfileCreation(request):
     try:
         profile = request.user.profile
@@ -157,14 +160,11 @@ def userProfileCreation(request):
 
 @login_required
 def userProfile(request):
-    if not request.user.is_superuser:
         context = {}
         context['blogs'] = Blog.objects.filter(author=request.user).order_by('approved')
         context['projects'] = Project.objects.filter(members=request.user).order_by('status')
         context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
         return render(request,'user/user_dashboard.html',context)
-    else:
-        return redirect('user:admin_page')
 
 
 def activate(request, uidb64, token):

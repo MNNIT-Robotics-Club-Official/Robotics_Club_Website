@@ -6,7 +6,11 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.contrib import messages
 from django.core.exceptions import ValidationError
+from RoboClub.decorators import has_role_head_or_coordinator
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+@has_role_head_or_coordinator
 def test(request,id):
     context={}
     component = Request.objects.filter(component_id=id).filter(status=0)
@@ -15,6 +19,7 @@ def test(request,id):
     context['approved']= othcomp
     return render(request,'component/test.html',context)
 
+@login_required
 def componentlist(request):
     context = {}
     context['components_0'] = Component.objects.filter(type=0)
@@ -28,6 +33,7 @@ def componentlist(request):
     context['form'] = RequestForm()
     return render(request, 'component/component_list.html', context)
 
+@has_role_head_or_coordinator
 def addcomponent(request):
     context = {}
     if request.user.is_superuser:
@@ -42,11 +48,13 @@ def addcomponent(request):
     else:
         return HttpResponse("Sorry You don't have permission :)")
 
+@has_role_head_or_coordinator
 def deletecomponent(request,pk):
     component=Component.objects.get(pk=pk)
     component.delete()
     return redirect('component_list')
 
+@has_role_head_or_coordinator
 def updatecomponent(request,pk):
     component=Component.objects.get(pk=pk)
     context = {}
@@ -62,6 +70,7 @@ def updatecomponent(request,pk):
     else:
         return HttpResponse("Sorry You don't have permission :)")
 
+@has_role_head_or_coordinator
 def handlerequest(request):
     context={}
     cid=request.GET.get('id')
@@ -104,6 +113,7 @@ def handlerequest(request):
     else:
         return HttpResponse("This is unexpected :(")
 
+@login_required
 def createrequest(request):
     context={}
     if request.is_ajax():
