@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.decorators import login_required
+from RoboClub.decorators import has_role_head_or_coordinator
 from django.urls import reverse
 from django.core.paginator import Paginator
 from .models import Blog
@@ -29,7 +30,7 @@ def detail(request,pk):
         if blog.author == request.user or request.user.profile.role>=2:
             pass
         else:
-            return HttpResponse("You are not authorised")
+            return redirect('home:permission')
     context['blog']=blog
     return render(request, 'blog/blog_detail.html', context)
 
@@ -50,9 +51,11 @@ def createblog(request):
 @login_required
 def deleteblog(request,pk):
     blog=Blog.objects.get(pk=pk)
-    if(request.user==blog.author):
+    if(request.user==blog.author or request.user.profile.role>=2):
         blog.delete()
-    return redirect('blog_list')
+        return redirect('blog_list')
+    else:
+        return redirect('home:permission')
 
 @login_required
 def updateblog(request,pk):
@@ -70,23 +73,21 @@ def updateblog(request,pk):
             form.save()
         return redirect('blog_detail',pk=blog.pk)
     else:
-        return HttpResponse("sorry you dont have permission :)")
-
-def approveblog(request):
-    if request.user.profile.role > 1:
-        pk=request.GET.get('id')
-        r_type=request.GET.get('r_type')
-        if request.is_ajax():
-            blog = Blog.objects.get(pk=pk)
-            if r_type=='0':
-                blog.approve()
-                blog.save()
-            else:
-                blog.delete()
-            context={}
-            context['blogs']=Blog.objects.filter(approved=False)
-            html = render_to_string('user/admin_blog.html', context, request=request)
-            return JsonResponse({'html':html},status=200)
-        return redirect('blog_detail',pk=pk)
-    else:
         return redirect('home:permission')
+
+@has_role_head_or_coordinator
+def approveblog(request):
+    pk = request.GET.get('id')
+    r_type = request.GET.get('r_type')
+    if request.is_ajax():
+        blog = Blog.objects.get(pk=pk)
+        if r_type == '0':
+            blog.approve()
+            blog.save()
+        else:
+            blog.delete()
+        context = {}
+        context['blogs'] = Blog.objects.filter(approved=False)
+        html = render_to_string('user/admin_blog.html', context, request=request)
+        return JsonResponse({'html': html}, status=200)
+    return redirect('blog_detail', pk=pk)

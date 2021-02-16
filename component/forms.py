@@ -4,12 +4,12 @@ from .models import Component,Request
 class ComponenentForm(forms.ModelForm):
     class Meta:
         model=Component
-        fields=['name','max_num','detail']
+        fields=['name','max_num','type','detail']
 
 class UpdateComponentForm(forms.ModelForm):
     class Meta:
         model=Component
-        fields=['name','max_num','detail','issued_members']
+        fields=['name','max_num','type','detail','issued_members']
 
 class RequestForm(forms.ModelForm):
     class Meta:
