@@ -21,3 +21,8 @@ class UserProfileForm(forms.ModelForm):
         model = Profile
         # fields = ['first_name','last_name','regnum','branch']
         exclude = ('user','role')
+
+class PasswordResetForm(forms.Form):
+    current_password = forms.CharField(widget=forms.PasswordInput)
+    new_password_1 = forms.CharField(widget=forms.PasswordInput)
+    new_password_2 = forms.CharField(widget=forms.PasswordInput)
