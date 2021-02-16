@@ -12,7 +12,7 @@ def list(request):
     context['projects'] = projects
     return render(request, 'project/project_list.html', context)
 
-def filter (request,tag) :
+def filter(request,tag) :
     context={}
     context['projects']=Project.objects.filter(tags__name__in=[tag])
     return render(request, 'project/project_list.html', context)
@@ -20,6 +20,17 @@ def filter (request,tag) :
 def detail(request,pk):
     context={}
     context['project']=Project.objects.get(pk=pk)
+    tech=Project.objects.filter(pk=pk).values('comp_and_tech')
+    for data in tech:
+        text = data['comp_and_tech']
+        data_list = text.split(',')
+
+    tech_stack = []
+    for text in data_list:
+        cleaned = text.strip()       # Removing trailing or leading whitespaces
+        tech_stack.append(cleaned)
+
+    context['tech'] = tech_stack
     return render(request,'project/project_detail.html',context)
 
 def delete(request,pk):
