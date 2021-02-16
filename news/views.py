@@ -4,6 +4,7 @@ from django.urls import reverse
 from .forms import NewsForm
 from .models import News
 from django.contrib import messages
+from RoboClub.decorators import has_role_head_or_coordinator
 # Create your views here.
 
 def news(request):
@@ -11,7 +12,7 @@ def news(request):
     context['newslist']=News.objects.all().order_by('-pk')
     return render(request,"news/notice.html",context)
 
-@login_required
+@has_role_head_or_coordinator
 def createNews(request):
     context={}
     if request.method=='POST':
@@ -23,14 +24,14 @@ def createNews(request):
         context['form']=form
     return render(request,'news/notice_form.html',context)
 
-@login_required
+@has_role_head_or_coordinator
 def deleteNews(request,pk):
     news=News.objects.get(pk=pk)
     if(request.user.is_superuser):
         news.delete()
     return redirect('news:news_page')
 
-@login_required
+@has_role_head_or_coordinator
 def updateNews(request,pk):
     context={}
     news = News.objects.get(pk=pk)
