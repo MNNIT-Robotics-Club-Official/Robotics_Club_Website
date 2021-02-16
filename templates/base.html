@@ -129,12 +129,6 @@
                 More
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <!-- <a class="dropdown-item" href="{% url 'home:achievement' %}">Achievement</a>
-                <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonial</a>
-                <a class="dropdown-item" href="{% url 'home:components' %}">Components</a>
-                <a class="dropdown-item" href="https://tsaw.tech/" target="_blank">TSAW</a>
-                <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice Board</a>
-                <a class="dropdown-item" href="{% url 'workshop:workshop_page' %}">Workshop</a> -->
                 <li class="{% if request.resolver_match.view_name == 'home:gallery' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:gallery' %}">Gallery</a>
                 </li>
@@ -162,10 +156,6 @@
                   aria-hidden="true"></i></a>
               {% endif %}
             </li>
-            <!-- <a class="nav-link" href="{% url 'home:donate' %}">Donate</a> -->
-            <!-- <li class="nav-item px-3" >
-              <a class="nav-link" href="{% url 'news:news_page' %}">Notice</a>
-            </li> -->
           </ul>
         </div>
       </nav>
