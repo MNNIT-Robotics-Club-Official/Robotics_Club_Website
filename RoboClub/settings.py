@@ -32,7 +32,7 @@ SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['https://roboticsmnnit.herokuapp.com/']
 
 
 # Application definition
@@ -164,6 +164,6 @@ LOGOUT_REDIRECT_URL='home:index'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'divanimax@gmail.com'
-EMAIL_HOST_PASSWORD = 'nluogfkywovvofnt'
+EMAIL_HOST_USER = 'roboclubmnnit.test@gmail.com'
+EMAIL_HOST_PASSWORD = 'pzrxeipzequfuagr'
 EMAIL_PORT = 587
