@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect,HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserProfileForm
+from .forms import UserRegisterForm, UserProfileForm,PasswordResetForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from component.models import Request,Component
@@ -115,21 +115,22 @@ def changerole(request):
         user.profile.save()
         if request.is_ajax():
             html = render_to_string('user/user_list.html', context, request=request)
-            return JsonResponse({'html': html})
+            return JsonResponse({'html': html},status=200)
     else:
         return render(request,'user/role_change.html',context)
 
 def comprequest(request):
     context={}
-    prequests=Request.objects.filter(request_user=request.user).filter(status=0)
-    arequests=Request.objects.filter(request_user=request.user).filter(status=1)
-    context['prequests']=prequests
-    context['arequests']=arequests
+    components=Request.objects.filter(request_user=request.user)
+    context['components']=components
     if request.method=='POST':
-        cid=request.POST.get('id')
-        req=Request.objects.get(component_id=cid,request_user=request.user)
+        cid=request.POST.get('cid')
+        req = Request.objects.get(component_id=cid, request_user=request.user)
         req.accepted_by_user()
-    return render(request, 'user/comp_request.html', context)
+        if request.is_ajax():
+            html = render_to_string('user/user_comp.html', context, request=request)
+            return JsonResponse({'html': html},status=200)
+    return HttpResponse('This is not be happening')
 
 @has_role_head_or_coordinator
 def adminPage(request):
@@ -158,13 +159,28 @@ def userProfileCreation(request):
         form = UserProfileForm()
     return render(request, 'user/profile_form.html', {'form': form})
 
+
 @login_required
 def userProfile(request):
-        context = {}
+    context = {}
+    if request.method=='GET':
+        context['passform']=PasswordResetForm()
         context['blogs'] = Blog.objects.filter(author=request.user).order_by('approved')
         context['projects'] = Project.objects.filter(members=request.user).order_by('status')
         context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
-        return render(request,'user/user_dashboard.html',context)
+    else:
+        form = PasswordResetForm(request.POST)
+        if form.is_valid():
+            if not request.user.check_password(form['current_password'].value()):
+                messages.error(request,'Incorrect Password')
+            else:
+                if form['new_password_1'].value() != form['new_password_2'].value():
+                    messages.error(request,'Password Mismatch')
+                else:
+                    request.user.set_password(form['new_password_1'].value())
+                    messages.success(request,'Password Changed Successfully')
+        return redirect('user:profile_page')
+    return render(request, 'user/user_dashboard.html', context)
 
 
 def activate(request, uidb64, token):
