@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -167,3 +168,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'roboclubmnnit.test@gmail.com'
 EMAIL_HOST_PASSWORD = 'pzrxeipzequfuagr'
 EMAIL_PORT = 587
+
+django_heroku.settings(locals())
