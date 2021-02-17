@@ -102,7 +102,6 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issue Details</a>
                                         </div>
-
                                     </div>
                                     {% endif %}
                                 </div>
@@ -136,6 +135,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -145,6 +145,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -174,6 +175,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -183,6 +185,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -213,6 +216,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -222,6 +226,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -252,6 +257,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -261,6 +267,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -291,6 +298,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -300,6 +308,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -330,6 +339,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -339,6 +349,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>
@@ -369,6 +380,7 @@ Robotics Club MNNIT
                                         </button>
 
                                     </form>
+                                    {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"
@@ -378,6 +390,7 @@ Robotics Club MNNIT
                                             <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                         </div>
                                     </div>
+                                    {% endif %}
                                 </div>
                                 <p>{{ component.detail }}</p>
                                 <p>Available : {{ component.available }}</p>

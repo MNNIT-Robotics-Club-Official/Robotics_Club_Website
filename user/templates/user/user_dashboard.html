@@ -83,7 +83,7 @@
                     Change Password
                 </button>
 
-                {% if user.profile.role is 3 %}
+                {% if user.profile.role > 1 %}
                 <a href="{% url 'user:admin_page' %}" id="Create" class="btn btn-warning ml-auto mb-sm-0 text-white">Goto admin page</a>
                 {% endif %}
 
@@ -240,8 +240,7 @@
 
             <div class="row py-3">
                 <div class="col-md-12 grid-margin stretch-card">
-                    <button type="button" id="Create" class="btn btn-danger float-right mb-sm-0"><a
-                            href="{% url 'user:logout_page' %}" class="text-white">Logout</a></button>
+                            <a href="{% url 'user:logout_page' %}" id="Create" class="btn btn-danger float-right mb-sm-0 text-white">Logout</a>
                 </div>
             </div>
         </div>

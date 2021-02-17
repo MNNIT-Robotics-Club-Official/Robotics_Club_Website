@@ -1,6 +1,6 @@
 {% load static %}
- <div id="message_container">
-    {% include 'spinnets/message.html' %}
+<div id="message_container">
+  {% include 'spinnets/message.html' %}
 </div>
 
 <section id="issue-details" class="issue-details">
@@ -8,73 +8,78 @@
 
     <div class="section-title">
       <div class="d-flex justify-content-center my-3">
-          <h2 class="">ISSUE DETAILS </h2>
+        <h2 class="">ISSUE DETAILS </h2>
       </div>
       <br>
     </div>
   </div>
 
-  <div class="message-box">
-    <img src="{{component.image.url}}" class="rounded-circle carousel-img" alt="">
-    <h3 class="customer-name">{{comp.name}}</h3>
-    <h4><b><i>Type : </i></b>{{comp.get_type_display}}</h4>
-    <h4><b><i>Available : </i></b>{{comp.available}}</h4>
+  <div class="container">
 
-    <div class="row">
-      <div class="col-md-6">
-        <div class="info-box">
-          <h3 class="name">Pending Requests</h3>
-          {% for comp in request %}
+    <div class="message-box">
+      <img src="{{component.image.url}}" class="rounded-circle carousel-img" alt="">
+      <h3 class="customer-name">{{component.name}}</h3>
+      <h4><b><i>Type : </i></b>{{component.get_type_display}}</h4>
+      <h4><b><i>Available : </i></b>{{component.available}}</h4>
 
-          <div id="handle">
-            <div class="list-group">
-              <div class="list-group-item list-group-item-action">
-                <div class="row">
-                  <div class="col-md-4">
-                     <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
-                       {{comp.reason}}      
-                  </div>
-      
-                  <div class="col-md-8">
-                    <button type="button" id="appbtn" class="componentsbtn approvebtn" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}" r_type=0>
-                    Approve
-                    </button>
-                    <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}"  r_type=1>
-                    Decline
-                    </button>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="info-box">
+            <h3 class="name">Pending Requests</h3>
+            {% for comp in request %}
+            <div id="handle">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
+                      {{comp.reason}}
+                    </div>
+
+                    <div class="col-md-8">
+                      <button type="button" id="appbtn" class="componentsbtn approvebtn" pk="{{ comp.component.pk }}"
+                        user="{{comp.request_user.username }}" r_type=0>
+                        Approve
+                      </button>
+                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
+                        user="{{comp.request_user.username }}" r_type=1>
+                        Decline
+                      </button>
+                    </div>
                   </div>
                 </div>
+              </div>
             </div>
+
+            {% endfor %}
           </div>
         </div>
 
-          {% endfor %}
-        </div>
-      </div>
+        <div class="col-md-6">
+          <div class="info-box">
+            <h3 class="name">Accepted Requests</h3>
+            {% for comp in approved %}
+            <div id="rhandle">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
+                      {{comp.reason}}
+                    </div>
 
-      <div class="col-md-6">
-        <div class="info-box">
-          <h3 class="name">Accepted Requests</h3>
-          {% for comp in approved %}
-                <div id="rhandle">
-                  <div class="list-group">
-                    <div class="list-group-item list-group-item-action">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
-                            {{comp.reason}}      
-                       </div>
-            
-                        <div class="col-md-6">
-                          <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}" user="{{comp.request_user.username }}" r_type=2>
-                          Remove
-                          </button>
-                        </div>
-                      </div>
+                    <div class="col-md-6">
+                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
+                        user="{{comp.request_user.username }}" r_type=2>
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
-                </div>
-          {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
@@ -82,4 +87,3 @@
 </section>
 
 <br>
-
