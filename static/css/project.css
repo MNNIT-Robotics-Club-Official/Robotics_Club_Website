@@ -191,11 +191,13 @@
 
 #updatebtn{
   width: 30%;
+  margin: 3px;
   background: grey;
 }
 
 #deletebtn{
   width: 30%;
+  margin: 3px;
 }
 
 .projectbtn:hover{

@@ -20,7 +20,6 @@ class Component(models.Model):
     max_num=models.IntegerField(default=0)
     issued_num=models.IntegerField(default=0)
     issued_members=models.ManyToManyField(User,blank=True)
-    image=models.ImageField(default='default-comp.png', upload_to=user_directory_path)
 
     def __str__(self):
         return self.name
@@ -31,8 +30,8 @@ class Component(models.Model):
     def available(self):
         return self.max_num-self.issued_num
 
-    def imagelink(self):
-        return f'components/{self.pk}__{self.name}'
+    # def imagelink(self):
+    #     return f'components/{self.pk}__{self.name}'
 
 Status=((0,"Pending"),(1,"Accepted"),(2,"Rejected"))
 
