@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+#import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,7 +33,7 @@ SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['roboticsmnnit.herokuapp.com']
 
 
 # Application definition
@@ -54,7 +55,6 @@ INSTALLED_APPS = [
     'news',
     'workshop',
     'django_cleanup.apps.CleanupConfig',
-    #'gunicorn-20.0.4.dist-info',
 ]
 
 MIDDLEWARE = [
@@ -165,6 +165,7 @@ LOGOUT_REDIRECT_URL='home:index'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'divanimax@gmail.com'
-EMAIL_HOST_PASSWORD = 'nluogfkywovvofnt'
+EMAIL_HOST_USER = 'roboclubmnnit.test@gmail.com'
+EMAIL_HOST_PASSWORD = 'pzrxeipzequfuagr'
 EMAIL_PORT = 587
+#django_heroku.settings(locals())
