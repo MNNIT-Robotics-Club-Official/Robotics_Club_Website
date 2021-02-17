@@ -185,10 +185,12 @@
 
 #updatebtn{
   width: 30%;
+  margin: 3px;
   background: grey;
 }
 
 #deletebtn{
+  margin: 3px;
   width: 30%;
 }
 

@@ -11,71 +11,74 @@
 
 {% block body %}
 <section class="blog-detail" id="blog-detail">
-<div class="container">
+    <div class="container">
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="section-title">
-                <div class="d-flex justify-content-center my-3">
-                    <h3 class="">{{blog.title}}</h3>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <div class="d-flex justify-content-center my-3">
+                        <h3 class="">{{blog.title}}</h3>
+                    </div>
                 </div>
-            </div>
-            <div class = "text-muted wow pulse">
-            <p><i class="fa fa-user"></i> &nbsp;Posted by {{blog.author}}</p>
-            <p><i class="fa fa-calendar"></i> on {{blog.date}}</p>
-            <p><i class="fa fa-tags"></i> Tags: 
-                <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>
+                <div class="text-muted wow pulse">
+                    <p><i class="fa fa-user"></i> &nbsp;Posted by {{blog.author}}</p>
+                    <p><i class="fa fa-calendar"></i> on {{blog.date}}</p>
+                    <p><i class="fa fa-tags"></i> Tags:
+                        <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>
                 <a href="#" class="badge badge-pill badge-danger">Tag2</a>
                 <a href="#" class="badge badge-pill badge-danger">Tag3</a> -->
-                {% for tag in blog.tags.all %}
-                    <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
-                {% endfor %}
-            </p>
+                        {% for tag in blog.tags.all %}
+                        <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
+                        {% endfor %}
+                    </p>
+                </div>
+
+                <hr>
+                <div class="blog-image wow fadeInUp d-flex justify-content-center my-6">
+                    <img src="{{blog.image.url}}" alt="">
+                </div>
+                <hr>
+                <div class="desc wow fadeInUp wow fadeInUp">
+                    {{blog.content | safe}}
+                    <br />
+                    <hr>
+                </div>
             </div>
-                
+
             <hr>
-            <div class="blog-image wow fadeInUp d-flex justify-content-center my-6">
-                <img src="{{blog.image.url}}" alt="">
-            </div>
-            <hr>
-        <div class="desc wow fadeInUp wow fadeInUp">
-            {{blog.content | safe}}
-            <br/>
-          <hr> 
         </div>
-        </div>
-        
-        <hr>
-    </div>
-    {% if blog.vidlink != "" %}
-    <div class="row wow fadeInLeft">
-        <div class="col-lg-12 wow pulse">
-            <div class="vid d-flex justify-content-center">
-                <iframe width="50%" height="370" src="{{blog.vidlink}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% if blog.vidlink != "" %}
+        <div class="row wow fadeInLeft">
+            <div class="col-lg-12 wow pulse">
+                <div class="vid d-flex justify-content-center">
+                    <iframe width="50%" height="370" src="{{blog.vidlink}}" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
-        </div>
-    <hr>
-   {% endif %}
-    
-    <div class="end">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span>
-    </div>
-    <hr>
-    {% if blog.author == request.user %}
-    <div class="row">
-        <div class="col-lg-6">
-            <a class="d-flex justify-content-start" href="{% url 'blog_update' pk=blog.pk %}"><button class="blogbtn" id="updatebtn" >Edit Blog</button></a>
-        </div>
-        <div class="col-lg-6">
-            <a class="d-flex justify-content-end" href="{% url 'blog_delete' pk=blog.pk %}"><button class="blogbtn" id="deletebtn" >Delete Blog</button></a>
-        </div>
-    </div>
-    <hr>
     {% endif %}
+    <div class="container">
+        <hr>
+        <div class="end">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <hr>
+        {% if blog.author == request.user %}
+        <div class="row">
+            <div class="d-flex justify-content-start col-lg-6">
+                <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_update' pk=blog.pk %}" id="updatebtn">Edit Blog</a>
+            </div>
+            <div class="d-flex justify-content-end col-lg-6">
+                <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_delete' pk=blog.pk %}" id="deletebtn">Delete Blog</a>
+            </div>
+        </div>
+        <hr>
+        {% endif %}
+    </div>
 </section>
 
 {% endblock %}

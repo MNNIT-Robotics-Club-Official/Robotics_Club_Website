@@ -88,9 +88,11 @@
             <div class="vid">
                 <iframe width="520" height="370" src="{{ project.vidlink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+        </div>
+    </div>
           {% endif %}
-    {% if project.vidlink == "" %}
-    <div class="row">
+    {% if project.vidlink %}
+    <div class="row py-3">
         <div class="members col-lg-4 wow fadeInUp">
             <h3 class="lead">MEMBERS</h3>
             <ul class="list-group list-group-flush">
@@ -98,7 +100,6 @@
                     <li class="list-group-item">
                         {{ member.username }}
                         <br>
-                        <!-- <small>{{member.profile.get_branch_display}}, Batch 2k22</small> -->
                         <small>{{member.profile.get_branch_display}}</small>
                         <small>{{member.profile.regnum}}</small>
                     </li>
@@ -111,11 +112,11 @@
     <i class="fa fa-github"></i> <a href = "{{ project.github }}" target="_blank"> Github Link to the Project </a>
     <hr>
     <div class="row">
-        <div class="col-lg-6">
-            <a class="d-flex justify-content-start" href="{% url 'project:update' project.pk %}"><button class="projectbtn" id="updatebtn" >Edit Project</button></a>
+        <div class="d-flex justify-content-start col-lg-6">
+            <a class="d-flex justify-content-center projectbtn" href="{% url 'project:update' project.pk %}" id="updatebtn">Edit Project</a>
         </div>
-        <div class="col-lg-6">
-            <a class="d-flex justify-content-end" href="{% url 'project:delete' project.pk %}"><button class="projectbtn" id="deletebtn" >Delete Project</button></a>
+        <div class="d-flex justify-content-end col-lg-6">
+            <a class="d-flex justify-content-center projectbtn" href="{% url 'project:delete' project.pk %}" id="deletebtn">Delete Project</a>
         </div>
     </div>
     <hr>

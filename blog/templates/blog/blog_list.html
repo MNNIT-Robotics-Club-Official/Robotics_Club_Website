@@ -19,7 +19,7 @@
                 </div>
                 <!-- <br> -->
             </div>
-
+            <br>
             <div class="row">
 
                 <!--start for-->
@@ -70,7 +70,7 @@
                 </a>
             </div>
             {% if bloglist %}
-                <ul class="pagination">
+                <ul class="d-flex justify-content-center pagination">
                     {% if bloglist.has_previous %}
                         <li><a href="?page={{ bloglist.previous_page_number }}">&laquo;</a></li>
                     {% else %}
