@@ -3,13 +3,15 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from PIL import Image
-#changed
-
+import uuid
 from django.utils import timezone
 
+
 # Create your models here.
-def user_directory_path(instance, filename):
-    return 'blogs/{0}__{1}'.format(instance.pk, filename)
+def get_path(instance, filename):
+    extension = filename.split('.')[-1]
+    uuid_name = uuid.uuid1().hex
+    return f'blogs/{uuid_name}.{extension}'
 
 class Blog(models.Model):
     title=models.CharField(blank=False,unique=False,max_length=256)
@@ -18,7 +20,7 @@ class Blog(models.Model):
     date=models.DateField()
     vidlink=models.URLField(blank=True,unique=False)
     tags=TaggableManager(blank=True)              #changed
-    image = models.ImageField(default='default-blog.png', upload_to=user_directory_path)
+    image = models.ImageField(default='default-blog.png', upload_to=get_path)
     approved=models.BooleanField(default=False)
 
     def __str__(self):

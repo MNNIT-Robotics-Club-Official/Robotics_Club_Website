@@ -22,7 +22,7 @@ User Roles
                 var r_type = $(this).attr('r_type');
                 var user = $(this).attr('user');
                 $.ajax({
-                    url: '{% url 'user:change_role' %}',
+                    url: '{% url "user:change_role" %}',
                     type: 'post',
                     data: {
                         r_type: r_type,
