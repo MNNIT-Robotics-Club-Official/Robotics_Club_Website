@@ -10,33 +10,29 @@
 {% endblock %}
 
 {% block body %}
-<section class="project-detail" id="project-detail">
-<div class="container">
 
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="section-title">
-                <div class="d-flex justify-content-start my-3">
-                    <h2>{{ project.title }}</h2>
+<section class="project-detail" id="project-detail" >
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <div class="d-flex justify-content-start my-3">
+                        <h1 class="">{{project.title}}</h2>
+                    </div>
                 </div>
-            </div>
-            <p><i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
+            <p><i class="fa fa-calendar"></i> &nbsp;Status : {{ project.get_status_display }}</p>
             <p><i class="fa fa-tags"></i> Tags:
                 {% for tag in project.tags.all %}
                 <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
                 {% endfor %}
             </p>
-             <div class="">
-                    <a href="{% url 'project:update' project.pk %}"><button type="button" class="btn btn-primary">Update</button>
-                    <a href="{% url 'project:delete' project.pk %}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-             </div>
             <hr>
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <!-- Slide One - Set the background image for this slide in the line below -->
                     <div class="carousel-item active">
                         <img class="carousel-img" src="{{ project.image.url }}" alt="" width="1900px" height="650px">
                     </div>
@@ -49,6 +45,9 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+            </div> -->
+            <div class="project-image wow fadeInUp d-flex justify-content-center my-6">
+                <img src="{{project.image.url}}" alt="">
             </div>
             <hr>
         <div class="aim wow fadeInUp">
@@ -59,11 +58,9 @@
         <div class="comp wow fadeInUp">
             <h3 class="lead">COMPONENTS AND TECHNOLOGIES USED</h3>
             <ul class="list-inline">
-                <li class="list-inline-item"><p> Arduino Uno </p></li>
-                <li class="list-inline-item"><p> PCB </p></li>
-                <li class="list-inline-item"><p> Jumper Wires </p></li>
-                <li class="list-inline-item"><p> LED Matrix </p></li>
-                <li class="list-inline-item">...</li>
+                {% for comp in project.components.all %}
+                <li class="list-inline-item"><p> {{comp}} </p></li>
+                {% endfor %}
             </ul>
         </div>
             <br/>
@@ -71,13 +68,14 @@
             <hr>
         <div class="desc wow fadeInUp">
             <h3 class="lead">DESCRIPTION</h3>
-           <p>{{ project.detail }}</p>
+           <p>{{ project.detail | safe}}</p>
             <br/>
             <hr>
         </div>
         </div>
     </div>
 
+    {% if project.vidlink != "" %}
     <div class="row">
         <div class="col-lg-8 wow pulse">
             <div class="vid">
@@ -98,13 +96,40 @@
             </ul>
         </div>
     </div>
+    {% endif %}
+
+    {% if project.vidlink == "" %}
+    <div class="row">
+        <div class="members col-lg-4 wow fadeInUp">
+            <h3 class="lead">MEMBERS</h3>
+            <ul class="list-group list-group-flush">
+                {% for member in project.members.all %}
+                <li class="list-group-item">
+                    {{ member.username }}
+                    <br>
+                    <small>Electronics and Communication Engg., Batch 2k22</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
     <hr>
     <i class="fa fa-github"></i> <a href = "{{ project.github }}"> Github Link to the Project </a>
     <hr>
-
+    <div class="row">
+        <div class="col-lg-6">
+            <a class="d-flex justify-content-start" href="{% url 'project:update' project.pk %}"><button class="projectbtn" id="updatebtn" >Edit Project</button></a>
+        </div>
+        <div class="col-lg-6">
+            <a class="d-flex justify-content-end" href="{% url 'project:delete' project.pk %}"><button class="projectbtn" id="deletebtn" >Delete Project</button></a>
+        </div>
+    </div>
+    <hr>
 
 
 
 </section>
+
 
 {% endblock %}

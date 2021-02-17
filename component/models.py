@@ -6,6 +6,9 @@ from django.dispatch import receiver
 
 COMPONENT_TYPE=((0,"Batteries and Chargers"),(1,"Development Boards"),(2,"Drivers"),(3,"Electronic Tools"),(4,"Mechanical Tools"),(5,"Robotics KIT"),(6,"Sensors"),(7,"Others"))
 
+def user_directory_path(instance, filename):
+    return 'components/{0}__{1}'.format(instance.pk, filename)
+
 class Component(models.Model):
     name=models.CharField(max_length=128,unique=False,blank=False)
     detail=models.TextField(blank=True)
@@ -13,6 +16,7 @@ class Component(models.Model):
     max_num=models.IntegerField(default=0)
     issued_num=models.IntegerField(default=7)
     issued_members=models.ManyToManyField(User,blank=True)
+    image=models.ImageField(default='default-comp.png', upload_to=user_directory_path)
 
     def __str__(self):
         return self.name
@@ -22,6 +26,9 @@ class Component(models.Model):
 
     def available(self):
         return self.max_num-self.issued_num
+
+    def imagelink(self):
+        return f'components/{self.pk}__{self.name}'
 
 Status=((0,"Pending"),(1,"Accepted"),(2,"Rejected"))
 

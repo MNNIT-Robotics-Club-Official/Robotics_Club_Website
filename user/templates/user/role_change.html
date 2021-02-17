@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+User Roles
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
 {% block body %}
     <div id="test123">
         {% include 'user/user_list.html' %}

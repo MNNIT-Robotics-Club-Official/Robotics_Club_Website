@@ -9,8 +9,10 @@ from django.core.exceptions import ValidationError
 # Create your views here.
 def test(request,id):
     context={}
+    comp=Component.objects.get(id=id)   #changed
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
+    context['comp'] = comp           #changed
     context['request'] = component
     context['approved']= othcomp
     return render(request,'component/test.html',context)
@@ -32,7 +34,7 @@ def addcomponent(request):
     context = {}
     if request.user.is_superuser:
         if request.method == 'POST':
-            form = ComponenentForm(request.POST)
+            form = ComponenentForm(request.POST, request.FILES)
             form.save()
             return redirect('component_list')
         else:
@@ -52,7 +54,7 @@ def updatecomponent(request,pk):
     context = {}
     if request.user.is_superuser:
         if request.method == 'POST':
-            form = UpdateComponentForm(request.POST,instance=component)
+            form = UpdateComponentForm(request.POST,request.FILES,instance=component)
             form.save()
             return redirect('component_list')
         else:
@@ -81,7 +83,7 @@ def handlerequest(request):
             req.save()
             comp.issued_num=comp.issued_num+add
             comp.save()
-            messages.success(request, "request accepted successfully")
+            messages.success(request, "Request accepted successfully")
     elif type=='1': #reject
         req.delete()
     elif type=='2':

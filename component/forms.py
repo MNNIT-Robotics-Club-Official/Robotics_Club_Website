@@ -4,12 +4,12 @@ from .models import Component,Request
 class ComponenentForm(forms.ModelForm):
     class Meta:
         model=Component
-        fields=['name','max_num','detail']
+        fields=['name','max_num','detail','image','type']
 
 class UpdateComponentForm(forms.ModelForm):
     class Meta:
         model=Component
-        fields=['name','max_num','detail','issued_members']
+        fields=['name','max_num','detail','issued_members', 'image','type']
 
 class RequestForm(forms.ModelForm):
     class Meta:
@@ -20,6 +20,6 @@ class RequestForm(forms.ModelForm):
             'request_num': forms.TextInput(attrs={
                 'id': 'request_number',
                 'required': True,
-                'placeholder': 'Enter no of components'
+                'placeholder': 'Enter no. of components'
             }),
         }
