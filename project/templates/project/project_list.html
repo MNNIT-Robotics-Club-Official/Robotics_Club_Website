@@ -2,90 +2,87 @@
 {% load static %}
 
 {% block title %}
-    Projects
+Projects
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/project.css' %} " type="text/css">
+<link rel="stylesheet" href="{% static 'css/project.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
-    <section class="project" id="project">
-
-        <div class="container">
-            <div class="section-title pb-2">
-                <div class="d-flex justify-content-center my-3">
-                    <h2 class="">OUR PROJECTS</h2>
-                </div>
-                <!-- <br> -->
-            </div>
-            {% if user.is_superuser %}
-            <div class="d-flex justify-content-center">
-                <a href="{% url 'project:create' %}"><button type="button" class="btn btn-danger mx-2 workshopbtn" id="writebtn">Create
-                        Project</button></a>
-            </div>
-            {% endif %}
-            <br>
-            <div class="row">
-
-                <!--start for-->
-                {% for project in projects %}
-                    <div class="col-md-4">
-                        <a href="{% url 'project:detail' project.pk %}">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="card-img-top" src="{{ project.image.url }}" alt="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ project.title }}</h5>
-                                    <p class="card-text">
-                                        <b class="text-muted">AIM:</b>
-                                        {{ project.aim }}
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}</p>
-                                    <p><i class="fa fa-tags"></i>Tags:
-                                        {% for tag in project.tags.all %}
-                                            <a href="{% url 'project:filter' tag %}"
-                                               class="badge badge-pill badge-danger">{{ tag }}</a>
-                                        {% endfor %}
-                                    </p>
-                                    </small>
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!--end for-->
-                {% endfor %}
+<section class="project" id="project">
+    <div class="container">
+        <div class="section-title pb-2">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">OUR PROJECTS</h2>
             </div>
         </div>
-    <div class="row justify-content-center">
-        {% if projects %}
+        <br>
+        <div class="row">
+            <!--start for-->
+            {% for project in projects %}
+            <div class="col-md-4">
+                <a href="{% url 'project:detail' project.pk %}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="card-img-top" src="{{ project.image.url }}" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">
+                                <b class="text-muted">AIM:</b>
+                                {{ project.aim }}
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}
+                            </p>
+                            <p><i class="fa fa-tags"></i>Tags:
+                                {% for tag in project.tags.all %}
+                                <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{tag}}</a>
+                                {% endfor %}
+                            </p>
+                            </small>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!--end for-->
+            {% endfor %}
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a class="d-flex justify-content-center projectbtn" id="writebtn" href="{% url 'project:create' %}">Add a Project</a>
+    </div>
+    <div class="container">
+
+        <div class="row justify-content-center">
+            {% if projects %}
             <ul class="pagination">
                 {% if projects.has_previous %}
-                    <li><a href="?page={{ projects.previous_page_number }}">&laquo;</a></li>
+                <li><a href="?page={{ projects.previous_page_number }}">&laquo;</a></li>
                 {% else %}
-                    <li class="disabled"><span>&laquo;</span></li>
+                <li class="disabled"><span>&laquo;</span></li>
                 {% endif %}
                 {% for i in projects.paginator.page_range %}
-                    {% if projects.number == i %}
-                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                    {% else %}
-                        <li><a href="?page={{ i }}">{{ i }}</a></li>
-                    {% endif %}
+                {% if projects.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
                 {% endfor %}
                 {% if projects.has_next %}
-                    <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
+                <li><a href="?page={{ projects.next_page_number }}">&raquo;</a></li>
                 {% else %}
-                    <li class="disabled"><span>&raquo;</span></li>
+                <li class="disabled"><span>&raquo;</span></li>
                 {% endif %}
-            </ul>
+        </ul>
         {% endif %}
     </div>
-    </section>
-    <br>
+</div>
+</section>
+<br>
 
 {% endblock %}

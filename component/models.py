@@ -30,6 +30,9 @@ class Component(models.Model):
     def available(self):
         return self.max_num-self.issued_num
 
+    # def imagelink(self):
+    #     return f'components/{self.pk}__{self.name}'
+
 Status=((0,"Pending"),(1,"Accepted"),(2,"Rejected"))
 
 class Request(models.Model):

@@ -20,6 +20,6 @@ class RequestForm(forms.ModelForm):
             'request_num': forms.TextInput(attrs={
                 'id': 'request_number',
                 'required': True,
-                'placeholder': 'Enter no of components'
+                'placeholder': 'Enter no. of components'
             }),
         }
