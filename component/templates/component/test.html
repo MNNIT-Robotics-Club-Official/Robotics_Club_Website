@@ -1,11 +1,22 @@
-{% extends 'base.html' %}
-{% block body %}
+{% extends "base.html" %}
+{% load static %}
 
-    <a href="{% url 'add_component' %}">Add Component</a>
+{% block title %}
+Issue Details of {{comp.name}}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/components.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <!-- <a href="{% url 'add_component' %}">Add Component</a> -->
     <div id="test123">
         {% include 'component/test_part.html' %}
     </div>
 {% endblock %}
+
 {% block script %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
