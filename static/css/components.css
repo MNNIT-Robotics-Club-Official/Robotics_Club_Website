@@ -223,7 +223,7 @@ starts
   padding: 30px;
 }
 
-#issue-details .message-box:after {
+#issue-details .message-box .row:after {
 	content: '';
 	position: absolute;
 	left: 20px;
@@ -231,7 +231,7 @@ starts
 	bottom: 0;
 	top: 120px;
 	
-	border: 1px solid #e9ecef;
+	/* border: 1px solid #e9ecef; */
 	border-radius: 20px;
   z-index: -1;
 }
