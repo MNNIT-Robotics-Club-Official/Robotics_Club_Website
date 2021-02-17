@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 
 # Create your views here.
-@login_required
+
 def list(request):
     context={}
     blog_all=Blog.objects.filter(approved=True).order_by('-id')
@@ -22,7 +22,6 @@ def list(request):
 
     return render(request, 'blog/blog_list.html', context)
 
-@login_required
 def detail(request,pk):
     context={}
     blog=Blog.objects.get(pk=pk)
