@@ -1,0 +1,243 @@
+/*
+Components
+starts
+*/
+
+/* Component Heading */
+#components .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid;
+  }
+  
+
+  /* Setting container for tabs+components */
+  #features {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  /* Color of the tabs */
+  #features .container .nav .nav-item a{
+    color:#e76668;
+  }
+
+  /* Active tab */
+  #features .container .nav .nav-item .active{
+    color:#e03a3c;
+    font-weight: 500;
+  }
+  
+  /* Block of single component */
+  #features .feature-block {
+    background: #fff none repeat scroll 0 0;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+
+  /* Component Image */
+
+  #features .feature-block img{
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+  }
+  
+
+  /* Hovering Effect of Block */
+  #features .feature-block:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+
+  /* Name of the Component */
+  #features .feature-block h4 {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #16324f;
+  }
+  
+  /* Description of Component */
+  #features .feature-block p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #333;
+  }
+
+  /*
+  Components
+  Ends
+  */
+
+  /*component form*/
+
+  .components-form .container{
+    border: 1px solid  #e9ecef;
+    border-radius: 20px;
+  }
+  
+  #components-form .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid;
+    margin-bottom: 0%;
+    }
+  
+  #components-form label{
+    margin-top: 15px;
+    color: #e03a3c;
+    font-style: italic;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+  }
+  
+  .components-form .form-control{
+    border-radius:1rem;
+  }
+  
+  .components-form form{
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .components-form .text-muted{
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 0;
+    display: inline;
+  }
+
+  .info-box .issuer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+   .componentsbtn {
+     
+     width: 30%;
+     height: 80%;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+    background: #e03a3c;
+    font-weight: 600;
+    color: #fff;
+    font-style: italic;
+    cursor: pointer;
+  }
+  
+  .approvebtn{
+    width: 30%;
+    background:green;
+  }
+  
+  #deletebtn{
+    width: 30%;
+  }
+
+ 
+  
+  .componentsbtn:hover{
+    background: crimson !important; 
+  }
+  
+  #id_detail{
+    height: 80px;
+  }
+
+/*issue details*/
+#issue-details .carousel-img {
+  width: 150px;
+  height: 150px;
+  }
+
+#issue-details .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 2px solid;
+}
+
+#issue-details .message-box {
+	position: relative;
+	padding: 60px;
+  margin-top: -60px;
+  text-align: left;
+}
+
+#issue-details .issuer{
+  color: #e03a3c;
+}
+
+#issue-details .info-box .name{
+  color: #16324f;
+  border-bottom: 1px #e03a3c;
+}
+
+
+#issue-details .message-box h3 {
+	margin-top: 15px;
+  margin-bottom: 25px;
+  color: #e03a3c;
+  font-size: 25px;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+#issue-details .message-box h4 b{
+  color: #e03a3c;
+}
+
+#issue-details .message-box h4 {
+	margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+#issue-details .message-box p {
+  line-height: 1.875;
+  padding: 30px;
+}
+
+#issue-details .message-box:after {
+	content: '';
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	bottom: 0;
+	top: 120px;
+	
+	border: 1px solid #e9ecef;
+	border-radius: 20px;
+  z-index: -1;
+}
+
+#issue-details .info-box{
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  text-align: center;
+}

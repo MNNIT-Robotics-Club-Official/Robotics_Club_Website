@@ -6,7 +6,7 @@ Robotics Club MNNIT
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+<link rel="stylesheet" href="{% static 'css/components.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -67,19 +67,19 @@ Robotics Club MNNIT
                 </li>
             </ul>
 
-            <!-- Specifing contents of tabs -->
+            <!-- Specifying contents of tabs -->
             <div class="tab-content" id="myTabContent">
 
                 <!-- Specifing contents of each tab-->
                 <div class="tab-pane fade show active" id="battery" role="tabpanel" aria-labelledby="battery-tab">
 
                     <!-- Declaring row class for placing components in grid -->
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row wow fadeInUp">
 
                         {% for component in components_0 %}
                         <div class="col-md-6 col-lg-4">
                             <div class="feature-block">
-                                <img src="{% static 'img/r9.jpg' %}" alt="img" class="img-fluid rounded pb-3">
+                                <img src="{{component.image.url}}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
@@ -98,7 +98,7 @@ Robotics Club MNNIT
                                                 aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issue Details</a>
                                         </div>
                                     </div>
                                 </div>
