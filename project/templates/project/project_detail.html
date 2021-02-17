@@ -52,7 +52,7 @@
                 <div class="aim wow fadeInUp">
                     <h3 class="lead">AIM</h3>
                     <p>{{ project.aim }}</p>
-                    <br />
+                    <!-- <br /> -->
                     <hr>
                     {% if tech %}
                     <div class="comp wow fadeInUp">
@@ -70,28 +70,29 @@
                         </ul>
                     </div>
                     {% endif %}
-                    <br />
+                    <!-- <br /> -->
                 </div>
                 <hr>
                 <div class="desc wow fadeInUp">
                     <h3 class="lead">DESCRIPTION</h3>
                     <p>{{ project.detail |safe }}</p>
-                    <br />
+                    <!-- <br> -->
                     <hr>
                 </div>
             </div>
         </div>
 
     {% if project.vidlink != "" %}
-    <div class="row">
+    <div class="row d-flex justify-content-center">
         <div class="col-lg-8 wow pulse">
             <div class="vid">
                 <iframe width="520" height="370" src="{{ project.vidlink }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-          {% endif %}
-    {% if project.vidlink %}
+    <hr>
+    {% endif %}
+    {% if project.members %}
     <div class="row py-3">
         <div class="members col-lg-4 wow fadeInUp">
             <h3 class="lead">MEMBERS</h3>
@@ -111,6 +112,7 @@
     <hr>
     <i class="fa fa-github"></i> <a href = "{{ project.github }}" target="_blank"> Github Link to the Project </a>
     <hr>
+    {% if user.profile.role > 1 %}
     <div class="row">
         <div class="d-flex justify-content-start col-lg-6">
             <a class="d-flex justify-content-center projectbtn" href="{% url 'project:update' project.pk %}" id="updatebtn">Edit Project</a>
@@ -120,5 +122,6 @@
         </div>
     </div>
     <hr>
+    {% endif %}
 </section>
 {% endblock %}

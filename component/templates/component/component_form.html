@@ -47,10 +47,12 @@
                         <label>Short Description About the Component</label> 
                         {{form.detail}}
                     </div>
+                    {% if form.issued_members%}
                     <div class="form-group wow fadeInUp">  
                         <label>Members Who Have Issued This Component</label> 
                         {{form.issued_members}}
                     </div>
+                    {% endif %}
                     
                     <div class="form-group d-flex justify-content-center wow fadeInUp">
                         <button class="componentsbtn" id="postbtn" type="submit">Add</button>

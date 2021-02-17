@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    Write the project...
+Write the project...
 {% endblock %}
 
 {% block head %}
@@ -24,52 +24,58 @@
         </div> -->
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-                
-                <!-- <div class="form-group">
+
+            <!-- <div class="form-group">
                     {{form | crispy}}
                 </div> -->
-                <div class="form-group wow fadeInUp">  
-                    <label>Title*</label> 
-                    {{form.title}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Aim*</label> 
-                    {{form.aim}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Status*</label> 
-                    {{form.status}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Intro Image*</label> 
-                    {{form.image}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Description*</label> 
-                    {{form.detail}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Tags*<div class="text-muted">
+            <div class="form-group wow fadeInUp">
+                <label>Title*</label>
+                {{form.title}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Aim*</label>
+                {{form.aim}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Components and Technology Used*<div class="text-muted">
+                        (Separate them by commas)
+                    </div></label>
+                {{form.comp_and_tech}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Status*</label>
+                {{form.status}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Intro Image*</label>
+                {{form.image}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Description*</label>
+                {{form.detail}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Tags*<div class="text-muted">
                         (Separate the tags by commas)
-                    </div></label> 
-                    {{form.tags}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Members</label> 
-                    {{form.members}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>Video Link</label> 
-                    {{form.vidlink}}
-                </div>
-                <div class="form-group wow fadeInUp">  
-                    <label>GitHub Link</label> 
-                    {{form.github}}
-                </div>
-                <div class="form-group d-flex justify-content-center wow fadeInUp">
-                    <button class="projectbtn" id="postbtn" type="submit">Add</button>
-                </div> 
-       
+                    </div></label>
+                {{form.tags}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Members</label>
+                {{form.members}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Video Link</label>
+                {{form.vidlink}}
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>GitHub Link</label>
+                {{form.github}}
+            </div>
+            <div class="form-group d-flex justify-content-center wow fadeInUp">
+                <button class="projectbtn" id="postbtn" type="submit">Add</button>
+            </div>
+
         </form>
     </div>
     <br>
@@ -77,7 +83,7 @@
 </section>
 
 
-    <script>
-        CKEDITOR.replace("detail");
-    </script>
+<script>
+    CKEDITOR.replace("detail");
+</script>
 {% endblock %}
