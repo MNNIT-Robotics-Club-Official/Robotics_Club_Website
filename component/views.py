@@ -17,7 +17,7 @@ def test(request, id):
     context = {}
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
-    context['comp'] = comp           #changed
+    context['component'] = Component.objects.get(pk=id)           #changed
     context['request'] = component
     context['approved'] = othcomp
     return render(request, 'component/test.html', context)
