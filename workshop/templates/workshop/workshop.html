@@ -19,8 +19,10 @@ Robotics Club MNNIT
 
     {% if user.is_superuser %}
     <div class="d-flex justify-content-center">
-        <a href="{% url 'workshop:workshop_form' %}"><button type="button" class="btn btn-danger mx-2 workshopbtn" id="writebtn">Create
-                Workshop</button></a>
+        <!-- <a href="{% url 'workshop:workshop_form' %}"><button type="button" class="btn btn-danger mx-2 workshopbtn" id="writebtn">Create
+                Workshop</button></a> -->
+                <a href="{% url 'workshop:workshop_form' %}" class="btn btn-default btn-danger mx-2 workshopbtn">Create
+                    Workshop</a>
     </div>
     {% endif %}
 
@@ -88,10 +90,8 @@ Robotics Club MNNIT
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
                     {% if user.is_superuser %}
-                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"><button type="button"
-                            class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</button></a>
-                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"><button type="button"
-                            class="btn btn-danger btn-sm mx-2 workshopbtn">Delete Workshop</button></a>
+                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
                 </div>
             </div>
@@ -163,10 +163,8 @@ Robotics Club MNNIT
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
                     {% if user.is_superuser %}
-                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"><button type="button"
-                            class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</button></a>
-                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"><button type="button"
-                            class="btn btn-danger btn-sm mx-2 workshopbtn">Delete Workshop</button></a>
+                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
                 </div>
             </div>

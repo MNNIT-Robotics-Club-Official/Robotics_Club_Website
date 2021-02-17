@@ -12,7 +12,7 @@
                                     <tbody>
                                     {% for blog in blogs %}
                                         <tr>
-                                            <td><a href="">{{blog.title}}</a></td>
+                                            <td><a href="{% url 'blog_detail' pk=blog.pk %}">{{blog.title}}</a></td>
                                             <td>{{ blog.author }}</td>
                                             <td>{{ blog.date }}</td>
                                             <td>

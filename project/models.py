@@ -15,6 +15,7 @@ class Project(models.Model):
     vidlink=models.URLField(blank=True)
     detail=models.TextField(blank=False)
     status=models.IntegerField(choices=Status,default=0)
+    comp_and_tech = models.TextField(max_length=250,blank=False,default=None)
     members=models.ManyToManyField(User)
     image=models.ImageField(default='default-project.png',upload_to=user_directory_path)
     tags = TaggableManager()
