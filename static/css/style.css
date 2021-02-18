@@ -75,6 +75,29 @@ Alumni Starts
 */
 
 /* Our Alumni */
+#alumniTeam #accordionExample .card-header{
+  background-color: #fff;
+}
+
+#alumniTeam #collapseOne .card-body{
+  padding: 0;
+}
+
+#alumniTeam #accordionExample button{
+  color: #e03a3c;
+  font-size: 0.6em;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 2px;
+  text-decoration: none;
+}
+
+#alumniTeam #accordionExample span{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
 #alumniTeam .d-flex h2{
   color: #333;
   font-weight: bold;
@@ -103,19 +126,46 @@ Alumni Starts
 #alumniTeam .row .d-flex ul{
   list-style-type: none;
   padding-inline-start: 0px;
+  margin-bottom: 7px;
 }
 
 /* Name & Branch */
 #alumniTeam .card .d-flex li{
-  margin-top: 10px;
-  padding-bottom: 12px;
-  font-size: 1.3em;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  margin-top: 4px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   color: #fff;
   line-height: 10px;
-  margin-bottom: -7px;
+  margin-bottom: -8px;
   text-align: center;
+  padding-bottom: 0.6em;
+}
+
+#alumniTeam .social-links ul{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#alumniTeam .social-links li{
+  display: inline-block;
+}
+
+#alumniTeam .social-links a {
+  font-size: 1.2em;
+  display: inline-block;
+  background: #EC3134;
+  color: #eee;
+  line-height: 1;
+  padding: 6px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 1.8em;
+  height: 1.8em;
+  transition: 0.3s;
 }
 
 /*
