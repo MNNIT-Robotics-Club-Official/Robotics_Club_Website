@@ -29,8 +29,6 @@ def achievement(request):
 def permission(request):
     return render(request, 'permission.html')
   
-def web(request):
-    return render(request, 'web.html')
-  
-def outreach(request):
-    return render(request, 'outreach.html')
+def team(request):
+    return render(request, 'team.html')
+

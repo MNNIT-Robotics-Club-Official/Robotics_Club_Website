@@ -116,10 +116,7 @@
                   <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumni</a>
                 </li>
                 <li class="">
-                  <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
-                </li>
-                <li class="">
-                  <a class="dropdown-item" href="{% url 'home:outreach' %}">Outreach Team</a>
+                  <a class="dropdown-item" href="{% url 'home:team' %}">Other Teams</a>
                 </li>
               </ul>
             </li>
@@ -150,7 +147,8 @@
             </li>
             <li class="nav-item px-3" id="donate">
               {% if user.is_authenticated %}
-              <a class="nav-link" href="{% url 'user:profile_page' %}">Profile <i class="fa fa-user" aria-hidden="true"></i></a>
+              <a class="nav-link" href="{% url 'user:profile_page' %}">Profile <i class="fa fa-user"
+                  aria-hidden="true"></i></a>
               {% else %}
               <a class="nav-link" href="{% url 'user:user_page' %}">Login <i class="fa fa-sign-in"
                   aria-hidden="true"></i></a>
@@ -221,13 +219,14 @@
             <a href="https://www.instagram.com/roboticsclubmnnit/" class="instagram"><i class="fa fa-instagram"></i></a>
             <a href="https://www.youtube.com/channel/UCsHbcNUhK5dMWgtsxNNfm7A" class="youtube"><i
                 class="fa fa-youtube"></i></a>
+
+
             <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin"><i
                 class="fa fa-linkedin"></i></a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in" class="linkedin"><i
-                class="fa fa-envelope"></i></a>
+                class="fa fa-envelope"></i></a>>
           </div>
         </div>
-      </div>
     </footer>
     <!-- FOOTER ENDS -->
 
