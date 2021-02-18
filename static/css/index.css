@@ -143,33 +143,13 @@ section {
   z-index:2;
 }
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 30px;
-  border-radius: 4px;
-  transition: 0.5s;
-  margin-top: 30px;
-  color: #fff;
-  background: #e03a3c;
-  border: 2px solid #e03a3c;
-}
-
-#hero .btn-get-started:hover {
-  background: transparent;
-  border-color: #fff;
-}
-
 @media (max-width: 768px) {
   #hero {
     text-align: center;
     padding-top: 58px;
   }
   #hero h1 {
-    font-size: 28px;
+    font-size: 38px;
   }
   #hero h2 {
     font-size: 18px;
