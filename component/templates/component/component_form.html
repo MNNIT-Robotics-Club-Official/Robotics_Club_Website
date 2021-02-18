@@ -3,18 +3,68 @@
 {% load static %}
 
 {% block title %}
-    Add Component
+    Add a Component...
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/components.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
-    <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Add component</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Add</button>
+    <section class="components-form" id="components-form">
+        <div class="container">
+            <div class="section-title pb-2">
+                <div class="d-flex justify-content-center my-3">
+                    <h2 class="">Add The Component...</h2>
+                </div>
             </div>
-        </form>
+            <!-- <div class="d-flex justify-content-end pb-3">
+                <h5>..by {{request.user.username}}</h5>
+            </div> -->
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    
+                    <!-- <div class="form-group">
+                        {{form | crispy}}
+                    </div> -->
+                    <div class="form-group wow fadeInUp">  
+                        <label>Name*</label> 
+                        {{form.name}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Image*</label> 
+                        {{form.image}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Type*</label> 
+                        {{form.type}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Quantity of This Component Available*</label> 
+                        {{form.max_num}}
+                    </div>
+                    <div class="form-group wow fadeInUp">  
+                        <label>Short Description About the Component</label> 
+                        {{form.detail}}
+                    </div>
+                    {% if form.issued_members%}
+                    <div class="form-group wow fadeInUp">  
+                        <label>Members Who Have Issued This Component</label> 
+                        {{form.issued_members}}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="form-group d-flex justify-content-center wow fadeInUp">
+                        <button class="componentsbtn" id="postbtn" type="submit">Add</button>
+                    </div> 
+           
+            </form>
+        </div>
+        <br>
+        <br>
+    </section>
+
+    <script>
+        CKEDITOR.replace("detail");
+    </script>
 {% endblock %}

@@ -4,6 +4,7 @@ from .forms import ProjectForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from RoboClub.decorators import has_role_head_or_coordinator
+from django.contrib import messages
 # Create your views here.
 
 def list(request):
@@ -56,7 +57,10 @@ def update(request,pk):
             obj=form.save(commit=False)
             obj.save()
             form.save_m2m()
-        return redirect('project:list')
+            return redirect('project:list')
+        else:
+            messages.info('request',"Invalid form!! Please fill all fields correctly")
+            return render(request,'project/project_form.html',{'form':form})
 
 
 @has_role_head_or_coordinator
@@ -71,4 +75,7 @@ def create(request):
             obj = form.save(commit=False)
             obj.save()
             form.save_m2m()
-        return redirect('project:list')
+            return redirect('project:list')
+        else:
+            messages.info('request',"Invalid form!! Please fill all fields correctly")
+            return render(request,'project/project_form.html',{'form':form})

@@ -11,17 +11,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+#import django_heroku
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMP_DIR_project=os.path.join(BASE_DIR,'project/templates')
-TEMP_DIR_blog=os.path.join(BASE_DIR,'blog/templates')
-TEMP_DIR_component=os.path.join(BASE_DIR,'component/templates')
-
-TEMP_DIR_user=os.path.join(BASE_DIR,'user/templates')
-
-TEMP_DIR_news=os.path.join(BASE_DIR,'news/templates')
+TEMP_DIR_project = os.path.join(BASE_DIR,'project/templates')
+TEMP_DIR_blog = os.path.join(BASE_DIR,'blog/templates')
+TEMP_DIR_component = os.path.join(BASE_DIR,'component/templates')
+TEMP_DIR_user = os.path.join(BASE_DIR,'user/templates')
+TEMP_DIR_news = os.path.join(BASE_DIR,'news/templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -54,7 +53,6 @@ INSTALLED_APPS = [
     'news',
     'workshop',
     'django_cleanup.apps.CleanupConfig',
-    # 'gunicorn-20.0.4.dist-info',
 ]
 
 MIDDLEWARE = [
@@ -76,11 +74,8 @@ TEMPLATES = [
                  TEMP_DIR_project,
                  TEMP_DIR_blog,
                  TEMP_DIR_component,
-
                  TEMP_DIR_user,
-
                  TEMP_DIR_news,
-
                  ],
 
         'APP_DIRS': True,
@@ -165,6 +160,7 @@ LOGOUT_REDIRECT_URL='home:index'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'divanimax@gmail.com'
-EMAIL_HOST_PASSWORD = 'nluogfkywovvofnt'
+EMAIL_HOST_USER = 'roboclubmnnit.test@gmail.com'
+EMAIL_HOST_PASSWORD = 'pzrxeipzequfuagr'
 EMAIL_PORT = 587
+#django_heroku.settings(locals())

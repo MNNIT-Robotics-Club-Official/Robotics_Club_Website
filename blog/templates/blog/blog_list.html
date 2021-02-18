@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    bloglist
+    Blogs
 {% endblock %}
 
 {% block head %}
@@ -15,11 +15,11 @@
         <div class="container">
             <div class="section-title pb-2">
                 <div class="d-flex justify-content-center my-3">
-                    <h2 class="">Blogs</h2>
+                    <h2 class="">BLOGS</h2>
                 </div>
                 <!-- <br> -->
             </div>
-
+            <br>
             <div class="row">
 
                 <!--start for-->
@@ -64,13 +64,13 @@
                 {% endfor %}
             </div>
 
-            <div>
+            <!-- <div>
                 <a class="d-flex justify-content-center" href="{% url 'blog_form' %}">
                     <button type="button" class="blogbtn" id="writebtn">Write a Blog</button>
                 </a>
-            </div>
+            </div> -->
             {% if bloglist %}
-                <ul class="pagination">
+                <ul class="d-flex justify-content-center pagination">
                     {% if bloglist.has_previous %}
                         <li><a href="?page={{ bloglist.previous_page_number }}">&laquo;</a></li>
                     {% else %}

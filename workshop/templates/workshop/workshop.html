@@ -16,15 +16,12 @@ Robotics Club MNNIT
     <div class="d-flex justify-content-center my-3">
         <h2>WORKSHOP</h2>
     </div>
-
-    {% if user.is_superuser %}
+    <!-- {% if user.is_superuser %}
     <div class="d-flex justify-content-center">
-        <!-- <a href="{% url 'workshop:workshop_form' %}"><button type="button" class="btn btn-danger mx-2 workshopbtn" id="writebtn">Create
-                Workshop</button></a> -->
                 <a href="{% url 'workshop:workshop_form' %}" class="btn btn-default btn-danger mx-2 workshopbtn">Create
                     Workshop</a>
     </div>
-    {% endif %}
+    {% endif %} -->
 
     <!-- Workshop Sub-Heading -->
     {% if upcoming %}
@@ -89,7 +86,7 @@ Robotics Club MNNIT
                     <br>
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
-                    {% if user.is_superuser %}
+                    {% if user.profile.role > 1 %}
                     <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
                     <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
@@ -112,8 +109,6 @@ Robotics Club MNNIT
         <div class="row no-gutters">
             <!-- Assigning column for image -->
             <div class="col-md-4">
-                <!-- <a href="{{workshop.link}}" target="_blank"> -->
-                <!-- <img src="{% static '{{workshop.image}}' %}" class="card-img img-fluid" alt="..."></a> -->
                 <img src="{{workshop.image.url}}" class="card-img img-fluid" alt="...">
                 </a>
             </div>
@@ -162,7 +157,7 @@ Robotics Club MNNIT
                     <br>
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
-                    {% if user.is_superuser %}
+                    {% if user.profile.role > 1 %}
                     <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
                     <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
