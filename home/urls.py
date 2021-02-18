@@ -13,6 +13,5 @@ urlpatterns = [
     path('testimonial/', views.testimonial, name='testimonial'),
     path('achievement/', views.achievement, name='achievement'),
     path('permission/', views.permission, name='permission'),
-    path('web/', views.web, name='web'),
-    path('outreach/', views.outreach, name='outreach'),
+    path('team/', views.team, name='team'),
 ]
