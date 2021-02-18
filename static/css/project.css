@@ -127,3 +127,96 @@
 .text-muted i {
   margin: 0 10px;
 }
+
+.project-form .container{
+  border: 1px solid  #e9ecef;
+  border-radius: 20px;
+}
+
+#project-form .d-flex h2{
+  color: #333;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid;
+  margin-bottom: 0%;
+  }
+
+#project-form label{
+  margin-top: 15px;
+  color: #e03a3c;
+  font-style: italic;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+.project-form .form-control{
+  border-radius:1rem;
+}
+
+.project-form form{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.project-form .text-muted{
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 0;
+  display: inline;
+}
+
+ .projectbtn {
+   height: 100%;
+  margin: 10px;
+  border: none;
+  border-radius: 1rem;
+  padding: 1%;
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+}
+
+#postbtn{
+  width: 10%;
+}
+
+#writebtn{
+  width: 30%;
+}
+
+#updatebtn{
+  width: 30%;
+  margin: 3px;
+  background: grey;
+}
+
+#deletebtn{
+  width: 30%;
+  margin: 3px;
+}
+
+.projectbtn:hover{
+  background: crimson !important; 
+}
+
+#id_aim{
+  height: 40px;
+}
+
+input{
+  width:auto;
+}
+
+.project-image img{
+  max-width: 100%;
+  height: 90vh;
+}
+
+.project-image iframe{
+  overflow: hidden;
+}

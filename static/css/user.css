@@ -101,3 +101,110 @@
 }
 
 /* LOGIN/REGISTER PAGE ENDS */
+
+
+/*user roles*/
+
+#user-roles .d-flex h2{
+    color: #333;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 4px solid;
+  }
+  
+  #user-roles .message-box {
+      position: relative;
+      padding-left: 60px;
+      padding-right: 60px;
+      text-align: center;
+  }
+  
+  #user-roles .issuer{
+    color:  #16324f;
+  }
+  
+  #user-roles .info-box .name{
+    color: #e03a3c;
+    border-bottom: 1px #e03a3c;
+  }
+  
+  
+  #user-roles .message-box h3 {
+      margin-top: 15px;
+    margin-bottom: 25px;
+    color: #e03a3c;
+    font-size: 25px;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+  }
+  
+  #user-roles .message-box h4 b{
+    color: #e03a3c;
+  }
+  
+  #user-roles .message-box h4 {
+      margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+  }
+  
+  #user-roles .message-box p {
+    line-height: 1.875;
+    padding: 30px;
+  }
+  
+  /* #user-roles .message-box:after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 0;
+      top: 120px;
+      
+      border: 1px solid #e9ecef;
+      border-radius: 20px;
+    z-index: -1;
+  }
+   */
+  #user-roles .info-box{
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    text-align: center;
+    margin: 30px;
+    width: 100%;
+  }
+
+  .userbtn {
+     
+    width: 30%;
+    height: 80%;
+   margin: 10px;
+   border: none;
+   border-radius: 10px;
+   padding: 1%;
+   background: #e03a3c;
+   font-weight: 600;
+   color: #fff;
+   font-style: italic;
+   cursor: pointer;
+ }
+ 
+ .promotebtn{
+   width: 30%;
+   background:green;
+ }
+ 
+ #deletebtn{
+   width: 30%;
+ }
+
+
+ 
+ .componentsbtn:hover{
+   background: crimson !important; 
+ }

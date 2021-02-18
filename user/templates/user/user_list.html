@@ -1,7 +1,129 @@
  <div id="message_container">
     {% include 'spinnets/message.html' %}
 </div>
-<h1>Heads</h1>
+
+<section id="user-roles" class="user-roles">
+    <div class="container">
+  
+      <div class="section-title">
+        <div class="d-flex justify-content-center">
+            <h2 class="">User Roles </h2>
+        </div>
+        <br>
+      </div>
+    </div>
+  
+    <div class="message-box">
+  
+      <div class="row">
+          <div class="info-box">
+            <h3 class="name">Heads</h3>
+            {% for user in heads %}
+  
+            <div id="handle">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-md-6">
+                       <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                    </div>
+        
+                    <div class="col-md-6">
+                        <button type="button" id="appbtn" class="userbtn" user="{{user.pk}}"  r_type=1>
+                            Demote &nbsp; &nbsp;<i class="fa fa-caret-down"></i>
+                        </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+  
+            {% endfor %}
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="info-box">
+          <h3 class="name">Coordinators</h3>
+          {% for user in coordis %}
+
+          <form method="POST">
+            {% csrf_token %}
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action">
+                <div class="row">
+                  <div class="col-md-6">
+                     <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                  </div>
+      
+                  <div class="col-md-6">
+                    <button type="button" id="appbtn" class="userbtn promotebtn" user="{{user.pk}}"  r_type=0>
+                        Promote &nbsp; &nbsp;<i class="fa fa-caret-up"></i>
+                    </button>
+                      <button type="button" id="appbtn" class="userbtn" user="{{user.pk}}"  r_type=1>
+                          Demote &nbsp; &nbsp;<i class="fa fa-caret-down"></i>
+                      </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </form>
+
+          {% endfor %}
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="info-box">
+      <h3 class="name">Members</h3>
+      {% for user in members %}
+
+      <form method="POST">
+        {% csrf_token %}
+        <div class="list-group">
+          <div class="list-group-item list-group-item-action">
+            <div class="row">
+              <div class="col-md-6">
+                 <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+              </div>
+  
+              <div class="col-md-6">
+                <button type="button" id="appbtn" class="userbtn promotebtn" user="{{user.pk}}"  r_type=0>
+                    Promote &nbsp; &nbsp;<i class="fa fa-caret-up"></i>
+                </button>
+                  <button type="button" id="appbtn" class="userbtn" user="{{user.pk}}"  r_type=1>
+                      Demote &nbsp; &nbsp;<i class="fa fa-caret-down"></i>
+                  </button>
+              </div>
+            </div>
+        </div>
+      </div>
+      </form>
+
+      {% endfor %}
+    </div>
+</div>
+  
+        
+       
+</div>
+  </section>
+  
+  <br>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Heads</h1>
 {% for user in heads %}
 
     <div id="handle">
@@ -48,6 +170,6 @@
     </ul>
     </form>
 
-{% endfor %}
+{% endfor %} -->
 
 

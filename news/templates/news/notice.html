@@ -18,14 +18,12 @@ RoboticsClub-Notice
     <div class="d-flex justify-content-center my-3">
         <h2 class="">NOTICE BOARD</h2>
     </div>
-    {% if user.is_superuser %}
+    <!-- {% if user.is_superuser %}
     <div class="d-flex justify-content-center">
-        <!-- <a href="{% url 'news:news_form' %}" class=""><button type="button" class="btn btn-danger mx-2 noticebtn" id="writebtn">Create
-                Notice</button></a> -->
         <a href="{% url 'news:news_form' %}" class="btn btn-default btn-danger mx-2 noticebtn">Create
                 Notice</a>
     </div>
-    {% endif %}
+    {% endif %} -->
     <br>
     {% for news in newslist %}
     <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
@@ -35,7 +33,7 @@ RoboticsClub-Notice
             <p class="card-text mb-2">{{news.content}}</p>
             <p><a href="{{news.link}}">Read More...</a></p>
             <p class="card-text"><small class="text-muted">Created on {{news.date}}</small></p>
-            {% if user.is_superuser %}
+            {% if user.profile.role > 1 %}
             <a href="{% url 'news:news_update' pk=news.pk %}" class="btn btn-primary btn-sm mx-2 noticebtn" >Update Notice</a>
             <a href="{% url 'news:news_delete' pk=news.pk %}" class="btn btn-primary btn-sm mx-2 noticebtn">Delete Notice</a>
             {% endif %}
@@ -43,8 +41,7 @@ RoboticsClub-Notice
 
     </div>
     {% endfor %}
-    <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
-
+    <!-- <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
         <div class="card-body">
             <h5 class="card-title mb-2 mt-1">TOPIC</h5>
             <p class="card-text mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis adipisci
@@ -78,7 +75,7 @@ RoboticsClub-Notice
             <p class="card-text"><small class="text-muted">Last updated on 26 Jan 2021</small></p>
         </div>
 
-    </div>
+    </div> -->
     <br>
 </section>
 

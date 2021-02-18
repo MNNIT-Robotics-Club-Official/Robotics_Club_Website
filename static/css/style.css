@@ -313,7 +313,7 @@ Faculty Ends
 /*donate ends*/
 
 /*donate msg starts*/
-.carousel-img {
+#message .carousel-img {
   width: 15%;
   height: 15%;
   }
@@ -322,7 +322,7 @@ Faculty Ends
   background-color: #16324f;
 }
 
-.carousel-icon i{
+#message .carousel-icon i{
   color: #16324f;
   font-size: 30px;
 }
@@ -337,14 +337,14 @@ Faculty Ends
   border-bottom:#e03a3c 2px solid;
 }
 
-.message-box {
+#message .message-box {
 	position: relative;
 	padding: 60px;
   margin-top: -40px;
   text-align: center;
 }
 
-.message-box h3 {
+#message .message-box h3 {
 	margin-top: 15px;
   margin-bottom: 25px;
   color: #16324f;
@@ -352,7 +352,7 @@ Faculty Ends
 	font-weight: bold;
 }
 
-.message-box h4 {
+#message .message-box h4 {
 	margin-top: 15px;
   margin-bottom: 25px;
   font-size: 15px;
@@ -360,12 +360,12 @@ Faculty Ends
   font-style: italic;
 }
 
-.message-box p {
+#message .message-box p {
   line-height: 1.875;
   padding: 30px;
 }
 
-.message-box:after {
+#message .message-box:after {
 	content: '';
 	position: absolute;
 	left: 20px;
