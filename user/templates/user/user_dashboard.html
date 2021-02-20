@@ -12,80 +12,82 @@
 
 
 {% block body %}
-    <div id="message-container">
-    {% include 'user/user_dashoard_updatepart.html' %}
-    </div>
-    <div class="container">
-                {% if cuser.user == request.user %}
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profilemodal">
-                        Edit Profile
-                    </button>
-                    <div class="modal fade" id="profilemodal" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <form method="POST" action="{% url 'user:profile_page' request.user%}" id="profile">
-                                    <div class="modal-body">
-
-                                        {% csrf_token %}
-                                        {{ profileform|crispy }}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                                        </button>
-                                        <button type="submit" class="btn btn-primary" name="profile">Confirm</button>
-                                </form>
-                            </div>
+    <section class="user" id="user">
+        <div id="message-container">
+            {% include 'user/user_dashoard_updatepart.html' %}
+        </div>
+        <div class="container">
+            {% if cuser.user == request.user %}
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profilemodal">
+                Edit Profile
+            </button>
+            <div class="modal fade" id="profilemodal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </div>
-                    </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passwordmodal">
-                        Change Password
-                    </button>
-                    <div class="modal fade" id="passwordmodal" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <form method="POST" action="{% url 'user:change_password' %}" id="password">
-                                    <div class="modal-body">
+                        <form method="POST" action="{% url 'user:profile_page' request.user %}" id="profile">
+                            <div class="modal-body">
 
-                                        {% csrf_token %}
-                                        {{ passform|crispy }}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                                        </button>
-                                        <button type="submit" class="btn btn-primary" name="password">Save changes</button>
-                                </form>
+                                {% csrf_token %}
+                                {{ profileform|crispy }}
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                </button>
+                                <button type="submit" class="btn btn-primary" name="profile">Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#passwordmodal">
+                Change Password
+            </button>
+            <div class="modal fade" id="passwordmodal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
+                        <form method="POST" action="{% url 'user:change_password' %}" id="password">
+                            <div class="modal-body">
+
+                                {% csrf_token %}
+                                {{ passform|crispy }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                </button>
+                                <button type="submit" class="btn btn-primary" name="password">Save changes</button>
+                            </div>
+                        </form>
+
                     </div>
-                    </div>
-                {% endif %}
+                </div>
+            </div>
+        {% endif %}
 
         {% if user.profile.role > 1 %}
             <a href="{% url 'user:admin_page' %}" id="Create"
                class="btn btn-warning ml-auto mb-sm-0 text-white">Goto admin page</a>
         {% endif %}
-
         </div>
 
         <br><br>
-
+        <div class="container">
         {% if components or blogs or projects %}
             <div class="info-box">
                 {% if blogs %}
@@ -218,31 +220,32 @@
             </div>
         </div>
         </div>
+        </div>
+    </div>
+    </section>
 {% endblock %}
 
 {% block script %}
     <script type="text/javascript">
-    $(document).ready(function ()
-    {
-        $("form").on('submit',function (event){
-            event.preventDefault();
-            var form=$(this).attr('id');
-            var the_post=$(this).serialize();
-            if(form=='password')
-            {
-                $('#password').trigger('reset');
-            }
-            $.ajax({
-                url: $(this).attr('action'),
-                type: 'post',
-                data: the_post,
-                success(data){
-                   $('#message-container').html(data['html'])
-                    $('#'+form+'modal').modal('hide');
+        $(document).ready(function () {
+            $("form").on('submit', function (event) {
+                event.preventDefault();
+                var form = $(this).attr('id');
+                var the_post = $(this).serialize();
+                if (form == 'password') {
+                    $('#password').trigger('reset');
                 }
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'post',
+                    data: the_post,
+                    success(data) {
+                        $('#message-container').html(data['html'])
+                        $('#' + form + 'modal').modal('hide');
+                    }
+                })
             })
         })
-    })
     </script>
     <script type="text/javascript">
         $(document).ready(function (event) {
