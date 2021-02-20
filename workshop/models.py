@@ -21,8 +21,6 @@ class Workshop(models.Model):
     date_posted = models.DateField()
     status = models.IntegerField(choices=Status,default=1)
 
-
-
     def __str__(self):
         return f'{self.title}'
     
