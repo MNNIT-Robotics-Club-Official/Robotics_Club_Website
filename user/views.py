@@ -161,27 +161,49 @@ def userProfileCreation(request):
 
 
 @login_required
-def userProfile(request):
+def userProfile(request,user):
     context = {}
     if request.method=='GET':
-        context['passform']=PasswordResetForm()
-        context['blogs'] = Blog.objects.filter(author=request.user).order_by('approved')
-        context['projects'] = Project.objects.filter(members=request.user).order_by('status')
-        context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
+        context['blogs'] = Blog.objects.filter(author__username=user).filter(approved=True).order_by('approved')
+        context['projects'] = Project.objects.filter(members__username=user).order_by('status')
+        context['cuser'] = Profile.objects.get(user__username=user)
+        if request.user.username ==user:
+            context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
+            context['blogs'] = Blog.objects.filter(author__username=request.user).order_by('approved')
+            context['passform'] = PasswordResetForm()
+            context['profileform']= UserProfileForm(instance=request.user.profile)
     else:
+        pro=Profile.objects.get(user=request.user)
+        form = UserProfileForm(request.POST,instance=pro)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Profile edited successfully')
+        else:
+            messages.info(request,'Fill form correctly')
+        context['cuser'] = Profile.objects.get(user__username=user)
+        html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
+        return JsonResponse({'html': html}, status=200)
+    return render(request, 'user/user_dashboard.html', context)
+
+@login_required
+def changepassword(request):
+    context={}
+    if request.method=="POST":
         form = PasswordResetForm(request.POST)
         if form.is_valid():
             if not request.user.check_password(form['current_password'].value()):
-                messages.error(request,'Incorrect Password')
+                messages.info(request, 'Incorrect Password')
             else:
                 if form['new_password_1'].value() != form['new_password_2'].value():
-                    messages.error(request,'Password Mismatch')
+                    messages.info(request, 'Password Mismatch')
                 else:
                     request.user.set_password(form['new_password_1'].value())
-                    messages.success(request,'Password Changed Successfully')
-        return redirect('user:profile_page')
-    return render(request, 'user/user_dashboard.html', context)
-
+                    messages.success(request, 'Password Changed Successfully')
+        context['cuser']=Profile.objects.get(user=request.user)
+        html = render_to_string('user/user_dashoard_updatepart.html',context ,request=request)
+        return JsonResponse({'html': html}, status=200)
+    else:
+        HttpResponse('Something is wrong I can feel it')
 
 def activate(request, uidb64, token):
     try:

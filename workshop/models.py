@@ -13,8 +13,9 @@ Status = ((0,"Past"),(1,"Upcoming"))
 
 class Workshop(models.Model):
     title = models.CharField(blank=False,unique=False,max_length=256)
-    date = models.DateField(blank=False,unique=False)
-    venue = models.CharField(blank=True,max_length=256)
+    date = models.DateField(blank=True,null=True,unique=False)
+    venue = models.CharField(blank=True,null=True,max_length=256)
+    target = models.CharField(max_length=256,default="All")
     link = models.FileField(upload_to=get_path,null=True,blank=True)
     image = models.ImageField(default='default-workshop.png',upload_to=get_path)
     date_posted = models.DateField()
