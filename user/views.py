@@ -95,7 +95,10 @@ def logoutUser(request):
 
 
 def userPage(request):
-    return redirect('user:login_page')
+    if request.user.is_authenticated:
+        return redirect('home:index')
+    else:
+        return redirect('user:login_page')
 
 
 @has_role_head
