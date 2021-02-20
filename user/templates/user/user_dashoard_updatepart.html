@@ -1,0 +1,65 @@
+{% include 'spinnets/message.html' %}
+<div class="container">
+            <div class="section-title">
+                <div class="d-flex justify-content-center my-3">
+                    <h2 class="">User Profile Page <i class="fa fa-user"></i></h2>
+                </div>
+            </div>
+            <div class="info-box p-4">
+                <h4 class="card-title mb-3 pl-0">Personal Details</h4>
+                <fieldset disabled>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Username</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="{{ cuser.user }}">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputReg">Registration Number</label>
+                            <input type="number" class="form-control" id="inputreg"
+                                   placeholder="{{ cuser.regnum }}">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset disabled>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">First Name</label>
+                            <input type="text" class="form-control" id="inputName"
+                                   placeholder="{{ cuser.first_name }}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Last Name</label>
+                            <input type="text" class="form-control" id="inputName"
+                                   placeholder="{{ cuser.last_name }}">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset disabled>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <fieldset disabled>
+
+                                <label for="inputG">G-Suit ID</label>
+                                <input type="email" class="form-control" id="inputG"
+                                       placeholder="{{ cuser.user.email }}">
+
+                            </fieldset>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputBranch">Branch</label>
+                            <input type="text" class="form-control" id="inputBranch"
+                                   placeholder="{{ cuser.get_branch_display }}">
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+</div>
