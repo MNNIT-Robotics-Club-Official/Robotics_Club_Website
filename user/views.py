@@ -178,6 +178,8 @@ def userProfile(request,user):
         if form.is_valid():
             form.save()
             messages.success(request,'Profile edited successfully')
+        else:
+            messages.info(request,'Fill form correctly')
         context['cuser'] = Profile.objects.get(user__username=user)
         html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
         return JsonResponse({'html': html}, status=200)
