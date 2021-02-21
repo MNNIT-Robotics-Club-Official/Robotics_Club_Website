@@ -110,7 +110,10 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li class="{% if request.resolver_match.view_name == 'home:faculty' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:faculty' %}">Coordinators</a>
+                  <a class="dropdown-item" href="{% url 'home:faculty' %}">Faculty</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:coordinator' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:coordinator' %}">Coordinators</a>
                 </li>
                 <li class="{% if request.resolver_match.view_name == 'home:alumini' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumni</a>
@@ -179,9 +182,13 @@
     <!-- FOOTER  -->
     <footer class="pt-4 pt-md-5 border-top px-2" id="footer">
       <div class="row mr-0 ml-0">
-        <div class="col-12 col-md">
-          <img class="mb-2 mx-4" src="{% static 'img/logo.jpg' %}" alt="" width="147" height="174.67">
-          <small class="d-block mb-3 text-muted mx-4">© RoboticsClub MNNIT</small>
+        <div class="col-12 col-md col-sm-12">
+          <ul style="list-style-type: none; text-align: center; padding: 0;">
+            <li>
+              <img class="mb-2 mx-4" src="{% static 'img/MNNIT.png' %}" alt="" width="89.57" height="120.85">
+            </li>
+            <li> <small class="d-block mb-3 text-muted">© RoboticsClub MNNIT</small></li>
+          </ul>
         </div>
         <div class="col-6 col-md">
           <h5><span class="line">Us</span>eful Links</h5>

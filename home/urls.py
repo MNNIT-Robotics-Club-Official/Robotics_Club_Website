@@ -14,4 +14,6 @@ urlpatterns = [
     path('achievement/', views.achievement, name='achievement'),
     path('permission/', views.permission, name='permission'),
     path('team/', views.team, name='team'),
+    path('coordinator/', views.coordinator, name='coordinator'),
+    path('sponsor/', views.sponsor, name='sponsor'),
 ]
