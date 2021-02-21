@@ -100,8 +100,8 @@ Alumni Starts
 
 #alumniTeam .d-flex h2{
   color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;
@@ -137,10 +137,23 @@ Alumni Starts
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: #fff;
-  line-height: 10px;
+  line-height: 15px;
   margin-bottom: -8px;
   text-align: center;
   padding-bottom: 0.6em;
+}
+
+#alumniTeam .card .d-flex a:hover{
+  text-decoration: none;
+}
+
+#alumniTeam .card .d-flex a>li{
+  font-weight: 600;
+}
+
+#alumniTeam .card .d-flex a>li:hover{
+  color: #000;
+  font-weight: bold;
 }
 
 #alumniTeam .social-links ul{
@@ -179,8 +192,8 @@ Faculty Starts
 /* Our Faculty */
 #facultyTeam .d-flex h2{
   color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;
@@ -226,8 +239,8 @@ Faculty Ends
 /*donate starts*/
 #donat .d-flex h2{
   color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;
@@ -399,8 +412,8 @@ starts
 /* Heading */
 .testimonials .d-flex h2{
   color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;

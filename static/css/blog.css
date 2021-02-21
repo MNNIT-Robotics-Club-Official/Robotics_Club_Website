@@ -1,7 +1,7 @@
 #blog .d-flex h2{
     color: #333;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
     word-spacing: 10px;
     letter-spacing: 2px;
     line-height: 180%;
@@ -85,8 +85,8 @@
   
 #blog-detail .d-flex h3{
     color: #333;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
     word-spacing: 10px;
     letter-spacing: 2px;
     line-height: 180%;
@@ -129,8 +129,8 @@
 
 #blog-form .d-flex h2{
   color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;
