@@ -1,7 +1,7 @@
 #avishkar .d-flex h2{
     color: #333;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
   line-height: 180%;
   border-bottom:#e03a3c 5px solid

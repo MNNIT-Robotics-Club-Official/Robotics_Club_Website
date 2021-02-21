@@ -11,6 +11,9 @@ def alumini(request):
 def faculty(request):
     return render(request, 'faculty.html')
 
+def coordinator(request):
+    return render(request, 'coordinator.html')
+
 def gallery(request):
     return render(request, 'gallery.html')
 
@@ -31,4 +34,7 @@ def permission(request):
   
 def team(request):
     return render(request, 'team.html')
+  
+def sponsor(request):
+    return render(request, 'sponsor.html')
 
