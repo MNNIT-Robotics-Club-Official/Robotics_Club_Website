@@ -40,13 +40,20 @@ Workshop Form
 
             </div>
             <div class="form-group wow fadeInUp">
-                <label>Venue*</label>
+                <label>Description</label>
+                {{form.description}}
+
+            </div>
+            <div class="form-group wow fadeInUp">
+                <label>Venue<div class="text-muted">
+                    (leave blank if none)
+                </div></label>
                 {{form.venue}}
 
             </div>
             <div class="form-group wow fadeInUp">
-                <label>Date*<div class="text-muted">
-                        (Please write in format yyyy-mm-dd)
+                <label>Date<div class="text-muted">
+                        (Please write in format yyyy-mm-dd, leave blank if none)
                     </div></label>
                 {{form.date}}
 
