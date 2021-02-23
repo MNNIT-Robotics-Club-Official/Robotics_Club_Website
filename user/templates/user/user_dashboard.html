@@ -16,7 +16,7 @@
         <div id="message-container">
             {% include 'user/user_dashoard_updatepart.html' %}
         </div>
-        <div class="container">
+        <div class="container py-3">
             {% if cuser.user == request.user %}
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#profilemodal">
                 Edit Profile
