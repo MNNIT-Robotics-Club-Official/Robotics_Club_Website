@@ -13,9 +13,27 @@ Robotics Club MNNIT
 
 <section id="workshop">
     <!-- Workshop Heading -->
-    <div class="d-flex justify-content-center my-3">
-        <h2>WORKSHOP</h2>
+    <div class="jigyasa">
+        <div class="d-flex justify-content-center my-3">
+            <h2>WORKSHOP</h2>
+        </div>
+
+
+        <img src="{% static 'img/Jigyasa_Transparent.png' %}" alt="Jigyasa">
+        <p>
+            Jigyasa is the workshop venture of the Technical clubs of MNNIT, namely Robotics, Astrowing and AeroClub,
+            motivated by the desire to supplement education with the present day industry requirements, thus making the
+            participants future ready with a STEM mindset.
+            <br><br>
+            The workshops under Jigyasa will help the students in acknowledging real-life applications of
+            science/engineering, through various projects, activities and interactive sessions.
+            Hence, by emphasizing on innovation and imagination, this workshop will incite in their minds, a profound
+            technical temperament and fascination towards STEM.
+
+        </p>
     </div>
+
+
     <!-- {% if user.is_superuser %}
     <div class="d-flex justify-content-center">
                 <a href="{% url 'workshop:workshop_form' %}" class="btn btn-default btn-danger mx-2 workshopbtn">Create
@@ -35,7 +53,7 @@ Robotics Club MNNIT
     <div class="card mb-5 mx-4">
         <div class="row no-gutters">
             <!-- Assigning column for image -->
-            <div class="col-md-4">
+            <div class="col-md-4 image">
                 <!-- <a href="{{workshop.link}}" target="_blank"> -->
                 <!-- <img src="{% static '{{workshop.image}}' %}" class="card-img img-fluid" alt="..."></a> -->
                 <img src="{{workshop.image.url}}" class="card-img img-fluid" alt="...">
@@ -87,8 +105,10 @@ Robotics Club MNNIT
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
                     {% if user.profile.role > 1 %}
-                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
-                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
+                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"
+                        class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"
+                        class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
                 </div>
             </div>
@@ -108,7 +128,7 @@ Robotics Club MNNIT
     <div class="card mb-5 mx-4">
         <div class="row no-gutters">
             <!-- Assigning column for image -->
-            <div class="col-md-4">
+            <div class="col-md-4 image">
                 <img src="{{workshop.image.url}}" class="card-img img-fluid" alt="...">
                 </a>
             </div>
@@ -117,14 +137,14 @@ Robotics Club MNNIT
                 <div class="card-body">
                     <!-- Workshop Title -->
                     <h5 class="card-title">{{workshop.title}}</h5>
-                    <br>
+
                     <!-- Table to maintain vertical alignment of date and venue -->
                     <table>
                         <tbody>
                             <!-- for date -->
                             <tr>
                                 <td>
-                                    <p class="card-text">Date</p>
+                                    <p class="card-text">Target Audience</p>
                                 </td>
                                 <td>
                                     <!-- Added a tab -->
@@ -134,9 +154,10 @@ Robotics Club MNNIT
                                 <td><span>&emsp; {{workshop.date}}</span></td>
 
                             </tr>
+                            <br>
                             <tr>
                                 <td>
-                                    <p class="card-text">Venue</p>
+                                    <p class="card-text">Discription</p>
                                 </td>
                                 <td>
                                     <p>&emsp;: </p>
@@ -158,8 +179,10 @@ Robotics Club MNNIT
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
                     {% if user.profile.role > 1 %}
-                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
-                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}" class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
+                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"
+                        class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"
+                        class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                     {% endif %}
                 </div>
             </div>

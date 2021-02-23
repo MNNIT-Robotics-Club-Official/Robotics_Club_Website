@@ -5,7 +5,7 @@ starts
 
 /* Workshop Heading */
 #workshop .d-flex h2{
-    color: #333;
+    color: #fff;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     word-spacing: 10px;
@@ -14,21 +14,56 @@ starts
     border-bottom:#e03a3c 5px solid;
 }
 
+#workshop .jigyasa{
+  background-color: #1b1b1b;
+  margin-bottom: 3em;
+  padding-top: 0.7em;
+  padding-bottom: 0.1em;
+}
+
+#workshop .jigyasa img{
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#workshop .jigyasa p{
+  margin: 2em;
+  margin-left: 3.5em;
+  margin-right: 3.5em;
+  padding-bottom: 2em;
+  text-align: center;
+  font-size: 1.1em;
+  font-family: "Raleway",sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+
   /* Sub Heading */
 #workshop .d-flex h3{
   color: #16324f;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  word-spacing: 2px;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 0.4em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Image of Workshop */
 #workshop .card .row img{
   background-color: #f8f9fa;
-  width: 100%;
-  height: 200px;
+  /* max-width: 100%; */
+  width: auto;
+  max-height: 100%;
   object-fit: contain;
+}
+
+#workshop .card .image{
+  background-color: #f8f9fa;
 }
 
 /* Workshop Title */
@@ -50,7 +85,7 @@ starts
   color: #e65658;
   font-weight: 600;
   margin-top: -4px;
-  line-height: 1.5em;
+  line-height: 1.2em;
   font-size: 18px;
   margin-bottom: 0;
 }
@@ -60,6 +95,10 @@ starts
   color: #16324f;
   font-weight: 500;
   font-size: 16px;
+}
+
+#workshop .card .row .card-body table td{
+  vertical-align:text-top;
 }
 
 /* More details link */
@@ -164,6 +203,18 @@ starts
 
 .workshopbtn:hover{
   background: crimson !important; 
+}
+
+@media (max-width: 500px) {
+  #workshop .jigyasa img{
+    width: 60%;
+    height: 60%;
+  }
+
+  #workshop .jigyasa p{
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
 }
 
   /* Workshop Form ends here */
