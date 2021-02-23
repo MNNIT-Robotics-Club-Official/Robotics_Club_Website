@@ -4,4 +4,4 @@ from .models import Workshop
 class WorkshopForm(forms.ModelForm):
     class Meta:
         model=Workshop
-        fields=['title','date','target','venue','link','image']
+        fields=['title','date','target','description','venue','link','image']
