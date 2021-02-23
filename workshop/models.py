@@ -19,6 +19,7 @@ class Workshop(models.Model):
     link = models.FileField(upload_to=get_path,null=True,blank=True)
     image = models.ImageField(default='default-workshop.png',upload_to=get_path)
     date_posted = models.DateField()
+    description = models.TextField(max_length=300,blank=True)
     status = models.IntegerField(choices=Status,default=1)
 
     def __str__(self):
@@ -26,6 +27,6 @@ class Workshop(models.Model):
     
     def save(self, *args,**kwargs):
         self.date_posted=timezone.now().date()
-        if self.date <= self.date_posted:
-            self.status = 0
+        # if self.date <= self.date_posted:
+            # self.status = 1   # Keeping all workshop as upcoming till now
         super().save(args,kwargs)
