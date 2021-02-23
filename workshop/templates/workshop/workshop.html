@@ -45,7 +45,7 @@ Robotics Club MNNIT
     {% if upcoming %}
 
     <div class="d-flex justify-content-start my-3 mx-4">
-        <h3 class="">UPCOMING WORKSHOPS</h3>
+        <h3 class="">Present Workshops</h3>
     </div>
 
     {% for workshop in upcoming %}
@@ -69,6 +69,7 @@ Robotics Club MNNIT
                     <table>
                         <tbody>
                             <!-- for date -->
+                            {% if workshop.date %}
                             <tr>
                                 <td>
                                     <p class="card-text">Date</p>
@@ -81,6 +82,9 @@ Robotics Club MNNIT
                                 <td><span>&emsp; {{workshop.date}}</span></td>
 
                             </tr>
+                            {% endif %}
+
+                            {% if workshop.venue %}
                             <tr>
                                 <td>
                                     <p class="card-text">Venue</p>
@@ -92,6 +96,32 @@ Robotics Club MNNIT
                                 <td><span>&emsp; {{workshop.venue}}</span></td>
 
                             </tr>
+                            {% endif %}
+
+                            <tr>
+                                <td>
+                                    <p class="card-text">Target Audience</p>
+                                </td>
+                                <td>
+                                    <!-- Added a tab -->
+                                    <p>&emsp;: </p>
+                                </td>
+
+                                <td><span>&emsp; {{workshop.target}}</span></td>
+                            </tr>
+                            {% if workshop.description %}
+                            <tr>
+                                <td>
+                                    <p class="card-text">Description</p>
+                                </td>
+                                <td>
+                                    <!-- Added a tab -->
+                                    <p>&emsp;: </p>
+                                </td>
+
+                                <td><span>&emsp; {{workshop.description}}</span></td>
+                            </tr>
+                            {% endif %}
                         </tbody>
                     </table>
                     <!-- Link for discription of Workshop -->
