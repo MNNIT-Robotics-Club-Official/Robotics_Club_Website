@@ -1,5 +1,10 @@
+#sponsor{
+  padding-top: 1em;
+  background-color: #1b1b1b;
+}
+
 #sponsor .d-flex h2{
-    color: #333;
+    color: #fff;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     word-spacing: 10px;
@@ -7,3 +12,142 @@
     line-height: 180%;
     border-bottom:#e03a3c 5px solid
   }
+
+  #sponsor .support img{
+    width: 14%;
+    height: 14%;
+    object-fit: cover;
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  #sponsor .support p{
+    /* margin: 2em; */
+    margin-left: 3.5em;
+    margin-right: 3.5em;
+    margin-bottom: 0;
+    /* padding-bottom: 2em; */
+    text-align: center;
+    font-size: 1em;
+    font-family: "Raleway",sans-serif;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+#sponsor .social-links ul{
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#sponsor .social-links li{
+  display: inline-block;
+  padding-bottom: 0.5em;
+}
+
+#sponsor .social-links i {
+  font-size: 1.2em;
+  display: inline-block;
+  background: #EC3134;
+  color: #eee;
+  line-height: 1;
+  padding: 7.5px 0;
+  margin-right: 0.4em;
+  border-radius: 50%;
+  text-align: center;
+  width: 1.8em;
+  height: 1.8em;
+  transition: 0.3s;
+}
+
+#sponsor .social-links span {
+  padding-right: 2em;
+  color: #eee;
+}
+
+#sponsor .social-links a:hover {
+  text-decoration: none;
+}
+
+  @media (max-width: 500px) {
+    #sponsor .support img{
+      width: 40%;
+      height: 40%;
+    }
+  
+    #sponsor .support p{
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+    }
+  }
+
+
+  /* Carousel */
+  @media (min-width: 768px) {
+    
+    /* show 4 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+      display: block;
+    }
+  
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+      transition: none;
+    }
+  
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: absolute;
+      top: 0;
+      right: -25%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+  
+    /* farthest right hidden item must be absolue position for animations */
+     .carousel-inner .carousel-item-prev.carousel-item-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+      display: block;
+      visibility: visible;
+    }
+  }
+  
