@@ -167,8 +167,8 @@
    height: 100%;
   margin: 10px;
   border: none;
-  border-radius: 1rem;
-  padding: 1%;
+  border-radius: 15px;
+  padding: 2%;
   background: #e03a3c;
   font-weight: 600;
   color: #fff;
@@ -185,12 +185,15 @@
 }
 
 #updatebtn{
-  width: 30%;
+  width: auto;
+  display: inline-block;
   margin: 3px;
   background: grey;
 }
 
 #deletebtn{
+  width: auto;
+  display: inline-block;
   margin: 3px;
   width: 30%;
 }

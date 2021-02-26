@@ -69,13 +69,17 @@
         <hr>
         {% if blog.author == request.user %}
         <div class="row">
-            <div class="d-flex justify-content-start col-lg-6">
-                <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_update' pk=blog.pk %}" id="updatebtn">Edit Blog</a>
+            <div class="col-6">
+                <div class="d-flex justify-content-start">
+                    <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_update' pk=blog.pk %}" id="updatebtn">Edit Blog</a>
+                </div>
             </div>
-            <div class="d-flex justify-content-end col-lg-6">
-                <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_delete' pk=blog.pk %}" id="deletebtn">Delete Blog</a>
+            <div class="col-6">
+                <div class="d-flex justify-content-end">
+                    <a class="d-flex justify-content-center blogbtn" href="{% url 'blog_delete' pk=blog.pk %}" id="deletebtn">Delete Blog</a>
+                </div>
             </div>
-        </div>
+            </div>   
         <hr>
         {% endif %}
     </div>
