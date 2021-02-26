@@ -12,14 +12,15 @@
 .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       border: none;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+      overflow: hidden;
 }
 
 .card-image{
-      overflow: hidden;
+      overflow-y: hidden;
       z-index: 9;
-      width: 350px;
-      height: 315px;
+      /* width: 350px;*/
+      height: 315px; 
       transition: all ease-in-out 1s;
 }
   

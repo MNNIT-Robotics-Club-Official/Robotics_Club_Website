@@ -74,13 +74,13 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: none;
-  margin-bottom: 330px;
+  margin-bottom: 50px;
 }
 
 .card-image{
   overflow: hidden;
   z-index: 9;
-  width: 350px;
+  /* width: 350px; */
   height: 315px;
 }
 
@@ -172,8 +172,8 @@
    height: 100%;
   margin: 10px;
   border: none;
-  border-radius: 1rem;
-  padding: 1%;
+  border-radius: 15px;
+  padding: 2%;
   background: #e03a3c;
   font-weight: 600;
   color: #fff;
@@ -190,13 +190,15 @@
 }
 
 #updatebtn{
-  width: 30%;
+  width: auto;
+  display: inline-block;
   margin: 3px;
   background: grey;
 }
 
 #deletebtn{
-  width: 30%;
+  width: auto;
+  display: inline-block;
   margin: 3px;
 }
 
