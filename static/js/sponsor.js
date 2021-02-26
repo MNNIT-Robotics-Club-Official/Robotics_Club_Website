@@ -1,5 +1,5 @@
 $('#recipeCarousel').carousel({
-    interval: 10000
+    interval: 4000
 })
 
 $('.carousel .carousel-item').each(function () {
