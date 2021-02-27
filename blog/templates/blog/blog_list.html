@@ -70,26 +70,98 @@
                 </a>
             </div> -->
             {% if bloglist %}
-                <ul class="d-flex justify-content-center pagination">
+            <nav aria-label="pages" class="pagination-container">
+                <div class="pagination d-flex justify-content-center">
                     {% if bloglist.has_previous %}
-                        <li><a href="?page={{ bloglist.previous_page_number }}">&laquo;</a></li>
+                    <a class="pagination-newer" href="?page={{ bloglist.previous_page_number }}">
+                        &laquo;
+                    </a>
                     {% else %}
-                        <li class="disabled"><span>&laquo;</span></li>
+                    
+                    <a class="pagination-newer disabled" href="#" tabindex="-1">&laquo;</a>
+                    
                     {% endif %}
+
+                    {% for i in bloglist.paginator.page_range %}
+                    <span class="pagination-inner">
+                        {% if bloglist.number == i %}
+                            <a class="pagination-active" href="#">{{i}} <span class="sr-only">(current)</span></a>
+                        {% else %}
+                            <a href="?page={{ i }}">{{i}}</a>
+                        {% endif %}
+                    </span>
+                    {% endfor %}
+
+                    {% if bloglist.has_next %}
+                    <a class="pagination-older" href="?page={{ bloglist.next_page_number }}">
+                        &raquo;
+                    </a>
+                    {% else %}
+                    
+                    <a class="pagination-older disabled" href="#" tabindex="-1">&raquo;</a>
+                    
+                    {% endif %}
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <ul class="pagination d-flex justify-content-center">
+                    {% if bloglist.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ bloglist.previous_page_number }}">
+                            &laquo;
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                    </li>
+                    {% endif %}
+
                     {% for i in bloglist.paginator.page_range %}
                         {% if bloglist.number == i %}
-                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">{{i}} <span class="sr-only">(current)</span></a>
+                        </li>
                         {% else %}
-                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ i }}">{{i}}</a>
+                        </li>
                         {% endif %}
                     {% endfor %}
+                  
                     {% if bloglist.has_next %}
-                        <li><a href="?page={{ bloglist.next_page_number }}">&raquo;</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ bloglist.next_page_number }}">
+                            &raquo;
+                        </a>
+                    </li>
                     {% else %}
-                        <li class="disabled"><span>&raquo;</span></li>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                    </li>
                     {% endif %}
-                </ul>
-            {% endif %}
+                </ul> -->
+              </nav>
+              {%endif%}
+
         </div>
     </section>
     <br>

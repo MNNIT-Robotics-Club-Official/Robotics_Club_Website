@@ -16,7 +16,7 @@ def list(request):
     blog_all=Blog.objects.filter(approved=True).order_by('-id')
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(blog_all, 12)
+    paginator = Paginator(blog_all, 12) 
     blogs = paginator.page(page)
     context['bloglist']=blogs
 
