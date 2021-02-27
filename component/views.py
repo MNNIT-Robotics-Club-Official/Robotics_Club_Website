@@ -18,8 +18,8 @@ def test(request, id):
     comp=Component.objects.get(id=id)   #changed
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
-    context['component'] = Component.objects.get(pk=id)           #changed
-    context['request'] = component
+    context['component'] = Component.objects.get(pk=id)  # changed
+    context['component_requests'] = component
     context['approved'] = othcomp
     return render(request, 'component/test.html', context)
 
@@ -63,17 +63,14 @@ def deletecomponent(request, pk):
 def updatecomponent(request, pk):
     component = Component.objects.get(pk=pk)
     context = {}
-    if request.user.is_superuser:
-        if request.method == 'POST':
-            form = UpdateComponentForm(request.POST,request.FILES,instance=component)
-            form.save()
-            return redirect('component_list')
-        else:
-            form = UpdateComponentForm(instance=component)
-            context['form'] = form
-        return render(request, 'component/component_form.html', context)
+    if request.method == 'POST':
+        form = UpdateComponentForm(request.POST, request.FILES, instance=component)
+        form.save()
+        return redirect('component_list')
     else:
-        return HttpResponse("Sorry You don't have permission :)")
+        form = UpdateComponentForm(instance=component)
+        context['form'] = form
+    return render(request, 'component/component_form.html', context)
 
 
 @has_role_head_or_coordinator
@@ -97,7 +94,7 @@ def handlerequest(request):
             comp.issued_num = comp.issued_num + add
             comp.save()
             messages.success(request, "Request accepted successfully")
-    elif type=='1': #reject
+    elif type == '1':  # reject
         req.delete()
     elif type == '2':
         add = req.request_num
