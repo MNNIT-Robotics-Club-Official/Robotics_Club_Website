@@ -168,7 +168,7 @@
   margin: 10px;
   border: none;
   border-radius: 15px;
-  padding: 2%;
+  padding: 3%;
   background: #e03a3c;
   font-weight: 600;
   color: #fff;
@@ -195,7 +195,6 @@
   width: auto;
   display: inline-block;
   margin: 3px;
-  width: 30%;
 }
 
 .blogbtn:hover{

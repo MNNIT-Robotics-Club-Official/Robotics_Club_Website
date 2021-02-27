@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Issue Details of {{comp.name}}
+Issue Details of {{component.name}}
 {% endblock %}
 
 {% block head %}
@@ -11,7 +11,7 @@ Issue Details of {{comp.name}}
 
 
 {% block body %}
-    <a href="{% url 'add_component' %}">Add Component</a>
+    <!-- <a href="{% url 'add_component' %}">Add Component</a> -->
     <div id="test123">
         {% include 'component/test_part.html' %}
     </div>

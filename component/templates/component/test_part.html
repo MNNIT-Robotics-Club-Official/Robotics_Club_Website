@@ -4,7 +4,7 @@
 </div>
 
 <section id="issue-details" class="issue-details">
-  <!-- <div class="container">
+  <div class="container">
 
     <div class="section-title">
       <div class="d-flex justify-content-center my-3">
@@ -12,27 +12,65 @@
       </div>
       <br>
     </div>
-  </div> -->
+  </div>
 
-  <!-- <div class="container">
+  <div class="container">
 
     <div class="message-box">
       <img src="{{component.image.url}}" class="rounded-circle carousel-img" alt="">
       <h3 class="customer-name">{{component.name}}</h3>
       <h4><b><i>Type : </i></b>{{component.get_type_display}}</h4>
+      <h4><b><i>Total Quantity : </i></b>{{component.max_num}}</h4>
+      <!-- <h4><b><i>Issued Quantity : </i></b>{{component.issued_num}}</h4> -->
       <h4><b><i>Available : </i></b>{{component.available}}</h4>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
+          <div class="info-box">
+            <h3 class="name">Issuer Details</h3>
+            {% for comp in approved %}
+            <div id="rhandle">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="{% url 'user:profile_page' user=comp.request_user %}">
+                      <b class="issuer">{{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}&nbsp;| &nbsp;
+                        {% if comp.user_confirmation %}
+                          Component received at {{ comp.time_confirmation }}
+                        {% else %}
+                          Yet to be received                
+                        {% endif %}
+                      </b></a> 
+                      {{comp.reason}}
+                    
+                    </div>
+                 
+
+                    <div class="col-md-6">
+                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
+                        user="{{comp.request_user.username }}" r_type=2>
+                        Return
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+           <!-- <div class="col-md-0">
           <div class="info-box">
             <h3 class="name">Pending Requests</h3>
-            {% for comp in component_requests %}
+            {% for comp in request %}
             <div id="handle">
               <div class="list-group">
                 <div class="list-group-item list-group-item-action">
                   <div class="row">
                     <div class="col-md-4">
-                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
+                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}| &nbsp;{{comp.request_num}}</b>
                       {{comp.reason}}
                     </div>
 
@@ -53,37 +91,10 @@
 
             {% endfor %}
           </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="info-box">
-            <h3 class="name">Accepted Requests</h3>
-            {% for comp in approved %}
-            <div id="rhandle">
-              <div class="list-group">
-                <div class="list-group-item list-group-item-action">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}</b>
-                      {{comp.reason}}
-                    </div>
-
-                    <div class="col-md-6">
-                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
-                        user="{{comp.request_user.username }}" r_type=2>
-                        Remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div> -->
+  </div>
 </section>
 
 <br>
