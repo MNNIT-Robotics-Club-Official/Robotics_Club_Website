@@ -1,0 +1,78 @@
+.about .row h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .about .row {
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .about .row .title{
+      text-align: center;
+      display: flex;
+      justify-content: center; /* align horizontal */
+      align-items: center; /* align vertical */
+  }
+
+  .about .row .text{
+    text-align: center;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+  
+  .about  p {
+    text-align: justify;
+  }
+
+  /* .about  #learn, #offer h2{
+    color: #e03a3c;
+  } */
+
+
+  #about .d-flex h2{
+    color: #333;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid;
+  }
+  .section-title p {
+    margin-bottom: 0;
+  }
+
+
+#about #section-title {
+    min-height: 400px;
+    padding-top: 40px;
+    text-align: left;
+}
+
+#about footer{
+    background-color: #fff !important;
+}
+
+#about #about-us{
+    background-color: #1B1B1B;
+    color: #fff;
+}
+
+#about #tech{
+    background-color: #1B1B1B;
+    color: #fff;
+}
+
+.about {
+    overflow: hidden;
+}
+
+#about .row a{
+    color: #e03a3c !important;
+}

@@ -15,6 +15,7 @@ from django.contrib.auth.decorators import login_required
 @has_role_head_or_coordinator
 def test(request, id):
     context = {}
+    comp=Component.objects.get(id=id)   #changed
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
     context['component'] = Component.objects.get(pk=id)  # changed
