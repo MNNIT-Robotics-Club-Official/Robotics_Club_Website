@@ -57,6 +57,10 @@ color: #e76668;
   color:  #e03a3c;
 }
 
+.pr-7{
+  padding-right: 0.7rem!important;
+}
+
 /* .carousel-caption{
   top: 50%;
   transform: translateY(-50%);

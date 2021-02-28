@@ -76,3 +76,12 @@
 #about .row a{
     color: #e03a3c !important;
 }
+
+@media(max-width: 990px) {
+  #offer {
+    flex-direction: column-reverse;
+  }
+  #learn {
+    flex-direction: column-reverse;
+  }
+}
