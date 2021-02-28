@@ -156,9 +156,9 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:sponsor' %}active{% endif %} pr-7"
+            <li class="nav-item {% if request.resolver_match.view_name == 'home:collaborate' %}active{% endif %} pr-7"
               id="donate">
-              <a class="nav-link" href="{% url 'home:sponsor' %}">Collaborate</a>
+              <a class="nav-link" href="{% url 'home:collaborate' %}">Collaborate</a>
             </li>
             <!-- <li class="nav-item px-3" id="donate">
               {% if user.is_authenticated %}
