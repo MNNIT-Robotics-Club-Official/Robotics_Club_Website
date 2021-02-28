@@ -1,4 +1,4 @@
-.about .content h2 {
+.about .row h2 {
     font-weight: 700;
     font-size: 48px;
     line-height: 60px;
@@ -6,33 +6,34 @@
     text-transform: uppercase;
   }
   
-  .about .content h3 {
-    font-weight: 500;
-    line-height: 32px;
-    font-size: 24px;
+  .about .row {
+    padding: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
-  .about .content ul {
-    list-style: none;
-    padding: 0;
+  .about .row .title{
+      text-align: center;
+      display: flex;
+      justify-content: center; /* align horizontal */
+      align-items: center; /* align vertical */
   }
+
+  .about .row .text{
+    text-align: center;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
   
-  .about .content ul li {
-    padding: 10px 0 0 28px;
-    position: relative;
+  .about  p {
+    text-align: justify;
   }
-  
-  .about .content ul i {
-    left: 0;
-    top: 7px;
-    position: absolute;
-    font-size: 20px;
-    color: #009970;
-  }
-  
-  .about .content p:last-child {
-    margin-bottom: 0;
-  }
+
+  /* .about  #learn, #offer h2{
+    color: #e03a3c;
+  } */
+
 
   #about .d-flex h2{
     color: #333;
@@ -51,10 +52,27 @@
 #about #section-title {
     min-height: 400px;
     padding-top: 40px;
-    text-align: left
+    text-align: left;
 }
 
 #about footer{
     background-color: #fff !important;
 }
 
+#about #about-us{
+    background-color: #1B1B1B;
+    color: #fff;
+}
+
+#about #tech{
+    background-color: #1B1B1B;
+    color: #fff;
+}
+
+.about {
+    overflow: hidden;
+}
+
+#about .row a{
+    color: #e03a3c !important;
+}
