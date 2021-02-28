@@ -42,15 +42,14 @@
 						<div class="input-group-append">
 							<span class="input-group-text"><i class="fa fa-key"></i></span>
 						</div>
-						<div class="row">
-							<div class="col-10 pwd">
-								<input type="password" name="password" placeholder="Password..." class="form-control" id="password">
-							</div>
-							<div class="col-2 show-pwd">
-								<div toggle="#password" class="fa fa-eye field-icon toggle-password"></div>
-							</div>
-					    </div>
+						<div class=" pwd">
+                            <input type="password" name="password" placeholder="Password..." class="form-control" id="password">
+                        </div>
+                        <div class="input-group-append show-pwd">
+                            <div toggle="#password" class="input-group-text fa fa-eye toggle-password"></div>
+                        </div> 
 					</div>
+					
 
 					<div class="d-flex justify-content-center mt-4 login_container">
 						<input class="btn btn-danger w-100" type="submit" value="Login">
@@ -71,6 +70,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
+	/* for show password*/
 	$(".toggle-password").click(function() 
 	{
 		$(this).toggleClass("fa-eye fa-eye-slash");
@@ -81,5 +81,11 @@
 		input.attr("type", "password");
     }
     });
+
+	/*to enable tooltip*/
+	$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();   
+	});
+
 </script>
 {% endblock %}
