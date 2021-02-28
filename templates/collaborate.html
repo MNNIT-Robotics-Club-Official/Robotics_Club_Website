@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Robotics Club MNNIT
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/collaborate.css' %} " type="text/css">
+
+{% endblock %}
+
+{% block body %}
+
+<section id="about" class="about">
+
+        <div class="section-title mb-5">
+            <div class="d-flex justify-content-center mt-4">
+                <h2 class="">COLLABORATE WITH US <i class="fa fa-handshake-o"></i></h2>
+            </div>
+            <br>
+            <div class="media">
+                <div class="d-flex justify-content-center media-body ml-3">
+                    <blockquote class="blockquote border-0 p-0">
+                        <p class="font-italic lead"> 
+                            <i class="fa fa-quote-left mr-3 text-danger"></i>
+                            Competition makes us faster; Collaboration makes us better.
+                            <i class="fa fa-quote-right ml-3 text-danger"></i>
+                        </p>
+                        <footer class="d-flex justify-content-end blockquote-footer"> Fyrefly</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="row wow fadeInLeft" id="about-us">
+            <div class="col-lg-6 title">
+                <h2>
+                    ABOUT US
+                </h2>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 text">
+                <p>
+                    Robotics Club MNNIT is a student body under the Student Activity Centre (SAC), MNNIT Allahabad. 
+                    We are a group of like-minded engineering students from all the college departments, 
+                    and what unites us is our passion for technology, particularly robotics, automation, 
+                    and artificial intelligence. 
+                    We build robots for all sorts of applications, 
+                    not only for competing at competitions but also to solve challenging real-life problems with technology. 
+                    Since our club's establishment in 2016, we have completed <a href="{% url 'project:list' %}" target="_blank">50+ projects</a> in all domains related to robotics and automation, 
+                    from design to circuits to software. We are also the birthplace of a fully functional startup, 
+                    <a href="https://tsaw.tech/" target="_blank">TSAW</a>. 
+                </p>
+            </div>
+        </div>
+
+        <div class="row wow fadeInRight" id="offer">
+            <div class="col-lg-6 pt-4 pt-lg-0 text">
+                <p>
+                    Technologies like robotics, automation, IoT, and artificial intelligence will be the workhorses of this decade. 
+                    Many challenges are waiting to be solved with technology. 
+                    In the past four years, since our club's establishment, we have gained expertise in all aspects of technology related to robotics and automation, 
+                    notably <a href="{% url 'home:index' %}" target="_blank">these</a>.
+                </p>
+            </div>
+            <div class="col-lg-6 title">
+                <h2>
+                    What Do We Have to Offer?
+                </h2>
+            </div>
+        </div>
+
+        <div class="row wow fadeInLeft" id="tech">
+            <div class="col-lg-6 title">
+                <h2>
+                    Technical Collaboration
+                </h2>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 text">
+                <p>
+                    If you feel you have any problem in these technologies' domain, our clubs’ budding engineers 
+                    are all ears for it. In our club, we believe that engineering should not happen after passing 
+                    out from college, it should start right away from when one enters an engineering college. 
+                    We offer you a workforce equipped with all tools to deal with challenges, and are eager to 
+                    apply their knowledge to real-world problems. We are open to all potential partners who want 
+                    to collaborate with us. Any collaborative projects from startups or companies from the industries 
+                    in robotics and automation are most welcome. We assure you full professionalism and dedication 
+                    from our end with anything you trust us.
+                </p>
+            </div>
+        </div>
+
+        <div class="row wow fadeInRight" id="learn">
+            <div class="col-lg-6 pt-4 pt-lg-0 text">
+                <p>
+                    Apart from technical expertise, we also have several workshops at both the 
+                    school and college level, which will surely help you set a firm foot in 
+                    technology. For more details, refer to <a href="{% url 'workshop:workshop_page' %" >this page</a>.
+                </p>
+            </div>
+            <div class="col-lg-6 title">
+                <h2>
+                    Collaboration for Learning and Workshops
+                </h2>
+            </div>
+        </div>
+        <br>
+        <br>
+  </section>
+
+
+{% endblock %}

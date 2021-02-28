@@ -85,13 +85,14 @@ Robotics Club MNNIT
                                 <div class="form-inline mb-3 justify-content-center">
                                 <form action="" cid="{{ component.pk }}">
                                     {% csrf_token %}
+                                    
                                     <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
                                            aria-label="Quantity" style="width: 100px;">
                                         <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
                                             Request
                                         </button>
 
-                                    </form>
+                                </form>
                                     {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
@@ -126,16 +127,16 @@ Robotics Club MNNIT
                                 <h4>{{ component.name }}</h4>
 
                                 <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
+                                <form cid="{{ component.pk }}">
                                     {% csrf_token %}
                                     <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
                                            aria-label="Quantity" style="width: 100px;">
                                         <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
                                             Request
                                         </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
+                                </form>
+                                    
+                                {% if request.user.profile.role > 1 %}
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-danger dropdown-toggle"
                                                 data-toggle="dropdown"

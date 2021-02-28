@@ -17,4 +17,7 @@ urlpatterns = [
     path('coordinator/', views.coordinator, name='coordinator'),
     path('sponsor/', views.sponsor, name='sponsor'),
     path('web/', views.web, name='web'),
+    path('collaborate/', views.collaborate, name='collaborate'),
+    # path('themes/', views.themes, name='themes'),
+
 ]

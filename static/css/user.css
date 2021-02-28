@@ -1,104 +1,153 @@
 /* LOGIN/REGISTER PAGE  */
 
 .login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .login-form-1{
-    margin: auto;
-    padding: 5%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  margin: auto;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .box h3{
-    font-family: 'Montserrat',sans-serif;
-    font-weight: 600;
-    text-align: center;
-    color: #333;
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
 }
 
 .switch{
-    color: #fff;
+  color: #fff;
 }
 
 .switch button{
-    margin-top: -3px;
-    font-size: 0.9em;
+  margin-top: -3px;
+  font-size: 0.9em;
 }
 
 .switch a{
-    /* color: #333; */
-    font-weight: 600;
+  /* color: #333; */
+  font-weight: 600;
 }
 
 .login-container form{
-    padding: 10%;
+  padding: 10%;
 }
 .btnSubmit
 {
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
 }
 .login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #f00d0d;
+  font-weight: 600;
+  color: #fff;
+  background-color: #f00d0d;
 }
 .login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .user_card {
-    width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: #e76668;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #e76668;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
 
 }
 
 .form_container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #form-title{
-    color: #fff;
-    
+  color: #fff;
+  
 }
 
 .login_container {
-    padding: 0 2rem;
+  padding: 0 2rem;
 }
 .input-group-text {
-    background: #f7ba5b !important;
-    color: white !important;
-    border: 0 !important;
-    border-radius: 0.25rem 0 0 0.25rem !important;
+  background: #f7ba5b ;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
 }
 .input_user,
 .input_pass:focus {
-    box-shadow: none !important;
-    outline: 0px !important;
+  box-shadow: none !important;
+  outline: 0px !important;
 }
 
 #messages{
-    background-color: grey;
-    color: #fff;
-    padding: 10px;
-    margin-top: 10px;
+  background-color: grey;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
 }
+
+.show-pwd .input-group-text{
+    background: #fff !important;
+    color: #e76668 !important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    border-top: 1px solid #ced4da !important;
+    border-right: 1px solid #ced4da !important;
+    border-bottom: 1px solid #ced4da !important;
+}
+
+/* .user_card .toggle-password {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.user_card .pwd{
+  padding-right: inherit !important;
+
+}*/
+
+.user_card .form-control{
+  border-radius: 0.25rem !important;
+}
+
+.pwd .form-control{
+  border-radius: 0.25rem  0 0 0.25rem  !important;
+  border-right: 0 !important;
+}
+
+/*
+.user_card .show-pwd{
+    background: #fff !important;
+    color: #e76668;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    border-top: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.user_card .row{
+  margin-right: inherit !important;
+} */
 
 /* LOGIN/REGISTER PAGE ENDS */
 
@@ -106,105 +155,105 @@
 /*user roles*/
 
 #user-roles .d-flex h2{
-    color: #333;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    word-spacing: 10px;
-    letter-spacing: 2px;
-    line-height: 180%;
-    border-bottom:#e03a3c 4px solid;
-  }
-  
-  #user-roles .message-box {
-      position: relative;
-      padding-left: 60px;
-      padding-right: 60px;
-      text-align: center;
-  }
-  
-  #user-roles .issuer{
-    color:  #16324f;
-  }
-  
-  #user-roles .info-box .name{
-    color: #e03a3c;
-    border-bottom: 1px #e03a3c;
-  }
-  
-  
-  #user-roles .message-box h3 {
-      margin-top: 15px;
-    margin-bottom: 25px;
-    color: #e03a3c;
-    font-size: 25px;
-    word-spacing: 10px;
-    letter-spacing: 2px;
-  }
-  
-  #user-roles .message-box h4 b{
-    color: #e03a3c;
-  }
-  
-  #user-roles .message-box h4 {
-      margin-top: 15px;
-    margin-bottom: 25px;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    font-style: italic;
-  }
-  
-  #user-roles .message-box p {
-    line-height: 1.875;
-    padding: 30px;
-  }
-  
-  /* #user-roles .message-box:after {
-      content: '';
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      bottom: 0;
-      top: 120px;
-      
-      border: 1px solid #e9ecef;
-      border-radius: 20px;
-    z-index: -1;
-  }
-   */
-  #user-roles .info-box{
+  color: #333;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 4px solid;
+}
+
+#user-roles .message-box {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+}
+
+#user-roles .issuer{
+  color:  #16324f;
+}
+
+#user-roles .info-box .name{
+  color: #e03a3c;
+  border-bottom: 1px #e03a3c;
+}
+
+
+#user-roles .message-box h3 {
+    margin-top: 15px;
+  margin-bottom: 25px;
+  color: #e03a3c;
+  font-size: 25px;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+}
+
+#user-roles .message-box h4 b{
+  color: #e03a3c;
+}
+
+#user-roles .message-box h4 {
+    margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+#user-roles .message-box p {
+  line-height: 1.875;
+  padding: 30px;
+}
+
+/* #user-roles .message-box:after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    top: 120px;
+    
     border: 1px solid #e9ecef;
     border-radius: 20px;
-    text-align: center;
-    margin: 30px;
-    width: 100%;
-  }
+  z-index: -1;
+}
+ */
+#user-roles .info-box{
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  text-align: center;
+  margin: 30px;
+  width: 100%;
+}
 
-  .userbtn {
-     
-    width: 30%;
-    height: 80%;
-   margin: 10px;
-   border: none;
-   border-radius: 10px;
-   padding: 1%;
-   background: #e03a3c;
-   font-weight: 600;
-   color: #fff;
-   font-style: italic;
-   cursor: pointer;
- }
- 
- .promotebtn{
-   width: 30%;
-   background:green;
- }
- 
- #deletebtn{
-   width: 30%;
- }
+.userbtn {
+   
+  width: 30%;
+  height: 80%;
+ margin: 10px;
+ border: none;
+ border-radius: 10px;
+ padding: 1%;
+ background: #e03a3c;
+ font-weight: 600;
+ color: #fff;
+ font-style: italic;
+ cursor: pointer;
+}
+
+.promotebtn{
+ width: 30%;
+ background:green;
+}
+
+#deletebtn{
+ width: 30%;
+}
 
 
- 
- .componentsbtn:hover{
-   background: crimson !important; 
- }
+
+.componentsbtn:hover{
+ background: crimson !important; 
+}

@@ -41,3 +41,9 @@ def sponsor(request):
 def web(request):
     return render(request, 'web.html')
 
+def collaborate(request):
+    return render(request, 'collaborate.html')
+
+# def themes(request):
+#     return render(request, 'index.html#themes')
+
