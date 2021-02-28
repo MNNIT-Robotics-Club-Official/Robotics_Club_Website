@@ -100,6 +100,32 @@
     margin-top: 10px;
 }
 
+.user_card .field-icon {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.user_card .pwd{
+  padding-right: inherit !important;
+
+}
+
+.row .form-control{
+  border-radius: 0.25rem  0 0 0.25rem  !important;
+}
+
+.user_card .show-pwd{
+    background: #FFFCC8 !important;
+    border-radius: 0 0.25rem 0.25rem 0 !important;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+.user_card .row{
+  margin-right: inherit !important;
+}
 /* LOGIN/REGISTER PAGE ENDS */
 
 
