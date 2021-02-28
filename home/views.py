@@ -37,6 +37,9 @@ def team(request):
   
 def sponsor(request):
     return render(request, 'sponsor.html')
+  
+def web(request):
+    return render(request, 'web.html')
 
 def collaborate(request):
     return render(request, 'collaborate.html')
