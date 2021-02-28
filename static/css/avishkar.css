@@ -1,3 +1,8 @@
+.container {
+  font-family: "Poppins", sans-serif;
+
+}
+
 #avishkar .d-flex h2{
     color: #333;
     font-weight: 600;
@@ -47,7 +52,7 @@ border-bottom:#e03a3c 5px solid
   border-top: 4px solid #fff;
   padding: 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: -60px;
+  margin-top: -20px;
   transition: 0.3s;
 }
 
@@ -86,6 +91,58 @@ border-bottom:#e03a3c 5px solid
   border-color: #db1515;
 }
 
-.events .card:hover .card-body .card-title a {
+.events .card:hover .card-body .card-title{
   color: #db1515;
+}
+
+/*--------------------------------------------------------------
+# Past Events
+--------------------------------------------------------------*/
+
+/* Horizontal line */
+.collapsible-link::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 1rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+/* Vertical line */
+.collapsible-link::after {
+  content: '';
+  width: 2px;
+  height: 14px;
+  background: #333;
+  position: absolute;
+  top: calc(50% - 7px);
+  right: calc(1rem + 6px);
+  display: block;
+  transition: all 0.3s;
+}
+
+.collapsible-link[aria-expanded='true']::after {
+  transform: rotate(90deg) translateX(-1px);
+}
+
+.collapsible-link[aria-expanded='true']::before {
+  transform: rotate(180deg);
+}
+
+.accordion .card-header a {
+  color: #37423b;
+  transition: 0.3s;
+}
+.accordion .card-body a {
+  color: #e05578;
+  transition: 0.3s;
+}
+
+.accordion .card a:hover{
+  color: #db1515;
+  text-decoration: none;
 }
