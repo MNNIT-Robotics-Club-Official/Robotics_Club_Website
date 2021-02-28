@@ -38,3 +38,9 @@ def team(request):
 def sponsor(request):
     return render(request, 'sponsor.html')
 
+def collaborate(request):
+    return render(request, 'collaborate.html')
+
+# def themes(request):
+#     return render(request, 'index.html#themes')
+

@@ -16,4 +16,6 @@ urlpatterns = [
     path('team/', views.team, name='team'),
     path('coordinator/', views.coordinator, name='coordinator'),
     path('sponsor/', views.sponsor, name='sponsor'),
+    path('collaborate/', views.collaborate, name='collaborate'),
+    # path('themes/', views.themes, name='themes'),
 ]
