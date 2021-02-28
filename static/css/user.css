@@ -142,8 +142,8 @@
     border-bottom: 1px solid #ced4da;
     display: flex;
     justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
-}
+    /* align-items: center;  
+   } */
 
 .user_card .row{
   margin-right: inherit !important;
