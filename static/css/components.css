@@ -132,11 +132,11 @@ starts
   
    .componentsbtn {
      width: auto;
-     height: 80%;
+     height: 45px;
     margin: 10px;
     border: none;
     border-radius: 10px;
-    padding: 2%;
+    /* padding: 2%; */
     background: #e03a3c;
     font-weight: 600;
     color: #fff;
@@ -151,6 +151,10 @@ starts
   
   #deletebtn{
     width: 30%;
+  }
+
+  #postbtn{
+    width:20%;
   }
 
  
