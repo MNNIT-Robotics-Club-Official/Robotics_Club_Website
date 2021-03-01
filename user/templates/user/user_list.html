@@ -11,7 +11,6 @@
         </div>
         <br>
       </div>
-    </div>
   
     <div class="message-box">
   
@@ -25,7 +24,7 @@
                 <div class="list-group-item list-group-item-action">
                   <div class="row">
                     <div class="col-md-6">
-                       <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                       <b class="issuer"> {{ user }} &nbsp;| {{user.profile.regnum}} &nbsp;</b>      
                     </div>
         
                     <div class="col-md-6">
@@ -53,7 +52,7 @@
               <div class="list-group-item list-group-item-action">
                 <div class="row">
                   <div class="col-md-6">
-                     <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                     <b class="issuer"> {{ user }} &nbsp;| {{user.profile.regnum}} &nbsp;</b>      
                   </div>
       
                   <div class="col-md-6">
@@ -84,7 +83,7 @@
           <div class="list-group-item list-group-item-action">
             <div class="row">
               <div class="col-md-6">
-                 <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                 <b class="issuer"> {{ user }} &nbsp;| {{user.profile.regnum}} &nbsp;</b>      
               </div>
   
               <div class="col-md-6">
@@ -102,10 +101,11 @@
 
       {% endfor %}
     </div>
-</div>
+  </div>
   
         
        
+</div>
 </div>
   </section>
   
