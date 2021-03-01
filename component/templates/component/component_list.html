@@ -11,7 +11,7 @@ Robotics Club MNNIT
 
 {% block body %}
 <div id="message_container">
-{% include 'spinnets/message.html' %}
+    {% include 'spinnets/message.html' %}
 </div>
 <section id="components">
     <div class="d-flex justify-content-center my-3">
@@ -82,327 +82,337 @@ Robotics Club MNNIT
                                 <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
                                 <h4>{{ component.name }}</h4>
 
-                                <div class="form-inline mb-3 justify-content-center">
                                 <form action="" cid="{{ component.pk }}">
                                     {% csrf_token %}
-                                    
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
+                                    <div class="form-group red-border px-2">
+                                        <textarea class="form-control" id="exampleFormControlTextarea4" rows="2"
+                                            placeholder="Write reason for your purchasing..."></textarea>
+                                    </div>
+
+
+                                    <div class="form-inline mb-3 justify-content-center">
+                                        <!-- <form action="" cid="{{ component.pk }}">
+                                            {% csrf_token %} -->
+
+                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                            id="request_number" aria-label="Quantity" style="width: 100px;">
+                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
                                             Request
                                         </button>
 
+                                        <!-- </form> -->
                                 </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle float-right mx-auto"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issue Details</a>
-                                        </div>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issue
+                                            Details</a>
                                     </div>
-                                    {% endif %}
                                 </div>
-
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
+                                {% endif %}
                             </div>
+
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
                         </div>
+                    </div>
                     {% endfor %}
 
-                    </div>
                 </div>
+            </div>
 
-                <div class="tab-pane fade" id="board" role="tabpanel" aria-labelledby="board-tab">
+            <div class="tab-pane fade" id="board" role="tabpanel" aria-labelledby="board-tab">
 
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
 
-                        {% for component in components_1 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
+                    {% for component in components_1 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
 
-                                <div class="form-inline mb-3 justify-content-center">
+                            <div class="form-inline mb-3 justify-content-center">
                                 <form cid="{{ component.pk }}">
                                     {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
                                 </form>
-                                    
+
                                 {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
                                     </div>
-                                    {% endif %}
                                 </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
+                                {% endif %}
                             </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
                         </div>
-                    {% endfor %}
                     </div>
-                </div>
-
-                <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                        {% for component in components_2 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
                     {% endfor %}
-
-                    </div>
                 </div>
-
-                <div class="tab-pane fade" id="etool" role="tabpanel" aria-labelledby="etool-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                       {% for component in components_3 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="mtool" role="tabpanel" aria-labelledby="mtool-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                        {% for component in components_4 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="kit" role="tabpanel" aria-labelledby="kit-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                       {% for component in components_5 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="sensor" role="tabpanel" aria-labelledby="sensor-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                        {% for component in components_6 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
-
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-
-                        {% for component in components_7 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                <form action="" cid="{{ component.pk }}">
-                                    {% csrf_token %}
-                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity" id="request_number"
-                                           aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test"  type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-
-                    </div>
-                </div>
-
             </div>
+
+            <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_2 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="etool" role="tabpanel" aria-labelledby="etool-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_3 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="mtool" role="tabpanel" aria-labelledby="mtool-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_4 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="kit" role="tabpanel" aria-labelledby="kit-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_5 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="sensor" role="tabpanel" aria-labelledby="sensor-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_6 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                    {% for component in components_7 %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feature-block">
+                            <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
+                            <h4>{{ component.name }}</h4>
+
+                            <div class="form-inline mb-3 justify-content-center">
+                                <form action="" cid="{{ component.pk }}">
+                                    {% csrf_token %}
+                                    <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
+                                        id="request_number" aria-label="Quantity" style="width: 100px;">
+                                    <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
+                                        Request
+                                    </button>
+
+                                </form>
+                                {% if request.user.profile.role > 1 %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"
+                                            href="{% url 'update_component' component.pk %}">Update</a>
+                                        <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <p>{{ component.detail }}</p>
+                            <p>Available : {{ component.available }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
 
         </div>
     </section><!-- End Components Section -->
@@ -414,24 +424,24 @@ Robotics Club MNNIT
 {% endblock %}
 {% block script %}
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-           $("form").on('submit', function (event) {
-                        event.preventDefault();
-                        var cid=$(this).attr('cid');
-                        $.ajax({
-                            url: '{% url "create_request" %}',
-                            type: 'POST',
-                            data: {
-                                'cid': cid,
-                                'req_num': $(this).children("#request_number").val(),
-                                'csrfmiddlewaretoken': '{{csrf_token}}'
-                            },
-                            success: function (data) {
-                                $("#message_container").html(data['html']);
-                            }
-                        })
-                    })
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("form").on('submit', function (event) {
+            event.preventDefault();
+            var cid = $(this).attr('cid');
+            $.ajax({
+                url: '{% url "create_request" %}',
+                type: 'POST',
+                data: {
+                    'cid': cid,
+                    'req_num': $(this).children("#request_number").val(),
+                    'csrfmiddlewaretoken': '{{csrf_token}}'
+                },
+                success: function (data) {
+                    $("#message_container").html(data['html']);
+                }
+            })
         })
-    </script>
+    })
+</script>
 {% endblock %}
