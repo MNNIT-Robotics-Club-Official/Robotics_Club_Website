@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="text-muted wow pulse">
-                    <p><i class="fa fa-user"></i> &nbsp;Posted by {{blog.author}}</p>
+                    <p><i class="fa fa-user"></i> &nbsp;Posted by<a href="{% url 'user:profile_page' blog.author%}"> {{blog.author}}</a></p>
                     <p><i class="fa fa-calendar"></i> on {{blog.date}}</p>
                     <p><i class="fa fa-tags"></i> Tags:
                         <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>

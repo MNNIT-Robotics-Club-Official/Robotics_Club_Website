@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from project.models import Project
 from .forms import ProjectForm
 from django.core.paginator import Paginator
@@ -59,8 +59,8 @@ def update(request,pk):
             form.save_m2m()
             return redirect('project:list')
         else:
-            messages.info('request',"Invalid form!! Please fill all fields correctly")
-            return render(request,'project/project_form.html',{'form':form})
+            messages.info(request,"Invalid form!! Please fill all fields correctly")
+        return render(request,'project/project_form.html',{'form':form})
 
 
 @has_role_head_or_coordinator
@@ -77,5 +77,6 @@ def create(request):
             form.save_m2m()
             return redirect('project:list')
         else:
-            messages.info('request',"Invalid form!! Please fill all fields correctly")
+            messages.info(request,"Invalid form!! Please fill all fields correctly")
             return render(request,'project/project_form.html',{'form':form})
+    return HttpResponse("wow")
