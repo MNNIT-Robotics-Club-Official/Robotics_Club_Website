@@ -99,7 +99,7 @@
             <ul class="list-group list-group-flush">
                 {% for member in project.members.all %}
                     <li class="list-group-item">
-                        {{ member.username }}
+                        <a href="{% url 'user:profile_page' member.username %}">{{ member.username }}</a>
                         <br>
                         <small>{{member.profile.get_branch_display}}</small>
                         <small>{{member.profile.regnum}}</small>
