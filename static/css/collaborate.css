@@ -1,6 +1,7 @@
 .about .row h2 {
     font-weight: 700;
-    font-size: 48px;
+    font-size: 42px; 
+    font-size: auto;
     line-height: 60px;
     margin-bottom: 20px;
     text-transform: uppercase;
