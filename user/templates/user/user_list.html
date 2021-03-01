@@ -25,7 +25,7 @@
                 <div class="list-group-item list-group-item-action">
                   <div class="row">
                     <div class="col-md-6">
-                       <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                        <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
                     </div>
         
                     <div class="col-md-6">
@@ -53,7 +53,7 @@
               <div class="list-group-item list-group-item-action">
                 <div class="row">
                   <div class="col-md-6">
-                     <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                    <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
                   </div>
       
                   <div class="col-md-6">
@@ -84,7 +84,7 @@
           <div class="list-group-item list-group-item-action">
             <div class="row">
               <div class="col-md-6">
-                 <b class="issuer"> {{ user }} &nbsp;| &nbsp;</b>      
+                <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
               </div>
   
               <div class="col-md-6">
@@ -110,66 +110,3 @@
   </section>
   
   <br>
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-<!-- <h1>Heads</h1>
-{% for user in heads %}
-
-    <div id="handle">
-    <ul>{{ user }}
-{#        <button type="button" id="appbtn" class="btn-primary"  user="{{ user.pk }}" r_type=0>#}
-{#       Promote#}
-{#        </button>#}
-        <button type="button" id="appbtn" class="btn-primary" user="{{user.pk}}"  r_type=1>
-       Demote
-        </button>
-    </ul>
-    </div>
-
-{% endfor %}
-
-<h1>Coordinators</h1>
-{% for user in coordis %}
-
-    <form method="POST">
-    {% csrf_token %}
-    <ul>{{ user }}
-        <button type="button" id="appbtn" class="btn-primary"  user="{{ user.pk }}" r_type=0>
-       Promote
-        </button>
-        <button type="button" id="appbtn" class="btn-primary" user="{{user.pk}}"  r_type=1>
-       Demote
-        </button>
-    </ul>
-    </form>
-
-{% endfor %}
-<h1>Members</h1>
-{% for user in members %}
-
-    <form method="POST">
-    {% csrf_token %}
-    <ul>{{ user }}
-        <button type="button" id="appbtn" class="btn-primary"  user="{{ user.pk }}" r_type=0>
-       Promote
-        </button>
-        <button type="button" id="appbtn" class="btn-primary" user="{{user.pk}}"  r_type=1>
-       Demote
-        </button>
-    </ul>
-    </form>
-
-{% endfor %} -->
-
-
