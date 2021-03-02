@@ -464,6 +464,7 @@ footer li{
   color: #edf2f4;
 }
 
+
 footer .social-links a {
   font-size: 18px;
   display: inline-block;
@@ -471,7 +472,8 @@ footer .social-links a {
   color: #eee;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 4px;
+  margin-right: 2px;
+  margin-left: 2px;
   border-radius: 50%;
   text-align: center;
   width: 36px;

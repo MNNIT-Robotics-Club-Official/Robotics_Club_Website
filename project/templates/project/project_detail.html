@@ -114,16 +114,16 @@
     <hr>
     {% if user.profile.role > 1 %}
     <div class="row">
-    <div class="col-6">
-        <div class="d-flex justify-content-start">
-            <a class="d-flex justify-content-center projectbtn" href="{% url 'project:update' project.pk %}" id="updatebtn">Edit Project</a>
+        <div class="col-6">
+            <a href="{% url 'project:update' project.pk %}" class="d-flex justify-content-start">
+                <button class="d-flex justify-content-center projectbtn" id="updatebtn">Edit Project</button>
+            </a>
         </div>
-    </div>
-    <div class="col-6">
-        <div class="d-flex justify-content-end">
-            <a class="d-flex justify-content-center projectbtn" href="{% url 'project:delete' project.pk %}" id="deletebtn">Delete Project</a>
+        <div class="col-6">
+            <a href="{% url 'project:delete' project.pk %}" class="d-flex justify-content-end">
+                <button class="d-flex justify-content-center projectbtn" id="deletebtn">Delete Project</button>
+            </a>
         </div>
-    </div>
     </div>   
     <hr>
     {% endif %}

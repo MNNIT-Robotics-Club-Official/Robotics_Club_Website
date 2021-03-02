@@ -84,7 +84,7 @@ Notice Ends
   display: inline;
 }
 
- .noticebtn {
+ /* .noticebtn {
   height: 100%;
   border: none;
   border-radius: 1rem;
@@ -94,10 +94,24 @@ Notice Ends
   color: #fff;
   font-style: italic;
   cursor: pointer;
+} */
+
+.noticebtn{
+  height: 45px;
+  margin: 3px;
+  border: none;
+  border-radius: 10px;
+  /* padding: 2%; */
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+  align-items: center; 
 }
 
 #postbtn{
-  width: 10%;
+  width: 20%;
 }
 
 #writebtn{

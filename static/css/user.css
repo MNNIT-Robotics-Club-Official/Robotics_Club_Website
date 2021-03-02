@@ -230,26 +230,33 @@
 
 .userbtn {
    
-  width: 30%;
-  height: 80%;
- margin: 10px;
- border: none;
- border-radius: 10px;
- padding: 1%;
- background: #e03a3c;
- font-weight: 600;
- color: #fff;
- font-style: italic;
- cursor: pointer;
+  height: 45px;
+  margin: 3px;
+  border: none;
+  border-radius: 10px;
+  /* padding: 2%; */
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+  align-items: center; 
 }
 
 .promotebtn{
- width: 30%;
  background:green;
 }
 
+.promotebtn:hover{
+  background:#056106 !important;
+ }
+
 #deletebtn{
  width: 30%;
+}
+
+.userbtn:hover{
+  background: crimson; 
 }
 
 
