@@ -250,3 +250,20 @@ starts
   border-radius: 20px;
   text-align: center;
 }
+
+.red-border textarea {
+  border: 1px solid #e03a3c;
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.red-border .form-control:focus {
+  border: 1px solid #e03a3c;
+  box-shadow: 0 0 0 0.3rem rgba(220, 20, 60, .10);
+}
+
+#components ul{
+  padding: 0;
+  margin: 0;
+}
