@@ -45,6 +45,12 @@ starts
     line-height: 1.2em;
 }
 
+.achievement .card-body .mb-2{
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
 .achievement .card-header{
     background-color: #e03a3c;
     text-align: center;
