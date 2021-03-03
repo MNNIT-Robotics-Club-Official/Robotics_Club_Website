@@ -7,74 +7,203 @@
   border-bottom:#e03a3c 5px solid
 }
 
+
 /*--------------------------------------------------------------
-# Events
+# Services
 --------------------------------------------------------------*/
-.events .card {
-  border: 0;
-  padding: 0 30px;
-  margin-bottom: 60px;
+
+section {
   position: relative;
 }
 
-.events .card-img {
-  width: calc(100% + 60px);
-  margin-left: -30px;
-  overflow: hidden;
-  z-index: 9;
-  border-radius: 0;
+.section-bg {
+  /* padding: 120px 0; */
+  padding-bottom: 30px;
+  color: #fff;
 }
 
-.events .card-img img {
-  max-width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-.events .card-body {
-  z-index: 10;
-  background: #fff;
-  border-top: 4px solid #fff;
+.services .icon-box {
+  color: black;
+  margin-bottom: 20px;
   padding: 30px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: -60px;
+  border-radius: 6px;
+  /* background: #252525; */
+  transition: 0.3s;
+  /* background-image: linear-gradient(to bottom right, #ff2525, #4c1313); */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+.services .icon-box:hover{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.services .icon-box:hover h3{
+  /* background: #2b2b2b; */
+  color: #db1515;
+}
+
+.services .icon-box h3 {
+  /* margin-left: 70px; */
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: black;
   transition: 0.3s;
 }
 
-.events .card-title {
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
+.services .icon-box p {
+  /* margin-left: 70px; */
+  line-height: 24px;
+  font-size: 14px;
 }
 
-.events .card-title a {
+/*--------------------------------------------------------------
+# Past Events
+--------------------------------------------------------------*/
+
+/* Horizontal line */
+.collapsible-link::before {
+  content: '';
+  width: 14px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 1rem;
+  display: block;
+  transition: all 0.3s;
+}
+
+/* Vertical line */
+.collapsible-link::after {
+  content: '';
+  width: 2px;
+  height: 14px;
+  background: #333;
+  position: absolute;
+  top: calc(50% - 7px);
+  right: calc(1rem + 6px);
+  display: block;
+  transition: all 0.3s;
+}
+
+.collapsible-link[aria-expanded='true']::after {
+  transform: rotate(90deg) translateX(-1px);
+}
+
+.collapsible-link[aria-expanded='true']::before {
+  transform: rotate(180deg);
+}
+
+.accordion .card-header a {
   color: #37423b;
   transition: 0.3s;
 }
-
-.events .card-text {
-  color: #5e5e5e;
-}
-
-.events .read-more a {
-  color: #777777;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
+.accordion .card-body a {
+  color: #e05578;
   transition: 0.3s;
 }
 
-.events .read-more a:hover {
-  color:#db1515;
-}
-
-.events .card:hover img {
-  transform: scale(1.1);
-}
-
-.events .card:hover .card-body {
-  border-color: #db1515;
-}
-
-.events .card:hover .card-body .card-title a {
+.accordion .card a:hover{
   color: #db1515;
+  text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.content{
+  font-size: 1.1rem;
+}
+.team .speaker{
+  transition: box-shadow 1s;
+  padding-top: 10px;
+}
+.team .speaker:hover{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  /* transition: all 0.3s ease-in-out; */
+}
+
+
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.team .member .social {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  text-align: center;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #111111;
+  margin: 0 3px;
+  padding-top: 7px;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  background: #e03a3c;
+  display: inline-block;
+  transition: ease-in-out 0.3s;
+  color: #fff;
+}
+
+.team .member .social a:hover {
+  background: #111111;
+}
+
+.team .member .social i {
+  font-size: 18px;
+}
+
+.team .member .member-info {
+  padding: 20px 15px;
+  transition: 0.3s;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #111111;
+}
+
+.team .speaker:hover h4{
+  color: red;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #777777;
+}
+
+.team .member:hover .social {
+  opacity: 1;
+  bottom: 15px;
 }
