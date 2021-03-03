@@ -36,7 +36,7 @@ starts
     /* line-height: 3em; */
     border-radius: 0px 0px 15px 15px;
     background-color: #fff;
-    border: 1px solid #1b1b1b7a;
+    border: 2px solid #1b1b1b7a;
     border-top: none;
 }
 
@@ -54,7 +54,7 @@ starts
     font-weight: 500;
     border-radius: 15px 15px 2px 2px;
     line-height: 1.2em;
-    border: 1px solid #1b1b1b7a;
+    border: 2px solid #1b1b1b7a;
     border-bottom: none;
 }
 /*
