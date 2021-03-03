@@ -77,12 +77,14 @@ section {
     float: left;
     color: #e03a3c;
     font-size: 40px;
+    align-items: center;
   }
   
   .services .icon-box h4 {
     margin-left: 70px;
     font-weight: 700;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    align-items: center;
     font-size: 18px;
   }
   
@@ -216,3 +218,67 @@ section {
   #college img{
     max-height: 30vw;
   } */
+
+  /*themes*/
+
+  .icon-box {
+    position: relative;
+  
+    overflow: hidden;
+    cursor: pointer;
+    
+    perspective: 800px;
+    transform-style: preserve-3d;
+  }
+  
+  .theme-title, .details {
+    width: 100%;
+    /* padding: 15px 30px; */
+    position: relative; 
+  }
+
+  /* .theme-title, .details .icon-box:hover{
+    background: darken($bg, 2%);
+  } */
+  
+  .theme-title {
+    z-index: 10;
+    transition: .3s ease all;
+  }
+  
+  .details {
+    max-height: 0;
+    padding: 0;
+    
+    overflow: hidden;
+    visibility: hidden;
+    
+    transform: rotateX(-180deg);
+    transform-origin: top center;
+    backface-visibility: hidden;
+    transition: .3s transform ease;
+  }
+
+    
+  .details::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: grey;
+    }
+    
+    .icon-box:hover .details {
+      max-height: none;
+      overflow: visible;
+      visibility: visible;
+      transform: rotateX(0deg);
+
+  }
+  
+  .details_inner {
+     padding-top: 30px;
+  }
