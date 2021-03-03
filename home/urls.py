@@ -18,6 +18,12 @@ urlpatterns = [
     path('sponsor/', views.sponsor, name='sponsor'),
     path('web/', views.web, name='web'),
     path('collaborate/', views.collaborate, name='collaborate'),
+    path('achievement_2016/', views.achievement_2016, name='achievement_2016'),
+    path('achievement_2017/', views.achievement_2017, name='achievement_2017'),
+    path('achievement_2018/', views.achievement_2018, name='achievement_2018'),
+    path('achievement_2019/', views.achievement_2019, name='achievement_2019'),
+    path('achievement_2020/', views.achievement_2020, name='achievement_2020'),
+    path('achievement_2021/', views.achievement_2021, name='achievement_2021'),
     # path('themes/', views.themes, name='themes'),
 
 ]

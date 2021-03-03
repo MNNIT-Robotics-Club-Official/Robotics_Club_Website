@@ -99,8 +99,34 @@
             <!-- <li class="nav-item {% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'news:news_page' %}">News</a>
             </li> -->
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
+            <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
+            </li> -->
+            <li class="nav-item dropdown pr-7">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Achievements
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2016' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2016' %}">&lt; 2016</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2017' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2017' %}">2016-17</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2018' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2018' %}">2017-18</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2019' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2019' %}">2018-19</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2020' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2020' %}">2019-20</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'home:achievement_2021' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:achievement_2021' %}">2020-21</a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item pr-7">
               <a class="nav-link" href="https://tsaw.tech/" target="_blank">Spinoff</a>
@@ -120,10 +146,10 @@
                 <li class="{% if request.resolver_match.view_name == 'home:alumini' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumni</a>
                 </li>
-                <li class="">
+                <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
                 </li>
-                <li class="">
+                <li class="{% if request.resolver_match.view_name == 'home:team' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:team' %}">Other Teams</a>
                 </li>
               </ul>
