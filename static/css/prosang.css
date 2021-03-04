@@ -6,8 +6,15 @@
   line-height: 180%;
   border-bottom:#e03a3c 5px solid
 }
-
-
+.logo{
+  max-height: 73px;
+}
+@media(max-width: 767px)
+{
+  .logo{
+    display: none;
+  }
+}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
