@@ -80,10 +80,10 @@
                 </div>
             {% endif %}
 
+         <a href="{% url 'component_list' %}" id="Create" class="btn btn-danger mb-sm-0 text-white">Club Components</a>
         {% if user.profile.role > 1 %}
         <a href="{% url 'user:admin_page' %}" id="Create" class="btn btn-warning mb-sm-0 text-white">Go to admin page</a>
         {% endif %}
-        <a href="{% url 'component_list' %}" id="Create" class="btn btn-danger mb-sm-0 text-white">Club Components</a>
 
         </div>
 
