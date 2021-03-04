@@ -1,11 +1,12 @@
 #support{
-  padding-top: 1em;
+  /* padding-top: 1em;
   background-color: #1b1b1b;
-  padding-bottom: 3em;
+  padding-bottom: 1em; */
+  padding: 0;
 }
 
 #sponsor .d-flex h2{
-    color: #fff;
+    color: #1b1b1b;;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     word-spacing: 10px;
@@ -25,15 +26,15 @@
 
   #sponsor .support p{
     /* margin: 2em; */
-    margin-left: 3.5em;
-    margin-right: 3.5em;
+    margin-left: 4em;
+    margin-right: 4em;
     margin-bottom: 0;
     /* padding-bottom: 2em; */
     /* text-align: center; */
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: "Raleway",sans-serif;
     font-weight: 500;
-    color: #fff;
+    color: #1b1b1b;;
   }
 
   #sponsor .support .quote{
@@ -186,10 +187,16 @@
   text-decoration: none;
 }
 
-#sponsor .container .row hr{
+#sponsor hr{
   color: #000;
   background: #000;
-  height: 1px;
+  height: 0.9px;
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+}
+
+#sponsor .tab{
+  margin-left: 1.5em;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -202,6 +209,11 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+/* 
+#sponsor hr{
+  background-color: #222;
+  height: 1px;
+} */
 
 @media (max-width: 768px) {
   .carousel-inner .carousel-item > div {
