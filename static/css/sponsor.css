@@ -1,7 +1,7 @@
 #support{
   padding-top: 1em;
   background-color: #1b1b1b;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 }
 
 #sponsor .d-flex h2{
@@ -29,11 +29,34 @@
     margin-right: 3.5em;
     margin-bottom: 0;
     /* padding-bottom: 2em; */
-    text-align: center;
+    /* text-align: center; */
     font-size: 1em;
     font-family: "Raleway",sans-serif;
     font-weight: 500;
     color: #fff;
+  }
+
+  #sponsor .support .quote{
+    text-align: center;
+  }
+
+  #sponsor .support .details{
+    text-align: left;
+    line-height: 1.3em;
+  }
+
+  #sponsor .support .details p{
+    margin-bottom: 0.5em;
+  }
+
+  #sponsor .support .details b{
+    font-family: "montserrat",sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  #sponsor .support .details a{
+    color: #EC3134;
   }
 
 #sponsor .social-links ul{
@@ -74,14 +97,14 @@
 @media (max-width: 768px){
   #sponsor .support img{
     width: 20%;
-    height: 20%;
+    height: auto;
   }
 }
 
 @media (max-width: 500px) {
   #sponsor .support img{
-    width: 32%;
-    height: 32%;
+    width: 42%;
+    height: auto;
   }
 
   #sponsor .support p{
