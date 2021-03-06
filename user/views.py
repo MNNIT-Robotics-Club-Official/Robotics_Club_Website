@@ -202,6 +202,7 @@ def changepassword(request):
                 else:
                     request.user.set_password(form['new_password_1'].value())
                     messages.success(request, 'Password Changed Successfully')
+                    return redirect('home:index')
         context['cuser']=Profile.objects.get(user=request.user)
         html = render_to_string('user/user_dashoard_updatepart.html',context ,request=request)
         return JsonResponse({'html': html}, status=200)
