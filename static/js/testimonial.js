@@ -8,6 +8,7 @@ $(document).ready(function(){
         itemsMobile:[650,1],
         pagination:true,
         navigation:false,
+        mouseDrag : false,
         slideSpeed:1000,
         autoPlay:8000
     });
