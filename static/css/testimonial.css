@@ -167,6 +167,6 @@
  
 .description::-webkit-scrollbar-thumb {
     border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(255, 243, 243, 0.3);
 	background-color: #D62929;
 }
