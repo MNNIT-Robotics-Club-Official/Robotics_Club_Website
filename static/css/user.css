@@ -81,6 +81,9 @@
 .login_container {
   padding: 0 2rem;
 }
+.icon{
+  padding-left: 16px;
+}
 .input-group-text {
   background: #f7ba5b ;
   color: white !important;
