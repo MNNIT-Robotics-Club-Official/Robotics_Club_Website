@@ -46,16 +46,16 @@
     margin-bottom: 20px;
     position: relative;
     overflow-y: scroll;
-    max-height: 210px;
+    max-height: 211px;
 }
-.description::-webkit-scrollbar {
+/* .description::-webkit-scrollbar {
     display: none;
 }
   
 .description {
     -ms-overflow-style: none;
     scrollbar-width: none;  
-}
+} */
 
 .testimonial .description:before{
     content: "\f10d";
@@ -152,3 +152,21 @@
   .owl-pagination{
       padding-bottom: 25px;
   }
+
+
+  .description::-webkit-scrollbar {
+    width: 5px;
+	background-color: #F5F5F5;
+}
+ 
+.description::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+ 
+.description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+	background-color: #D62929;
+}
