@@ -88,3 +88,64 @@ flip card
     .card-back hr{
       border-color: white;
     }
+
+/*--------------------------------------------------------------
+# Faculty
+--------------------------------------------------------------*/
+.faculty-title .d-flex h2{
+  color: #333;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid
+}
+
+.faculty{
+  margin: 0 auto;
+}
+
+.faculty .faculty-item{
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.faculty .faculty-item .user .row{
+  margin: 0;
+}
+
+.faculty .faculty-item .user{
+  background: white;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+}
+.faculty .faculty-item .user .user-image{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: 2rem auto 2rem auto;
+}
+.faculty-content{
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.display-7{
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.display-8{
+  /* font-family: "Poppins", sans-serif; */
+  font-weight: 500;
+}
+.user_name{
+  font-weight: bold;
+}
+.user-link a{
+  color: #e03a3c;
+}
+.user-link a:hover{
+  color: red;
+  text-decoration: none;
+}
