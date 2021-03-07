@@ -24,37 +24,41 @@
 
                 <!--start for-->
                 {% for post in bloglist %}
-                <div class="col-md-4">
-                  <div class="card">
-                      <div class="hover-part">
-                          <div class="card-image">
-                              <img src="{% static 'img/r9.jpg' %}">
-                          </div>
-                          <div class="card-text">
-                              <h2>BLOG</h2>
-                              <div class="card-desc">
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
-                                  <span class="more">Click to read more...</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="card-details">
-                        <h2>why Raspberry Pi no ho jo Pico?</h2>
-                        <div class="detail">
-                          <span><i class="fa fa-user"></i> by <a href=""> author</a></span>
+                    <div class="col-md-4">
+                        <a href="{% url 'blog_detail' pk=post.pk %}">
+                            <div class="card wow fadeInUp">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{{ post.image.url }}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                      <h2>{{ post.title }}</h2> 
+                                    </div>
+                                    <div class="card-text">
+                                      <p>hjdhhhhhhhhhhhhhhhhhhhhhhhhhhh<br>
+                                        gsdjjjjjjjjjjjjjjjjvh<br>
+                                        ghhhhhhhhhhhh
+                                    </p>
+                                    </div>
+                                </div>
+                                   
+                                <div class="card-details">
+                                  <small class="text-muted">
+                                    <p><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{ post.author }}</a></p>
+                                    <p><i class="fa fa-calendar"></i> {{ post.date }}</p>
+                                    <p><i class="fa fa-tags"></i>Tags:
+                                        {% for tag in post.tags.all %}
+                                            <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
+                                        {% endfor %}
+                                    </p>
+                                  </small>
+                                </div>
+                                <hr>    
+                            </div>
+                          </a>
                         </div>
-                        <div class="detail">
-                              <span><i class="fa fa-calendar"></i> date</span>
-                        </div>
-                        <div class="detail">
-                          <i class="fa fa-tags"></i>Tags:
-                              <a href="" class="badge badge-pill badge-danger">tag1</a>
-                              <a href="" class="badge badge-pill badge-danger">tag2</a>
-                              <a href="" class="badge badge-pill badge-danger">tag2</a>
-                        </div>
-                      </div>
-                  </div>
-              </div>
+
+                    <!--end for-->
                 {% endfor %}
             </div>
 
@@ -141,3 +145,81 @@
     </script>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Blogs
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %} " type="text/css">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="hover-part">
+                <div class="card-image">
+                    <img src="{% static 'img/r9.jpg' %}">
+                </div>
+                <div class="card-text">
+                    <h2>BLOG</h2>
+                    <div class="card-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
+                        <span class="more">Click to read more...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-details">
+              <h2>why Raspberry Pi no ho jo Pico?</h2>
+              <div class="detail">
+                <span><i class="fa fa-user"></i> by <a href=""> author</a></span>
+              </div>
+              <div class="detail">
+                    <span><i class="fa fa-calendar"></i> date</span>
+              </div>
+              <div class="detail">
+                <i class="fa fa-tags"></i>Tags:
+                    <a href="" class="badge badge-pill badge-danger">tag1</a>
+                    <a href="" class="badge badge-pill badge-danger">tag2</a>
+                    <a href="" class="badge badge-pill badge-danger">tag2</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+</div>
+</div>
+{% endblock %} -->

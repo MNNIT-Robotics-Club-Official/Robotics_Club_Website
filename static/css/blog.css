@@ -18,16 +18,17 @@
 }
 
 .card-image{
-      overflow-y: hidden;
-      z-index: 9;
+  transition: transform 0.3s;
+  overflow: hidden;
+  z-index: 2;
       /* width: 350px;*/
-      height: 315px; 
-      transition: all ease-in-out 1s;
+      height: 315px;
 }
   
     .card-body{
-       transform: translateY(calc(10px + 1em));
-      transition: transform 0.3s;
+      transition: height 0.4s;
+      overflow: hidden;
+      z-index: 2;
       /* transition: all ease-in-out 1s; */
     }
 
@@ -50,7 +51,7 @@
     }
     
     .card:hover .card-body{
-      transform: translateY(-300px);
+      transform: translateY(-150%);
       /* height: 100%; */
     }
   
@@ -58,9 +59,13 @@
       border-bottom: 2px solid #e03a3c;
     } 
     
-    .card:hover img{
-      /* transform: scaleY(0.8); */
+    .card:hover .card-image{
+      transform: translateY(-320px);
     } 
+
+    .card:hover .card-text{
+      display: block;
+    }
     
      #blog a, a:hover{
       text-decoration: none;
@@ -72,8 +77,15 @@
     }
      
     .card-text{
+      display: none; 
+    overflow: hidden;
+    transition: display 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
       font-size: 15px;
     }
+
+  
     
     .text-muted i {
       margin: 0 10px;
@@ -214,283 +226,3 @@
   padding: 20px;
 }
 
-/* .example-2 .data{
-  color: white;
-    transform: translateY(calc(70px + 4em));
-}
-
-.example-2 .button{
-  display: block;
-  width: 100px;
-  margin: 2em auto 1em;
-  text-align: center;
-  font-size: 12px;
-  color: white;
-  line-height: 1;
-  position: relative;
-  font-weight: 700; 
-}
-
-.example-2 .button::after{
-  content: '\2192';
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  transition: all 0.3s;
-}
-
-.example-2 .button:hover ::after{
-  transform: translate(5px, -50%);
-        opacity: 1;
-} */
-
-
-/* .example-2 {
- 
-
-  .button {
-    display: block;
-    width: 100px;
-    margin: 2em auto 1em;
-    text-align: center;
-    font-size: 12px;
-    color: $white;
-    line-height: 1;
-    position: relative;
-    font-weight: 700;
-    &::after {
-      content: '\2192';
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      transition: all 0.3s;
-    }
-    &:hover {
-      &::after {
-        transform: translate(5px, -50%);
-        opacity: 1;
-      }
-    }
-  }
-}
- */
-
- /* .example-2 .wrapper {
-    background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
-    &:hover {
-      .menu-content {
-        span {
-          transform: translate(-50%, -10px);
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .example-2 .wrapper:hover . */
-
-  /* body{
-    -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  } */
-
-  .wrapper {
-    background-color: white;
-    min-height: 540px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 19px 38px rgba(black, 0.3), 0 15px 12px rgba(black, 0.2);
-
-  }
-
-  .wrapper:hover .data{
-    transform: translateY(0);
-  }
-  .data {
-    /* position: absolute;
-    bottom: 0; */
-    /* width: 100%;*/
-    transform: translateY(calc(70px + 1em)); 
-    transition: transform 0.3s;
-  }
-
-  /* .data .content {
-    padding: 1em;
-    position: relative;
-    z-index: 1;
-  } */
-
-  /* .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* -webkit-transform: translate(-50%, -50%); 
-  } */
-  
-    .card {
-    width: 350px;
-    height: 520px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    margin: 1.5rem;
-  } 
-  
-  .card h1 {
-    text-align: center;
-  }
-  
-  .card .additional {
-    position: absolute;
-    height: 150px;
-    width: 100%;
-    background: linear-gradient(#dE685E, #EE786E);
-    transition: height 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  
-  .card.green .additional {
-    background: linear-gradient(#92bCa6, #A2CCB6);
-  }
-  
-  .card:hover .additional {
-    height: 100%;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  /* .card .additional .user-card {
-    height: 150px;
-    width: 100%;
-    position: relative;
-    float: left;
-  } */
-  
-  /* .card .additional .user-card::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10%;
-    right: -2px;
-    height: 80%;
-    border-left: 2px solid rgba(0,0,0,0.025);
-  } */
-  
-  /* .card .additional .user-card .level,
-  .card .additional .user-card .points {
-    top: 15%;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    font-weight: bold;
-    background: rgba(0,0,0,0.15);
-    padding: 0.125rem 0.75rem;
-    border-radius: 100px;
-    white-space: nowrap;
-  } */
-  
-  /* .card .additional .user-card .points {
-    top: 85%;
-  }
-  
-  .card .additional .user-card svg {
-    top: 50%;
-  } */
-  
-  .card .additional .more-info {
-    width: 300px;
-    float: left;
-    position: absolute;
-    left: 150px;
-    height: 100%;
-  }
-  
-  .card .additional .more-info h1 {
-    color: #fff;
-    margin-bottom: 0;
-  }
-  
-  .card.green .additional .more-info h1 {
-    color: #224C36;
-  }
-  
-  .card .additional .coords {
-    margin: 0 1rem;
-    color: #fff;
-    font-size: 1rem;
-  }
-  
-  .card.green .additional .coords {
-    color: #325C46;
-  }
-  
-  .card .additional .coords span + span {
-    float: right;
-  }
-  
-  .card .additional .stats {
-    font-size: 2rem;
-    display: flex;
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-    top: auto;
-    color: #fff;
-  }
-  
-  .card.green .additional .stats {
-    color: #325C46;
-  }
-  
-  .card .additional .stats > div {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .card .additional .stats i {
-    display: block;
-  }
-  
-  .card .additional .stats div.title {
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .card .additional .stats div.value {
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1.5rem;
-  }
-  
-  .card .additional .stats div.value.infinity {
-    font-size: 2.5rem;
-  }
-  
-  .card .general {
-    width: 300px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    box-sizing: border-box;
-    padding: 1rem;
-    padding-top: 0;
-  }
-  
-  .card .general .more {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 0.9em;
-  }
-   

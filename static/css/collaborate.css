@@ -21,6 +21,7 @@
   }
 
   .about .row .text{
+    font-size: 18px;
     text-align: center;
     display: flex;
     justify-content: center; /* align horizontal */
@@ -61,13 +62,13 @@
 }
 
 #about #about-us{
-    background-color: #1B1B1B;
-    color: #fff;
+    background-color: #CCCCCC;;
+    /* color: #fff; */
 }
 
 #about #tech{
-    background-color: #1B1B1B;
-    color: #fff;
+    background-color: #CCCCCC;;
+    /* color: #fff; */
 }
 
 .about {
