@@ -9,6 +9,10 @@
   height: 90vh;
 }
 
+#about p{
+  text-align: justify;
+}
+
 section {
     padding: 60px 0;
     overflow: hidden;
@@ -243,7 +247,7 @@ section {
   
   .theme-title {
     z-index: 10;
-    transition: .3s ease all;
+    transition: .8s ease all;
   }
   
   .details {
@@ -256,7 +260,7 @@ section {
     transform: rotateX(-180deg);
     transform-origin: top center;
     backface-visibility: hidden;
-    transition: .3s transform ease;
+    transition: .8s transform ease;
   }
 
     
