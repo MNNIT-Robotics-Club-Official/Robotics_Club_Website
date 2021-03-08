@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request, 'homepage-testimonial.html')
+    return render(request, 'index.html')
 
 def alumini(request):
     return render(request, 'alumni.html')
@@ -43,9 +43,6 @@ def web(request):
 
 def collaborate(request):
     return render(request, 'collaborate.html')
-
-def donate(request):
-    return render(request, 'donate.html')
 
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
