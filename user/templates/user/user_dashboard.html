@@ -92,14 +92,12 @@
             {% if components or blogs or projects %}
                 <div class="info-box">
                     {% if blogs %}
-                        <!-- Blog Request section starts -->
                         <div class="row">
                             <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card border-0">
                                     <div class="card-body border-0">
                                         <div class="d-sm-flex align-items-center mb-4">
                                             <h4 class="card-title mb-sm-0">Blogs</h4>
-                                            <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
 
                                         </div>
                                         <div class="table-responsive p-1">
@@ -132,15 +130,6 @@
                                                         </td>
                                                     </tr>
                                                 {% endfor %}
-                                                <!--<tr>
-                                                        <td><a href="">Lost in Space</a></td>
-
-                                                        <td>04 Jun 2019</td>
-
-                                                        <td>
-                                                            Removed
-                                                        </td>
-                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -259,6 +248,31 @@
                     type: 'post',
                     data: {
                         cid: cid,
+                        'csrfmiddlewaretoken': '{{csrf_token}}'
+                    },
+                    success: function (data) {
+                        $('#comp_req').html(data['html'])
+                    }
+                })
+            })
+        })
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#delete', function (event) {
+                event.preventDefault()
+                var cid = $(this).attr('cid');
+                var type=1;
+                var status=2;
+                var user="{{ request.user}}";
+                $.ajax({
+                    url: '{% url "handle_request" %}',
+                    type: 'get',
+                    data: {
+                        id: cid,
+                        r_type: type,
+                        status:status,
+                        user:user,
                         'csrfmiddlewaretoken': '{{csrf_token}}'
                     },
                     success: function (data) {
