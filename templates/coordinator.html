@@ -5,214 +5,475 @@
 Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/coordinator.css' %} " type="text/css">
+
+{% endblock %}
+
+
+
 {% block body %}
 
-<section id="alumniTeam">
+<div class="cord-title container">
     <div class="d-flex justify-content-center my-3">
-        <h2 class="">OUR COORDINATORS</h2>
+        <h2 class="">COORDINATORS</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div id="accordion" class="py-5">
+        <div class="card border-0">
+            <div class="card-header p-0 border-0" id="heading-239">
+                <button class="btn btn-link accordion-title border-0 collapse" data-toggle="collapse"
+                    data-target="#collapse-239" aria-expanded="true" aria-controls="#collapse-239"><i
+                        class="fa fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Core
+                    Coordinators</button>
+            </div>
+            <div id="collapse-239" class="collapse show" aria-labelledby="heading-239" data-parent="#accordion">
+                <div class="card-body accordion-body">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/bhuvan_sir.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/bhuvanjhamb/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Bhuvan Jhamb</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Aerial Robotics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Algorithms</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">AI</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Kinematics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/apoorva.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/apoorva-singh-0111" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Apoorva Dinesh Singh</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer Vision</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Path Planning</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/anuj.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anuj Tiwari</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer Vision</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Internet of Things</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-0" style="visibility: visible; animation-name: fadeInUp;">
+            <div class="card-header p-0 border-0" id="heading-240">
+                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                    data-target="#collapse-240" aria-expanded="false" aria-controls="#collapse-240"><i
+                        class="fa fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Senior
+                    Coordinators</button>
+            </div>
+            <div id="collapse-240" class="collapse " aria-labelledby="heading-240" data-parent="#accordion">
+                <div class="card-body accordion-body">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/ashutosh.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/ashutosh-kr/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Ashutosh Kumar</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">AI</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Block Chain</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">3D Modelling</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/anshuman.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/anshuman-pandey-93635b179/"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anshuman Pandey</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Algorithms</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/saurabh.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/saurabh-1729/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Saurabh Kumar Yadav</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Embedded Systems</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Automation</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Internet of Things</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/vikas.png' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/vikash-kumar-48028a177" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Vikash Kumar</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Kinematics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">CAD</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Controls</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-0 " style="visibility: visible; animation-name: fadeInUp;">
+            <div class="card-header p-0 border-0" id="heading-241">
+                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                    data-target="#collapse-241" aria-expanded="false" aria-controls="#collapse-241"><i
+                        class="fa fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Junior
+                    Coordinators</button>
+            </div>
+            <div id="collapse-241" class="collapse " aria-labelledby="heading-241" data-parent="#accordion">
+                <div class="card-body accordion-body">
+                    <div class="row d-flex justify-content-center pb-3">
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/puru.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/puru2411" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Purushotam Kumar Agrawal</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Kinematics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Drones</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Controls</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/abhishek.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/abhishek-kumar-pathak-07b929146"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Abhishek Kumar Pathak</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Algorithms</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer Vision</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/anurag.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/anurag-gupta-806a161aa/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Anurag Gupta</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer Vision</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Web Dev</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Autonomous Vehicles</p>
+                                </div>
+                                <!-- <div class="icon">
+                                            <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                                    target="_blank"><i class="fa fa-linkedin"></i></a>
+                                        </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/mehul.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/mehul-singhal-9bb75a1a0" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Mehul Singhal</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Path Planning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Controls</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Drones</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center pb-3">
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/gungun.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/gungun-agrawal-239717206"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Gungun Agrawal</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Autonomous Vehicles</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/vartika.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/narayani180/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Vartika Narayani Srinet</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Autonomous Vehicles</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/amit2.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/amit-gupta-0b64991bb" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Amit Gupta</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Path Planning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Autonomous System</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">AI</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/sahil.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/mohd-sahil-a77394176/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Mohd. Sahil</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Algorithms</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Controls</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/ammar.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/ammar-raza-9b68ab1a5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Ammar Raza</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Machine Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Automation</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Battery and BMS</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/karim2.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/karimulla1098" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Karimulla Mohammad</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Path Planning</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/ankur.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/ankur-singh-82496514b/" target="_blank"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Ankur Pratap Singh</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Aerial Robotics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer Vision</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Deep Learning</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex align-items-stretch speaker">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="member-img">
+                                    <img src="{% static 'img/coordinator/vibhanshu.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/vibhanshu-vaibhav-1546761b0"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info">
+                                    <h4>Vibhanshu</h4>
+                                    <p class="badge badge-pill badge-danger tags text-white">Internet of Things</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Kinematics</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Computer vision</p>
+                                    <p class="badge badge-pill badge-danger tags text-white">Simulations</p>
+                                </div>
+                                <!-- <div class="icon">
+                                    <a href="https://www.linkedin.com/in/anuj-tiwari-mnnit/?originalSubdomain=in"
+                                            target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <br>
-
-    <div class="accordion px-5 pb-5" id="accordionExample">
-
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Core Coordinators
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Senior Coordinators
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Junior Coordinators
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
+</div>
 {% endblock %}
