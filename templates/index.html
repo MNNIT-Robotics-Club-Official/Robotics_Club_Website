@@ -7,6 +7,7 @@ Robotics Club MNNIT
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/index.css' %} " type="text/css">
+ 
 {% endblock %}
 
 {% block body %}
@@ -139,65 +140,345 @@ Robotics Club MNNIT
     <div class="container wow fadeInUp">
         <div class="section-title">
             <h2>Themes</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+            <p>Research themes that we have worked upon: </p>
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.1s">
-                    <i class="fa fa-laptop" aria-hidden="true"></i>
-                    <h4><a href="#">Machine Learning</a></h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                        cupiditate non provident</p>
+                    <div class="theme-title">
+                        <i class="fas fa-robot" aria-hidden="true"></i>
+                        <h4><a href="#">Artificial Intelligence</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Maths and Algorithms</li>
+                                <li>Machine Learning</li>     
+                                <li>Use of Deep Learning in Robotic Applications
+                                </li>
+                                <li>Behaviour Cloning
+                                </li>
+                                <li>Natural Language Processing
+                                </li>
+                                <li>Speech Recognition, Facial Recognition, Sentiment Analysis</li>
+                                <li>Application of RL in Robotics and Autonomous Driving
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-4 mt-md-0">
+
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                    <i class="fa fa-video-camera" aria-hidden="true"></i>
-                    <h4><a href="#">Computer Vision</a></h4>
-                    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-                        tarad limino ata</p>
+                    <div class="theme-title">
+                        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                        <h4><a href="">Internet of Things</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Embedded Systems</li>
+                                <li>FTTH Server and Firebase Database</li>
+                                <li>Realtime Data Syncing</li>
+                                <li>Home/Room Automation</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-4 mt-md-0">
+
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.3s">
-                    <i class="fa fa-car" aria-hidden="true"></i>
-                    <h4><a href="#">Control System And Path Planning</a></h4>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur</p>
+                    <div class="theme-title">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <h4><a href="#">Mapping</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Computer Vision</li>
+                                <li>Occupancy Grid Mapping
+                                </li>
+                                <li>Object Detection and Tracking</li>
+                                <li>Semantic Segmentation </li>
+                                <li>Road and Lane Detection</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-4 mt-md-0">
+
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                    <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-                    <h4><a href="#">Internet Of Things</a></h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                        est laborum</p>
+                    <div class="theme-title">
+                        <i class="material-icons" aria-hidden="true">gps_fixed</i>
+                        <h4><a href="#">Localization</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>GPS Based Localization
+                                </li>
+                                <li>Odometry Based Localization</li>
+                                <li>Visual Odometry
+                                </li>
+                                <li>Sensor Fusion</li>
+                                <li>Kalman Filter</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-4 mt-md-0">
+
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.5s">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                    <h4><a href="#">Automations</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque</p>
+                    <div class="theme-title">
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                        <h4><a href="#">Motion Planning</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Path Planning Algorithms</li>
+                                <li>Path Planning in case of Dynamic Objects</li>
+                                <li>Collision Detection</li>
+                                <li>Swarm Intelligence
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mt-4 mt-md-0">
+
+            <div class="col-md-4">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.6s">
-                    <i class="fa fa-android" aria-hidden="true"></i>
-                    <h4><a href="#">Robot Operating System(ROS)</a></h4>
-                    <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis
-                        est eligendi</p>
+                    <div class="theme-title">
+                        <i class="fa fa-gears" aria-hidden="true"></i>
+                        <h4><a href="">Kinematics</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Forward and Inverse Kinematics</li>
+                                <li>Control of Robotic Arms</li>
+                                <li>ZMP Balancing and Trajectory Generation</li>
+                                <li>Biped and Humanoid Robots</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="theme-title">
+                        <i class="material-icons" aria-hidden="true">battery_charging_full</i>
+                        <h4><a href="#">Power Source</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Different Power Sources (Batteries/AC) in Robotics</li>
+                                <li>Battery Management System</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="theme-title">
+                        <i class="material-icons" aria-hidden="true">memory</i>
+                        <h4><a href="#">Electronics</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Embedded platforms like Atmega,STM etc.</li>
+                                <li>Different Sensors
+                                </li>
+                                <li>Sensor-Microcontroller-Actuator Interfacing</li>
+                                <li>Communication(Bluetooth/4G/WiFi/Radio)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="theme-title">
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        <h4><a href="#">Softwares and Platforms</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Arduino/RaspberryPi/Jetson Nano/Pixhawk/Ardupilot Mega
+                                </li>
+                                <li>Robot Operating System (ROS)</li>
+                                <li>Gazebo/Webots/Pybullet/V-REP/CARLA/Pybullet</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="theme-title">
+                        <i class="material-icons" aria-hidden="true">print</i>
+                        <h4><a href="#">Design</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Computer Aided Design
+                                </li>
+                                <li>Structural Analysis
+                                </li>
+                                <li>3D Printing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="1.1s">
+                    <div class="theme-title">
+                        <i class="fa fa-tools" aria-hidden="true"></i>
+                        <h4><a href="#">Control</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Control System Algorithms</li>
+                                <li>Different Actuators and their Control
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="icon-box wow fadeInUp" data-wow-delay="1.2s">
+                    <div class="theme-title">
+                        <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+                        <h4><a href="#">Others</a></h4>
+                    </div>
+                    <div class="details">
+                        <div class="details_inner">
+                            <ul>
+                                <li>Manual Robotics and All Terrain Vehicles</li>
+                                <li>Aerial Robotics
+                                </li>
+                                <li>Biometric Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div> 
 </section>
 <!-- End Services Section -->
+
+<section id="testimonials">
+    <div class="container wow fadeInUp">
+        <div class="section-title">
+            <h2>Testimonials</h2>
+            <p>What do our alumni say about us..? </p>
+        </div>
+
+        <div class="row mx-auto my-auto">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-sm-6 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        Thanks to the club for everything. Being student president for the session 2018-19, we reimagined the whole way of doing things. We launched around 20+ projects, initiated ProSang, connected club projects to the companies, and launched my startup TSAW Drones during the event. The time at the club, with the members, transformed me a lot, taught me to dare things & do it uniquely, being fearless.
+
+                                    </p>
+                                </div>
+                                <h3 class="title">Kishan Tiwari</h3>
+                                <span class="post">Founder and CEO at TSAW Drones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-sm-6 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        I joined the club in the first year thinking ki "Kuch to kar lete hain!" but it never left me. I have learned many things, from joining two wires to handle the disappointment that you get after working too hard on a project. It will not just teach you robotics; it will help you develop the most fundamental problem-solving ability and handle pressure and loss, which is natural in life.
+                                    </p>
+                                </div>
+                                <div class="row testimonial-details">
+                                    <div class="col-lg-4">
+                                        <img src="{% static 'img/m3.png' %}" class="rounded-circle carousel-img" alt="">
+                                    </div>
+                                    <div class="col-lg-4" id="name">
+                                        <h3 class="title">Gaurav Bansal</h3>
+                                        <span class="post">Software Engineer at Visa INC.</span>
+                                        <span class="links">
+                                            <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-sm-8 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        I had never thought that an arbitrary decision of joining the Robotics club could tweak me by teaching such interdisciplinary things. Apart from the technical stuff, I could learn team management and the bliss of working altogether in a team. Participating in organizing them and being a team member to mentoring a team has played a crucial role in brushing me up to become a better version of myself. My reassuring seniors and ever-supportive colleagues made my journey even more beautiful. Indeed I am lucky enough to find my best friends for life through this platform. Of course, I had to go through some edgy, restless nights, but that's all that defines your current position. Hence I would never step back from owing the Robotics club for everything.
+                                    </p>
+                                </div>
+                                <h3 class="title">Kalyan Prusty</h3>
+                                <span class="post">Position at IISc Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+     
+                    <div class="carousel-item">
+                        <div class="col-sm-4 align-self-center">
+                            <div class="text-center">
+                                <a class="animated-btn text-white" href="#">More >>></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- <section id="college">
     <div class="container">
@@ -206,6 +487,8 @@ Robotics Club MNNIT
 </section> -->
 
 </div>
+
+
 
 
 {% endblock %}

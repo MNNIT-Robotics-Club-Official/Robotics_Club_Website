@@ -1,4 +1,4 @@
-#blog .d-flex h2{
+/* #blog .d-flex h2{
     color: #333;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
@@ -14,18 +14,22 @@
       border: none;
       margin-bottom: 50px;
       overflow: hidden;
+      max-height: 520px;
 }
 
 .card-image{
-      overflow-y: hidden;
-      z-index: 9;
+  transition: transform 0.3s;
+  overflow: hidden;
+  z-index: 2;
       /* width: 350px;*/
-      height: 315px; 
-      transition: all ease-in-out 1s;
+      height: 315px;
 }
   
     .card-body{
-      transition: all ease-in-out 1s;
+      transition: height 0.4s;
+      overflow: hidden;
+      z-index: 2;
+      /* transition: all ease-in-out 1s; */
     }
 
     .card img{
@@ -47,16 +51,21 @@
     }
     
     .card:hover .card-body{
-      height: 100%;
+      transform: translateY(-150%);
+      /* height: 100%; */
     }
   
     .card:hover .card-title{
       border-bottom: 2px solid #e03a3c;
     } 
     
-    .card:hover img{
-      transform: scale(1.2);
+    .card:hover .card-image{
+      transform: translateY(-320px);
     } 
+
+    .card:hover .card-text{
+      display: block;
+    }
     
      #blog a, a:hover{
       text-decoration: none;
@@ -68,8 +77,15 @@
     }
      
     .card-text{
+      display: none; 
+    overflow: hidden;
+    transition: display 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s;
       font-size: 15px;
     }
+
+  
     
     .text-muted i {
       margin: 0 10px;
@@ -109,19 +125,19 @@
     margin: 5px
 }
 
-#intro {
+/* #intro {
 
   display: none;
   
-}
+} */
 
-.card:hover #pic{
+/* .card:hover #pic{
   display: none;
 }
 
 .card:hover #intro{
   display: block;
-}
+} */
 
 .blog-form .container{
   border: 1px solid  #e9ecef;
@@ -209,4 +225,4 @@
 .vid{
   padding: 20px;
 }
-
+ */
