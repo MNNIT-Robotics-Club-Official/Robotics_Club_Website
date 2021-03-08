@@ -471,10 +471,10 @@ section {
 
 
 @media (max-width: 576px) {
-  .carousel-inner .carousel-item > div {
+  .testimonial-slider .testimonial > div {
       display: none;
   }
-  .carousel-inner .carousel-item > div:first-child {
+  .testimonial-slider .testimonial > div:first-child {
       display: block;
   }
 }
@@ -516,3 +516,4 @@ transform: translateX(0);
     height: 25vw;
   }
 }
+
