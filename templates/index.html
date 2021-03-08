@@ -7,6 +7,7 @@ Robotics Club MNNIT
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/index.css' %} " type="text/css">
+ 
 {% endblock %}
 
 {% block body %}
@@ -386,14 +387,99 @@ Robotics Club MNNIT
 </section>
 <!-- End Services Section -->
 
-<section id="project">
-    <div class="container mt-5">
-        <h2 class="section-title mb-5">Testimonials</h2>
-        <div class="row mb-4 wow pulse">
-        
+<section id="testimonials">
+    <div class="container wow fadeInUp">
+        <div class="section-title">
+            <h2>Testimonials</h2>
+            <p>What do our alumni say about us..? </p>
+        </div>
+
+        <div class="row mx-auto my-auto">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item active">
+                        <div class="col-sm-6 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        Thanks to the club for everything. Being student president for the session 2018-19, we reimagined the whole way of doing things. We launched around 20+ projects, initiated ProSang, connected club projects to the companies, and launched my startup TSAW Drones during the event. The time at the club, with the members, transformed me a lot, taught me to dare things & do it uniquely, being fearless.
+
+                                    </p>
+                                </div>
+                                <h3 class="title">Kishan Tiwari</h3>
+                                <span class="post">Position at TSAW Drones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-sm-6 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        I joined the club in the first year thinking ki "Kuch to kar lete hain!" but it never left me. I have learned many things, from joining two wires to handle the disappointment that you get after working too hard on a project. It will not just teach you robotics; it will help you develop the most fundamental problem-solving ability and handle pressure and loss, which is natural in life.
+                                    </p>
+                                </div>
+                                <div class="row testimonial-details">
+                                    <div class="col-lg-4">
+                                        <img src="{% static 'img/m3.png' %}" class="rounded-circle carousel-img" alt="">
+                                    </div>
+                                    <div class="col-lg-4" id="name">
+                                        <h3 class="title">Gaurav Bansal</h3>
+                                        <span class="post">Position at Visa INC.</span>
+                                        <span class="links">
+                                            <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                            <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-sm-8 align-self-center">
+                            <div class="testimonial">
+                                <div class="testimonial-content">
+                                    <div class="testimonial-icon">
+                                        <i class="fa fa-quote-left"></i>
+                                    </div>
+                                    <p class="description">
+                                        I had never thought that an arbitrary decision of joining the Robotics club could tweak me by teaching such interdisciplinary things. Apart from the technical stuff, I could learn team management and the bliss of working altogether in a team. Participating in organizing them and being a team member to mentoring a team has played a crucial role in brushing me up to become a better version of myself. My reassuring seniors and ever-supportive colleagues made my journey even more beautiful. Indeed I am lucky enough to find my best friends for life through this platform. Of course, I had to go through some edgy, restless nights, but that's all that defines your current position. Hence I would never step back from owing the Robotics club for everything.
+                                    </p>
+                                </div>
+                                <h3 class="title">Kalyan Prusty</h3>
+                                <span class="post">Position at IISc Bangalore</span>
+                            </div>
+                        </div>
+                    </div>
+     
+                    <div class="carousel-item">
+                        <div class="col-sm-4 align-self-center">
+                            <div class="text-center">
+                                <a class="animated-btn text-white" href="#">More >>></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                        <span class="carousel-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                        <span class="carousel-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+            </div>
         </div>
     </div>
+    </div>    
 </section>
+
+
 
 <!-- <section id="college">
     <div class="container">
@@ -402,6 +488,8 @@ Robotics Club MNNIT
 </section> -->
 
 </div>
+
+
 
 
 {% endblock %}
