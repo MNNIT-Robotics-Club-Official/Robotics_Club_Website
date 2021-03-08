@@ -44,6 +44,9 @@ def web(request):
 def collaborate(request):
     return render(request, 'collaborate.html')
 
+def donate(request):
+    return render(request, 'donate.html')
+
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
 

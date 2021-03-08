@@ -17,6 +17,7 @@ urlpatterns = [
     path('coordinator/', views.coordinator, name='coordinator'),
     path('sponsor/', views.sponsor, name='sponsor'),
     path('web/', views.web, name='web'),
+    path('donate/', views.donate, name='donate'),
     path('collaborate/', views.collaborate, name='collaborate'),
     path('achievement_2016/', views.achievement_2016, name='achievement_2016'),
     path('achievement_2017/', views.achievement_2017, name='achievement_2017'),
