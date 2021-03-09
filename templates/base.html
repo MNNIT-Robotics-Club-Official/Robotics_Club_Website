@@ -125,8 +125,8 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item pr-7">
-              <a class="nav-link" href="https://tsaw.tech/" target="_blank">Spinoff</a>
+            <li class="nav-item {% if request.resolver_match.view_name == 'home:spinoff' %}active{% endif %} pr-7">
+              <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
             </li>
             <li class="nav-item dropdown pr-7">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -255,7 +255,7 @@
                 <li>Near boys SAC</li>
                 <li>MNNIT Allahabad</li>
                 <li>Prayagraj</li>
-                <li><strong>Email  :</strong>roboticsclub@mnnit.ac.in </li>
+                <li><strong>Email :</strong>roboticsclub@mnnit.ac.in </li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
@@ -270,8 +270,8 @@
                     class="fa fa-youtube"></i></a>
                 <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin" target="_blank"><i
                     class="fa fa-linkedin"></i></a>
-                <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin"
-                  target="_blank"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin" target="_blank"><i
+                    class="fa fa-envelope"></i></a>
               </div>
             </div>
           </div>
