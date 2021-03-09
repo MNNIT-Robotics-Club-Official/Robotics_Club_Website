@@ -41,7 +41,7 @@
 .testimonial .testimonial-content{
     padding: 35px 25px 35px 50px;
     margin-bottom: 35px;
-    background: #F7F7F7;
+    background: #F8f8f8;
     border: 5px solid #f0f0f0;
     position: relative;
 }
@@ -149,6 +149,12 @@
   color: #e03a3c;
 }
 
+#more{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
 .carousel-icon i{
   color: #e03a3c;
   font-size: 30px;
@@ -191,6 +197,53 @@
   animation-delay: 0.5s;
 }
 
+.owl-carousel .owl-buttons{
+    height: 47px;
+    position: absolute;
+    width: 100%;
+    top: 100px !important;
+    
+}
+
+.owl-buttons .owl-prev{
+  display: flex !important;
+  justify-content: start;
+  width: 26px;
+  position: absolute;
+  left: 0px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.owl-buttons .owl-next{
+  display: flex !important;
+  justify-content: end;
+  width: 26px;
+  position: absolute;
+  right: 0px;
+}
+
+/* .owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.owl-buttons .owl-prev{
+    /* background: url(nav-icon.png) no-repeat scroll 0 0; */
+    /* left: -33px;
+}
+.owl-buttons .owl-next{ */
+    /* background: url(nav-icon.png) no-repeat scroll -24px 0px; */
+    /* right: -33px;
+}
+.owl-carousel .prev-slide:hover{
+   background-position: 0px -53px;
+}
+.owl-carousel .next-slide:hover{
+  background-position: -24px -53px;
+} */
+
 
 @keyframes ripple-1 {
   0% {
@@ -216,14 +269,4 @@
   }
 }
 
-@media (max-width: 992px) {
-    #testimonial-slider .card{
-      height: 15vw;
-    }
-  }
   
-  @media (max-width: 576px) {
-    #testimonial-slider .card{
-      height: 25vw;
-    }
-  }
