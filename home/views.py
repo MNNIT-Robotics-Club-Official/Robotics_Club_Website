@@ -44,6 +44,9 @@ def web(request):
 def collaborate(request):
     return render(request, 'collaborate.html')
 
+def spinoff(request):
+    return render(request, 'spinoff.html')
+
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
 
