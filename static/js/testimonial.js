@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 
     $("#sponsor-slider").owlCarousel({
-        items:4,
+        items: 4,
         itemsDesktop:[1000,2],
         itemsDesktopSmall:[979,2],
         itemsTablet:[768,1],
@@ -37,8 +37,8 @@ $(document).ready(function(){
         nav:true,
         navigation:true,
         navigationText: [
-                "<i class='icon-chevron-left icon-white'><</i>",
-                "<i class='icon-chevron-right icon-white'>></i>"
+                "<i class='icon-arrow-left icon-white'><</i>",
+                "<i class='icon-arrow-right icon-white'>></i>"
               ],
         navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
         slideSpeed:1000,
