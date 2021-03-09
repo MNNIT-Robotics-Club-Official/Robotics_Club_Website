@@ -21,10 +21,20 @@ starts
   border-bottom:#e03a3c 5px solid
 }
 
+.achievement h3{
+    color: #16324f;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4em;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  line-height: 180%;
+}
+
 .achievement .card{
     border: none;
     /* background-color: #1b1b1b; */
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }
 
 .achievement .card-body{
@@ -38,6 +48,13 @@ starts
     background-color: #fff;
     border: 2px solid #1b1b1b7a;
     border-top: none;
+}
+
+.achievement hr{
+    color: #000;
+    background: #16324f;
+    height: 1.9px;
+    margin-top: 0;
 }
 
 .achievement .card-body p{
