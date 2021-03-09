@@ -140,8 +140,8 @@
                 <li class="{% if request.resolver_match.view_name == 'home:coordinator' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:coordinator' %}">Coordinators</a>
                 </li>
-                <li class="{% if request.resolver_match.view_name == 'home:alumini' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumni</a>
+                <li class="{% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 </li>
                 <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
