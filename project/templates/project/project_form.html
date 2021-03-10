@@ -21,6 +21,9 @@ Write the project...
         </div>
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            <!-- <div class="form-group">
+                    {{form | crispy}}
+                </div> -->
             <div class="form-group wow fadeInUp">
                 <label>Title*</label>
                 {{form.title}}
@@ -43,16 +46,20 @@ Write the project...
                 <label>Intro Image*</label>
                 {{form.image}}
             </div>
-            <h3 class="lead wow">Description is Shown to all Logged in Users only</h3>
+            <!-- <h3 class="lead wow">Description is Shown to all Logged in Users only</h3> -->
             <div class="form-group wow fadeInUp">
-                <label>Description*</label>
+               <label>Overview*<div class="text-muted">
+                   (A Short Summary of the project: Visible to Everyone)
+               </div></label>
+               {{form.overview}}
+           </div>
+            <div class="form-group wow fadeInUp">
+                <label>Description*<div class="text-muted">
+                    (Full Project Description/Report: Visible to logged in users only)
+                </div></label>
                 {{form.detail}}
             </div>
-            <h3 class="lead wow">OverView is visible to everyone</h3>
-             <div class="form-group wow fadeInUp">
-                <label>Overview*</label>
-                {{form.overview}}
-            </div>
+            <!-- <h3 class="lead wow">OverView is visible to everyone</h3> -->
             <div class="form-group wow fadeInUp">
                 <label>Tags*<div class="text-muted">
                         (Separate the tags by commas)
@@ -80,8 +87,9 @@ Write the project...
     <br>
     <br>
 </section>
+{% endblock %}
 
-
+{% block script %}
 <script>
     CKEDITOR.replace("detail");
     CKEDITOR.replace("overview");

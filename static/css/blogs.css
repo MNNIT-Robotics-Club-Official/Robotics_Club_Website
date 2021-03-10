@@ -277,6 +277,8 @@ color: #e03a3c;
 font-style: italic;
 word-spacing: 10px;
 letter-spacing: 2px;
+font-size: 20px;
+  font-weight: 500;
 }
 
 .blog-form .form-control{
