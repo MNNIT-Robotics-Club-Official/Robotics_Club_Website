@@ -36,6 +36,7 @@ def detail(request,pk):
         tech_stack.append(cleaned)
 
     context['tech'] = tech_stack
+
     return render(request,'project/project_detail.html',context)
 
 @has_role_head_or_coordinator
