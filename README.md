@@ -12,8 +12,11 @@ If already installed python follow next steps:
 3. then install Django inside this environment with this command `pip install Django`
 4. then clone the git repo `git clone https://github.com/MNNIT-Robotics-Club-Official/Robotics_Club_Website.git`
 5. `cd Robotics_Club_Website`
-6. run `python manage.py runserver`
-7. goto server http://127.0.0.1:8000/
+6. run `pip install -r requirements.txt`
+7. create database schema by running `python manage.py makemigrations` and then `python manage.py migrate`
+8. create a superuser using `python manage.py createsuperuser` and fill required fields
+9. run `python manage.py runserver`
+10. goto server http://127.0.0.1:8000/
 
 ### If you want to install Django Globally and do not want an Virtual env, then do following steps:
 1. open Powershell terminal in an empty folder (Shift+ right click) and run `pip install Django`
@@ -34,9 +37,9 @@ If already installed python follow next steps:
 7. [x] Events
 
 1. [ ] Projects
-2. [ ] Login
+2. [x] Login
 3. [x] Donate
-4. [ ] Blog
+4. [x] Blog
 5. [x] Workshop
 6. [x] Notice Board
 7. [ ] Components

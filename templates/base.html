@@ -92,38 +92,15 @@
               class="nav-item {% if request.resolver_match.view_name == 'workshop:workshop_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'workshop:workshop_page' %}">Jigyasa</a>
             </li>
-            </li>
+
             <!-- <li class="nav-item {% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'news:news_page' %}">News</a>
             </li> -->
             <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li> -->
-            <li class="nav-item dropdown pr-7">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Achievements
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2016' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2016' %}">&lt; 2016</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2017' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2017' %}">2016-17</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2018' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2018' %}">2017-18</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2019' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2019' %}">2018-19</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2020' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2020' %}">2019-20</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2021' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2021' %}">2020-21</a>
-                </li>
-              </ul>
+            <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
+              <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li>
             <li class="nav-item {% if request.resolver_match.view_name == 'home:spinoff' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
@@ -143,9 +120,9 @@
                 <li class="{% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 </li>
-                <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
+                <!-- <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
-                </li>
+                </li> -->
                 <li class="{% if request.resolver_match.view_name == 'home:team' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:team' %}">Other Teams</a>
                 </li>
@@ -238,12 +215,15 @@
                 <li><a class="" href="http://www.mnnit.ac.in/" target="_blank"><i class="fa fa-angle-right"
                       aria-hidden="true"></i>
                     MNNIT</a></li>
-                <li><a class="" href="http://sac.mnnit.ac.in/" target="_blank"><i class="fa fa-angle-right"
+                <li><a class="" href="{% url 'home:sponsor' %}" target="_blank"><i class="fa fa-angle-right"
                       aria-hidden="true"></i>
-                    SAC MNNIT</a></li>
-                <li><a class="" href="https://academics.mnnit.ac.in/new" target="_blank"><i class="fa fa-angle-right"
+                    Sponsor</a></li>
+                <li><a class="" href="{% url 'home:collaborate' %}" target="_blank"><i class="fa fa-angle-right"
                       aria-hidden="true"></i>
-                    Dean Academics MNNIT</a></li>
+                    Collaborate</a></li>
+                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right"
+                      aria-hidden="true"></i>
+                    Aeroclub</a></li>
               </ul>
             </div>
 
