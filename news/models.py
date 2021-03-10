@@ -6,8 +6,9 @@ from django.urls import reverse
 class News(models.Model):
     title = models.CharField(blank=False,unique=False,max_length=256)
     content =models.TextField()
-    link = models.URLField()
+    link = models.URLField(blank=True,null=True)
     date = models.DateField(blank=True,unique=False)
+    is_open = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title}'

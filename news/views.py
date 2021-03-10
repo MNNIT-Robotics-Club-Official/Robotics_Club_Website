@@ -9,8 +9,14 @@ from RoboClub.decorators import has_role_head_or_coordinator
 
 def news(request):
     context={}
-    context['newslist']=News.objects.all().order_by('-pk')
+    context['newslist']=News.objects.filter(is_open=True).order_by('-pk')
     return render(request,"news/notice.html",context)
+
+@login_required
+def collegenews(request):
+    context = {}
+    context['newslist'] = News.objects.filter(is_open=False).order_by('-pk')
+    return render(request, "news/notice_college.html", context)
 
 @has_role_head_or_coordinator
 def createNews(request):

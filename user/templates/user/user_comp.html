@@ -33,9 +33,11 @@
                                             <td>Component(s) Received at:{{ component_user.time_confirmation }}</td>
                                         {% else %}
                                             <td><button id="confirm" class="btn badge-danger" cid="{{ component_user.component.pk }}">Confirm Approval</button></td>
+
                                         {% endif %}
                                     {% else %}
                                         <td>Yet to be accepted by admin</td>
+                                        <td><button id="delete" class="btn badge-danger" cid="{{ component_user.component.pk }}">Delete Your Request</button></td>
                                     {% endif %}
 
                                 </tr>

@@ -251,6 +251,30 @@ Profile
                 }
             })
         })
-    })
-</script>
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function (event) {
+            $(document).on('click', '#delete', function (event) {
+                event.preventDefault()
+                var cid = $(this).attr('cid');
+                var type=1;
+                var status=2;
+                var user="{{ request.user}}";
+                $.ajax({
+                    url: '{% url "handle_request" %}',
+                    type: 'get',
+                    data: {
+                        id: cid,
+                        r_type: type,
+                        status:status,
+                        user:user,
+                        'csrfmiddlewaretoken': '{{csrf_token}}'
+                    },
+                    success: function (data) {
+                        $('#comp_req').html(data['html'])
+                    }
+                })
+            })
+        })
+    </script>
 {% endblock %}

@@ -92,41 +92,18 @@
               class="nav-item {% if request.resolver_match.view_name == 'workshop:workshop_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'workshop:workshop_page' %}">Jigyasa</a>
             </li>
-            </li>
+
             <!-- <li class="nav-item {% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'news:news_page' %}">News</a>
             </li> -->
             <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li> -->
-            <li class="nav-item dropdown pr-7">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Achievements
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2016' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2016' %}">&lt; 2016</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2017' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2017' %}">2016-17</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2018' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2018' %}">2017-18</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2019' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2019' %}">2018-19</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2020' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2020' %}">2019-20</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:achievement_2021' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:achievement_2021' %}">2020-21</a>
-                </li>
-              </ul>
+            <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
+              <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li>
-            <li class="nav-item pr-7">
-              <a class="nav-link" href="https://tsaw.tech/" target="_blank">Spinoff</a>
+            <li class="nav-item {% if request.resolver_match.view_name == 'home:spinoff' %}active{% endif %} pr-7">
+              <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
             </li>
             <li class="nav-item dropdown pr-7">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -140,8 +117,8 @@
                 <li class="{% if request.resolver_match.view_name == 'home:coordinator' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:coordinator' %}">Coordinators</a>
                 </li>
-                <li class="{% if request.resolver_match.view_name == 'home:alumini' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:alumini' %}">Alumni</a>
+                <li class="{% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
                 </li>
                 <!-- <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
@@ -227,7 +204,7 @@
                 <li>
                   <img class="mb-2 ml-3" src="{% static 'img/MNNIT.png' %}" alt="" width="89.57" height="120.85">
                 </li>
-                <li> <small class="text-muted">© RoboticsClub MNNIT</small></li>
+                <li> <small class="text-muted">© Robotics Club MNNIT</small></li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
@@ -255,10 +232,10 @@
                 <li>
                   <h4>Robotics Lab</h4>
                 </li>
-                <li>Near boys SAC</li>
+                <li>Near Boys' SAC</li>
                 <li>MNNIT Allahabad</li>
                 <li>Prayagraj</li>
-                <li><strong>Email  :</strong>roboticsclub@mnnit.ac.in </li>
+                <li><strong>Email :</strong>roboticsclub@mnnit.ac.in </li>
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
@@ -273,8 +250,8 @@
                     class="fa fa-youtube"></i></a>
                 <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin" target="_blank"><i
                     class="fa fa-linkedin"></i></a>
-                <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin"
-                  target="_blank"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin" target="_blank"><i
+                    class="fa fa-envelope"></i></a>
               </div>
             </div>
           </div>

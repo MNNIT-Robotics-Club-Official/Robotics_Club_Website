@@ -22,7 +22,7 @@ Projects
             <!--start for-->
             {% for project in projects %}
             <div class="col-md-4">
-                <a href="{% url 'project:detail' project.pk %}">
+                <a href="{% url 'project:overview' project.pk %}">
                     <div class="card">
                         <div class="card-image">
                             <img class="card-img-top" src="{{ project.image.url }}" alt="">
@@ -53,9 +53,6 @@ Projects
             {% endfor %}
         </div>
     </div>
-    <!-- <div class="d-flex justify-content-center">
-        <a class="d-flex justify-content-center projectbtn" id="writebtn" href="{% url 'project:create' %}">Add a Project</a>
-    </div> -->
     {% if projects %}
     <nav aria-label="pages" class="pagination-container">
         <div class="pagination d-flex justify-content-center">
