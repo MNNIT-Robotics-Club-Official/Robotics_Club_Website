@@ -24,14 +24,14 @@
   max-height: 100vh;
 }
 
-.card-details h3{
+.card-details h4{
   color: #e03a3c;
   /* font-weight: bold; */
   margin-left: 2px;
   margin-right: 2px;
-  font-family: "Roboto", sans-serif;
-  word-spacing: 6px;
-  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  word-spacing: 2px;
+  letter-spacing: 1px;
   
   /* line-height: 180%; */
 }
@@ -63,7 +63,7 @@
   height: 92%;
 }
 
-.card h3 {
+.card h4 {
   text-align: center;
 }
 
@@ -131,16 +131,16 @@
   padding: 10px;
 }
 
-.card .hover-part h3 {
+.card .hover-part h4 {
   /* color: #fff; */
   /* font-weight: bold; */
   color: #e03a3c;
   margin-bottom: 0;
   /* padding: 10px; */
   /* padding: 0; */
-  font-family: "Roboto", sans-serif;
-  word-spacing: 6px;
-  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
   /* line-height: 180%; */
 }
 
@@ -151,7 +151,7 @@
 .card .card-details .detail {
   margin: 1rem;
   /* color: #fff; */
-  font-size: 1rem;
+  font-size: 0.9rem;
   align-items: center;
 
 }
@@ -209,7 +209,7 @@
 
 .blog-image img{
   max-width: 50%;
-  height: 50vw;
+  height: 40vh;
 }
 
 .blog-image iframe{
@@ -223,8 +223,8 @@ font-family: "Poppins", sans-serif;
 word-spacing: 10px;
 letter-spacing: 2px;
 line-height: 180%;
-border-bottom:#e03a3c 5px solid;
-margin-bottom: 0%;
+border-bottom:#e03a3c 3px solid;
+margin-bottom: 3%;
 }
 
 .end{
