@@ -153,6 +153,8 @@
   font-style: italic;
   word-spacing: 10px;
   letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .project-form .form-control{
