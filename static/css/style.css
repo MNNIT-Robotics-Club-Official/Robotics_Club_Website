@@ -67,119 +67,9 @@ color: #e76668;
 }
 
 /*--------------------------------------------------------------
-# alumni
---------------------------------------------------------------*/
-
-#alumniTeam #accordionExample .card-header{
-  background-color: #fff;
-}
-
-#alumniTeam .card-body{
-  padding: 0;
-}
-
-#alumniTeam #accordionExample button{
-  color: #e03a3c;
-  font-size: 0.6em;
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-  word-spacing: 2px;
-  text-decoration: none;
-}
-
-#alumniTeam #accordionExample span{
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 0.9em;
-}
-
-#alumniTeam .d-flex h2{
-  color: #333;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  word-spacing: 10px;
-  letter-spacing: 2px;
-  line-height: 180%;
-  border-bottom:#e03a3c 5px solid
-}
-
-/* Batch */
-#alumniTeam .d-flex h3{
-  color: #16324f;
-  font-size: 26px;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-  word-spacing: 2px;
-}
-
-/* Name & Branch Background */
-#alumniTeam .row .d-flex{
-  background-color: #e03a3c;
-  opacity: 85%;
-}
-
-#alumniTeam .row .d-flex ul{
-  list-style-type: none;
-  padding-inline-start: 0px;
-  margin-bottom: 7px;
-}
-
-/* Name & Branch */
-#alumniTeam .card .d-flex li{
-  margin-top: 4px;
-  padding-bottom: 10px;
-  font-size: 1.2em;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  color: #fff;
-  line-height: 15px;
-  margin-bottom: -8px;
-  text-align: center;
-  padding-bottom: 0.6em;
-}
-
-#alumniTeam .card .d-flex a:hover{
-  text-decoration: none;
-}
-
-#alumniTeam .card .d-flex a>li{
-  font-weight: 600;
-}
-
-#alumniTeam .card .d-flex a>li:hover{
-  color: #000;
-  font-weight: bold;
-}
-
-#alumniTeam .social-links ul{
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-#alumniTeam .social-links li{
-  display: inline-block;
-}
-
-#alumniTeam .social-links a {
-  font-size: 1.2em;
-  display: inline-block;
-  background: #EC3134;
-  color: #eee;
-  line-height: 1;
-  padding: 6px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 1.8em;
-  height: 1.8em;
-  transition: 0.3s;
-}
-
-/*--------------------------------------------------------------
 # Faculty
 --------------------------------------------------------------*/
-
+/* 
 #facultyTeam .d-flex h2{
   color: #333;
   font-weight: 600;
@@ -190,7 +80,6 @@ color: #e76668;
   border-bottom:#e03a3c 5px solid
 }
 
-/* Batch */
 #facultyTeam .d-flex h3{
   color: #16324f;
   font-size: 26px;
@@ -199,7 +88,6 @@ color: #e76668;
   word-spacing: 2px;
 }
 
-/* Name & Branch Background */
 #facultyTeam .row .d-flex{
   background-color: #e03a3c;
   opacity: 85%;
@@ -210,7 +98,6 @@ color: #e76668;
   padding-inline-start: 0px;
 }
 
-/* Name & Branch */
 #facultyTeam .card .d-flex li{
   margin-top: 10px;
   padding-bottom: 12px;
@@ -221,7 +108,7 @@ color: #e76668;
   line-height: 10px;
   margin-bottom: -7px;
   text-align: center;
-}
+} */
 /*--------------------------------------------------------------
 # Donation
 --------------------------------------------------------------*/
@@ -407,7 +294,7 @@ color: #e76668;
   content: '';
   position: absolute;
   display: block;
-  width: 20px;
+  width: 60px;
   height: 2px;
   background: #e03a3c;
   bottom: 0;
