@@ -14,7 +14,7 @@ def get_path(instance, filename):
     return f'blogs/{uuid_name}.{extension}'
 
 class Blog(models.Model):
-    title=models.CharField(blank=False,unique=False,max_length=256)
+    title=models.CharField(blank=False,unique=False,max_length=50) #size changed from 256
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     content=models.TextField()
     date=models.DateField()

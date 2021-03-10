@@ -1,5 +1,7 @@
-/* Preloader Starts here */
-/* Preloader */
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+
 .loader{
   position: fixed;
   top: 0;
@@ -26,11 +28,10 @@
 
 /* Preloader Ends here */
 
-/* 
-Header - Navbar 
-Starts
-*/
-/* NavBar Background Color (1 Change in reboot.css) */
+/*--------------------------------------------------------------
+# Navigation bar
+--------------------------------------------------------------*/
+
 .navbar{ 
     background-color: #fff;
 }
@@ -57,28 +58,18 @@ color: #e76668;
   color:  #e03a3c;
 }
 
+#navbarNavDropdown .dropdown-item{
+  background-color: white;
+}
+
 .pr-7{
   padding-right: 0.7rem!important;
 }
 
-/* .carousel-caption{
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: initial;
-} */
+/*--------------------------------------------------------------
+# alumni
+--------------------------------------------------------------*/
 
-/* 
-Header - Navbar 
-Ends
-*/
-
-
-
-/*
-Alumni Starts
-*/
-
-/* Our Alumni */
 #alumniTeam #accordionExample .card-header{
   background-color: #fff;
 }
@@ -185,15 +176,10 @@ Alumni Starts
   transition: 0.3s;
 }
 
-/*
-Alumni Ends
-*/
+/*--------------------------------------------------------------
+# Faculty
+--------------------------------------------------------------*/
 
-/*
-Faculty Starts
-*/
-
-/* Our Faculty */
 #facultyTeam .d-flex h2{
   color: #333;
   font-weight: 600;
@@ -236,9 +222,9 @@ Faculty Starts
   margin-bottom: -7px;
   text-align: center;
 }
-/*
-Faculty Ends
-*/
+/*--------------------------------------------------------------
+# Donation
+--------------------------------------------------------------*/
 
 /*donate starts*/
 #donat .d-flex h2{
@@ -394,105 +380,108 @@ Faculty Ends
 	border-radius: 10px;
   z-index: -1;
 }
-/*donate msg ends*/
 
-/*
-Testimonial
-starts
-*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-.testimonials{position: relative;background-repeat: no-repeat;background-size: cover;padding:10px 0;font-family:'Poppins', sans-serif}
-.testimonials::before{content:'';position: absolute;right:0;left:0;top:0;bottom:0;}
-.testimonials .testi .item {background: #fff;padding: 40px 30px;border-radius:15px; border: rgb(58, 58, 58) solid 1px;}
-.testimonials .testi .item .profile {display:flex;padding-left: 15px;}
-.testimonials .testi .item .profile img {border-radius: 100%;width:100px;height:100px;object-fit:cover}
-.testimonials .testi .item .profile .information {padding-left:20px;margin-bottom:15px;}
-.testimonials .testi .item .profile .information p {font-size: 24px;margin: 0px auto 0px;color: #16324f;font-weight: 900;line-height: 1;}
-.testimonials .testi .item .profile .information span {color: #e76668;font-weight: bold;margin-top: -4px;line-height: 1.8em;font-size: 15px;}
-.testimonials .testi .item>p {margin-bottom: 15px;font-size: 16px;line-height: 1.6em;display: block;z-index: 2;color: #5A3733;text-align: center;}
-.testimonials .testi .item .icon {text-align: center;}
-.testimonials .testi .item .icon i {font-size: 32px;color: #e03a3c;}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
 
-/* Heading */
-.testimonials .d-flex h2{
-  color: #333;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  word-spacing: 10px;
-  letter-spacing: 2px;
-  line-height: 180%;
-  border-bottom:#e03a3c 5px solid
+#footer {
+  color: #fff;
+  font-size: 14px;
+  background: #111111;
 }
-/*
-Testimonial
-Ends
-*/
 
+#footer .footer-top {
+  padding: 40px 0 22px 0;
+  background: #1b1b1b;
+}
 
-/*
-Footer
-starts
-*/
-/* Footer Background Color */
-footer{
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top h4::after {
+  content: '';
+  position: absolute;
   display: block;
-  background-color: #1b1b1b;
+  width: 20px;
+  height: 2px;
+  background: #e03a3c;
+  bottom: 0;
+  left: 0;
 }
 
-/*Heading Underline */
-footer .line{
-  border-bottom: 3px solid white;
+#footer .footer-top .footer-links {
+  margin-bottom: 20px;
 }
 
-/* Headings */
-footer h5{
-  color: #f83e41;
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Robotics Lab Heading */
-footer li h5{
-  color: #f83336;
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: white;
+  font-size: 18px;
+  line-height: 1;
 }
 
-/* List Items */
-footer li a{
-  color: #edf2f4;
+#footer .footer-top .footer-links ul li {
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
 }
 
-/* Location and Email */
-footer li{ 
-  color: #edf2f4;
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
 }
 
+#footer .footer-top .footer-links ul a {
+  color: #aaaaaa;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
 
-footer .social-links a {
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+}
+
+#footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #EC3134;
-  color: #eee;
+  background: #2b2b2b;
+  color: #fff;
   line-height: 1;
   padding: 8px 0;
-  margin-right: 2px;
-  margin-left: 2px;
-  border-radius: 50%;
+  margin-right: 4px;
+  border-radius: 4px;
   text-align: center;
   width: 36px;
   height: 36px;
   transition: 0.3s;
 }
 
-footer .social-links a:hover, a:active, a:focus {
-  color: #000;
-  outline: none;
+#footer .social-links a:hover {
+  background: #e03a3c;
+  color: #fff;
   text-decoration: none;
 }
 
-/*
-Footer
-Ends
-*/
-
-/*pagination*/
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
 
  .pagination-container{
   margin: 30px auto;

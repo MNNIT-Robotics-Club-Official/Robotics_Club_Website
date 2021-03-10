@@ -1,6 +1,12 @@
 {% autoescape off %}
 Hi {{ user.username }},
-Please click on the link to confirm your registration,
+Robotics Club, MNNIT welcomes you.
+We hope you learn, grow, and have an amazing experience with us.
+Click on the link below to kickstart your Robotics journey.
+
 http://{{ domain }}{% url 'user:activate' uidb64=uid token=token %}
+
+Team Robotics
+
 If you think, it's not you, then just ignore this email.
 {% endautoescape %}

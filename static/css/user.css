@@ -1,6 +1,10 @@
-/* LOGIN/REGISTER PAGE  */
+/*--------------------------------------------------------------
+# Login and Register Page
+--------------------------------------------------------------*/
 
-.login-container{
+/* Old login page css */
+
+/* .login-container{
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -9,7 +13,7 @@
   padding: 5%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-.box h3{
+ .box h3{
   font-family: 'Montserrat',sans-serif;
   font-weight: 600;
   text-align: center;
@@ -26,7 +30,6 @@
 }
 
 .switch a{
-  /* color: #333; */
   font-weight: 600;
 }
 
@@ -81,6 +84,9 @@
 .login_container {
   padding: 0 2rem;
 }
+.icon{
+  padding-left: 16px;
+}
 .input-group-text {
   background: #f7ba5b ;
   color: white !important;
@@ -105,23 +111,12 @@
     color: #e76668 !important;
     border-radius: 0 0.25rem 0.25rem 0 !important;
     display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
+    justify-content: center; 
+    align-items: center;
     border-top: 1px solid #ced4da !important;
     border-right: 1px solid #ced4da !important;
     border-bottom: 1px solid #ced4da !important;
 }
-
-/* .user_card .toggle-password {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
-
-.user_card .pwd{
-  padding-right: inherit !important;
-
-}*/
 
 .user_card .form-control{
   border-radius: 0.25rem !important;
@@ -132,7 +127,7 @@
   border-right: 0 !important;
 }
 
-/*
+
 .user_card .show-pwd{
     background: #fff !important;
     color: #e76668;
@@ -141,13 +136,148 @@
     border-right: 1px solid #ced4da;
     border-bottom: 1px solid #ced4da;
     display: flex;
-    justify-content: center; /* align horizontal */
-    /* align-items: center;  
-   } */
+    justify-content: center; 
+   } 
 
 .user_card .row{
   margin-right: inherit !important;
 } */
+
+
+/* NEW LOGIN PAGE CSS */
+#signin .card{
+  border: none;
+}
+
+.box {
+  max-width: 500px;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  top: 50%;
+  background: #1b1b1b;
+  text-align: center;
+  transition: 0.25s;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #e03a3c;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 300px;
+  border-color: #ff0105
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #e03a3c;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+  background: #e03a3c
+}
+
+.forgot {
+  margin-top: 30px;
+  color: #6c757d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot:hover{
+  color: white;
+  transition: 0.3s;
+}
+
+.field-icon {
+  position: relative;
+  top: -57px;
+  left: 172px;
+  z-index: 2;
+  color: red;
+}
+.pass{
+  margin-bottom: -40px;
+}
+
+.pass .field-icon{
+  left: 100px;
+}
+.signup{
+  border: 0;
+  background: none;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #e03a3c;
+  padding: 8px 20px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer
+}
+
+@media(max-width: 393px)
+{
+  .signup{
+    padding: 8px 7px;
+  }
+}
+.forgot a:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #e03a3c;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #ff0105;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #1b1b1b inset;
+  border: 2px solid #e03a3c;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 
 /* LOGIN/REGISTER PAGE ENDS */
 
@@ -258,8 +388,6 @@
 .userbtn:hover{
   background: crimson; 
 }
-
-
 
 .componentsbtn:hover{
  background: crimson !important; 

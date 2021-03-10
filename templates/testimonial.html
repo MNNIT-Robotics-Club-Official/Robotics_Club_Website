@@ -5,71 +5,407 @@
 Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/testimonial.css' %} " type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+{% endblock %}
+
 {% block body %}
+<div class="testimonials container">
+    <div class="d-flex justify-content-center my-3">
+        <h2 class="">TESTIMONIALS</h2>
+    </div>
+</div>
 
-<section class="testimonials">
-    <div class="container">
-
-        <!-- Testimonial Heading -->
-        <div class="d-flex justify-content-center my-3">
-            <h2 class="">TESTIMONIALS</h2>
-        </div>
-
-        <br>
-
-        <div class="testi">
-            <!-- Single Starts -->
-            <div class="item mb-5">
-                <div class="profile">
-                    <img src="{% static 'img/r9.jpg' %}" alt="">
-                    <div class="information mt-4">
-                        <p>Full Name</p>
-                        <span>Branch/Department/Position</span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="testimonial-slider" class="owl-carousel">
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/zaki1.jpg' %}">
+                    </div>
+                    <p class="description">
+                        When our seniors were graduating, they assigned us the responsibility to make the club reach new
+                        heights. They trained us well and made us aware of the industry standards of technology and
+                        future course things. Because of every individual's wisdom and collective efforts, the club has
+                        been able to establish its name in prestigious competitions ranging from e-Yantra, which is an
+                        initiative of the Ministry of Education, Government of India, to the technical festival of
+                        different IITs. Keep up the excellent work and the team spirit! You have much more goals to
+                        achieve and establish new records! ALL THE BEST :)
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Mohd. Zaki-</h3>
+                        <span class="post">IIT Delhi, New Delhi</span>
+                        <h6 class="year">Graduation Year: 2017</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/iamzaki/"><i class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:mohdzaki1995@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
                     </div>
                 </div>
-                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit
-                    distinctio,
-                    officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus
-                    maiores impedit ducimus cum accusamus.</p>
-                <div class="icon">
-                    <i class="fa fa-quote-right" aria-hidden="true"></i>
-                </div>
-            </div>
-            <!-- Single Ends -->
-            <div class="item mb-5">
-                <div class="profile">
-                    <img src="{% static 'img/r9.jpg' %}" alt="">
-                    <div class="information mt-4">
-                        <p>Full Name</p>
-                        <span>Branch/Department/Position</span>
+
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/shubham.jpg' %}">
+                    </div>
+                    <p class="description">
+                        I had a great time in Allahabad. The environment was excellent, and I still remember visiting
+                        the ghats of Ganga. We were blessed to be part of this institute. The culture of our college is
+                        fantastic, we had friends from both senior and junior batch, and everyone was always ready to
+                        help others, people didn't have any ego, everything was so pleasing and lite. Some of my most
+                        memorable memories of college are associated with the Robotics club, which I feel privileged to
+                        be a part of. Creativity and innovation were the club's main principles; being part of a club
+                        means one can work to make his creative idea a reality. All ideas were encouraged, no matter how
+                        wild or useless they may sound at a first impression. Working with some great minds, I learned a
+                        lot and made memories worth cherishing.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Shubham Sharma-</h3>
+                        <span class="post">IIM Trichy, Agra</span>
+                        <h6 class="year">Graduation Year: 2015</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/shubham-sharma-aa821963/"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:shubhamsharma.mnnit@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
                     </div>
                 </div>
-                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit
-                    distinctio,
-                    officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus
-                    maiores impedit ducimus cum accusamus.</p>
-                <div class="icon">
-                    <i class="fa fa-quote-right" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="item mb-5">
-                <div class="profile">
-                    <img src="{% static 'img/r9.jpg' %}" alt="">
-                    <div class="information mt-4">
-                        <p>Full Name</p>
-                        <span>Branch/Department/Position</span>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/gaurav1.jpg' %}">
+                    </div>
+                    <p class="description">
+                        I joined the club in the first year thinking ki "Kuch to kr lete h," but it never left me. I
+                        have learned many things, from joining two wires to handle the disappointment that you get after
+                        working too hard on a project. It will not just teach you robotics; it will help you develop the
+                        most fundamental problem-solving ability and handle pressure and loss, which is natural in life.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Gaurav Bansal-</h3>
+                        <span class="post">VISA Inc. Bangalore</span>
+                        <h6 class="year">Graduation Year: 2020</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gauravbansal98/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:gauravbansal233@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
                     </div>
                 </div>
-                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit
-                    distinctio,
-                    officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus
-                    maiores impedit ducimus cum accusamus.</p>
-                <div class="icon">
-                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/kartik.jpg' %}">
+                    </div>
+                    <p class="description">
+                        MNNIT robotics club bridges the gap between college and industry... The kind of projects on
+                        which students work is challenging. Most of the projects are inspired by society problems, and
+                        students here came up with very innovative solutions. MNNIT robotics club brings the best out
+                        from students... from critical thinking to best technical solutions... I wish club and Club
+                        members to continue work with the same spirit and bring success to club and college.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Kartik Singh-</h3>
+                        <span class="post">Mentor Graphics, Noida</span>
+                        <h6 class="year">Graduation Year: 2019</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/kartik-singh-lmp"><i class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:kartiksinghlmp@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/ankur2.jpg' %}">
+                    </div>
+                    <p class="description">
+                        Robotics Club is a great initiative taken by my juniors. Before it, we didn't have a structured
+                        entity to proceed, so most work was done by word of mouth and coordinating with seniors. So only
+                        a limited number of people were able to work all year round in this field. But because of the
+                        club being in the loop with juniors, I can see how better they are growing each year, with more
+                        projects done and actively participating in various events.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Ankur Srivastava-</h3>
+                        <span class="post">MathWorks India, Hyderabad</span>
+                        <h6 class="year">Graduation Year: 2015</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/ankursrivastava12/"><i class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:kcs.ankur@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/utkarsh.jpg' %}">
+                    </div>
+                    <p class="description">
+                        Robotics club is the college where you would want to be for learning, growth, and inspiration.
+                        It is like a launchpad to build things and imbibe cooperation, where you think and develop
+                        yourselves. It has given me great memories and contributed to the overall enhancement of my
+                        personality. I am truly grateful for all the opportunities the club gave me. Thanks and all the
+                        best !!
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Utkarsh Sharma-</h3>
+                        <span class="post">Citicorp Services India, Pune</span>
+                        <h6 class="year">Graduation Year: 2019</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/mwlite/in/utkarsh-sharma-194338139"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:utkarshsharmaas@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/santanu1.jpg' %}">
+                    </div>
+                    <p class="description">
+                        This club provides a great way to learn and grow practically as engineers in our respective
+                        domains and explore other interests.
+
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Santanu Banerjee-</h3>
+                        <span class="post">Qualcomm, Noida</span>
+                        <h6 class="year">Graduation Year: 2020</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/santanu-banerjee-7b8852152/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href=""><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/kishan.jpg' %}">
+                    </div>
+                    <p class="description">
+                        Thanks to the club for everything. Being student president for the session 2018-19, we
+                        reimagined the whole way of doing things. We launched around 20+ projects, initiated ProSang,
+                        connected club projects to the companies, and launched my startup TSAW Drones during the event.
+                        The time at the club, with the members, transformed me a lot, taught me to dare things & do it
+                        uniquely, being fearless.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Kishan Tiwari-</h3>
+                        <span class="post">TSAW Drones, Gurgaon</span>
+                        <h6 class="year">Graduation Year: 2019</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/kishan-tiwari-poseidon/"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:kishan@tsaw.tech"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/ayush.jpg' %}">
+                    </div>
+                    <p class="description">
+                        The robotics club allowed me to work with and mentor some of the most brilliant engineers I met.
+                        It is a place where curiosity and technology meet to lay the foundation for an innovative future
+                        that lies ahead for all of us. A lot of credit goes to the club for any success that I got in my
+                        professional career so far.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Ayush Gaurav-</h3>
+                        <span class="post">Xilinx Inc, Hyderabad</span>
+                        <h6 class="year">Graduation Year: 2018</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/ayush23gaurav/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:Ayush23gaurav@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/vishal2.png' %}">
+                    </div>
+                    <p class="description">
+                        Curiosity is the essence of our existence. So keep inventing and keep the wheels in motion; it
+                        doesn't matter if wheels are of life or robots.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Vishal Gupta</h3>
+                        <span class="post">Centre for Development of Telematics (C-DOT), New Delhi</span>
+                        <h6 class="year">Graduation Year: 2017</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/vishal-gupta-9b450791"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:vishalgupta584@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/pragya.jpg' %}">
+                    </div>
+                    <p class="description">
+                        It was a great learning experience for me, serving on both sides of the table. The club soon
+                        becomes more like a family, and it feels great to engage in such creative projects with such
+                        good peers. The robotics club was one of the major highlights of my four years at MNNIT.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Pragya Pandey-</h3>
+                        <span class="post">Qualcomm, Hyderabad</span>
+                        <h6 class="year">Graduation Year: 2019</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/pragya-pande-74046b147"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:pandepragya0501@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/naveen2.jpg' %}">
+                    </div>
+                    <p class="description">
+                        The robotics club has done a great job during the last 3-4 years. During our time, the club
+                        received tremendous responses from students from all years; we conducted technical sessions for
+                        them and kept improving on technical knowledge. Even after graduating, I have always been in
+                        touch with club activities through my batchmate Mohd. Zaki. I feel so much satisfied and proud
+                        to be a part of the MNNIT robotics club. All the best for upcoming graduates. Keep learning and
+                        keep improving!
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Naveen Chandra-</h3>
+                        <span class="post">Leoforce Pvt Ltd, Hyderabad</span>
+                        <h6 class="year">Graduation Year: 2017</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/naveen-chandra-n23"><i class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:naveenchandra180@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/aditya.jpg' %}">
+                    </div>
+                    <p class="description">
+                        The Robotics Club MNNIT is the place for all the technical activities going in the college
+                        relating to Robotics, Electronics, IoT, Mechtronics, Machine Learning, and many more. We
+                        initiated projects like Humanoid Robot, Self Driving Car, Artificial Hands, etc. The club
+                        provides you the platform to express your technological ideas and implement them with Team's
+                        help having vast knowledge. I hold the post of head of this club for 2k18-2k19. This one year
+                        has given me an emotional attachment to this club that will remain lifelong.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Aditya Singh-</h3>
+                        <span class="post">Qualcomm, Bangalore</span>
+                        <h6 class="year">Graduation Year: 2019</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/aditya-kumar-singh-022517112"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:aks60507@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/shubham-maurya2.jpg' %}">
+                    </div>
+                    <p class="description">
+                        Being a civil engineer, it's was hard for me to invest myself in non-core activities, but under
+                        the guidance of super awesome and supportive seniors, I started doing robotics and participated
+                        in lots of events, In 2016 we made our club official; for that, I would like thanks to my
+                        seniors, Vishal sir, and the whole robotics team. In 2017 I took charge of the robotics club.
+                        I can't imagine my 4yr of BTech without this club, where I get a chance to explore myself, do
+                        some real-life challenges, and how to deal with people. It helps me to improve my technical as
+                        well as public dealing skills. The club was not just a place where we do some technical stuff;
+                        for me, the club was home, and all our team members are like family.
+
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Shubham Maurya-</h3>
+                        <span class="post">Quinbay, Bangalore</span>
+                        <h6 class="year">Graduation Year: 2018</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/shubham-maurya-565978bb/"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:mauryas367@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/kalyan1.jpg' %}">
+                    </div>
+                    <p class="description">
+                        I have never thought that an arbitrary decision of joining the Robotics club could tweak me by
+                        teaching such interdisciplinary things. Apart from the technical stuff, I could learn team
+                        management and the bliss of working altogether in a team. Participating in organizing them and
+                        being a team member to mentoring a team has played a crucial role in brushing me up to become a
+                        better version of myself. My reassuring seniors and ever-supportive colleagues made my journey
+                        even more beautiful. Indeed I am lucky enough to find my best friends for life through this
+                        platform. Of course, I had to go through some edgy, restless nights, but that's all that defines
+                        your current position. Hence I would never step back from owing the Robotics club for
+                        everything.
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Kalyan Prusty-</h3>
+                        <span class="post">IISc, Bangalore</span>
+                        <h6 class="year">Graduation Year: 2020</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/kalyan-prusty-0a8b55141/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:kalyanprusty@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="pic">
+                        <img src="{% static 'img/testimonial/umang.jpg' %}">
+                    </div>
+                    <p class="description">
+                        Robotics is one field that is very close to my heart, and even today, though I am occupied at
+                        work, I try to steal around 4-6 hours every week from working on some cool robots :) In my
+                        opinion, to get started in robotics, there is no better place than your local club. I started my
+                        robotics journey at MNNIT itself, where we tried to understand and carry forward the projects
+                        and our seniors' initiatives and pass the baton to the new budding engineers. They, in my
+                        opinion, have taken the club to new heights and have worked extremely hard to make the MNNIT
+                        Robotics club a world-class one.
+                        Robotics is a field that gives you the perspective to think from the system engineering point of
+                        view and look beyond the narrow area of expertise that one has in a given domain. Opportunities
+                        ranging from the buzzwords of AI/ML to Computer Vision, Estimation, Control and Planning,
+                        Simulation, Circuit Designing, Sensor designing and planning, Power management, actuators
+                        design, locomotion engineering, etc. etc. are some of the few fields to name that one can work
+                        on. Additionally, you meet some great people and get to exchange ideas. In fact, today, a lot of
+                        entrepreneurs are working in the field of robotics.
+                        And finally, Robotics is the future. From Mars/Space exploration to the deepest point in the
+                        Mariana Trench, the boundaries that we know have been reached by robots only. From the
+                        day-to-day task of household chores to the most complex ones of understanding and simulating
+                        emotions or medical surgery, Robotics has a role to play. The application of robotics is still
+                        something that the world is discovering every other day.
+
+                    </p>
+                    <div class="testimonial-profile">
+                        <h3 class="title">Umang Agrawal-</h3>
+                        <span class="post">Qualcomm, Hyderabad</span>
+                        <h6 class="year">Graduation Year: 2017</h6>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/umang-agrawal-35069367/"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <!-- <a href="mailto:champ.umangagrawal@gmail.com"><i class="fa fa-envelope"></i></a> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script type="text/javascript" src="{% static 'js/testimonial.js' %} "></script>
 
 {% endblock %}
