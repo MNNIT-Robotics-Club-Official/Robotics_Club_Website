@@ -5,248 +5,104 @@
 Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/teams.css' %} " type="text/css">
+{% endblock %}
+
 {% block body %}
-
-<section id="alumniTeam">
+<div class="title container">
     <div class="d-flex justify-content-center my-3">
-        <h2 class="">WEB TEAM</h2>
+        <h2 class="">Web Team</h2>
     </div>
+</div>
 
-    <br>
-
-    <div class="accordion px-5 pb-5" id="accordionExample">
-        <div class="card">
-            <!-- <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Web Team
-                    </button>
-                </h2>
-            </div> -->
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
+<div class="container">
+    <div class="col-12 mx-auto team p-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{% static 'img/coordinator/ashutosh.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/ashutosh-kr/"><i class="fa fa-linkedin"></i></a>
                         </div>
+                    </div>
+                    <div class="member-info text-center">
+                        <h4>Ashutosh Kumar</h4>
+                        <span><i>Third Year</i></span>
+                        <span><i>Computer Science and Engg.</i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{% static 'img/teams/ishu.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/ir2010/"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info text-center">
+                        <h4>Ishu Raj</h4>
+                        <span><i>Third Year</i></span>
+                        <span><i>Computer Science and Engg.</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{% static 'img/coordinator/anurag.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/anurag-gupta-806a161aa/"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info text-center">
+                        <h4>Anurag Gupta</h4>
+                        <span><i>Second Year</i></span>
+                        <span><i>Electronics and Comm. Engg.</i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{% static 'img/teams/divyansh.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/divyansh-upadhyay-81b5a31a3/?originalSubdomain=in"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info text-center">
+                        <h4>Divyansh Upadhyay</h4>
+                        <span><i>Second Year</i></span>
+                        <span><i>Information Technology</i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{% static 'img/teams/hardik.jpg' %}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/hardik-mittal-87687a1a1/"><i
+                                    class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info text-center">
+                        <h4>Hardik Mittal</h4>
+                        <span><i>Second Year</i></span>
+                        <span><i>Information Technology</i></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</section>
+</div>
 
 {% endblock %}

@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
-# Coordinators
+# Alumini
 --------------------------------------------------------------*/
-.cord-title .d-flex h2{
+.title .d-flex h2{
     color: #333;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
@@ -10,7 +10,7 @@
     line-height: 180%;
     border-bottom:#e03a3c 5px solid
   }
-
+  
   [data-toggle="collapse"] i:before {
     content: "\f068";
 }
@@ -75,37 +75,27 @@
     color: #213744;
 }
 
- .speaker{
-    transition: box-shadow 1s;
-    padding-top: 10px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
- .speaker:hover{
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
-    /* transition: all 0.3s ease-in-out; */
-  }
-  
-  
-  .tags{
-      font-size: 10px;
-      color: white;
-      border-radius: 12px;
-  }
- .member {
+/* ------------------------- */
+
+.team .member {
     margin-bottom: 20px;
     overflow: hidden;
     border-radius: 5px;
     background: #fff;
-    transition: all 0.3s ease-in-out;
+    background: #e03a3c;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
   }
+.team .member:hover{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
   
- .member .member-img {
+  .team .member .member-img {
     position: relative;
     overflow: hidden;
-    transition: 0.3s;
   }
   
- .member .social {
+  .team .member .social {
     position: absolute;
     left: 0;
     bottom: 30px;
@@ -115,7 +105,7 @@
     text-align: center;
   }
   
- .member .social a {
+  .team .member .social a {
     transition: color 0.3s;
     color: #111111;
     margin: 0 3px;
@@ -129,64 +119,43 @@
     color: #fff;
   }
   
- .member .social a:hover {
+  .team .member .social a:hover {
     background: #111111;
   }
   
- .member .social i {
+  .team .member .social i {
     font-size: 18px;
   }
   
- .member .member-info {
-    padding: 15px 15px;
-    transition: 0.3s;
+  .team .member .member-info {
+    padding: 20px 15px;
   }
   
- .member .member-info h4 {
-    font-weight: 700;
+  .team .member .member-info h4 {
+    font-weight: 650;
     margin-bottom: 5px;
-    font-size: 18px;
-    color: #111111;
+    font-size: 21px;
+    color: white;
+    letter-spacing: 1px;
   }
   
- .speaker:hover h4{
-    color: #b31b1b;
-  }
-  
- .member .member-info span {
+  .team .member .member-info span {
     display: block;
     font-size: 14px;
-    font-weight: 500;
-    color: #aaaaaa;
+    font-weight: 400;
+    color: #efe2e2;
   }
   
- .member .member-info p {
+  .team .member .member-info p {
     font-style: italic;
-    font-size: 11px;
-    font-weight: 480;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 26px;
     color: #777777;
-    margin-bottom: 0.5rem;
   }
   
- .member:hover .social {
+  .team .member:hover .social {
     opacity: 1;
     bottom: 15px;
   }
   
-  /* .icon{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  .icon a{
-      padding: 5px 10px;
-      background: #dc3545;
-      color: white;
-      border-radius: 20px;
-  }
-  .icon a:hover{
-      color: #4a60d0;
-      transition: 0.3s;
-  }
-   */
+  

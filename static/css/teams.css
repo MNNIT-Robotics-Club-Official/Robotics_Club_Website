@@ -1,0 +1,147 @@
+/*--------------------------------------------------------------
+# Other Teams
+--------------------------------------------------------------*/
+.title .d-flex h2{
+    color: #333;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid
+  }
+  
+  section{
+	padding: 60px 0;
+}
+
+.accordion{
+    box-shadow: 0px 2px 12px rgb(0 0 0 / 30%);
+}
+/* #accordion-style-1 h1,
+#accordion-style-1 a{
+    color:hsl(0, 62%, 51%);
+} */
+#accordion-style-1 .btn-link {
+    font-weight: 400;
+    color: #d03535;
+    background-color: transparent;
+    text-decoration: none !important;
+    font-size: 21px;
+    font-weight: bold;
+	padding-left: 25px;
+}
+
+/* #accordion-style-1 .card-body {
+    border-top: 2px solid #d03535;
+} */
+
+#accordion-style-1 .card-header .btn.collapsed .fa.main{
+	display:none;
+}
+
+#accordion-style-1 .card-header .btn .fa.main{
+	background: #e03a3c;
+    padding: 11px 10px;
+    color: #ffffff;
+    width: 35px;
+    height: 41px;
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+	display:block;
+}
+.others{
+    padding: 50px 0px;
+}
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* --------------------------- */
+
+.team .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #fff;
+    background: #cc1a1c;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+  }
+.team .member:hover{
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.8);
+    transition: 0.3s;
+}
+  
+  .team .member .member-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .team .member .social {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+  }
+  
+  .team .member .social a {
+    transition: color 0.3s;
+    color: #111111;
+    margin: 0 3px;
+    padding-top: 7px;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    background: #e03a3c;
+    display: inline-block;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+  }
+  
+  .team .member .social a:hover {
+    background: #111111;
+  }
+  
+  .team .member .social i {
+    font-size: 18px;
+  }
+  
+  .team .member .member-info {
+    padding: 20px 15px;
+  }
+  
+  .team .member .member-info h4 {
+    font-weight: 650;
+    margin-bottom: 5px;
+    font-size: 21px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  
+  .team .member .member-info span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #efe2e2;
+  }
+  
+  .team .member .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+  }
+  
+  .team .member:hover .social {
+    opacity: 1;
+    bottom: 15px;
+  }
+  
+  
