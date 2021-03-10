@@ -41,9 +41,11 @@ RoboticsClub-Notice (For College Students)
 
     </div>
     {% endfor %}
-     {% if user.is_authenticated %}
-    <div class="row justify-content-center">
-        <a href="{% url 'news:news_page' %}"><button class="btn btn-outline-danger">Public News</button></a>
+    {% if user.is_authenticated %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <a href="{% url 'news:news_page' %}"><button class="btn btn-outline-danger">Public News</button></a>
+        </div>
     </div>
     {% endif %}
     <br>

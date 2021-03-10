@@ -149,11 +149,9 @@
                       aria-hidden="true"></i></a>
                 </li>
                 {% endif %}
-                {% if user.is_authenticated %}
                 <li class="{% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice</a>
                 </li>
-                {% endif %}
                 <li class="{% if request.resolver_match.view_name == 'home:testimonial' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonials</a>
                 </li>
