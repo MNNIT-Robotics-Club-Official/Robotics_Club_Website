@@ -5,206 +5,439 @@
 Alumni | Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/alumni.css' %} " type="text/css">
+{% endblock %}
+
+
 {% block body %}
 
-<section id="alumniTeam">
+<div class="title container">
     <div class="d-flex justify-content-center my-3">
-        <h2 class="">OUR ALUMNI</h2>
+        <h2 class="">Our Alumni</h2>
     </div>
-
-    <br>
-
-    <div class="accordion px-5 pb-5" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Batch - <span>2020</span>
-                    </button>
-                </h2>
+</div>
+<div class="container">
+    <div id="accordion" class="py-5">
+        <div class="card border-0">
+            <div class="card-header p-0 border-0" id="heading-239">
+                <button class="btn btn-link accordion-title border-0 collapse" data-toggle="collapse"
+                    data-target="#collapse-239" aria-expanded="true" aria-controls="#collapse-239"><i
+                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Batch
+                    2020</button>
             </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
+            <div id="collapse-239" class="collapse show" aria-labelledby="heading-239" data-parent="#accordion">
+                <div class="card-body accordion-body team">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{% static 'img/alumni/gaurav.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a href="https://www.linkedin.com/in/gauravbansal98/?originalSubdomain=in"><i
+                                                class="fa fa-linkedin"></i></a>
                                     </div>
                                 </div>
+                                <div class="member-info text-center">
+                                    <h4>Gaurav Bansal</h4>
+                                    <span><i>Software Engineer</i></span>
+                                    <span><i>VISA Inc, Bangalore</i></span>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{% static 'img/alumni/santanu.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a
+                                            href="https://www.linkedin.com/in/santanu-banerjee-7b8852152/?originalSubdomain=in"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info text-center">
+                                    <h4>Santanu Banerjee</h4>
+                                    <span><i>Associate Engineer</i></span>
+                                    <span><i>Qualcomm, Noida</i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{% static 'img/alumni/kalyan.jpg' %}" class="img-fluid" alt="">
+                                    <div class="social">
+                                        <a
+                                            href="https://www.linkedin.com/in/kalyan-prusty-0a8b55141/?originalSubdomain=in"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <div class="member-info text-center">
+                                    <h4>Kalyan Prusty</h4>
+                                    <span><i>M.Tech</i></span>
+                                    <span><i>IISc, Bangalore</i></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Batch - <span>2019</span>
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
+            <div class="card border-0 " style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-header p-0 border-0" id="heading-240">
+                    <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                        data-target="#collapse-240" aria-expanded="false" aria-controls="#collapse-240"><i
+                            class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Batch
+                        2019</button>
+                </div>
+                <div id="collapse-240" class="collapse " aria-labelledby="heading-240" data-parent="#accordion">
+                    <div class="card-body accordion-body team">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/kishan.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/kishan-tiwari-poseidon/"><i
+                                                    class="fa fa-linkedin"></i></a>
                                         </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Kishan Tiwari</h4>
+                                        <span><i>Founder and CEO</i></span>
+                                        <span><i>TSAW Drones, Gurgaon</i></span>
                                     </div>
                                 </div>
+                            </div>
 
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/pragya.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/pragya-pande-74046b147/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Pragya Pande</h4>
+                                        <span><i>Associate Engineer</i></span>
+                                        <span><i>Qualcomm, Hyderabad</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/utkarsh.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/utkarsh-sharma-194338139/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Utkarsh Sharma</h4>
+                                        <span><i>Technical Analyst</i></span>
+                                        <span><i>Citicorp Services India, Pune</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/anshuman.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/anshuman-sabath-045aa045/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Anshuman Sabath</h4>
+                                        <span><i>Member of Technical Staff</i></span>
+                                        <span><i>Oracle, Bangalore</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/kartik.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/kartik-singh-lmp/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Kartik Singh</h4>
+                                        <span><i>Senior Member Technical Staff</i></span>
+                                        <span><i>Mentor Graphics, Noida</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/aditya.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/aditya-kumar-singh-022517112/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Aditya Kumar Singh</h4>
+                                        <span><i>Engineer</i></span>
+                                        <span><i>Qualcomm, Bangalore</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/piyush.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/piyush-gupta-01111997/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info  text-center ">
+                                        <h4>Piyush Kumar Gupta</h4>
+                                        <span><i>Engineer</i></span>
+                                        <span><i>Qualcomm, Bangalore</i></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Batch - <span>2018</span>
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
+            <div class="card border-0 " style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-header p-0 border-0" id="heading-241">
+                    <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                        data-target="#collapse-241" aria-expanded="false" aria-controls="#collapse-241"><i
+                            class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Batch
+                        2018</button>
+                </div>
+                <div id="collapse-241" class="collapse " aria-labelledby="heading-241" data-parent="#accordion">
+                    <div class="card-body accordion-body team">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/shubham-maurya.jpg' %}" class="img-fluid"
+                                            alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/shubham-maurya-565978bb/"><i
+                                                    class="fa fa-linkedin"></i></a>
                                         </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
+                                    </div>
+                                    <div class="member-info text-center ">
+                                        <h4>Shubham Maurya</h4>
+                                        <span><i>Senior Software Engineer</i></span>
+                                        <span><i>Quinbay, Bangalore</i></span>
                                     </div>
                                 </div>
+                            </div>
 
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/shivam.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/shivam-singh-sengar-b89847112/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center ">
+                                        <h4>Shivam Singh Sengar</h4>
+                                        <span><i>Senior Software Engineer</i></span>
+                                        <span><i>Quinbay, Bangalore</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/ayush.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/ayush23gaurav/?originalSubdomain=in"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center ">
+                                        <h4>Ayush Gaurav</h4>
+                                        <span><i>Design Engineer II</i></span>
+                                        <span><i>Xilinx Inc, Hyderabad</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/mohit.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.linkedin.com/in/mohit-borana-64892a128/?originalSubdomain=in"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Mohit Borana</h4>
+                                        <span><i>Management Trainee</i></span>
+                                        <span><i>BPCL, Kochi</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-0 " style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-header p-0 border-0" id="heading-242">
+                    <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                        data-target="#collapse-242" aria-expanded="false" aria-controls="#collapse-242"><i
+                            class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Batch
+                        2017</button>
+                </div>
+                <div id="collapse-242" class="collapse " aria-labelledby="heading-242" data-parent="#accordion">
+                    <div class="card-body accordion-body team">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/zaki.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/iamzaki/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Mohd. Zaki</h4>
+                                        <span><i>Ph.D. Reseach Scholar</i></span>
+                                        <span><i>IIT Delhi, New Delhi</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/umang.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/umang-agrawal-35069367/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Umang Agrawal</h4>
+                                        <span><i>RF Software Developer</i></span>
+                                        <span><i>Qualcomm, Hyderabad</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/vishal.png' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/vishal-gupta-9b450791/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Vishal Gupta</h4>
+                                        <span><i>Research Engineer</i></span>
+                                        <span><i>Centre for Development of Telematics (C-DOT), New Delhi</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/naveen.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/naveen-chandra-n23/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Naveen Chandra</h4>
+                                        <span><i>Senior Software Engineer</i></span>
+                                        <span><i>Leoforce, Hyderabad</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-0" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-header p-0 border-0" id="heading-243">
+                    <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
+                        data-target="#collapse-243" aria-expanded="false" aria-controls="#collapse-243"><i
+                            class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>Batch
+                        2016 and before</button>
+                </div>
+                <div id="collapse-243" class="collapse " aria-labelledby="heading-243" data-parent="#accordion">
+                    <div class="card-body accordion-body team">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/shantanu.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a
+                                                href="https://www.linkedin.com/in/shantanu-agarwal-62b9927b/?originalSubdomain=in"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Shantanu Agarwal</h4>
+                                        <span><i>Computer Scientist</i></span>
+                                        <span><i>Adobe Systems Inc, Noida</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/ankur.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/ankursrivastava12/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Ankur Srivastava</h4>
+                                        <span><i>Software Developer</i></span>
+                                        <span><i>MathWorks, Hyderabad</i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                <div class="member">
+                                    <div class="member-img">
+                                        <img src="{% static 'img/alumni/shubham.jpg' %}" class="img-fluid" alt="">
+                                        <div class="social">
+                                            <a href="https://www.linkedin.com/in/shubham-sharma-aa821963/"><i
+                                                    class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="member-info text-center">
+                                        <h4>Shubham Sharma</h4>
+                                        <span><i>MBA</i></span>
+                                        <span><i>IIM Trichy, Tiruchirappalli</i></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -212,7 +445,5 @@ Alumni | Robotics Club MNNIT
             </div>
         </div>
     </div>
-
-</section>
-
+</div>
 {% endblock %}

@@ -19,7 +19,7 @@ Jigyasa | Robotics Club MNNIT
         </div>
 
 
-        <img src="{% static 'img/Jigyasa_Transparent.png' %}" alt="Jigyasa">
+        <img src="{% static 'img/Jigyasa_logo.png' %}" alt="Jigyasa">
         <p>
             Jigyasa is the workshop venture of the Technical clubs of MNNIT, namely Robotics, Astrowing and AeroClub,
             motivated by the desire to supplement education with the present day industry requirements, thus making the
@@ -53,7 +53,7 @@ Jigyasa | Robotics Club MNNIT
     <div class="card mb-5 mx-4">
         <div class="row no-gutters">
             <!-- Assigning column for image -->
-            <div class="col-md-4 image">
+            <div class="col-md-4 image text-center">
                 <!-- <a href="{{workshop.link}}" target="_blank"> -->
                 <!-- <img src="{% static '{{workshop.image}}' %}" class="card-img img-fluid" alt="..."></a> -->
                 <img src="{{workshop.image.url}}" class="card-img img-fluid" alt="...">
@@ -119,7 +119,7 @@ Jigyasa | Robotics Club MNNIT
                                     <p>&emsp;: </p>
                                 </td>
 
-                                <td><span>&emsp; {{workshop.description}}</span></td>
+                                <td><span> {{workshop.description}}</span></td>
                             </tr>
                             {% endif %}
                         </tbody>
@@ -187,7 +187,7 @@ Jigyasa | Robotics Club MNNIT
                             <br>
                             <tr>
                                 <td>
-                                    <p class="card-text">Discription</p>
+                                    <p class="card-text">Description</p>
                                 </td>
                                 <td>
                                     <p>&emsp;: </p>

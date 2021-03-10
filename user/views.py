@@ -91,6 +91,7 @@ def loginUser(request):
 @login_required
 def logoutUser(request):
     logout(request)
+    messages.info(request,"Logged Out Successfully")
     return redirect('home:index')
 
 

@@ -5,370 +5,458 @@
 Team | Robotics Club MNNIT
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/teams.css' %} " type="text/css">
+{% endblock %}
+
 {% block body %}
-
-<section id="alumniTeam">
+<div class="title container">
     <div class="d-flex justify-content-center my-3">
-        <h2 class="">OUR TEAM</h2>
+        <h2 class="">Other Teams</h2>
     </div>
+</div>
 
-    <br>
+<div class="container-fluid bg-gray" id="accordion-style-1">
+    <div class="container">
+        <div class="row others">
+            <div class="col-12 mx-auto">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fa fa-html5 main"></i><i class="fa fa-angle-double-right mr-3"></i>Web
+                                    Team
+                                </button>
+                            </h5>
+                        </div>
 
-    <div class="accordion px-5 pb-5" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Content Team
-                    </button>
-                </h2>
-            </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body team">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/coordinator/ashutosh.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/ashutosh-kr/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Ashutosh Kumar</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Computer Science and Engineering</i></span>
+                                            </div>
                                         </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/ishu.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/ir2010/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Ishu Raj</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Computer Science and Engineering</i></span>
+                                            </div>
                                         </div>
+                                    </div>
 
+
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/coordinator/anurag.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/anurag-gupta-806a161aa/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Anurag Gupta</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Electronics and Comm. Engg.</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/divyansh.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/divyansh-upadhyay-81b5a31a3/?originalSubdomain=in"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Divyansh Upadhyay</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Information Technology</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/hardik.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/hardik-mittal-87687a1a1/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Hardik Mittal</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Information Technology</i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Design Team
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed btn-block text-left" type="button"
+                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    <i class="fa fa-pencil-square-o main"></i><i
+                                        class="fa fa-angle-double-right mr-3"></i>Content Team
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body team">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/saptrishi.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/saptarshi-roy-c-5bb29b92"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Saptarshi Roy Chowdhury</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Electronics and Comm Engg.</i></span>
+                                            </div>
                                         </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/devansh.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/devansh-sethi-2a97721b3"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Devansh Sethi</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Electronics and Comm. Engg.</i></span>
+                                            </div>
                                         </div>
+                                    </div>
 
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/prasanna.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/prasanna-sneha-2211200013"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Prasanna Sneha</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Mechanical Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/maaz.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/maaz-shuaib-baa715206"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Maaz</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Civil Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/rishank.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/rishank-barua-3413821b9/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Rishank Barua</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Information Technology</i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Outreach Team
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    <div class="album pt-5 py-3 bg-light">
-                        <div class="container">
-
-                            <!-- Defining row for cards -->
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-4 col-sm-6">
-                                    <div class="card mb-4 shadow-sm">
-
-                                        <!-- Image of Alumni -->
-                                        <img class="bd-placeholder-img card-img-top" src="{% static 'img/r9.jpg' %}"
-                                            role="img">
-
-                                        <!-- Details of Alumni -->
-                                        <div class="d-flex pt-2 justify-content-center">
-                                            <ul>
-                                                <li class="display:inline">
-                                                    FULL NAME
-                                                </li>
-                                                <li class="display:inline">
-                                                    BRANCH
-                                                </li>
-                                            </ul>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed btn-block text-left" type="button"
+                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    <i class="fa fa-paint-brush main"></i><i
+                                        class="fa fa-angle-double-right mr-3"></i>Design Team
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body team">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/hamza.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/mohammed-hamza-siddiqui-68b076190/"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Hamza Siddiqui</h4>
+                                                <span><i>Final Year</i></span>
+                                                <span><i>Electronics and Comm. Engg.</i></span>
+                                            </div>
                                         </div>
-
-                                        <div class="card-body social-links py-2">
-
-
-                                            <ul>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/"
-                                                        class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-                                                <li>
-                                                    <!-- <div style="text-align:center"> -->
-                                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=roboticsclub@mnnit.ac.in"
-                                                        class="email"><i class="fa fa-envelope"></i></a>
-                                                    <!-- </div> -->
-                                                </li>
-
-                                            </ul>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/nilotpal.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/nilotpal-mukherjee-579249196"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Nilotpal Mukherjee</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Mechanical Engineering</i></span>
+                                            </div>
                                         </div>
-
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/abhas.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/abhas-raj-333360179"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Abhas Raj</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Mechanical Engineering</i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/apanshula.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/apanshula-shourie-0b25931b5/?originalSubdomain=in"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Apanshula Shourie</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Mechanical Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/aditya.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/aditya-gupta-916304199"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Aditya Gupta</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Electrical Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/maaz.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/maaz-shuaib-baa715206"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Maaz</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Civil Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed btn-block text-left" type="button"
+                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
+                                    <i class="fa fa-volume-control-phone main"></i><i
+                                        class="fa fa-angle-double-right mr-3"></i>Outreach Team
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                            data-parent="#accordionExample">
+                            <div class="card-body team">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/saptrishi.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/saptarshi-roy-c-5bb29b92"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Saptarshi Roy Chowdhury</h4>
+                                                <span><i>Third Year</i></span>
+                                                <span><i>Electronics and Comm. Engg.</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/coordinator/puru.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/puru2411"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Purushotam Kumar Agrawal</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Electrical Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/harsh.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/harsh-kumar-singh-455b29206"><i class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Harsh Kumar Singh</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Electrical Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/rahul.jpg' %}" class="img-fluid" alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/rahul-verma-0406021b3"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Rahul Verma</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Production and Industrial Engg.</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                                        <div class="member">
+                                            <div class="member-img">
+                                                <img src="{% static 'img/teams/prakhar.jpg' %}" class="img-fluid"
+                                                    alt="">
+                                                <div class="social">
+                                                    <a href="https://www.linkedin.com/in/prakhar-jain-32aa57208"><i
+                                                            class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="member-info text-center">
+                                                <h4>Prakhar jain</h4>
+                                                <span><i>Second Year</i></span>
+                                                <span><i>Civil Engineering</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -376,7 +464,5 @@ Team | Robotics Club MNNIT
             </div>
         </div>
     </div>
-
-</section>
-
+</div>
 {% endblock %}
