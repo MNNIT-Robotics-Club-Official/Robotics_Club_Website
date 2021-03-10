@@ -86,9 +86,9 @@ def loginUser(request):
                 login(request, user)
                 return redirect('home:index')
             else:
-                messages.info(request,"Incorrect Password")
+                messages.error(request,"Incorrect Password")
         else:
-            messages.info(request,"Username does not exist")
+            messages.error(request,"Username does not exist")
 
     return render(request,'login.html')
 
@@ -188,7 +188,7 @@ def userProfile(request,user):
             form.save()
             messages.success(request,'Profile edited successfully')
         else:
-            messages.info(request,'Fill form correctly')
+            messages.error(request,'Fill form correctly')
         context['cuser'] = Profile.objects.get(user__username=user)
         html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
         return JsonResponse({'html': html}, status=200)
@@ -201,10 +201,10 @@ def changepassword(request):
         form = PasswordResetForm(request.POST)
         if form.is_valid():
             if not request.user.check_password(form['current_password'].value()):
-                messages.info(request, 'Incorrect Password')
+                messages.error(request, 'Incorrect Password')
             else:
                 if form['new_password_1'].value() != form['new_password_2'].value():
-                    messages.info(request, 'Password Mismatch')
+                    messages.error(request, 'Password Mismatch')
                 else:
                     request.user.set_password(form['new_password_1'].value())
                     messages.success(request, 'Password Changed Successfully')

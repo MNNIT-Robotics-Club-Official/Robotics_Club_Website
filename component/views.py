@@ -88,7 +88,7 @@ def handlerequest(request):
         req.status = 1
         add = req.request_num
         if add > comp.available():
-            messages.success(request, "Not enough component!")
+            messages.info(request, "Not enough component!")
         else:
             req.save()
             comp.issued_num = comp.issued_num + add
@@ -133,15 +133,15 @@ def createrequest(request):
             req = Request.objects.get(request_user=request.user, component=component)
             if req.status == 0:
                 if int(req_num) > component.available():
-                    messages.success(request, "Not Enough components!")
+                    messages.info(request, "Not Enough components!")
                 else:
                     req.request_num = req_num
                     req.save()
                     messages.success(request, "Request Updated Successfully!")
             else:
-                messages.success(request, "Request Already Accepted!")
+                messages.info(request, "Request Already Accepted!")
         elif int(req_num) > component.available():
-            messages.success(request, "Not Enough Components!")
+            messages.error(request, "Not Enough Components!")
         else:
             req = Request(request_num=req_num, request_user=request.user, component=component)
             req.save()
