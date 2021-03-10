@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %} " type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
@@ -24,43 +24,41 @@
 
                 <!--start for-->
                 {% for post in bloglist %}
-                    <div class="col-md-4">
-                        <a href="{% url 'blog_detail' pk=post.pk %}">
-                            <div class="card wow fadeInUp">
-                                <div class="card-image" id="pic">
-                                    <img class="card-img-top" src="{{ post.image.url }}" alt="">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ post.title }}</h5>
-
-                                    <!-- first 1-2 lines from content-->
-                                    <div class="card-text" id="intro">
-                                        {{ post.content|safe|truncatewords_html:15 }}
-                                        <br><small class="text-muted">
-                                        Click to Read More...
-                                    </small>
-                                    </div>
-                                    <hr>
-                                    <div class="card-text" id="details">
-                                        <small class="text-muted">
-                                            <p><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{ post.author }}</a></p>
-                                            <p><i class="fa fa-calendar"></i> {{ post.date }}</p>
-                                            <p><i class="fa fa-tags"></i>Tags:
-                                                <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>
-                                                <a href="#" class="badge badge-pill badge-danger">Tag2</a>
-                                                <a href="#" class="badge badge-pill badge-danger">Tag3</a> -->
-                                                {% for tag in post.tags.all %}
-                                                    <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
-                                                {% endfor %}
-                                            </p>
-                                        </small>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!--end for-->
+                <div class="col-lg-4 col-md-6">
+                  <a href="{% url 'blog_detail' pk=post.pk %}">
+                  <div class="card">
+                      <div class="hover-part">
+                          <div class="card-image">
+                              <img src="{{ post.image.url }}">
+                          </div>
+                          <div class="card-text">
+                              <h4>{{ post.title }}</h4>
+                              <div class="card-desc">
+                                  <p>{{post.content|safe|truncatewords_html:15}}</p>
+                                  <span class="more">Click to read more...</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card-details">
+                        <h4>{{ post.title }}</h4>
+                        <small class="text-muted">
+                          <div class="detail">
+                             <span><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{post.author.profile.first_name}}&nbsp;{{post.author.profile.last_name}}</a></span>
+                          </div>
+                          <div class="detail">
+                              <span><i class="fa fa-calendar"></i> {{ post.date }} </span>
+                          </div>
+                          <div class="detail">
+                            <i class="fa fa-tags"></i>Tags:
+                            {% for tag in post.tags.all %}
+                                <a href="" class="badge badge-pill badge-danger">{{ tag }}</a>
+                            {% endfor %}
+                          </div>
+                        </small>
+                      </div>
+                  </div>
+                  </a>
+              </div>
                 {% endfor %}
             </div>
 
@@ -98,7 +96,6 @@
                     <button type="button" class="blogbtn" id="writebtn">Write a Blog</button>
                 </a>
             </div>
-
         </div>
     </section>
     <br>

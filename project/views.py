@@ -9,7 +9,7 @@ from django.contrib import messages
 
 def list(request):
     context={}
-    project_all=Project.objects.all()
+    project_all=Project.objects.get_queryset().order_by('id')
     page=request.GET.get('page')
     paginator=Paginator(project_all,12)
     projects=paginator.get_page(page)
@@ -36,6 +36,7 @@ def detail(request,pk):
         tech_stack.append(cleaned)
 
     context['tech'] = tech_stack
+
     return render(request,'project/project_detail.html',context)
 
 def overview(request,pk):

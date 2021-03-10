@@ -5,7 +5,7 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('alumini/', views.alumini, name='alumini'),
+    path('alumni/', views.alumni, name='alumni'),
     path('faculty/', views.faculty, name='faculty'),
     path('gallery/', views.gallery, name='gallery'),
     path('avishkar/', views.avishkar, name='avishkar'),
@@ -18,6 +18,7 @@ urlpatterns = [
     path('sponsor/', views.sponsor, name='sponsor'),
     path('web/', views.web, name='web'),
     path('collaborate/', views.collaborate, name='collaborate'),
+    path('spinoff/', views.spinoff, name='spinoff'),
     path('achievement_2016/', views.achievement_2016, name='achievement_2016'),
     path('achievement_2017/', views.achievement_2017, name='achievement_2017'),
     path('achievement_2018/', views.achievement_2018, name='achievement_2018'),

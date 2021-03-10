@@ -18,12 +18,12 @@
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-{#                Need An Account? <a class="ml-2" href="#">Sign Up Now</a>#}
+                Need An Account? <a class="ml-2" href="#">Sign Up Now</a>
             </small>
         </div>
     </div> -->
 
-<div class="container box h-100 py-5">
+<!-- <div class="container box h-100 py-5">
 	<div class="d-flex justify-content-center h-100">
 		<div class="user_card">
 			<div class="d-flex justify-content-center">
@@ -34,13 +34,13 @@
 					{% csrf_token %}
 					<div class="input-group mb-3">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fa fa-user"></i></span>
+							<span class="input-group-text icon"><i class="fa fa-user"></i></span>
 						</div>
 						<input type="text" name="username" placeholder="Username..." class="form-control">
 					</div>
 					<div class="input-group mb-2">
 						<div class="input-group-append">
-							<span class="input-group-text"><i class="fa fa-key"></i></span>
+							<span class="input-group-text"><i class="fa fa-unlock"></i></span>
 						</div>
 						<div class=" pwd">
                             <input type="password" name="password" placeholder="Password..." class="form-control" id="password">
@@ -67,24 +67,48 @@
 			</div>
 		</div>
 	</div>
+</div> -->
+
+<div class="container" id='signin'>
+	<div class="row">
+		<div class="col-md-12 col-lg-12">
+			<div class="card">
+				<form class="box mx-auto" method="POST" action="">
+					{% csrf_token %}
+					<h1>Login</h1>
+					<p class="text-muted"> Please enter your login and password!</p>
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" id="password" placeholder="Password">
+					<span toggle="#password" class="fa fa-eye toggle-password field-icon"></span>
+					<a class="forgot" href="{% url 'password_reset' %}">Forgot password?</a>
+					<input type="submit" name="" value="Login">
+					<p class="forgot text-muted">Don't have an account? <a href="{% url 'user:register_page' %}"
+							class="signup">Sign Up</a></p>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+{% endblock %}
+
+
+{% block script %}
 <script>
 	/* to show password*/
-	$(".toggle-password").click(function() 
-	{
+	$(".toggle-password").click(function () {
 		$(this).toggleClass("fa-eye fa-eye-slash");
 		var input = $($(this).attr("toggle"));
 		if (input.attr("type") == "password") {
-		input.attr("type", "text");
+			input.attr("type", "text");
 		} else {
-		input.attr("type", "password");
-    }
-    });
+			input.attr("type", "password");
+		}
+	});
 
 	/*to enable tooltip*/
-	$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();   
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
 	});
 
 </script>

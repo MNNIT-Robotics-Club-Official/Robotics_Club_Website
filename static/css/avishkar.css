@@ -7,22 +7,45 @@
     color: #333;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
-  word-spacing: 10px;
   letter-spacing: 2px;
   line-height: 180%;
-  border-bottom:#e03a3c 5px solid
+  /* border-bottom:#e03a3c 5px solid; */
 }
-
-#project .d-flex h2{
-  color: #333;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-word-spacing: 10px;
-letter-spacing: 2px;
-line-height: 180%;
-border-bottom:#e03a3c 5px solid
+.title{
+  border-bottom:#e03a3c 5px solid;
 }
-
+.full-form{
+  border-bottom:#e03a3c 5px solid;
+  margin-right: auto;
+}
+.logo{
+  max-height: 73px;
+  margin-right: auto;
+}
+@media(min-width: 576px) and (max-width: 767px)
+{
+  .logo{
+    /* display: none; */
+    max-height: 64px;
+    margin-right: 0px;
+  }
+  .title{
+    margin-left: 7px;
+    border-bottom: transparent;
+  }
+}
+@media(max-width: 557px)
+{
+  .logo{
+    /* display: none; */
+    max-height: 64px;
+    margin-right: 0px;
+  }
+  .title{
+    margin-left: 9px;
+    border-bottom: transparent;
+  }
+}
 /*--------------------------------------------------------------
 # Events
 --------------------------------------------------------------*/

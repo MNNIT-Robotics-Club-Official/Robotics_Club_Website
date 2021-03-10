@@ -5,7 +5,7 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def alumini(request):
+def alumni(request):
     return render(request, 'alumni.html')
 
 def faculty(request):
@@ -43,6 +43,9 @@ def web(request):
 
 def collaborate(request):
     return render(request, 'collaborate.html')
+
+def spinoff(request):
+    return render(request, 'spinoff.html')
 
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
