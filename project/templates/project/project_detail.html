@@ -100,7 +100,7 @@
                         <a class="text-danger" href="{% url 'user:profile_page' member.username %}">{{ member.profile.first_name }}&nbsp;{{ member.profile.last_name }}</a>
                         <br>
                         <small>{{member.profile.get_branch_display}}</small>
-                        <small>{{member.profile.regnum}}</small>
+                        <small>{{reg}}</small>
                     </li>
                 {% endfor %}
             </ul>
