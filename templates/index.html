@@ -69,19 +69,118 @@ Robotics Club MNNIT
 <section id="project">
     <div class="container mt-5">
         <h2 class="section-title mb-5">Featured Projects</h2>
-        <div class="row mb-4 wow pulse">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div id="projects-slider" class="owl-carousel">        
+                        <div class="projects">
+                            <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/projects/wander.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger">
+                                        WanderBot
+                                    </h4>
+                                    <p class="card-text">Pybullet Simulation of a Robotic arm mounted on Ground Robot for Warehouse Automation Task. This Robot find the target using image processing, avoids obstacles using path planning and performs various tasks using forward and Inverse Kinematics.
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+        
+                        <div class="projects">
+                            <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/projects/drone.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger">
+                                        Drone Automation for Indoor Environment
+                                    </h4>
+                                    <p class="card-text">PID Tuning of a quadcopter and automation of its flight in indoor environments (using whycon markers) through Python scripts using Robot Operating System.
+
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+
+                        <div class="projects">
+                            <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/projects/inter.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger">
+                                       Internal Navigation
+                                    </h4>
+                                    <p class="card-text">ROS-Gazebo simulation of a robot capable of mapping an unknown environment first and then traverse the same using the map developed.
+
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>   
+                        <div class="projects">
+                            <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="card-img-top" src="{% static 'img/projects/person.jpg' %}" alt="">
+                                </div>
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger">
+                                       Person Follower Robot
+                                    </h4>
+                                    <p class="card-text">A Robot capable of following a robot to follow a human in challenging situations using  CNN and stereo depth camera.
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>      
+                        <div class="projects">
+                            <a href="#">
+                            <div class="card">
+                                <div class="card-image">
+                                   <img class="card-img-top" src="{% static 'img/projects/obst.jpg' %}" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title text-danger">
+                                        Obstacle Avoidance using Behaviour Cloning
+                                    </h4>
+                                    <p class="card-text">A nitro engine based RC car modified to run on BLDC motor and LiPo battery capable of avoiding obstacles using Behaviour Cloning Technique. 
+
+                                    </p>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="projects d-flex justify-content-center" id="more">
+                            <div class="more">
+                                <a class="animated-btn text-white" href="{% url 'project:list' %}">More >>></a>
+                            </div>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- <div class="row mb-4 wow pulse">
             <div class="col-lg-4 p-2 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <a href="#"><img class="card-img-top" src="{% static 'img/projects/person.jpg' %}" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Project One</a>
+                            <a href="#">Person Follower Robot</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
-                            aspernatur
-                            eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in,
-                            nesciunt,
-                            illum tempora ex quae? Nihil, dolorem!</p>
+                        <p class="card-text">A Robot capable of following a robot to follow a human in challenging situations using  CNN and stereo depth camera.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -114,7 +213,7 @@ Robotics Club MNNIT
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <!-- <h2>Themes Worked Upon:</h2>
@@ -147,21 +246,20 @@ Robotics Club MNNIT
         </div>
 
         <div class="row">
-            <div class="col-md-4">
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.1s">
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box wow fadeInUp ai" data-wow-delay="0.1s">
                     <div class="theme-title">
                         <i class="fas fa-robot" aria-hidden="true"></i>
-                        <h4><a href="#">Artificial Intelligence</a></h4>
+                        <h4><a href="">Artificial Intelligence</a></h4>
                     </div>
                     <div class="details">
                         <div class="details_inner">
                             <ul>
                                 <li>Maths and Algorithms</li>
                                 <li>Machine Learning</li>
-                                <li>Use of Deep Learning in Robotic Applications
-                                </li>
-                                <li>Behaviour Cloning
-                                </li>
+                                <li>Use of Deep Learning in Robotic Applications</li>
+                                <li>Behaviour Cloning</li>
                                 <li>Natural Language Processing
                                 </li>
                                 <li>Speech Recognition, Facial Recognition, Sentiment Analysis</li>
@@ -173,7 +271,8 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
                     <div class="theme-title">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i>
@@ -192,7 +291,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.3s">
                     <div class="theme-title">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -213,7 +312,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">gps_fixed</i>
@@ -235,7 +334,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.5s">
                     <div class="theme-title">
                         <i class="fa fa-car" aria-hidden="true"></i>
@@ -255,7 +354,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.6s">
                     <div class="theme-title">
                         <i class="fa fa-gears" aria-hidden="true"></i>
@@ -274,7 +373,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.7s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">battery_charging_full</i>
@@ -291,8 +390,8 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-lg-4 col-md-6">
+                <div class="elec icon-box wow fadeInUp" data-wow-delay="0.8s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">memory</i>
                         <h4><a href="#">Electronics</a></h4>
@@ -311,7 +410,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="0.9s">
                     <div class="theme-title">
                         <i class="fas fa-laptop-code" aria-hidden="true"></i>
@@ -330,7 +429,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="1.0s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">print</i>
@@ -350,7 +449,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="1.1s">
                     <div class="theme-title">
                         <i class="fa fa-tools" aria-hidden="true"></i>
@@ -368,7 +467,7 @@ Robotics Club MNNIT
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="icon-box wow fadeInUp" data-wow-delay="1.2s">
                     <div class="theme-title">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
