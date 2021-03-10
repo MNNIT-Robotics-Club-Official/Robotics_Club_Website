@@ -46,7 +46,7 @@
     margin-bottom: 20px;
     position: relative;
     overflow-y: scroll;
-    max-height: 211px;
+    max-height: 185px;
 }
 /* .description::-webkit-scrollbar {
     display: none;
@@ -154,7 +154,7 @@
   }
 
 
-  .description::-webkit-scrollbar {
+.description::-webkit-scrollbar {
     width: 5px;
 	background-color: #F5F5F5;
 }
@@ -169,4 +169,12 @@
     border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(255, 243, 243, 0.3);
 	background-color: #D62929;
+}
+.description {
+    overflow-y:scroll;
+    }
+    
+.description {
+    scrollbar-color:red yellow;
+    scrollbar-width:5px;
 }
