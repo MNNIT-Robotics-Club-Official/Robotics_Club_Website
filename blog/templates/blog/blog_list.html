@@ -32,7 +32,7 @@
                               <img src="{{ post.image.url }}">
                           </div>
                           <div class="card-text">
-                              <h3>{{ post.title }}</h3>
+                              <h4>{{ post.title }}</h4>
                               <div class="card-desc">
                                   <p>{{post.content|safe|truncatewords_html:15}}</p>
                                   <span class="more">Click to read more...</span>
@@ -40,10 +40,10 @@
                           </div>
                       </div>
                       <div class="card-details">
-                        <h3>{{ post.title }}</h3>
+                        <h4>{{ post.title }}</h4>
                         <small class="text-muted">
                           <div class="detail">
-                             <span><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{ post.author }}</a></span>
+                             <span><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{post.author.profile.first_name}}&nbsp;{{post.author.profile.last_name}}</a></span>
                           </div>
                           <div class="detail">
                               <span><i class="fa fa-calendar"></i> {{ post.date }} </span>

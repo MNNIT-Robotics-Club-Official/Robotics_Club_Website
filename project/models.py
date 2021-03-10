@@ -17,6 +17,7 @@ class Project(models.Model):
     github=models.URLField(blank=True)
     vidlink=models.URLField(blank=True)
     detail=models.TextField(blank=False)
+    overview=models.TextField(blank=True)
     status=models.IntegerField(choices=Status,default=0)
     comp_and_tech = models.CharField(max_length=250,blank=False,default=None)
     members=models.ManyToManyField(User)

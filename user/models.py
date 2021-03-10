@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-Branch = ((0, "Biotechnology"), (1, "Civil Engineering"), (2, "Electrical Engineering"), (3, "Mechanical Engineering"), (4, "Computer Science & Engineering"),
+Branch = ((0, "Biotechnology"), (1, "Civil Engineering"), (2, "Electrical Engineering"), (3, "Mechanical Engineering"), (4, "Computer Science and Engineering"),
           (5, "Electronics and Communication Engineering"), (6, "Production and Industrial Engineering"), (8, "Information Technology"), (9, "Chemical Engineering"),)
 
 Rank = ((0, "Temporary Ban"), (1, "Member"), (2, "Coordinator"), (3, "Head"))
