@@ -39,6 +39,22 @@ def detail(request,pk):
 
     return render(request,'project/project_detail.html',context)
 
+def overview(request,pk):
+    context={}
+    context['project']=Project.objects.get(pk=pk)
+    tech=Project.objects.filter(pk=pk).values('comp_and_tech')
+    for data in tech:
+        text = data['comp_and_tech']
+        data_list = text.split(',')
+
+    tech_stack = []
+    for text in data_list:
+        cleaned = text.strip()       # Removing trailing or leading whitespaces
+        tech_stack.append(cleaned)
+
+    context['tech'] = tech_stack
+    return render(request,'project/project_overview.html',context)
+
 @has_role_head_or_coordinator
 def delete(request,pk):
     pro=Project.objects.get(pk=pk)

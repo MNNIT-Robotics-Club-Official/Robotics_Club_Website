@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-RoboticsClub-Notice
+RoboticsClub-Notice (For College Students)
 {% endblock %}
 
 {% block head %}
@@ -41,9 +41,9 @@ RoboticsClub-Notice
 
     </div>
     {% endfor %}
-    {% if user.is_authenticated %}
+     {% if user.is_authenticated %}
     <div class="row justify-content-center">
-        <a href="{% url 'news:news_college' %}"><button class="btn btn-outline-danger">College News</button></a>
+        <a href="{% url 'news:news_page' %}"><button class="btn btn-outline-danger">Open News</button></a>
     </div>
     {% endif %}
     <br>

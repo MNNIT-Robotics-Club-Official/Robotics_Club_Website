@@ -109,6 +109,9 @@ def handlerequest(request):
             context['request'] = Request.objects.filter(component=comp).filter(status=0)
             context['approved'] = Request.objects.filter(component=comp).filter(status=1)
             html = render_to_string('Component/test_part.html', context, request=request)
+        elif status == '2':
+            context['components'] = Request.objects.filter(request_user=request.user)
+            html = render_to_string('user/user_comp.html',context,request=request)
         else:
             context['requests'] = Request.objects.filter(status=0)
             html = render_to_string('user/admin_comp.html', context, request=request)
