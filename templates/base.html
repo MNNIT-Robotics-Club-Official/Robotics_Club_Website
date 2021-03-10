@@ -179,13 +179,21 @@
     <!-- header end -->
 
     <!-- Django messages -->
-    {% if messages %}
+    <!-- {% if messages %}
     <div class="alert alert-primary mb-0" role="alert">
       {% for message in messages %}
       <li>{{message}}</li>
       {% endfor %}
     </div>
-    {% endif %}
+    {% endif %} -->
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible wow fadeInDown" role="alert" style="margin-bottom: 0;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+    {% endfor %}
     <!-- Django messages ends -->
 
     {% block body %}
@@ -221,8 +229,7 @@
                 <li><a class="" href="{% url 'home:collaborate' %}" target="_blank"><i class="fa fa-angle-right"
                       aria-hidden="true"></i>
                     Collaborate</a></li>
-                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right"
-                      aria-hidden="true"></i>
+                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>
                     Aeroclub</a></li>
               </ul>
             </div>
@@ -264,6 +271,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     {% block script %}
     {% endblock %}
+
+    {% if messages %}
+    <script>
+      $(".alert").delay(4000).slideUp(800, function () {
+        $(this).alert('close');
+      });
+    </script>
+    {% endif %}
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

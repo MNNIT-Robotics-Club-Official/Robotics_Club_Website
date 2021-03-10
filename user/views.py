@@ -23,6 +23,7 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
+            to_email = form.data.get('email')
             if form.is_valid():
                 user = form.save(commit=False)
                 to_email = form.cleaned_data.get('email')
@@ -49,11 +50,15 @@ def register(request):
             else:
                 password1 = form.data['password1']
                 password2 = form.data['password2']
+                flag=1
                 for msg in form.errors.as_data():
-                    if msg == 'email':
-                        messages.error(request, f"Email Already Exists")
-                    else:
-                        messages.error(request, f"{form.errors[msg]}")
+                    if flag:
+                        if msg == 'email':
+                            if User.objects.filter(email=to_email).exists():
+                                messages.error(request, f"Email Already Exists!! If already registered, Please Login")
+                            else:
+                                messages.error(request, f"Invalid Email!")
+                            flag=0
                     if msg == 'password2' and password1 == password2:
                         messages.error(request, f"Selected password is not strong enough")
                     elif msg == 'password2' and password1 != password2:
