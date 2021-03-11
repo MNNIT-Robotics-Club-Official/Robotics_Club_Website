@@ -130,10 +130,9 @@
   margin-top: 6px;
 }
 
-/* .testimonial-details .links{
-  display: flex;
-  justify-content: center;
-} */
+.testimonial-details .links{
+  padding-left: 60px;
+}
 
 .testimonial-details a:hover, a:active, a:focus {
   color: #000;
@@ -149,6 +148,11 @@
   color: #e03a3c;
 }
 
+.batch{
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
 #home-testimonial-slider #more{
   height: 50vh;
   display: flex;
@@ -158,6 +162,17 @@
 .carousel-icon i{
   color: #e03a3c;
   font-size: 30px;
+}
+
+#testimonials h4::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #e03a3c;
+  margin-top: 9px ;
+  left: calc(50% - 25px);
 }
 
 .animated-btn {
