@@ -39,3 +39,12 @@ def is_banned(view_func):
             return redirect('user:login_page')
 
     return wrapper_func
+
+def allow_shares(view_func):
+    def sharify(request, *args, **kwargs):
+        shared = kwargs.get('__shared', None)
+        pk= kwargs.get('pid',None)
+        if shared is not None:
+            return view_func(request, *args, **kwargs)
+        else: return login_required(view_func)(request, *args, **kwargs)
+    return sharify
