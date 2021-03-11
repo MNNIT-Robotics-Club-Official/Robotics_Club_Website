@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------
+# Spinoff
+--------------------------------------------------------------*/
+
+.title .d-flex h2{
+    color: #333;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 180%;
+    border-bottom:#e03a3c 5px solid
+  }
+.details .text-center{
+    font-family: "Raleway",sans-serif;
+    /* font-size: 1em; */
+    font-weight: 500;
+    font-size: 19px;
+}
+.details .text-center a{
+    color: #e03a3c;
+    /* text-decoration: none; */
+}
+ .tsaw-title{
+    font-family: "Raleway",sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+  }
+ .about{
+    font-family: "Poppins",sans-serif;
+    line-height: 26px;
+    margin-right: 1em;
+  }
+ .spinoff-logo{
+    width: 100%;
+    height: auto;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin-top: 20px; */
+  }
+ .quote-text p{
+    font-family: "Raleway",sans-serif;
+      font-size: 18px;
+      font-weight: 450;
+  }
+ .quote-text b{
+      font-size: 18px;
+      float: right;
+      margin-top: 10px;
+  }
+  .blogbtn {
+    height: 45px;
+    margin: 3px;
+    border: none;
+    border-radius: 22px;
+    /* padding: 2%; */
+    background: #e03a3c;
+    font-weight: 600;
+    color: #fff;
+    font-style: italic;
+    cursor: pointer;
+    align-items: center; 
+    width: 30%;
+}
+.blogbtn:hover{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
