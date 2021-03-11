@@ -281,7 +281,7 @@ section {
 
   #project .card{
     margin: 0 20px 0 20px;
-    height: 70vh;
+    height: 80vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -325,6 +325,7 @@ section {
     font-size: 15px;
     font-family: 'Poppins',sans-serif;
     color: #444;
+    padding: 3px;
   }
 
 /* #college{

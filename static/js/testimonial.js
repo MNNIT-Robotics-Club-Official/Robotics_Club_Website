@@ -53,13 +53,7 @@ $(document).ready(function(){
         itemsMobile:[650,1],
         pagination:true,
         mouseDrag :false,
-        nav:true,
-        navigation:true,
-        navigationText: [
-                "<i class='icon-arrow-left icon-white'><</i>",
-                "<i class='icon-arrow-right icon-white'>></i>"
-              ],
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        nav:false,
         slideSpeed:1000,
         autoPlay:8000
     });
