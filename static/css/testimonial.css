@@ -175,6 +175,6 @@
     }
     
 .description {
-    scrollbar-color:red yellow;
-    scrollbar-width:5px;
+    /* scrollbar-color:red yellow;
+    scrollbar-width:5px; */
 }
