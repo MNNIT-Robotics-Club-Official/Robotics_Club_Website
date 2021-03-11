@@ -14,13 +14,13 @@ $(document).ready(function(){
     });
 
     $("#sponsor-slider").owlCarousel({
-        items: 4,
-        itemsDesktop:[1000,2],
-        itemsDesktopSmall:[979,2],
-        itemsTablet:[768,1],
-        itemsMobile:[650,1],
+        items: 5,
+        itemsDesktop:[1000,3],
+        itemsDesktopSmall:[979,3],
+        itemsTablet:[768,2],
+        itemsMobile:[650,2],
         pagination:true,
-        mouseDrag :false,
+        mouseDrag :true,
         navigation:false,
         slideSpeed:1000,
         autoPlay:8000
@@ -33,14 +33,14 @@ $(document).ready(function(){
         itemsTablet:[768,1],
         itemsMobile:[650,1],
         pagination:true,
-        mouseDrag :false,
-        nav:true,
-        navigation:true,
-        navigationText: [
-                "<i class='icon-arrow-left icon-white'><</i>",
-                "<i class='icon-arrow-right icon-white'>></i>"
-              ],
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        mouseDrag :true,
+        nav:false,
+        navigation:false,
+        // navigationText: [
+        //         "<i class='icon-arrow-left icon-white'><</i>",
+        //         "<i class='icon-arrow-right icon-white'>></i>"
+        //       ],
+        // navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
         slideSpeed:1000,
         autoPlay:8000
     });

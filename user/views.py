@@ -139,7 +139,7 @@ def comprequest(request):
         if request.is_ajax():
             html = render_to_string('user/user_comp.html', context, request=request)
             return JsonResponse({'html': html},status=200)
-    return HttpResponse('This is not be happening')
+    return HttpResponse('This should not be happening')
 
 @has_role_head_or_coordinator
 def adminPage(request):
