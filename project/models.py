@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from taggit.managers import TaggableManager
 import uuid
 
@@ -31,4 +32,25 @@ class Project(models.Model):
         if not self.vidlink.find("v=")==-1:
             self.vidlink="https://www.youtube.com/embed/"+self.vidlink.split("v=",1)[1]
         super().save(args,kwargs)
+
+    def get_absolute_url_detail(self,*args,**kwargs):
+        return reverse('project:detail',args=[self.pk])
+
+class ShareKey(models.Model):
+    project=models.OneToOneField(Project,on_delete=models.CASCADE,related_name='sharelink',null=True)
+    location = models.TextField() # absolute path
+    token = models.CharField(max_length=40, primary_key=True)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    expiration_seconds = models.BigIntegerField()
+
+    def expired(self):
+        return False
+
+    def __str__(self):
+        return self.project.title
+
+    def slink(self):
+        return "/project/access/"+self.token
+
+
 

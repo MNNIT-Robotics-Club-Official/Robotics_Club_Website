@@ -20,6 +20,8 @@
                     </div>
                 </div>
                 <p><i class="fa fa-calendar"></i> &nbsp;Status : {{ project.get_status_display }}</p>
+             <p><i class="fa"></i> &nbsp;Sharable Link :{{ request.get_host }}{{ project.sharelink.slink }}</p>
+            <a href="{% url 'project:createLink' project.pk %}"><p>Generate Link</p></a>
                 <p><i class="fa fa-tags"></i> Tags:
                     {% for tag in project.tags.all %}
                     <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
