@@ -25,7 +25,7 @@ def workshop_form(request):
             form.save()
             return redirect('workshop:workshop_page')
         else:
-            messages.info(request, "Invalid Input!! Please fill correctly")
+            messages.error(request, "Invalid Input!! Please fill correctly")
             return render(request, "workshop/workshop_form.html", {'form': form})
             # return redirect('workshop:workshop_form')
     else:
@@ -54,5 +54,5 @@ def updateWorkshop(request, pk):
             form.save()
             return redirect('workshop:workshop_page')
         else:
-            messages.info(request, "Invalid Input!!, Please fill correctly")
+            messages.error(request, "Invalid Input!!, Please fill correctly")
             return render(request, 'workshop/workshop_form.html', {'form': form})

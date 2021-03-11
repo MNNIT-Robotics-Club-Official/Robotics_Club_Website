@@ -26,7 +26,7 @@ Notice | Robotics Club MNNIT
             <h5 class="card-title mb-2 mt-1">{{news.title}}</h5>
             <p class="card-text mb-2">{{news.content}}</p>
             {% if news.link != None %}
-            <p><a href="{{news.link}}">Read More...</a></p>
+            <p><a href="{{news.link}}">Click Here for More Detail</a></p>
             {% endif %}
             <p class="card-text"><small class="text-muted">Created on {{news.date}}</small></p>
             {% if user.profile.role > 1 %}
@@ -42,8 +42,10 @@ Notice | Robotics Club MNNIT
     </div>
     {% endfor %}
     {% if user.is_authenticated %}
-    <div class="row justify-content-center">
-        <a href="{% url 'news:news_college' %}"><button class="btn btn-outline-danger">College News</button></a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <a href="{% url 'news:news_college' %}"><button class="btn btn-outline-danger">College News</button></a>
+        </div>
     </div>
     {% endif %}
     <br>
