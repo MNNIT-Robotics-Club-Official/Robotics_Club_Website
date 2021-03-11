@@ -290,11 +290,31 @@ color: #e76668;
   padding-bottom: 12px;
 }
 
-#footer .footer-top h4::after {
+#footer .footer-top .first::after {
   content: '';
   position: absolute;
   display: block;
-  width: 60px;
+  width: 90px;
+  height: 2px;
+  background: #e03a3c;
+  bottom: 0;
+  left: 0;
+}
+#footer .footer-top .second::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 96px;
+  height: 2px;
+  background: #e03a3c;
+  bottom: 0;
+  left: 0;
+}
+#footer .footer-top .third::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 154px;
   height: 2px;
   background: #e03a3c;
   bottom: 0;
