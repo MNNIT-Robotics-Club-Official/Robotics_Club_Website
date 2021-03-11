@@ -23,6 +23,7 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
+            to_email = form.data.get('email')
             if form.is_valid():
                 user = form.save(commit=False)
                 to_email = form.cleaned_data.get('email')
@@ -49,11 +50,15 @@ def register(request):
             else:
                 password1 = form.data['password1']
                 password2 = form.data['password2']
+                flag=1
                 for msg in form.errors.as_data():
-                    if msg == 'email':
-                        messages.error(request, f"Email Already Exists")
-                    else:
-                        messages.error(request, f"{form.errors[msg]}")
+                    if flag:
+                        if msg == 'email':
+                            if User.objects.filter(email=to_email).exists():
+                                messages.error(request, f"Email Already Exists!! If already registered, Please Login")
+                            else:
+                                messages.error(request, f"Invalid Email!")
+                            flag=0
                     if msg == 'password2' and password1 == password2:
                         messages.error(request, f"Selected password is not strong enough")
                     elif msg == 'password2' and password1 != password2:
@@ -81,9 +86,9 @@ def loginUser(request):
                 login(request, user)
                 return redirect('home:index')
             else:
-                messages.info(request,"Incorrect Password")
+                messages.error(request,"Incorrect Password")
         else:
-            messages.info(request,"Username does not exist")
+            messages.error(request,"Username does not exist")
 
     return render(request,'login.html')
 
@@ -183,7 +188,7 @@ def userProfile(request,user):
             form.save()
             messages.success(request,'Profile edited successfully')
         else:
-            messages.info(request,'Fill form correctly')
+            messages.error(request,'Fill form correctly')
         context['cuser'] = Profile.objects.get(user__username=user)
         html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
         return JsonResponse({'html': html}, status=200)
@@ -196,10 +201,10 @@ def changepassword(request):
         form = PasswordResetForm(request.POST)
         if form.is_valid():
             if not request.user.check_password(form['current_password'].value()):
-                messages.info(request, 'Incorrect Password')
+                messages.error(request, 'Incorrect Password')
             else:
                 if form['new_password_1'].value() != form['new_password_2'].value():
-                    messages.info(request, 'Password Mismatch')
+                    messages.error(request, 'Password Mismatch')
                 else:
                     request.user.set_password(form['new_password_1'].value())
                     messages.success(request, 'Password Changed Successfully')

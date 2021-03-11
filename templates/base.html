@@ -149,11 +149,9 @@
                       aria-hidden="true"></i></a>
                 </li>
                 {% endif %}
-                {% if user.is_authenticated %}
                 <li class="{% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice</a>
                 </li>
-                {% endif %}
                 <li class="{% if request.resolver_match.view_name == 'home:testimonial' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonials</a>
                 </li>
@@ -179,13 +177,21 @@
     <!-- header end -->
 
     <!-- Django messages -->
-    {% if messages %}
+    <!-- {% if messages %}
     <div class="alert alert-primary mb-0" role="alert">
       {% for message in messages %}
       <li>{{message}}</li>
       {% endfor %}
     </div>
-    {% endif %}
+    {% endif %} -->
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible wow fadeInDown" role="alert" style="margin-bottom: 0;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+    {% endfor %}
     <!-- Django messages ends -->
 
     {% block body %}
@@ -208,7 +214,7 @@
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
+              <h4 class="first">Useful Links</h4>
               <ul>
                 <li><a class="" href="{% url 'home:index' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>
                     Home</a></li>
@@ -221,8 +227,7 @@
                 <li><a class="" href="{% url 'home:collaborate' %}" target="_blank"><i class="fa fa-angle-right"
                       aria-hidden="true"></i>
                     Collaborate</a></li>
-                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right"
-                      aria-hidden="true"></i>
+                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>
                     Aeroclub</a></li>
               </ul>
             </div>
@@ -230,7 +235,7 @@
             <div class="col-lg-3 col-md-6 footer-links">
               <ul>
                 <li>
-                  <h4>Robotics Lab</h4>
+                  <h4 class="second">Robotics Lab</h4>
                 </li>
                 <li>Near Boys' SAC</li>
                 <li>MNNIT Allahabad</li>
@@ -239,7 +244,7 @@
               </ul>
             </div>
             <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Social Networks</h4>
+              <h4 class="third">Our Social Networks</h4>
               <!-- <p class="text-white">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
               <div class="social-links mt-3">
                 <a href="https://www.facebook.com/avishkar.robotics" class="facebook" target="_blank"><i
@@ -264,6 +269,15 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     {% block script %}
     {% endblock %}
+
+    {% if messages %}
+    <script>
+      $(".alert").delay(4000).slideUp(800, function () {
+        $(this).alert('close');
+      });
+    </script>
+    {% endif %}
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
