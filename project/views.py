@@ -76,7 +76,7 @@ def update(request,pk):
             form.save_m2m()
             return redirect('project:list')
         else:
-            messages.info(request,"Invalid form!! Please fill all fields correctly")
+            messages.error(request,"Invalid form!! Please fill all fields correctly")
         return render(request,'project/project_form.html',{'form':form})
 
 
@@ -94,6 +94,6 @@ def create(request):
             form.save_m2m()
             return redirect('project:list')
         else:
-            messages.info(request,"Invalid form!! Please fill all fields correctly")
+            messages.error(request,"Invalid form!! Please fill all fields correctly")
             return render(request,'project/project_form.html',{'form':form})
     return HttpResponse("wow")
