@@ -1,0 +1,86 @@
+.achievement .d-flex h2{
+    color: #333;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  line-height: 180%;
+  border-bottom:#e03a3c 5px solid;
+}
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+section {
+  position: relative;
+}
+
+.section-bg {
+  /* padding: 120px 0; */
+  padding-bottom: 30px;
+  color: #fff;
+}
+
+.services .icon-box {
+  color: black;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  /* background: #252525; */
+  transition: 0.3s;
+  /* background-image: linear-gradient(to bottom right, #ff2525, #4c1313); */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+.services .icon-box:hover{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.services .icon-box:hover h4{
+  /* background: #2b2b2b; */
+  color: #db1515;
+}
+
+.services .icon-box h4 {
+  /* margin-left: 70px; */
+  font-weight: 650;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #16324f;
+  transition: 0.3s;
+  text-align: center;
+  font-family: "Poppins",sans-serif;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+}
+
+.services .icon-box p {
+  /* margin-left: 70px; */
+  line-height: 20px;
+  font-size: 1em;
+  margin-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.services .icon-box p>a {
+    color: #EC3134;
+    /* font-weight: 600; */
+}
+
+.services .bg-dark{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.achievement h4{
+    color: #16324f;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4em;
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  line-height: 180%;
+}

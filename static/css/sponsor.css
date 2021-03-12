@@ -50,10 +50,36 @@
     margin-bottom: 0.5em;
   }
 
+  #sponsor .support .details .text-center b{
+    font-family: "montserrat",sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  #sponsor .support .details .told b{
+    /* font-family: "montserrat",sans-serif; */
+    /* font-size: 1em; */
+    /* font-weight: 600; */
+    float: right;
+  }
   #sponsor .support .details b{
     font-family: "montserrat",sans-serif;
     font-size: 1.4em;
     font-weight: 600;
+  }
+  #sponsor .support .tsaw-title{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  #sponsor .support .about{
+    line-height: 26px;
+    margin-right: 1em;
+  }
+  #sponsor .support .spinoff-logo{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 20px; */
   }
 
   #sponsor .support .details a{
@@ -260,4 +286,7 @@ transform: translateX(0);
   #sponsor .card img{
     height: 25vw;
   }
+} */
+/* .details p b{
+  font-size: 1em;
 } */

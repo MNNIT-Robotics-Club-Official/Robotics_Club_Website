@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %}
 {% load static %}
 
 {% block title %}
@@ -16,100 +16,107 @@ Robotics Club MNNIT
     <div class="d-flex justify-content-center my-3">
         <h2 class="">TESTIMONIALS</h2>
     </div>
-</div>
+</div> -->
+<section id="testimonials">
+    <div class="container wow fadeInUp">
+        <div class="section-title">
+            <h2>TESTIMONIALS</h2>
+            <p>What do our alumni say about us..? </p>
+        </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="home-testimonial-slider" class="owl-carousel">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="home-testimonial-slider" class="owl-carousel">
 
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Thanks to the club for everything. Being student president for the session 2018-19, we reimagined the whole way of doing things. We launched around 20+ projects, initiated ProSang, connected club projects to the companies, and launched my startup TSAW Drones during the event. The time at the club, with the members, transformed me a lot, taught me to dare things & do it uniquely, being fearless.
+                            </p>
                         </div>
-                        <p class="description">
-                            Thanks to the club for everything. Being student president for the session 2018-19, we reimagined the whole way of doing things. We launched around 20+ projects, initiated ProSang, connected club projects to the companies, and launched my startup TSAW Drones during the event. The time at the club, with the members, transformed me a lot, taught me to dare things & do it uniquely, being fearless.
-                        </p>
+                        <div class="row testimonial-details">
+                            <div class="col-lg-4">
+                                <img src="{% static 'img/testimonial/kishan.jpg' %}" class="rounded-circle carousel-img" alt="">
+                            </div>
+                            <div class="col-lg-8" id="name">
+                                <h3 class="title">Kishan Tiwari</h3>
+                                <span class="post">Founder and CEO at TSAW Drones</span>
+                                <span class="links">
+                                    <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row testimonial-details">
-                        <div class="col-lg-4">
-                            <img src="{% static 'img/testimonial/kishan.jpg' %}" class="rounded-circle carousel-img" alt="">
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                I joined the club in the first year thinking ki "Kuch to kar lete hain!" but it never left me. I have learned many things, from joining two wires to handle the disappointment that you get after working too hard on a project. It will not just teach you robotics; it will help you develop the most fundamental problem-solving ability and handle pressure and loss, which is natural in life.
+                            </p>
                         </div>
-                        <div class="col-lg-8" id="name">
-                            <h3 class="title">Kishan Tiwari</h3>
-                            <span class="post">Founder and CEO at TSAW Drones</span>
-                            <span class="links">
-                                <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
-                            </span>
+                        <div class="row testimonial-details">
+                            <div class="col-lg-4">
+                                <img src="{% static 'img/testimonial/gaurav1.jpg' %}" class="rounded-circle carousel-img" alt="">
+                            </div>
+                            <div class="col-lg-8" id="name">
+                                <h3 class="title">Gaurav Bansal</h3>
+                                <span class="post">Software Engineer at Visa INC.</span>
+                                <span class="links">
+                                    <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
+                                </span>
+                            </div>
                         </div>
                     </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                I had never thought that an arbitrary decision of joining the Robotics club could tweak me by teaching such interdisciplinary things. Apart from the technical stuff, I could learn team management and the bliss of working altogether in a team. Participating in organizing them and being a team member to mentoring a team has played a crucial role in brushing me up to become a better version of myself. My reassuring seniors and ever-supportive colleagues made my journey even more beautiful. Indeed I am lucky enough to find my best friends for life through this platform. Of course, I had to go through some edgy, restless nights, but that's all that defines your current position. Hence I would never step back from owing the Robotics club for everything.
+                            </p>
+                        </div>
+                        <div class="row testimonial-details">
+                            <div class="col-lg-4 col-sm-4">
+                                <img src="{% static 'img/testimonial/kalyan1.jpg' %}" class="rounded-circle carousel-img" alt="">
+                            </div>
+                            <div class="col-lg-8 col-sm-8" id="name">
+                                <h3 class="title">Kalyan Prusty</h3>
+                                <span class="post">Position at IISc Bangalore</span>
+                                <span class="links">
+                                    <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="testimonial d-flex justify-content-center" id="more">
+                        <div class="more">
+                            <a class="animated-btn text-white" href="#">More >>></a>
+                        </div>
+                    </div>   
+
                 </div>
-
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
-                        </div>
-                        <p class="description">
-                            I joined the club in the first year thinking ki "Kuch to kar lete hain!" but it never left me. I have learned many things, from joining two wires to handle the disappointment that you get after working too hard on a project. It will not just teach you robotics; it will help you develop the most fundamental problem-solving ability and handle pressure and loss, which is natural in life.
-                        </p>
-                    </div>
-                    <div class="row testimonial-details">
-                        <div class="col-lg-4">
-                            <img src="{% static 'img/testimonial/gaurav1.jpg' %}" class="rounded-circle carousel-img" alt="">
-                        </div>
-                        <div class="col-lg-8" id="name">
-                            <h3 class="title">Gaurav Bansal</h3>
-                            <span class="post">Software Engineer at Visa INC.</span>
-                            <span class="links">
-                                <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
-                        </div>
-                        <p class="description">
-                            I had never thought that an arbitrary decision of joining the Robotics club could tweak me by teaching such interdisciplinary things. Apart from the technical stuff, I could learn team management and the bliss of working altogether in a team. Participating in organizing them and being a team member to mentoring a team has played a crucial role in brushing me up to become a better version of myself. My reassuring seniors and ever-supportive colleagues made my journey even more beautiful. Indeed I am lucky enough to find my best friends for life through this platform. Of course, I had to go through some edgy, restless nights, but that's all that defines your current position. Hence I would never step back from owing the Robotics club for everything.
-                        </p>
-                    </div>
-                    <div class="row testimonial-details">
-                        <div class="col-lg-4 col-sm-4">
-                            <img src="{% static 'img/testimonial/kalyan1.jpg' %}" class="rounded-circle carousel-img" alt="">
-                        </div>
-                        <div class="col-lg-8 col-sm-8" id="name">
-                            <h3 class="title">Kalyan Prusty</h3>
-                            <span class="post">Position at IISc Bangalore</span>
-                            <span class="links">
-                                <a href="https://www.facebook.com/avishkar.robotics" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/roboticsclubmnnit/" class="linkedin"><i class="fa fa-envelope"></i></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>   
-                <div class="testimonial d-flex justify-content-center" id="more">
-                    <div class="more">
-                        <a class="animated-btn text-white" href="#">More >>></a>
-                    </div>
-                </div>   
-
             </div>
         </div>
     </div>
 </div>
+</section>
 
-{% endblock %}
-
-{% block script %}
+<!-- {% endblock %}
+ {% block script %}
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <script type="text/javascript" src="{% static 'js/testimonial.js' %} "></script>
 
-{% endblock %}
+{% endblock %}  -->
