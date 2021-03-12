@@ -15,24 +15,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <div class="d-flex justify-content-start my-3">
+                    <div class="d-flex justify-content-start my-2">
                         <h2 class="">{{ project.title }}</h2>
                     </div>
                 </div>
                 <p><i class="fa fa-calendar"></i> &nbsp;Status : {{ project.get_status_display }}</p>
-                <div class="container">
-                    <div class="row">
 
-                        <div class="col-md-10">
-                            <p><i class="fa"></i> &nbsp;Sharable Link :{{ request.get_host }}{{ project.sharelink.slink }}</p>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="{% url 'project:createLink' project.pk %}">Generate Link</a>
-                            
-                        </div>
+                {% if user.is_authenticated %}
+                <div class="row shareable">
+                    <div class="col-md-12">
+                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span class="link-text">{{ request.get_host}}{{ project.sharelink.slink }}</span>
+                            <a href="{% url 'project:createLink' project.pk %}" class="btn btn-success link">Reset Link</a>
+                        </p>
                     </div>
-
                 </div>
+                {% endif %}
                 <p><i class="fa fa-tags"></i> Tags:
                     {% for tag in project.tags.all %}
                     <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
@@ -89,7 +86,7 @@
                 <ul class="list-group list-group-flush">
                     {% for member in project.members.all %}
                     <li class="list-group-item">
-                        <a class="text-danger" href="{% url 'user:profile_page' member.username %}">{{ member.username}}</a>
+                        <a class="text-danger" href="{% url 'user:profile_page' member.username %}">{{member.username}}</a>
                         <br>
                         <small>{{ member.profile.get_branch_display }}</small>
                         <small>{{ member.profile.regnum }}</small>
@@ -98,8 +95,8 @@
                 </ul>
             </div>
         </div>
-        {% endif %}
         <hr>
+        {% endif %}
         <i class="fa fa-github"></i> <a href="{{ project.github }}" target="_blank"> Github Link to the Project </a>
         <hr>
         {% if user.profile.role > 1 %}

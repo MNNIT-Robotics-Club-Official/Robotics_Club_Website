@@ -55,7 +55,7 @@
     font-weight: 500;
     font-family: "Poppins", sans-serif;
     word-spacing: 5px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     margin-top: 10px;
     letter-spacing: 1px;
 }
@@ -227,4 +227,56 @@ input{
 
 .project-image iframe{
   overflow: hidden;
+}
+
+.link-text{
+  padding: 4px 4px;
+  padding-bottom: 9px;
+  background: #756969;
+  color: white;
+  border-radius: 4px;
+  overflow-wrap: break-word;
+}
+
+.link-text::selection{
+  background: #e03a3c;
+  height: 5px;
+}
+
+.link{
+  padding: 6px 12px;
+  border-radius: 9px;
+  margin-left: 1px;
+  margin-bottom: 3px;
+}
+
+@media(max-width:992px){
+  .link{
+    margin-top: 10px;
+  }
+  .shareable i{
+    margin-bottom: 10px;
+  }
+  .link-text{
+    font-size: 14px;
+  }
+}
+.blogbtn {
+  height: 45px;
+  margin: 3px;
+  border: none;
+  border-radius: 22px;
+  /* padding: 2%; */
+  background: #e03a3c;
+  font-weight: 600;
+  color: #fff;
+  font-style: italic;
+  cursor: pointer;
+  align-items: center; 
+  width: 30%;
+}
+.blogbtn:hover{
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
 }

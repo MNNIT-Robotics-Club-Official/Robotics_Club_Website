@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <div class="d-flex justify-content-start my-3">
+                    <div class="d-flex justify-content-start my-2">
                         <h2 class="">{{project.title}}</h2>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                 <ul class="list-group list-group-flush">
                     {% for member in project.members.all %}
                     <li class="list-group-item">
-                        <a href="{% url 'user:profile_page' member.username %}">{{ member.username }}</a>
+                        <a href="{% url 'user:profile_page' member.username %}">{{member.username}}</a>
                         <br>
                         <small>{{member.profile.get_branch_display}}</small>
                         <small>{{member.profile.regnum}}</small>
@@ -87,8 +87,8 @@
                 </ul>
             </div>
         </div>
-        {% endif %}
         <hr>
+        {% endif %}
         <i class="fa fa-github"></i> <a href="{{ project.github }}" target="_blank"> Github Link to the Project </a>
         <hr>
         {% if user.profile.role > 1 %}
@@ -107,9 +107,8 @@
         <hr>
         {% endif %}
         {% if request.user.is_authenticated %}
-        <div class="row justify-content-center d-flex">
-            <a href="{% url 'project:detail' project.pk %}"><button class="btn btn-outline-danger">Detail</button></a>
-            {% endif %}
-        </div>
+            <a href="{% url 'project:detail' project.pk %}" class="d-flex justify-content-center blogbtn mx-auto">Full Project Report</a>
+        <hr>
+        {% endif %}
 </section>
 {% endblock %}
