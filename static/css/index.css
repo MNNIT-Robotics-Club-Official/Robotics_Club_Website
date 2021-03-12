@@ -359,7 +359,7 @@ section {
     left: 3%;
     right: 3%;
     height: 1px;
-    background: grey;
+    background: #e03a3c;
   }
   
   /* .icon-box:hover .details {
@@ -373,6 +373,14 @@ section {
 .details_inner {
    padding-top: 30px;
    padding-left: 0 !important;
+}
+
+::marker{
+  color: #e03a3c;
+}
+
+.services li{
+  padding-left: 20px;
 }
  
 
