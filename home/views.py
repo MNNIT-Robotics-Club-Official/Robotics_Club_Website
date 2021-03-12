@@ -21,7 +21,8 @@ def contact(request):
             mail_subject, message, to=['ishuraj201000@gmail.com']
         )
         email.send()
-        # messages.success('Contact Us Form sent successfully')
+        print("yes")
+        messages.success(request,'Message sent successfully')
     return JsonResponse({'message':'Form sent successfully'})
 
 def index(request):
@@ -70,6 +71,9 @@ def collaborate(request):
 
 def spinoff(request):
     return render(request, 'spinoff.html')
+
+def error(request):
+    return render(request, 'error.html')
 
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')

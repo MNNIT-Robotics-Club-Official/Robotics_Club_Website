@@ -19,6 +19,7 @@ urlpatterns = [
     path('web/', views.web, name='web'),
     path('collaborate/', views.collaborate, name='collaborate'),
     path('spinoff/', views.spinoff, name='spinoff'),
+    path('error/', views.error, name='error'),
     path('achievement_2016/', views.achievement_2016, name='achievement_2016'),
     path('achievement_2017/', views.achievement_2017, name='achievement_2017'),
     path('achievement_2018/', views.achievement_2018, name='achievement_2018'),
