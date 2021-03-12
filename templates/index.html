@@ -691,11 +691,11 @@ Robotics Club MNNIT
              <!-- <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea> -->
             </div>
             <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
+              <div class="loading">Please wait while we send your message.</div>
+              <div class="error-message">Oops! Some error occurred!</div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center send"><button type="submit">Send Message</button></div>
           </form>
         </div>
 
@@ -738,11 +738,18 @@ Robotics Club MNNIT
                 success: function (data) {
                     $('#contactForm').trigger('reset');
                     console.log(data);
+                    $('.loading').hide();
                     $('.sent-message').show();
                 },
                 error: function (data) {
                     console.log(data);
+                    $('.loading').hide();
                     $('.error-message').show();
+                },
+                beforeSend: function (data) {
+                    console.log(data);
+                    $('.send').hide();
+                    $('.loading').show();
                 }
             })
         })
