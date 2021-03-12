@@ -79,7 +79,7 @@
     left: 1px;
 }
 .testimonial .description{
-    max-height: 24.5vh;
+    max-height: 22.5vh;
     overflow-y: scroll;
     font-size: 16px;
     font-style: italic;
@@ -289,3 +289,19 @@
 }
 
   
+.description::-webkit-scrollbar {
+  width: 5px;
+background-color: #F5F5F5;
+}
+
+.description::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+border-radius: 10px;
+background-color: #F5F5F5;
+}
+
+.description::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+-webkit-box-shadow: inset 0 0 6px rgba(255, 243, 243, 0.3);
+background-color: #D62929;
+}
