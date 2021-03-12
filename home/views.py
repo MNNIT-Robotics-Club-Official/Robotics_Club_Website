@@ -18,7 +18,7 @@ def contact(request):
             'body':body,
         })
         email = EmailMessage(
-            mail_subject, message, to=['roboclubmnnit.test@gmail.com']
+            mail_subject, message, to=['ishuraj201000@gmail.com']
         )
         email.send()
         # messages.success('Contact Us Form sent successfully')
