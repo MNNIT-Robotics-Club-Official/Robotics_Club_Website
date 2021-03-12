@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Error!
+{% endblock %}
+
+{% block body %}
+
+<section id="error">
+    <p>PAGE NOT FOUND. CLICK <a href="{% url 'home:index' %}">HERE</a> TO GO BACK TO MAIN
+        PAGE.</p>
+    <img src="{% static 'img/error.jpg' %}" alt="error 404">
+</section>
+
+{% endblock %}

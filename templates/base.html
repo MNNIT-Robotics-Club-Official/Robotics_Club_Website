@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %} " type="text/css">
   <!-- <link rel="stylesheet" href="{% static 'css/components.css' %} " type="text/css"> -->
   <link rel="stylesheet" href="{% static 'css/permission.css' %} " type="text/css">
+  <link rel="stylesheet" href="{% static 'css/error.css' %} " type="text/css">
   <link rel="stylesheet" href="{% static 'css/animate.compat.css' %} " type="text/css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     type="text/css">
@@ -43,125 +44,125 @@
 <body style="padding-top: 78px;">
 
   <!-- <body> -->
-    <!-- Preloader Start -->
+  <!-- Preloader Start -->
 
-    <div class="loader">
-      <img src="/static/img/tenor.gif" alt="">
-    </div>
-    <!-- End Preloader -->
+  <div class="loader">
+    <img src="/static/img/tenor.gif" alt="">
+  </div>
+  <!-- End Preloader -->
 
-    <!-- header start -->
-    <header class="fixed-top" id="topbar">
-      <nav class="navbar navbar-expand-xl navbar-light">
-        <a class="navbar-brand" href="{% url 'home:index' %}"><img src="{% static 'img/RoboClubNewCrop.png' %}"
-            alt="RoboClub Logo" width="184.25" height="50"></a>
+  <!-- header start -->
+  <header class="fixed-top" id="topbar">
+    <nav class="navbar navbar-expand-xl navbar-light">
+      <a class="navbar-brand" href="{% url 'home:index' %}"><img src="{% static 'img/RoboClubNewCrop.png' %}"
+          alt="RoboClub Logo" width="184.25" height="50"></a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000" class="bi bi-justify"
-            viewBox="0 0 16 16" style="border: none;">
-            <path fill-rule="evenodd"
-              d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-          </svg>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:index' %}active{% endif %} px-3">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000" class="bi bi-justify"
+          viewBox="0 0 16 16" style="border: none;">
+          <path fill-rule="evenodd"
+            d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:index' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'home:index' %}">Home<span class="sr-only">(current)</span></a>
             </li> -->
-            <li class="nav-item {% if request.resolver_match.view_name == 'project:list' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'project:list' %}">Projects</a>
-            </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'blog_list' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'blog_list' %}">Blogs</a>
-            </li>
-            <li class="nav-item dropdown pr-7">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Events
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li class="{% if request.resolver_match.view_name == 'home:avishkar' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:avishkar' %}">Avishkar</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:prosang' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:prosang' %}">Prosang</a>
-                </li>
-              </ul>
-            <li
-              class="nav-item {% if request.resolver_match.view_name == 'workshop:workshop_page' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'workshop:workshop_page' %}">Jigyasa</a>
-            </li>
+          <li class="nav-item {% if request.resolver_match.view_name == 'project:list' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'project:list' %}">Projects</a>
+          </li>
+          <li class="nav-item {% if request.resolver_match.view_name == 'blog_list' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'blog_list' %}">Blogs</a>
+          </li>
+          <li class="nav-item dropdown pr-7">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Events
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="{% if request.resolver_match.view_name == 'home:avishkar' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:avishkar' %}">Avishkar</a>
+              </li>
+              <li class="{% if request.resolver_match.view_name == 'home:prosang' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:prosang' %}">Prosang</a>
+              </li>
+            </ul>
+          <li
+            class="nav-item {% if request.resolver_match.view_name == 'workshop:workshop_page' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'workshop:workshop_page' %}">Jigyasa</a>
+          </li>
 
-            <!-- <li class="nav-item {% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %} pr-7">
+          <!-- <li class="nav-item {% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'news:news_page' %}">News</a>
             </li> -->
-            <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
+          <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
               <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
             </li> -->
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
-            </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:spinoff' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
-            </li>
-            <li class="nav-item dropdown pr-7">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Team
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li class="{% if request.resolver_match.view_name == 'home:faculty' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:faculty' %}">Faculty</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:coordinator' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:coordinator' %}">Coordinators</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
-                </li>
-                <!-- <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
+          <li class="nav-item {% if request.resolver_match.view_name == 'home:achievement' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'home:achievement' %}">Achievements</a>
+          </li>
+          <li class="nav-item {% if request.resolver_match.view_name == 'home:spinoff' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
+          </li>
+          <li class="nav-item dropdown pr-7">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Team
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="{% if request.resolver_match.view_name == 'home:faculty' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:faculty' %}">Faculty</a>
+              </li>
+              <li class="{% if request.resolver_match.view_name == 'home:coordinator' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:coordinator' %}">Coordinators</a>
+              </li>
+              <li class="{% if request.resolver_match.view_name == 'home:alumni' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:alumni' %}">Alumni</a>
+              </li>
+              <!-- <li class="{% if request.resolver_match.view_name == 'home:web' %}active{% endif %}">
                   <a class="dropdown-item" href="{% url 'home:web' %}">Web Team</a>
                 </li> -->
-                <li class="{% if request.resolver_match.view_name == 'home:team' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:team' %}">Other Teams</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:sponsor' %}active{% endif %} pr-7">
-              <a class="nav-link" href="{% url 'home:sponsor' %}">Sponsors</a>
-            </li>
+              <li class="{% if request.resolver_match.view_name == 'home:team' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:team' %}">Other Teams</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item {% if request.resolver_match.view_name == 'home:sponsor' %}active{% endif %} pr-7">
+            <a class="nav-link" href="{% url 'home:sponsor' %}">Sponsors</a>
+          </li>
 
-            <li class="nav-item dropdown pr-7">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                {% if user.is_authenticated %}
-                <li class="{% if request.resolver_match.view_name == 'user:profile_page' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'user:profile_page' user=request.user %}">Profile <i
-                      class="fa fa-user" aria-hidden="true"></i></a>
-                </li>
-                {% else %}
-                <li class="{% if request.resolver_match.view_name == 'user:user_page' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'user:user_page' %}">Login <i class="fa fa-sign-in"
-                      aria-hidden="true"></i></a>
-                </li>
-                {% endif %}
-                <li class="{% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice</a>
-                </li>
-                <li class="{% if request.resolver_match.view_name == 'home:testimonial' %}active{% endif %}">
-                  <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonials</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item {% if request.resolver_match.view_name == 'home:collaborate' %}active{% endif %} pr-7"
-              id="donate">
-              <a class="nav-link" href="{% url 'home:collaborate' %}">Collaborate</a>
-            </li>
-            <!-- <li class="nav-item px-3" id="donate">
+          <li class="nav-item dropdown pr-7">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              {% if user.is_authenticated %}
+              <li class="{% if request.resolver_match.view_name == 'user:profile_page' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'user:profile_page' user=request.user %}">Profile <i
+                    class="fa fa-user" aria-hidden="true"></i></a>
+              </li>
+              {% else %}
+              <li class="{% if request.resolver_match.view_name == 'user:user_page' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'user:user_page' %}">Login <i class="fa fa-sign-in"
+                    aria-hidden="true"></i></a>
+              </li>
+              {% endif %}
+              <li class="{% if request.resolver_match.view_name == 'news:news_page' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'news:news_page' %}">Notice</a>
+              </li>
+              <li class="{% if request.resolver_match.view_name == 'home:testimonial' %}active{% endif %}">
+                <a class="dropdown-item" href="{% url 'home:testimonial' %}">Testimonials</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item {% if request.resolver_match.view_name == 'home:collaborate' %}active{% endif %} pr-7"
+            id="donate">
+            <a class="nav-link" href="{% url 'home:collaborate' %}">Collaborate</a>
+          </li>
+          <!-- <li class="nav-item px-3" id="donate">
               {% if user.is_authenticated %}
               <a class="nav-link" href="{% url 'user:profile_page' user=request.user %}">Profile <i class="fa fa-user"
                   aria-hidden="true"></i></a>
@@ -170,129 +171,129 @@
                   aria-hidden="true"></i></a>
               {% endif %}
             </li> -->
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- header end -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- header end -->
 
-    <!-- Django messages -->
-    <!-- {% if messages %}
+  <!-- Django messages -->
+  <!-- {% if messages %}
     <div class="alert alert-primary mb-0" role="alert">
       {% for message in messages %}
       <li>{{message}}</li>
       {% endfor %}
     </div>
     {% endif %} -->
-    {% for message in messages %}
-    <div class="alert {{ message.tags }} alert-dismissible wow fadeInDown" role="alert" style="margin-bottom: 0;">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      {{ message }}
-    </div>
-    {% endfor %}
-    <!-- Django messages ends -->
+  {% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible wow fadeInDown" role="alert" style="margin-bottom: 0;">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+  {% endfor %}
+  <!-- Django messages ends -->
 
-    {% block body %}
-    {% endblock %}
+  {% block body %}
+  {% endblock %}
 
-    {% block extra-body %}
-    {% endblock %}
+  {% block extra-body %}
+  {% endblock %}
 
-    <!-- FOOTER  -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 footer-links">
-              <ul>
-                <li>
-                  <img class="mb-2 ml-3" src="{% static 'img/MNNIT.png' %}" alt="" width="89.57" height="120.85">
-                </li>
-                <li> <small class="text-muted">© Robotics Club MNNIT</small></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4 class="first">Useful Links</h4>
-              <ul>
-                <li><a class="" href="{% url 'home:index' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                    Home</a></li>
-                <li><a class="" href="{% url 'workshop:workshop_page' %}" target=""><i class="fa fa-angle-right"
-                      aria-hidden="true"></i>
-                    Workshops</a></li>
-                <li><a class="" href="{% url 'home:sponsor' %}" target=""><i class="fa fa-angle-right"
-                      aria-hidden="true"></i>
-                    Sponsor</a></li>
-                <li><a class="" href="{% url 'home:collaborate' %}" target=""><i class="fa fa-angle-right"
-                      aria-hidden="true"></i>
-                    Collaborate</a></li>
-                <li><a class="" href="" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                    Aeroclub</a></li>
-              </ul>
-            </div>
+  <!-- FOOTER  -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-links">
+            <ul>
+              <li>
+                <img class="mb-2 ml-3" src="{% static 'img/MNNIT.png' %}" alt="" width="89.57" height="120.85">
+              </li>
+              <li> <small class="text-muted">© Robotics Club MNNIT</small></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4 class="first">Useful Links</h4>
+            <ul>
+              <li><a class="" href="{% url 'home:index' %}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                  Home</a></li>
+              <li><a class="" href="{% url 'workshop:workshop_page' %}" target=""><i class="fa fa-angle-right"
+                    aria-hidden="true"></i>
+                  Workshops</a></li>
+              <li><a class="" href="{% url 'home:sponsor' %}" target=""><i class="fa fa-angle-right"
+                    aria-hidden="true"></i>
+                  Sponsor</a></li>
+              <li><a class="" href="{% url 'home:collaborate' %}" target=""><i class="fa fa-angle-right"
+                    aria-hidden="true"></i>
+                  Collaborate</a></li>
+              <li><a class="" href="" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                  Aeroclub</a></li>
+            </ul>
+          </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-              <ul>
-                <li>
-                  <h4 class="second">Robotics Lab</h4>
-                </li>
-                <li>Near Boys' SAC</li>
-                <li>MNNIT Allahabad</li>
-                <li>Prayagraj</li>
-                <li><strong>Email :</strong>roboticsclub@mnnit.ac.in </li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4 class="third">Our Social Networks</h4>
-              <!-- <p class="text-white">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
-              <div class="social-links mt-3">
-                <a href="https://www.facebook.com/avishkar.robotics" class="facebook" target="_blank"><i
-                    class="fa fa-facebook"></i></a>
-                <a href="https://www.instagram.com/roboticsclubmnnit/" class="instagram" target="_blank"><i
-                    class="fa fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCsHbcNUhK5dMWgtsxNNfm7A" class="youtube" target="_blank"><i
-                    class="fa fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin" target="_blank"><i
-                    class="fa fa-linkedin"></i></a>
-                <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin" target="_blank"><i
-                    class="fa fa-envelope"></i></a>
-              </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <ul>
+              <li>
+                <h4 class="second">Robotics Lab</h4>
+              </li>
+              <li>Near Boys' SAC</li>
+              <li>MNNIT Allahabad</li>
+              <li>Prayagraj</li>
+              <li><strong>Email :</strong>roboticsclub@mnnit.ac.in </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4 class="third">Our Social Networks</h4>
+            <!-- <p class="text-white">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/avishkar.robotics" class="facebook" target="_blank"><i
+                  class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/roboticsclubmnnit/" class="instagram" target="_blank"><i
+                  class="fa fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCsHbcNUhK5dMWgtsxNNfm7A" class="youtube" target="_blank"><i
+                  class="fa fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/robotics-club-mnnit-20634417a/" class="linkedin" target="_blank"><i
+                  class="fa fa-linkedin"></i></a>
+              <a href="mailto:roboticsclub@mnnit.ac.in" class="linkedin" target="_blank"><i
+                  class="fa fa-envelope"></i></a>
             </div>
           </div>
         </div>
-    </footer>
-    <!-- FOOTER ENDS -->
+      </div>
+  </footer>
+  <!-- FOOTER ENDS -->
 
 
-    <!-- To add another js file, use below format and change file name -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    {% block script %}
-    {% endblock %}
+  <!-- To add another js file, use below format and change file name -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  {% block script %}
+  {% endblock %}
 
-    {% if messages %}
-    <script>
-      $(".alert").delay(4000).slideUp(800, function () {
-        $(this).alert('close');
-      });
-    </script>
-    {% endif %}
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <!--<script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>-->
-    <!-- <script src="{% static 'js/jquery/popper.min.js'%}"></script> -->
-    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'js/base.js'%}"></script>
+  {% if messages %}
+  <script>
+    $(".alert").delay(4000).slideUp(800, function () {
+      $(this).alert('close');
+    });
+  </script>
+  {% endif %}
 
-    <script src="{% static 'js/sponsor.js' %} "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!--<script src="{% static 'js/jquery/jquery.slim.min.js'%}"></script>-->
+  <!-- <script src="{% static 'js/jquery/popper.min.js'%}"></script> -->
+  <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'js/base.js'%}"></script>
 
-    {% block last %}
-    {% endblock %}
+  <script src="{% static 'js/sponsor.js' %} "></script>
 
-  </body>
+  {% block last %}
+  {% endblock %}
+
+</body>
 
 
 </html>
