@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.urls import resolve
+from django.http import JsonResponse
 from project.models import Project,ShareKey
 from .forms import ProjectForm
 from django.core.paginator import Paginator
@@ -128,6 +129,6 @@ def createShare(request, pk):
                                       location=task.get_absolute_url_detail(),
                                       )
     key.save()
-    return render(request, 'project/share.html', {"key":key});
+    return JsonResponse({"key":key.pk})
 
 class SharifyError(Exception):pass
