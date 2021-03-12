@@ -1,27 +1,81 @@
-/*
-Achievement
-starts
-*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
-.achievement{
-    /* background-color: #1b1b1b; */
-    margin: 0;
-    padding: 0;
-}
-
-/* Heading */
 .achievement .d-flex h2{
-  color: #333;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  word-spacing: 10px;
+    color: #333;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
   line-height: 180%;
-  border-bottom:#e03a3c 5px solid
+  border-bottom:#e03a3c 5px solid;
 }
 
-.achievement h3{
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+section {
+  position: relative;
+}
+
+.section-bg {
+  /* padding: 120px 0; */
+  padding-bottom: 30px;
+  color: #fff;
+}
+
+.services .icon-box {
+  color: black;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  /* background: #252525; */
+  transition: 0.3s;
+  /* background-image: linear-gradient(to bottom right, #ff2525, #4c1313); */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+.services .icon-box:hover{
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.services .icon-box:hover h4{
+  /* background: #2b2b2b; */
+  color: #db1515;
+}
+
+.services .icon-box h4 {
+  /* margin-left: 70px; */
+  font-weight: 650;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #16324f;
+  transition: 0.3s;
+  text-align: center;
+  font-family: "Poppins",sans-serif;
+  line-height: 1.2em;
+  letter-spacing: 0.05em;
+  word-spacing: 0.2em;
+}
+
+.services .icon-box p {
+  /* margin-left: 70px; */
+  line-height: 20px;
+  font-size: 1em;
+  margin-bottom: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.services .icon-box p>a {
+    color: #EC3134;
+    /* font-weight: 600; */
+}
+
+.services .bg-dark{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.achievement h4{
     color: #16324f;
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
@@ -30,57 +84,3 @@ starts
   letter-spacing: 2px;
   line-height: 180%;
 }
-
-.achievement .card{
-    border: none;
-    /* background-color: #1b1b1b; */
-    margin-bottom: 2em;
-}
-
-.achievement .card-body{
-    text-align: center;
-    color: #1b1b1b;
-    font-size: 1.2em;
-    font-family: "raleway",sans-serif;
-    font-weight: 700;
-    /* line-height: 3em; */
-    border-radius: 0px 0px 15px 15px;
-    background-color: #fff;
-    border: 2px solid #1b1b1b7a;
-    border-top: none;
-}
-
-.achievement hr{
-    color: #000;
-    background: #16324f;
-    height: 1.9px;
-    margin-top: 0;
-}
-
-.achievement .card-body p{
-    margin: 0;
-    line-height: 1.2em;
-}
-
-.achievement .card-body .mb-2{
-    font-family: "poppins",sans-serif;
-    font-weight: 600;
-    font-size: 0.9em;
-}
-
-.achievement .card-header{
-    background-color: #e03a3c;
-    text-align: center;
-    color: #eee;
-    font-size: 1.4em;
-    font-family: "poppins",sans-serif;
-    font-weight: 500;
-    border-radius: 15px 15px 2px 2px;
-    line-height: 1.2em;
-    border: 2px solid #1b1b1b7a;
-    border-bottom: none;
-}
-/*
-Achievement
-Ends
-*/
