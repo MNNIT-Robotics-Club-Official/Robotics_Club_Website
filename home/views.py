@@ -1,9 +1,33 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
+from django.http import JsonResponse
+from .forms import ContactForm
+from django.core.mail import EmailMessage
+from django.contrib import messages
+from django.template.loader import render_to_string
 # Create your views here.
+def contact(request):
+    if request.method=='POST':
+        form=ContactForm(request.POST)
+        user=form['name'].value()
+        email=form['email'].value()
+        body=form['body'].value()
+        mail_subject='Contact Form'
+        message = render_to_string('contact_form.html', {
+            'user': user,
+            'email': email,
+            'body':body,
+        })
+        email = EmailMessage(
+            mail_subject, message, to=['roboclubmnnit.test@gmail.com']
+        )
+        email.send()
+        # messages.success('Contact Us Form sent successfully')
+    return JsonResponse({'message':'Form sent successfully'})
 
 def index(request):
-    return render(request, 'index.html')
+    context={}
+    context['form']=ContactForm()
+    return render(request, 'index.html',context)
 
 def alumni(request):
     return render(request, 'alumni.html')

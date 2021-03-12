@@ -1,16 +1,16 @@
 {% if components %}
-    <div class="row">
-        <div class="col-md-12 grid-margin stretch-card">
-            <div class="card border-0">
-                <div class="card-body border-0">
-                    <div class="d-sm-flex align-items-center mb-4">
-                        <h4 class="card-title mb-sm-0">Components Requests</h4>
-                        <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card border-0">
+            <div class="card-body border-0">
+                <div class="d-sm-flex align-items-center mb-4">
+                    <h4 class="card-title mb-sm-0">Components Requests</h4>
+                    <!-- <a href="#" class="text-dark ml-auto mb-3 mb-sm-0">Create Blog</a> -->
 
-                    </div>
-                    <div class="table-responsive p-1">
-                        <table class="table">
-                            <thead>
+                </div>
+                <div class="table-responsive p-1">
+                    <table class="table">
+                        <thead>
                             <tr>
                                 <th class="font-weight-bold">Component</th>
                                 <th class="font-weight-bold">Quantity</th>
@@ -20,35 +20,41 @@
 
 
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             {% for component_user in components %}
-                                <tr>
-                                    <td>{{ component_user.component.name }}</td>
+                            <tr>
+                                <td>{{ component_user.component.name }}</td>
 
-                                    <td>{{ component_user.request_num }}</td>
-                                    <td>{{ component_user.get_status_display }}</td>
+                                <td>{{ component_user.request_num }}</td>
+                                <td>{{ component_user.get_status_display }}</td>
 
-                                    {% if component_user.status %}
-                                        {% if component_user.user_confirmation %}
-                                            <td>Component(s) Received at:{{ component_user.time_confirmation }}</td>
-                                        {% else %}
-                                            <td><button id="confirm" class="btn badge-danger" cid="{{ component_user.component.pk }}">Confirm Approval</button></td>
+                                {% if component_user.status %}
+                                {% if component_user.user_confirmation %}
+                                    <td>Component(s) Received at:{{ component_user.time_confirmation }}</td>
+                                {% else %}
+                                    <td><button id="confirm" class="btn badge-danger"
+                                        cid="{{ component_user.component.pk }}">Confirm Approval</button></td>
+                                {% endif %}
+                                {% else %}
+                                    <td>Yet to be accepted by admin</td>
+                                {% endif %}
+                                
+                                {% if component_user.status %}
+                                <td>Confirmed by Club</td>
+                                {% else %}
+                                <td><button id="delete" class="btn badge-danger"
+                                        cid="{{ component_user.component.pk }}">Delete Your Request</button></td>
+                                {% endif %}
 
-                                        {% endif %}
-                                    {% else %}
-                                        <td>Yet to be accepted by admin</td>
-                                        <td><button id="delete" class="btn badge-danger" cid="{{ component_user.component.pk }}">Delete Your Request</button></td>
-                                    {% endif %}
-
-                                </tr>
+                            </tr>
                             {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endif %}
 <!-- Components Request section Ends -->
