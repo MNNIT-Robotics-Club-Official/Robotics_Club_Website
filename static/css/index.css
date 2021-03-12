@@ -162,16 +162,16 @@ section {
     padding-top: 0;
   }
 
-  #project h2 {
+  /* #project h2 {
     font-size: 32px;
     font-weight: 700;
-    font-family: "Raleway", sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
   }
-  
+   */
   #project h2::after {
     content: '';
     position: absolute;
@@ -184,9 +184,11 @@ section {
   }
 
   #project .card{
-    margin: 0 20px 0 20px;
+    /* margin: 0 20px 0 20px; */
     height: 80vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: solid 5px #f7f7f7;
+    border-radius: 5px;
   }
 
   #project .card-image{
@@ -206,6 +208,7 @@ section {
   }
 
   #project .card-title{
+    font-weight: 600;
     word-spacing: 6px;
     letter-spacing: 2px;
   }
@@ -230,6 +233,7 @@ section {
     font-family: 'Poppins',sans-serif;
     color: #444;
     padding: 3px;
+    text-align: left;
   }
 
 /* #college{
