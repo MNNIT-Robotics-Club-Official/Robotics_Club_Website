@@ -11,14 +11,15 @@ def contact(request):
         user=form['name'].value()
         email=form['email'].value()
         body=form['body'].value()
-        mail_subject='Contact Form'
+        subject=form['subject'].value()
         message = render_to_string('contact_form.html', {
             'user': user,
             'email': email,
             'body':body,
+            'subject':subject
         })
         email = EmailMessage(
-            mail_subject, message, to=['ishuraj201000@gmail.com']
+            subject, message, to=['ishuraj201000@gmail.com']
         )
         email.send()
         print("yes")
