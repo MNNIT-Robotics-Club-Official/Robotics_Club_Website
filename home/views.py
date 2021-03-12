@@ -71,6 +71,9 @@ def collaborate(request):
 def spinoff(request):
     return render(request, 'spinoff.html')
 
+def error(request):
+    return render(request, 'error.html')
+
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
 
