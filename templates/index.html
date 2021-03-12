@@ -171,6 +171,9 @@ Robotics Club MNNIT
                 </div>
             </div>
         </div>
+        </div>
+        <h4 class="text-center"><a class="text-danger font-weight-bold" href="{% url 'project:list' %}">CLICK FOR
+            MORE</a></h4>
     </div>
 </section>
 
@@ -668,21 +671,22 @@ Robotics Club MNNIT
               {% csrf_token %}
             <div class="row">
               <div class="col form-group">
-                   <label>Name*</label>
+                   <!-- <label>Name*</label> -->
                   {{ form.name }}
                 <!-- <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required> -->
               </div>
               <div class="col form-group">
-                   <label>Email*</label>
+                   <!-- <label>Email*</label> -->
                   {{ form.email }}
                <!-- <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required> -->
               </div>
             </div>
             <div class="form-group">
+                {{ form.subject }}
               <!-- <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required> -->
             </div>
             <div class="form-group">
-                 <label>Message*</label>
+                 <!-- <label>Message*</label> -->
                 {{ form.body }}
              <!-- <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea> -->
             </div>
@@ -734,6 +738,11 @@ Robotics Club MNNIT
                 success: function (data) {
                     $('#contactForm').trigger('reset');
                     console.log(data);
+                    $('.sent-message').show();
+                },
+                error: function (data) {
+                    console.log(data);
+                    $('.error-message').show();
                 }
             })
         })

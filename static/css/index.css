@@ -203,7 +203,7 @@ section {
     transition: all ease-in-out 0.3s;
   }
 
-  #project a{
+  #project .projects a{
     text-decoration: none !important;
   }
 
