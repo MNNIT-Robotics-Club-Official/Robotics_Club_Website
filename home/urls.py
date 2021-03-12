@@ -25,6 +25,7 @@ urlpatterns = [
     path('achievement_2019/', views.achievement_2019, name='achievement_2019'),
     path('achievement_2020/', views.achievement_2020, name='achievement_2020'),
     path('achievement_2021/', views.achievement_2021, name='achievement_2021'),
+    path('contact_form/',views.contact,name='contact_form'),
     # path('themes/', views.themes, name='themes'),
 
 ]
