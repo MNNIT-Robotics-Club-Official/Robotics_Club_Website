@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect,HttpResponse
-from project.models import Project
+from django.urls import resolve
+from project.models import Project,ShareKey
 from .forms import ProjectForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-from RoboClub.decorators import has_role_head_or_coordinator
+from django.utils.crypto import get_random_string
+from RoboClub.decorators import has_role_head_or_coordinator,allow_shares
 from django.contrib import messages
 # Create your views here.
 
@@ -21,8 +23,8 @@ def filter(request,tag) :
     context['projects']=Project.objects.filter(tags__name__in=[tag])
     return render(request, 'project/project_list.html', context)
 
-
-def detail(request,pk):
+@allow_shares
+def detail(request,pk,*args,**kwargs):
     context={}
     context['project']=Project.objects.get(pk=pk)
     tech=Project.objects.filter(pk=pk).values('comp_and_tech')
@@ -97,3 +99,35 @@ def create(request):
             messages.error(request,"Invalid form!! Please fill all fields correctly")
             return render(request,'project/project_form.html',{'form':form})
     return HttpResponse("wow")
+
+def sharedPage(request, key):
+    try:
+        try:
+            shareKey = ShareKey.objects.get(pk=key)
+        except: raise SharifyError
+        # if shareKey.expired: raise SharifyError
+        func, args, kwargs = resolve(shareKey.location)
+        kwargs["__shared"] = True
+        kwargs['pid']=shareKey.project.pk
+        return func(request, *args, **kwargs)
+    except SharifyError:
+        return HttpResponse("shared view")# or add a more detailed error page. This either means that the key doesn’t exist or is expired
+
+def createShare(request, pk):
+    task = Project.objects.get(pk=pk)
+    try:
+        key = task.sharelink
+        key.delete()
+        key = ShareKey.objects.create(project=task,pk=get_random_string(40),
+                                      expiration_seconds=60*60*24, # 1 day
+                                      location = task.get_absolute_url_detail(),
+                                      )
+    except:
+        key = ShareKey.objects.create(project=task, pk=get_random_string(40),
+                                      expiration_seconds=60 * 60 * 24,  # 1 day
+                                      location=task.get_absolute_url_detail(),
+                                      )
+    key.save()
+    return render(request, 'project/share.html', {"key":key});
+
+class SharifyError(Exception):pass
