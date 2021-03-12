@@ -19,7 +19,7 @@ def contact(request):
             'subject':subject
         })
         email = EmailMessage(
-            subject, message, to=['ishuraj201000@gmail.com']
+            subject, message, to=['roboclubmnnit.test@gmail.com']
         )
         email.send()
         print("yes")
