@@ -17,11 +17,10 @@ def contact(request):
             'email': email,
             'body':body,
         })
-        email = EmailMessage(
-            mail_subject, message, to=['roboclubmnnit.test@gmail.com']
-        )
+        email = EmailMessage(mail_subject,message, to=['roboclubmnnit.test@gmail.com'])
         email.send()
-        # messages.success('Contact Us Form sent successfully')
+        print("yes")
+        messages.success(request,'Message sent successfully')
     return JsonResponse({'message':'Form sent successfully'})
 
 def index(request):
