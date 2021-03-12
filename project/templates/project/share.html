@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 {% block body %}
 <h1>Sharing link created.</h1>
-<p>The link is <a href="{{ base_url }}{% url 'project:sharedPage' key.pk %}">{{ base_url }}{% url 'project:sharedPage' key.pk %}</a>. It will be valid until {{ key.expiration_date|date:"l, N dS" }} at {{ key.expiration_date|time:"g:i a" }}.</p>
+<p>The link is <a href="{{ request.get_host }}{% url 'project:sharedPage' key.pk %}">{{ base_url }}{% url 'project:sharedPage' key.pk %}</a>. It will be valid until {{ key.expiration_date|date:"l, N dS" }} at {{ key.expiration_date|time:"g:i a" }}.</p>
 {% endblock %}
