@@ -50,7 +50,7 @@ class ShareKey(models.Model):
         return self.project.title
 
     def slink(self):
-        return "/project/access/"+self.token
+        return "/projects/access/"+self.token
 
 
 
