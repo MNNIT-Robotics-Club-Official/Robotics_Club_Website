@@ -19,7 +19,7 @@ class Workshop(models.Model):
     link = models.FileField(upload_to=get_path,null=True,blank=True)
     image = models.ImageField(default='default-workshop.png',upload_to=get_path)
     date_posted = models.DateField()
-    description = models.TextField(max_length=300,blank=True)
+    description = models.TextField(max_length=1000,blank=True)
     status = models.IntegerField(choices=Status,default=1)
 
     def __str__(self):

@@ -34,7 +34,7 @@ def componentlist(request):
     context['components_4'] = Component.objects.filter(type=4)
     context['components_5'] = Component.objects.filter(type=5)
     context['components_6'] = Component.objects.filter(type=6)
-    context['components_7'] = Component.objects.filter(type=7)
+    # context['components_7'] = Component.objects.filter(type=7)
     context['form'] = RequestForm()
     return render(request, 'component/component_list.html', context)
 
