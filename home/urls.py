@@ -20,12 +20,6 @@ urlpatterns = [
     path('collaborate/', views.collaborate, name='collaborate'),
     path('spinoff/', views.spinoff, name='spinoff'),
     path('error/', views.error, name='error'),
-    path('achievement_2016/', views.achievement_2016, name='achievement_2016'),
-    path('achievement_2017/', views.achievement_2017, name='achievement_2017'),
-    path('achievement_2018/', views.achievement_2018, name='achievement_2018'),
-    path('achievement_2019/', views.achievement_2019, name='achievement_2019'),
-    path('achievement_2020/', views.achievement_2020, name='achievement_2020'),
-    path('achievement_2021/', views.achievement_2021, name='achievement_2021'),
     path('contact_form/',views.contact,name='contact_form'),
     # path('themes/', views.themes, name='themes'),
 
