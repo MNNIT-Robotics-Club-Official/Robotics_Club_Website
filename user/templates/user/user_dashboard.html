@@ -178,7 +178,7 @@ Profile | Robotics Club MNNIT
                                                     {{ project.title}}</a>
                                             </td>
 
-                                            <td>{{ project.aim }}</td>
+                                            <td>{{ project.aim|safe|truncatewords_html:8 }}</td>
 
                                             <td>
                                                 {{ project.get_status_display }}
