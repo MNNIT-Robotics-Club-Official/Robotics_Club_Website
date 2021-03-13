@@ -24,8 +24,8 @@
                 {% if user.is_authenticated %}
                 <div class="row shareable">
                     <div class="col-md-12">
-                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span class="link-text">{{ request.get_host}}{{ project.sharelink.slink }}</span>
-                            <a href="{% url 'project:createLink' project.pk %}" class="btn btn-success link">Reset Link</a>
+                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span id="shareLink" class="link-text">{{ request.get_host}}{{ project.sharelink.slink }}</span>
+                            <a href="{% url 'project:createLink' project.pk %}" id="createLink" class="btn btn-success link">Reset Link</a>
                         </p>
                     </div>
                 </div>
@@ -118,4 +118,26 @@
         {% endif %}
     </div>
 </section>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+    $(document).ready(function (){
+        $(document).on('click','#createLink',function (event){
+            event.preventDefault();
+            $.ajax(
+                {
+                    url:$(this).attr('href'),
+                    type:'get',
+                    data:{
+                    },
+                    success:function (data)
+                    {
+                     var temp="{{ request.get_host }}/projects/access/"+data['key'];
+                     $('#shareLink').text(temp);
+                    }
+                }
+            )
+        })
+    })
+    </script>
 {% endblock %}

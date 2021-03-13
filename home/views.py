@@ -22,7 +22,7 @@ def contact(request):
             subject, message, to=['roboclubmnnit.test@gmail.com']
         )
         email.send()
-        print("yes")
+        # print("yes")
         messages.success(request,'Message sent successfully')
     return JsonResponse({'message':'Form sent successfully'})
 
