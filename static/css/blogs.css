@@ -301,7 +301,7 @@ display: inline;
 height: 45px;
 margin: 3px;
 border: none;
-border-radius: 10px;
+border-radius: 23px;
 /* padding: 2%; */
 background: #e03a3c;
 font-weight: 600;
@@ -312,7 +312,7 @@ align-items: center;
 }
 
 #postbtn{
-width: auto;
+width: 30%;
 }
 
 #writebtn{
