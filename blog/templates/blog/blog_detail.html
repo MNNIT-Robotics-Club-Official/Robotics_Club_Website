@@ -21,7 +21,8 @@
                     </div>
                 </div>
                 <div class="text-muted wow pulse mt-6">
-                    <p><i class="fa fa-user"></i> &nbsp;Posted by<a href="{% url 'user:profile_page' blog.author%}"> {{blog.author.profile.first_name}}&nbsp;{{blog.author.profile.last_name}}</a></p>
+                    <p><i class="fa fa-user"></i> &nbsp;Posted by<a href="{% url 'user:profile_page' blog.author%}">
+                            {{blog.author.profile.first_name}}&nbsp;{{blog.author.profile.last_name}}</a></p>
                     <p><i class="fa fa-calendar"></i> on {{blog.date}}</p>
                     <p><i class="fa fa-tags"></i> Tags:
                         <!-- <a href="#" class="badge badge-pill badge-danger">Tag1</a>
@@ -35,13 +36,17 @@
 
                 <hr>
                 <div class="blog-image wow fadeInUp d-flex justify-content-center my-6">
+                    {% if blog.image %}
                     <img src="{{blog.image.url}}" alt="">
+                    {% else %}
+                    <img src="{% static 'img/defaults/default-blog.png' %}">
+                    {% endif %}
                 </div>
                 <hr>
                 <div class="desc wow fadeInUp wow fadeInUp">
                     {{blog.content | safe}}
                     <br />
-                    
+
                 </div>
             </div>
 
@@ -79,7 +84,7 @@
                     <button class="d-flex justify-content-center blogbtn" id="deletebtn">Delete Blog</button>
                 </a>
             </div>
-        </div>   
+        </div>
         <hr>
         {% endif %}
     </div>

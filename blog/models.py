@@ -20,7 +20,7 @@ class Blog(models.Model):
     date=models.DateField()
     vidlink=models.URLField(blank=True,unique=False)
     tags=TaggableManager(blank=True)              #changed
-    image = models.ImageField(default='default-blog.png', upload_to=get_path)
+    image = models.ImageField(upload_to=get_path,blank=True)
     approved=models.BooleanField(default=False)
 
     def __str__(self):
