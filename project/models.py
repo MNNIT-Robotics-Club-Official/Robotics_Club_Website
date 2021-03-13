@@ -22,7 +22,7 @@ class Project(models.Model):
     status=models.IntegerField(choices=Status,default=0)
     comp_and_tech = models.CharField(max_length=250,blank=False,default=None)
     members=models.ManyToManyField(User)
-    image=models.ImageField(default='default-project.png',upload_to=get_path)
+    image=models.ImageField(upload_to=get_path,blank=True)
     tags = TaggableManager()
 
     def __str__(self):

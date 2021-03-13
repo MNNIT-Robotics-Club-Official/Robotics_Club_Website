@@ -17,7 +17,11 @@
   <div class="container">
 
     <div class="message-box">
+      {% if component.image %}
       <img src="{{component.image.url}}" class="rounded-circle carousel-img" alt="">
+      {% else %}
+      <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="rounded-circle carousel-img">
+      {% endif %}
       <h3 class="customer-name">{{component.name}}</h3>
       <h4><b><i>Type : </i></b>{{component.get_type_display}}</h4>
       <h4><b><i>Total Quantity : </i></b>{{component.max_num}}</h4>
@@ -35,17 +39,18 @@
                   <div class="row">
                     <div class="col-md-6">
                       <a href="{% url 'user:profile_page' user=comp.request_user %}">
-                      <b class="issuer">{{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}&nbsp;| &nbsp;
-                        {% if comp.user_confirmation %}
+                        <b class="issuer">{{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}&nbsp;|
+                          &nbsp;
+                          {% if comp.user_confirmation %}
                           Component received at {{ comp.time_confirmation }}
-                        {% else %}
-                          Yet to be received                
-                        {% endif %}
-                      </b></a> 
+                          {% else %}
+                          Yet to be received
+                          {% endif %}
+                        </b></a>
                       {{comp.reason}}
-                    
+
                     </div>
-                 
+
                     <div class="col-md-6">
                       <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
                         user="{{comp.request_user.username }}" r_type=2>
@@ -60,7 +65,7 @@
           </div>
         </div>
 
-           <!-- <div class="col-md-0">
+        <!-- <div class="col-md-0">
           <div class="info-box">
             <h3 class="name">Pending Requests</h3>
             {% for comp in request %}
