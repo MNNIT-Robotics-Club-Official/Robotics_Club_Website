@@ -76,24 +76,6 @@ def spinoff(request):
 def error(request):
     return render(request, 'error.html')
 
-def achievement_2016(request):
-    return render(request, 'achievement_2016.html')
-
-def achievement_2017(request):
-    return render(request, 'achievement_2017.html')
-
-def achievement_2018(request):
-    return render(request, 'achievement_2018.html')
-
-def achievement_2019(request):
-    return render(request, 'achievement_2019.html')
-
-def achievement_2020(request):
-    return render(request, 'achievement_2020.html')
-
-def achievement_2021(request):
-    return render(request, 'achievement_2021.html')
-
 # def themes(request):
 #     return render(request, 'index.html#themes')
 
