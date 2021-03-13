@@ -212,7 +212,7 @@ section {
   #project .card-title{
     font-weight: 600;
     word-spacing: 6px;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
   }
 
   #project .card:hover .card-title{
