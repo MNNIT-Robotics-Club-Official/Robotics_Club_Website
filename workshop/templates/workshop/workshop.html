@@ -55,7 +55,11 @@ Jigyasa | Robotics Club MNNIT
         <div class="row">
             <!-- Assigning column for image -->
             <div class="col-md-4 image text-center">
+                {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="img-fluid" alt="...">
+                {% else %}
+                <img src="{% static 'img/defaults/default-workshop.png' %}" class="img-fluid" alt="...">
+                {% endif %}
                 </a>
             </div>
             <!-- Details of Workshop -->

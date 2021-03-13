@@ -27,7 +27,11 @@
                 </p>
                 <hr>
                 <div class="project-image wow fadeInUp d-flex justify-content-center my-6">
-                    <img src="{{project.image.url}}" alt="">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="">
+                    {% else %}
+                    <img src="{% static 'img/defaults/default-project.png' %}" alt="">
+                    {% endif %}
                 </div>
                 <hr>
                 <div class="aim wow fadeInUp">

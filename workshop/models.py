@@ -17,7 +17,7 @@ class Workshop(models.Model):
     venue = models.CharField(blank=True,null=True,max_length=256)
     target = models.CharField(max_length=256,default="All")
     link = models.FileField(upload_to=get_path,null=True,blank=True)
-    image = models.ImageField(default='default-workshop.png',upload_to=get_path)
+    image = models.ImageField(upload_to=get_path,blank=True)
     date_posted = models.DateField()
     description = models.TextField(max_length=1000,blank=True)
     status = models.IntegerField(choices=Status,default=1)
