@@ -25,7 +25,11 @@ Projects | Robotics Club MNNIT
                 <a href="{% url 'project:overview' project.pk %}">
                     <div class="card">
                         <div class="card-image">
+                            {% if project.image %}
                             <img class="card-img-top" src="{{ project.image.url }}" alt="">
+                            {% else %}
+                            <img class="card-img-top" src="{% static 'img/defaults/default-project.png' %}" alt="">
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ project.title }}</h5>

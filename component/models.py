@@ -15,7 +15,7 @@ def get_path(instance, filename):
 class Component(models.Model):
     name = models.CharField(max_length=128,unique=False,blank=False)
     detail = models.TextField(blank=True)
-    image = models.ImageField(default='default-component.png', upload_to=get_path)
+    image = models.ImageField(upload_to=get_path,blank=True)
     type = models.IntegerField(choices=COMPONENT_TYPE,default=6)
     max_num = models.IntegerField(default=0)
     issued_num = models.IntegerField(default=0)

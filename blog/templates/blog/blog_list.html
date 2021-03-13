@@ -29,7 +29,11 @@
                   <div class="card">
                       <div class="hover-part">
                           <div class="card-image">
+                              {% if post.image %}
                               <img src="{{ post.image.url }}">
+                              {% else %}
+                              <img src="{% static 'img/defaults/default-blog.png' %}">
+                              {% endif %}
                           </div>
                           <div class="card-text">
                               <h4>{{ post.title }}</h4>

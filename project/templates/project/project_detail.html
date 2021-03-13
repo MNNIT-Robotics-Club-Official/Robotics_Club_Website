@@ -24,8 +24,10 @@
                 {% if user.is_authenticated %}
                 <div class="row shareable">
                     <div class="col-md-12">
-                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span id="shareLink" class="link-text">{{ request.get_host}}{{ project.sharelink.slink }}</span>
-                            <a href="{% url 'project:createLink' project.pk %}" id="createLink" class="btn btn-success link">Reset Link</a>
+                        <p><i class="fa fa-link"></i> &nbsp;Shareable Link : <span id="shareLink" class="link-text">{{
+                                request.get_host}}{{ project.sharelink.slink }}</span>
+                            <a href="{% url 'project:createLink' project.pk %}" id="createLink"
+                                class="btn btn-success link">Reset Link</a>
                         </p>
                     </div>
                 </div>
@@ -37,7 +39,11 @@
                 </p>
                 <hr>
                 <div class="project-image wow fadeInUp d-flex justify-content-center my-6">
+                    {% if project.image %}
                     <img src="{{ project.image.url }}" alt="">
+                    {% else %}
+                    <img src="{% static 'img/defaults/default-project.png' %}" alt="">
+                    {% endif %}
                 </div>
                 <hr>
                 <div class="aim wow fadeInUp my-3">
@@ -86,7 +92,8 @@
                 <ul class="list-group list-group-flush">
                     {% for member in project.members.all %}
                     <li class="list-group-item">
-                        <a class="text-danger" href="{% url 'user:profile_page' member.username %}">{{member.username}}</a>
+                        <a class="text-danger"
+                            href="{% url 'user:profile_page' member.username %}">{{member.username}}</a>
                         <br>
                         <small>{{ member.profile.get_branch_display }}</small>
                         <small>{{ member.profile.regnum }}</small>
@@ -120,24 +127,23 @@
 </section>
 {% endblock %}
 {% block script %}
-    <script type="text/javascript">
-    $(document).ready(function (){
-        $(document).on('click','#createLink',function (event){
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '#createLink', function (event) {
             event.preventDefault();
             $.ajax(
                 {
-                    url:$(this).attr('href'),
-                    type:'get',
-                    data:{
+                    url: $(this).attr('href'),
+                    type: 'get',
+                    data: {
                     },
-                    success:function (data)
-                    {
-                     var temp="{{ request.get_host }}/projects/access/"+data['key'];
-                     $('#shareLink').text(temp);
+                    success: function (data) {
+                        var temp = "{{ request.get_host }}/projects/access/" + data['key'];
+                        $('#shareLink').text(temp);
                     }
                 }
             )
         })
     })
-    </script>
+</script>
 {% endblock %}
