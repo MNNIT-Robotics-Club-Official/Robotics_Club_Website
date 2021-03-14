@@ -30,9 +30,32 @@ Profile | Robotics Club MNNIT
                     </div>
                     <form method="POST" action="{% url 'user:profile_page' request.user %}" id="profile">
                         <div class="modal-body">
-
                             {% csrf_token %}
-                            {{ profileform|crispy }}
+                            <!-- {{ profileform|crispy }} -->
+                            <div class="form-group">
+                                <label class=" requiredField">First name<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{profileform.first_name}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="">Last name</label>
+                                <div>
+                                    {{profileform.last_name}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="">Registration Number</label>
+                                <div>
+                                    {{profileform.regnum}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="">Branch</label>
+                                <div>
+                                    {{profileform.branch}}
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -87,7 +110,8 @@ Profile | Robotics Club MNNIT
                     <a href="{% url 'blog_form' %}" id="Create" class="btn btn-danger mb-sm-0 text-white">Add Blog</a>
                     <a href="{% url 'component_list' %}" id="Create" class="btn btn-danger mb-sm-0 text-white">Club
                         Components</a>
-                    <a href="https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing" id="Create" class="btn btn-danger mb-sm-0 text-white" target="_blank">Useful Resources</a>
+                    <a href="https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing"
+                        id="Create" class="btn btn-danger mb-sm-0 text-white" target="_blank">Useful Resources</a>
                 </div>
             </div>
         </div>
@@ -253,31 +277,31 @@ Profile | Robotics Club MNNIT
                 }
             })
         })
-        })
+    })
 </script>
 <script type="text/javascript">
-        $(document).ready(function (event) {
-            $(document).on('click', '#delete', function (event) {
-                event.preventDefault()
-                var cid = $(this).attr('cid');
-                var type = 1;
-                var status = 2;
-                var user = "{{ request.user}}";
-                $.ajax({
-                    url: '{% url "handle_request" %}',
-                    type: 'get',
-                    data: {
-                        id: cid,
-                        r_type: type,
-                        status: status,
-                        user: user,
-                        'csrfmiddlewaretoken': '{{csrf_token}}'
-                    },
-                    success: function (data) {
-                        $('#comp_req').html(data['html'])
-                    }
-                })
+    $(document).ready(function (event) {
+        $(document).on('click', '#delete', function (event) {
+            event.preventDefault()
+            var cid = $(this).attr('cid');
+            var type = 1;
+            var status = 2;
+            var user = "{{ request.user}}";
+            $.ajax({
+                url: '{% url "handle_request" %}',
+                type: 'get',
+                data: {
+                    id: cid,
+                    r_type: type,
+                    status: status,
+                    user: user,
+                    'csrfmiddlewaretoken': '{{csrf_token}}'
+                },
+                success: function (data) {
+                    $('#comp_req').html(data['html'])
+                }
             })
         })
+    })
 </script>
 {% endblock %}
