@@ -15,7 +15,6 @@ from django.contrib.auth.decorators import login_required
 @has_role_head_or_coordinator
 def test(request, id):
     context = {}
-    comp=Component.objects.get(id=id)   #changed
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
     context['component'] = Component.objects.get(pk=id)  # changed
@@ -82,28 +81,28 @@ def handlerequest(request):
     status = request.GET.get('status')
     comp = Component.objects.get(pk=cid)
     user = User.objects.get(username__exact=user)
-    req = Request.objects.get(request_user=user, component=comp)
-
-    if type == '0':  # approve
-        req.status = 1
-        add = req.request_num
-        if add > comp.available():
-            messages.info(request, "Not enough component!")
-        else:
-            req.save()
-            comp.issued_num = comp.issued_num + add
+    req = Request.objects.filter(request_user=user, component=comp).first()
+    if req is not None:
+        if type == '0':  # approve
+            req.status = 1
+            add = req.request_num
+            if add > comp.available():
+                messages.info(request, "Not enough component!")
+            else:
+                req.save()
+                comp.issued_num = comp.issued_num + add
+                comp.save()
+                messages.success(request, "Request accepted successfully")
+        elif type == '1':  # reject
+            req.delete()
+        elif type == '2':
+            add = req.request_num
+            if (req.status == 1):
+                comp.issued_num = comp.issued_num - add
             comp.save()
-            messages.success(request, "Request accepted successfully")
-    elif type == '1':  # reject
-        req.delete()
-    elif type == '2':
-        add = req.request_num
-        if (req.status == 1):
-            comp.issued_num = comp.issued_num - add
-        comp.save()
-        req.delete()
-    else:
-        print("this should not be happening")
+            req.delete()
+        else:
+            print("this should not be happening")
     if request.is_ajax():
         if status == '1':
             context['component'] = comp
