@@ -24,7 +24,7 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
-            name = form.cleaned_data.get('username')
+            name = form.data.get('username')
             if(User.objects.filter(username=name).exists()):
                 messages.error(request,"Username already Taken")
                 return redirect('user:register_page')
