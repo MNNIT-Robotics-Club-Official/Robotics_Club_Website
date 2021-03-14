@@ -24,6 +24,10 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
+            name = form.data.get('username')
+            if(User.objects.filter(username=name).exists()):
+                messages.error(request,"Username already Taken")
+                return redirect('user:register_page')
             to_email = form.data.get('email')
             if form.is_valid():
                 user = form.save(commit=False)
