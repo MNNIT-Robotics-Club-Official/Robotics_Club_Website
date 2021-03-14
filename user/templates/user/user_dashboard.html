@@ -82,7 +82,25 @@ Profile | Robotics Club MNNIT
                         <div class="modal-body">
 
                             {% csrf_token %}
-                            {{ passform|crispy }}
+                            <!-- {{ passform|crispy }} -->
+                            <div class="form-group">
+                                <label class=" requiredField">Current Password<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{passform.current_password}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" requiredField">New Password<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{passform.new_password_1}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" requiredField">Confirm New Password<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{passform.new_password_2}}
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
