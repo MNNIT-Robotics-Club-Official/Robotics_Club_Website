@@ -100,13 +100,13 @@ def handlerequest(request):
         add = req.request_num
         if (req.status == 1):
             comp.issued_num = comp.issued_num - add
-        req.delete()
         comp.save()
+        req.delete()
     else:
         print("this should not be happening")
     if request.is_ajax():
         if status == '1':
-            context['request'] = Request.objects.filter(component=comp).filter(status=0)
+            context['component'] = comp
             context['approved'] = Request.objects.filter(component=comp).filter(status=1)
             html = render_to_string('Component/test_part.html', context, request=request)
         elif status == '2':
@@ -127,7 +127,8 @@ def createrequest(request):
         cid = request.POST.get('cid')
         component = Component.objects.get(pk=cid)
         req_num = request.POST.get('req_num')
-        reason = request.POST.get('reason')
+        reas = request.POST.get('reason')
+        print(reas)
         if int(req_num) < 0:
             return JsonResponse({'request': '2'})
         if Request.objects.filter(request_user=request.user, component=component).exists():
@@ -137,7 +138,7 @@ def createrequest(request):
                     messages.info(request, "Not Enough components!")
                 else:
                     req.request_num = req_num
-                    req.reason=reason
+                    req.reason=reas
                     req.save()
                     messages.success(request, "Request Updated Successfully!")
             else:
@@ -145,7 +146,7 @@ def createrequest(request):
         elif int(req_num) > component.available():
             messages.error(request, "Not Enough Components!")
         else:
-            req = Request(request_num=req_num, request_user=request.user, component=component)
+            req = Request(request_num=req_num, request_user=request.user,reason=reas, component=component)
             req.save()
             messages.success(request, "Request Sent Successfully!")
         html = render_to_string('spinnets/message.html', context, request=request)

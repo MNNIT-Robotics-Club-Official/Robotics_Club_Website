@@ -25,7 +25,6 @@
       <h3 class="customer-name">{{component.name}}</h3>
       <h4><b><i>Type : </i></b>{{component.get_type_display}}</h4>
       <h4><b><i>Total Quantity : </i></b>{{component.max_num}}</h4>
-      <!-- <h4><b><i>Issued Quantity : </i></b>{{component.issued_num}}</h4> -->
       <h4><b><i>Available : </i></b>{{component.available}}</h4>
 
       <div class="row">
@@ -39,20 +38,20 @@
                   <div class="row">
                     <div class="col-md-6">
                       <a href="{% url 'user:profile_page' user=comp.request_user %}">
-                        <b class="issuer">{{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}&nbsp;|
+                        <b class="issuer">{{ comp.request_user.username }}</a> &nbsp;| &nbsp;{{comp.request_num}}&nbsp;|
                           &nbsp;
                           {% if comp.user_confirmation %}
                           Component received at {{ comp.time_confirmation }}
                           {% else %}
                           Yet to be received
                           {% endif %}
-                        </b></a>
+                        </b>
                       {{comp.reason}}
 
                     </div>
 
                     <div class="col-md-6">
-                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
+                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ component.pk }}"
                         user="{{comp.request_user.username }}" r_type=2>
                         Returned
                       </button>
@@ -64,38 +63,6 @@
             {% endfor %}
           </div>
         </div>
-
-        <!-- <div class="col-md-0">
-          <div class="info-box">
-            <h3 class="name">Pending Requests</h3>
-            {% for comp in request %}
-            <div id="handle">
-              <div class="list-group">
-                <div class="list-group-item list-group-item-action">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <b class="issuer"> {{ comp.request_user.username }} &nbsp;| &nbsp;{{comp.request_num}}| &nbsp;{{comp.request_num}}</b>
-                      {{comp.reason}}
-                    </div>
-
-                    <div class="col-md-8">
-                      <button type="button" id="appbtn" class="componentsbtn approvebtn" pk="{{ comp.component.pk }}"
-                        user="{{comp.request_user.username }}" r_type=0>
-                        Approve
-                      </button>
-                      <button type="button" id="appbtn" class="componentsbtn" pk="{{ comp.component.pk }}"
-                        user="{{comp.request_user.username }}" r_type=1>
-                        Decline
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {% endfor %}
-          </div>
-        </div> -->
       </div>
     </div>
   </div>

@@ -463,7 +463,7 @@ Club Components | Robotics Club MNNIT
                 data: {
                     'cid': cid,
                     'req_num': $(this).children("#request_number").val(),
-                    'reason': $(this).children().children("#exampleFormControlTextarea4").val(),
+                    'reason': $(this).children(".red-border").children("#exampleFormControlTextarea4").val(),
                     'csrfmiddlewaretoken': '{{csrf_token}}'
                 },
                 success: function (data) {
