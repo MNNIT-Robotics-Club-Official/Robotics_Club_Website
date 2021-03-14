@@ -17,6 +17,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from RoboClub.decorators import has_role_head,has_role_head_or_coordinator
+from django.views.decorators.cache import cache_control
 # Create your views here.
 
 def register(request):
@@ -94,6 +95,7 @@ def loginUser(request):
 
 
 @login_required
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logoutUser(request):
     logout(request)
     messages.info(request,"Logged Out Successfully")
