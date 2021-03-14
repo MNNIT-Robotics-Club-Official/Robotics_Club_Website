@@ -438,46 +438,6 @@ Club Components | Robotics Club MNNIT
                     </div>
                 </div>
 
-                <!-- <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
-
-                    <div class="row">
-
-                        {% for component in components_7 %}
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-block">
-                                <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                <h4>{{ component.name }}</h4>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-2 my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                    </form>
-                                    {% if request.user.profile.role > 1 %}
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-danger dropdown-toggle"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item"
-                                                href="{% url 'update_component' component.pk %}">Update</a>
-                                            <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued By</a>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div> -->
 
             </div>
 
@@ -503,9 +463,12 @@ Club Components | Robotics Club MNNIT
                 data: {
                     'cid': cid,
                     'req_num': $(this).children("#request_number").val(),
+                    'reason': $(this).children().children("#exampleFormControlTextarea4").val(),
                     'csrfmiddlewaretoken': '{{csrf_token}}'
                 },
                 success: function (data) {
+                    $(this).children("#request_number").val(0);
+                    $(this).children(".red-border").children("#exampleFormControlTextarea4").val("");
                     $("#message_container").html(data['html']);
                 }
             })

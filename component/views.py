@@ -127,6 +127,7 @@ def createrequest(request):
         cid = request.POST.get('cid')
         component = Component.objects.get(pk=cid)
         req_num = request.POST.get('req_num')
+        reason = request.POST.get('reason')
         if int(req_num) < 0:
             return JsonResponse({'request': '2'})
         if Request.objects.filter(request_user=request.user, component=component).exists():
@@ -136,6 +137,7 @@ def createrequest(request):
                     messages.info(request, "Not Enough components!")
                 else:
                     req.request_num = req_num
+                    req.reason=reason
                     req.save()
                     messages.success(request, "Request Updated Successfully!")
             else:
