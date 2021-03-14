@@ -185,7 +185,7 @@ section {
 
   #project .card{
     /* margin: 0 20px 0 20px; */
-    height: 80vh;
+    height: 585px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: solid 5px #f7f7f7;
     border-radius: 5px;
@@ -300,9 +300,8 @@ section {
 }
 
 .services .icon-box p {
-  margin-left: 70px;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 

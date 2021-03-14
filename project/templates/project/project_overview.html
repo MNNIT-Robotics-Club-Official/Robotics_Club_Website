@@ -39,6 +39,7 @@
                     <p>{{ project.aim }}</p>
                     <!-- <br /> -->
                     <hr>
+                </div>
                     {% if tech %}
                     <div class="comp wow fadeInUp">
                         <h3 class="lead">COMPONENTS AND TECHNOLOGIES USED</h3>
@@ -50,10 +51,9 @@
                             {% endfor %}
                         </ul>
                     </div>
+                    <hr>
                     {% endif %}
                     <!-- <br /> -->
-                </div>
-                <hr>
                 <div class="desc wow fadeInUp">
                     <h3 class="lead">OVERVIEW</h3>
                     <p>{{ project.overview |safe }}</p>
@@ -76,7 +76,7 @@
         <hr>
         {% endif %}
         {% if project.members %}
-        <div class="row py-3">
+        <!-- <div class="row py-3">
             <div class="members col-lg-4 wow fadeInUp">
                 <h3 class="lead">MEMBERS</h3>
                 <ul class="list-group list-group-flush">
@@ -91,10 +91,12 @@
                 </ul>
             </div>
         </div>
-        <hr>
+        <hr> -->
         {% endif %}
+        {% if project.github %}
         <i class="fa fa-github"></i> <a href="{{ project.github }}" target="_blank"> Github Link to the Project </a>
         <hr>
+        {% endif %}
         {% if user.profile.role > 1 %}
         <div class="row">
             <div class="col-6">
@@ -111,7 +113,8 @@
         <hr>
         {% endif %}
         {% if request.user.is_authenticated %}
-            <a href="{% url 'project:detail' project.pk %}" class="d-flex justify-content-center blogbtn mx-auto">Full Project Report</a>
+        <a href="{% url 'project:detail' project.pk %}" class="d-flex justify-content-center blogbtn mx-auto">Full
+            Project Report</a>
         <hr>
         {% endif %}
 </section>
