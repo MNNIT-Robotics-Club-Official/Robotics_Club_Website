@@ -15,7 +15,6 @@ from django.contrib.auth.decorators import login_required
 @has_role_head_or_coordinator
 def test(request, id):
     context = {}
-    comp=Component.objects.get(id=id)   #changed
     component = Request.objects.filter(component_id=id).filter(status=0)
     othcomp = Request.objects.filter(component_id=id).filter(status=1)
     context['component'] = Component.objects.get(pk=id)  # changed
@@ -82,31 +81,31 @@ def handlerequest(request):
     status = request.GET.get('status')
     comp = Component.objects.get(pk=cid)
     user = User.objects.get(username__exact=user)
-    req = Request.objects.get(request_user=user, component=comp)
-
-    if type == '0':  # approve
-        req.status = 1
-        add = req.request_num
-        if add > comp.available():
-            messages.info(request, "Not enough component!")
-        else:
-            req.save()
-            comp.issued_num = comp.issued_num + add
+    req = Request.objects.filter(request_user=user, component=comp).first()
+    if req is not None:
+        if type == '0':  # approve
+            req.status = 1
+            add = req.request_num
+            if add > comp.available():
+                messages.info(request, "Not enough component!")
+            else:
+                req.save()
+                comp.issued_num = comp.issued_num + add
+                comp.save()
+                messages.success(request, "Request accepted successfully")
+        elif type == '1':  # reject
+            req.delete()
+        elif type == '2':
+            add = req.request_num
+            if (req.status == 1):
+                comp.issued_num = comp.issued_num - add
             comp.save()
-            messages.success(request, "Request accepted successfully")
-    elif type == '1':  # reject
-        req.delete()
-    elif type == '2':
-        add = req.request_num
-        if (req.status == 1):
-            comp.issued_num = comp.issued_num - add
-        req.delete()
-        comp.save()
-    else:
-        print("this should not be happening")
+            req.delete()
+        else:
+            print("this should not be happening")
     if request.is_ajax():
         if status == '1':
-            context['request'] = Request.objects.filter(component=comp).filter(status=0)
+            context['component'] = comp
             context['approved'] = Request.objects.filter(component=comp).filter(status=1)
             html = render_to_string('Component/test_part.html', context, request=request)
         elif status == '2':
@@ -127,6 +126,8 @@ def createrequest(request):
         cid = request.POST.get('cid')
         component = Component.objects.get(pk=cid)
         req_num = request.POST.get('req_num')
+        reas = request.POST.get('reason')
+        print(reas)
         if int(req_num) < 0:
             return JsonResponse({'request': '2'})
         if Request.objects.filter(request_user=request.user, component=component).exists():
@@ -136,6 +137,7 @@ def createrequest(request):
                     messages.info(request, "Not Enough components!")
                 else:
                     req.request_num = req_num
+                    req.reason=reas
                     req.save()
                     messages.success(request, "Request Updated Successfully!")
             else:
@@ -143,7 +145,7 @@ def createrequest(request):
         elif int(req_num) > component.available():
             messages.error(request, "Not Enough Components!")
         else:
-            req = Request(request_num=req_num, request_user=request.user, component=component)
+            req = Request(request_num=req_num, request_user=request.user,reason=reas, component=component)
             req.save()
             messages.success(request, "Request Sent Successfully!")
         html = render_to_string('spinnets/message.html', context, request=request)

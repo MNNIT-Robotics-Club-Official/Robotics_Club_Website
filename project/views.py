@@ -112,7 +112,7 @@ def sharedPage(request, key):
         kwargs['pid']=shareKey.project.pk
         return func(request, *args, **kwargs)
     except SharifyError:
-        return HttpResponse("shared view")# or add a more detailed error page. This either means that the key doesn’t exist or is expired
+        return render(request,'error.html')# or add a more detailed error page. This either means that the key doesn’t exist or is expired
 
 def createShare(request, pk):
     task = Project.objects.get(pk=pk)
