@@ -41,7 +41,7 @@ class Request(models.Model):
     status = models.IntegerField(choices=Status,default=0)
     request_num = models.IntegerField(default=0)
     user_confirmation = models.BooleanField(default=False)
-    time_confirmation = models.TimeField(auto_created=False,null=True,blank=True)
+    time_confirmation = models.DateTimeField(auto_created=False,null=True,blank=True)
     reason = models.TextField(max_length=128,default="",null=True,blank=True)
 
     def __str__(self):

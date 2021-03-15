@@ -50,8 +50,8 @@
                 <div class="aim wow fadeInUp my-3">
                     <h3 class="lead">AIM</h3>
                     <p>{{ project.aim }}</p>
-                    <hr>
                 </div>
+                <hr>
                 {% if tech %}
                 <div class="comp wow fadeInUp my-3">
                     <h3 class="lead">COMPONENTS AND TECHNOLOGIES USED</h3>
@@ -63,14 +63,13 @@
                         {% endfor %}
                     </ul>
                 </div>
-                {% endif %}
-                <!-- </div> -->
                 <hr>
+                {% endif %}
                 <div class="desc wow fadeInUp">
                     <h3 class="lead">DESCRIPTION</h3>
                     <p>{{ project.detail |safe }}</p>
-                    <hr>
                 </div>
+                <hr>
             </div>
         </div>
 
@@ -87,7 +86,7 @@
         <hr>
         {% endif %}
         {% if project.members %}
-        <div class="row py-3">
+        <!-- <div class="row py-3">
             <div class="members col-lg-4 wow fadeInUp">
                 <h3 class="lead">MEMBERS</h3>
                 <ul class="list-group list-group-flush">
@@ -103,10 +102,12 @@
                 </ul>
             </div>
         </div>
+        <hr> -->
+        {% endif %}
+        {% if project.github %}
+        <i class="fa fa-github"></i> <a href="{{ project.github }}" target="_blank">Github Link to the Project </a>
         <hr>
         {% endif %}
-        <i class="fa fa-github"></i> <a href="{{ project.github }}" target="_blank"> Github Link to the Project </a>
-        <hr>
         {% if user.profile.role > 1 %}
         <div class="row">
             <div class="col-6">

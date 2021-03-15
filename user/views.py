@@ -24,6 +24,10 @@ def register(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
+            name = form.data.get('username')
+            if(User.objects.filter(username=name).exists()):
+                messages.error(request,"Username already Taken")
+                return redirect('user:register_page')
             to_email = form.data.get('email')
             if form.is_valid():
                 user = form.save(commit=False)
@@ -174,27 +178,31 @@ def userProfileCreation(request):
 @login_required
 def userProfile(request,user):
     context = {}
-    if request.method=='GET':
-        context['blogs'] = Blog.objects.filter(author__username=user).filter(approved=True).order_by('approved')
-        context['projects'] = Project.objects.filter(members__username=user).order_by('status')
-        context['cuser'] = Profile.objects.get(user__username=user)
-        if request.user.username ==user:
-            context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
-            context['blogs'] = Blog.objects.filter(author__username=request.user).order_by('approved')
-            context['passform'] = PasswordResetForm()
-            context['profileform']= UserProfileForm(instance=request.user.profile)
-    else:
-        pro=Profile.objects.get(user=request.user)
-        form = UserProfileForm(request.POST,instance=pro)
-        if form.is_valid():
-            form.save()
-            messages.success(request,'Profile edited successfully')
+    try:
+        if request.method=='GET':
+            context['blogs'] = Blog.objects.filter(author__username=user).filter(approved=True).order_by('approved')
+            context['projects'] = Project.objects.filter(members__username=user).order_by('status')
+            context['cuser'] = Profile.objects.get(user__username=user)
+            if request.user.username ==user:
+                context['components'] = Request.objects.filter(request_user=request.user).order_by('status')
+                context['blogs'] = Blog.objects.filter(author__username=request.user).order_by('approved')
+                context['passform'] = PasswordResetForm()
+                context['profileform']= UserProfileForm(instance=request.user.profile)
         else:
-            messages.error(request,'Fill form correctly')
-        context['cuser'] = Profile.objects.get(user__username=user)
-        html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
-        return JsonResponse({'html': html}, status=200)
-    return render(request, 'user/user_dashboard.html', context)
+            pro=Profile.objects.get(user=request.user)
+            form = UserProfileForm(request.POST,instance=pro)
+            if form.is_valid():
+                form.save()
+                messages.success(request,'Profile edited successfully')
+            else:
+                messages.error(request,'Fill form correctly')
+            context['cuser'] = Profile.objects.get(user__username=user)
+            html = render_to_string('user/user_dashoard_updatepart.html', context, request=request)
+            return JsonResponse({'html': html}, status=200)
+        return render(request, 'user/user_dashboard.html', context)
+    except:
+        return render(request,'error.html')
+
 
 @login_required
 def changepassword(request):
