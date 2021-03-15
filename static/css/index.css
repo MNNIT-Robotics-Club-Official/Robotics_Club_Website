@@ -92,7 +92,7 @@ section {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -104,7 +104,7 @@ section {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
-  color: #fff;
+  color:black;
 }
 
 #hero img{

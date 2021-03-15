@@ -79,7 +79,7 @@
     left: 1px;
 }
 .testimonial .description{
-    max-height: 22.5vh;
+    max-height: 160px;
     overflow-y: scroll;
     font-size: 16px;
     font-style: italic;
