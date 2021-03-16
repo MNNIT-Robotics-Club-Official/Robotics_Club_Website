@@ -29,5 +29,5 @@ $("#sponserpage-slider").owlCarousel({
     mouseDrag :false,
     nav:false,
     slideSpeed:1000,
-    autoPlay:false
+    autoPlay:8000
 });
