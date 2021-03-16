@@ -21,7 +21,6 @@ $(document).ready(function(){
         itemsMobile:[650,2],
         pagination:true,
         mouseDrag :false,
-        mouseDrag :true,
         navigation:false,
         slideSpeed:1000,
         autoPlay:8000
