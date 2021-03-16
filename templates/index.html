@@ -74,28 +74,30 @@ Robotics Club MNNIT
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
                     <div id="projects-slider" class="owl-carousel">
+                        {% for project in featured %}
                         <div class="projects">
-                            <a href="#">
+                            <a href="{% url 'project:overview' project.pk %}">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="card-img-top" src="{% static 'img/projects/wander2.jpg' %}" alt="">
+                                        {% if project.image %}
+                                        <img class="card-img-top" src="{{ project.image.url }}" alt="">
+                                        {% else %}
+                                        <img class="card-img-top" src="{% static 'img/defaults/default-project.png' %}" alt="">
+                                        {% endif %}
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title text-danger">
-                                            WanderBot
+                                            {{ project.title }}
                                         </h4>
-                                        <p class="card-text">Pybullet Simulation of a Robotic arm mounted on Ground
-                                            Robot
-                                            for Warehouse Automation Task. This Robot find the target using image
-                                            processing, avoids obstacles using path planning and performs various tasks
-                                            using forward and Inverse Kinematics.
+                                        <p class="card-text">{{ project.aim }}
                                         </p>
                                     </div>
                                 </div>
                             </a>
                         </div>
+                        {% endfor %}
 
-                        <div class="projects">
+                        <!-- <div class="projects">
                             <a href="#">
                                 <div class="card">
                                     <div class="card-image">
@@ -172,7 +174,7 @@ Robotics Club MNNIT
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
