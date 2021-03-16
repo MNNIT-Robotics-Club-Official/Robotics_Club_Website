@@ -97,8 +97,8 @@ section {
 #hero {
   width: 100%;
   height: 89vh;
-  background: url("../img/r37.jpg") center no-repeat;
-  background-size: cover;
+  background: url("../img/front.png") center no-repeat;
+  background-size: 100% 100%;
   position: relative;
   padding-top: 82px;
 }
