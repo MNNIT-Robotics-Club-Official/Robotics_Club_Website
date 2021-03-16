@@ -618,6 +618,7 @@ Robotics Club MNNIT
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <section id="contact" class="contact">
@@ -721,7 +722,7 @@ Robotics Club MNNIT
 
 {% block script %}
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
 <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 <script type="text/javascript" src="{% static 'js/testimonial.js' %} "></script>
@@ -755,13 +756,5 @@ Robotics Club MNNIT
             })
         })
     })
-</script>
-<script>
-    $(".jumbotron").css({ height: $(window).height() + "px" });
-
-    $(window).on("resize", function() {
-    $(".jumbotron").css({ height: $(window).height() + "px" });
-    });
-
 </script>
 {% endblock %}

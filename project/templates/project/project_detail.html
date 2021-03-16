@@ -67,7 +67,9 @@
                 {% endif %}
                 <div class="desc wow fadeInUp">
                     <h3 class="lead">DESCRIPTION</h3>
-                    <p>{{ project.detail |safe }}</p>
+                    <div class="container img-fluid content">
+                        <p>{{ project.overview |safe }}</p>
+                    </div>
                 </div>
                 <hr>
             </div>
