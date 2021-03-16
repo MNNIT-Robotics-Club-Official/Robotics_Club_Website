@@ -44,7 +44,7 @@
   #sponsor .support .details{
     text-align: left;
     line-height: 1.8em;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   #sponsor .support .details p{
@@ -231,6 +231,7 @@
   /* font-weight: 600; */
   line-height: 1.2em;
   color: #3F4246;
+  height: 185px;
   
 }
 
@@ -345,7 +346,7 @@ background-color: #F5F5F5;
 #sponsor  .row .card-body p::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
 border-radius: 10px;
-background-color: #F5F5F5;
+background-color: white;
 }
 
 #sponsor  .row .card-body p::-webkit-scrollbar-thumb {
