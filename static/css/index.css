@@ -82,22 +82,42 @@ section {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  /* overflow: scroll;
   width: 100%;
   height: 89vh;
   background: url("../img/r37.jpg") center no-repeat;
-  background-size: cover;
-  position: relative;
-  padding-top: 82px;
+  background-size: contain !important;
+  position: relative; */
+  /* padding-top: 82px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
 }
 
-#hero:before {
+
+#hero::before {
+
   content: "";
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
+
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/r37.jpg") top center;
+  background-attachment: scroll;
+  background-size: auto;
+  background-size: cover;
+  position: relative;
+}
+
+#hero img{
+  width: 100vw;
+  height: 90vh;
 }
 
 #hero h1 {
@@ -107,19 +127,20 @@ section {
   color:black;
 }
 
-#hero img{
+/* #hero img{
   height: 90px;
   position:absolute;
   float:right;
   right:1em;
   bottom:1em;
   z-index:2;
-}
+} */
 
 @media (max-width: 768px) {
   #hero {
     text-align: center;
     padding-top: 58px;
+    
   }
   #hero h1 {
     font-size: 38px;
@@ -130,11 +151,11 @@ section {
   }
 }
 
-@media (max-height: 500px) {
+/* @media (max-height: 500px) {
   #hero {
     height: 120vh;
   }
-}
+} */
 
   /* #coverImg .container{
     padding: 0;

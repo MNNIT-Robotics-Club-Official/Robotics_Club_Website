@@ -15,22 +15,29 @@ Robotics Club MNNIT
 
 {% block body %}
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
 
-    <div class="container-fluid" style="margin-top: 90px;" data-aos="zoom-out" data-aos-delay="100">
+
+
+
+    </div>
+
+
+    <!-- <div class="container-fluid" style="margin-top: 90px;" data-aos="zoom-out" data-aos-delay="100">
         <div class="row justify-content-center">
             <div class="col-xl-10">
                 <div class="row">
                     <div class="col-xl-4">
-                        <h1>Robotics Club MNNIT</h1>
-                    </div>
+                         <h1>Robotics Club MNNIT</h1> -->
+                    <!-- </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="row">
             <img src="{% static 'img/MNNIT.png' %}" alt="MNNIT Allahabad, Prayagraj" class="img-fluid">
         </div> -->
-    </div>
+   
 
 </section><!-- End Hero -->
 
@@ -767,5 +774,13 @@ Robotics Club MNNIT
             })
         })
     })
+</script>
+<script>
+    $(".jumbotron").css({ height: $(window).height() + "px" });
+
+    $(window).on("resize", function() {
+    $(".jumbotron").css({ height: $(window).height() + "px" });
+    });
+
 </script>
 {% endblock %}
