@@ -14,14 +14,27 @@ def list(request):
     context={}
     project_all=Project.objects.get_queryset().order_by('id')
     page=request.GET.get('page')
-    paginator=Paginator(project_all,12)
+    paginator=Paginator(project_all,6)
     projects=paginator.get_page(page)
     context['projects'] = projects
     return render(request, 'project/project_list.html', context)
 
 def filter(request,tag) :
     context={}
-    context['projects']=Project.objects.filter(tags__name__in=[tag])
+    project_all=Project.objects.filter(tags__name__in=[tag])
+    page = request.GET.get('page')
+    paginator = Paginator(project_all, 6)
+    projects = paginator.get_page(page)
+    context['projects'] = projects
+    return render(request, 'project/project_list.html', context)
+
+def featured(request):
+    context={}
+    project_all = Project.objects.filter(tags__name__in=['featured']).order_by('id')
+    page = request.GET.get('page')
+    paginator = Paginator(project_all, 6)
+    projects = paginator.get_page(page)
+    context['projects'] = projects
     return render(request, 'project/project_list.html', context)
 
 @allow_shares
