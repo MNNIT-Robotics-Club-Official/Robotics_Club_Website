@@ -4,6 +4,7 @@ from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.template.loader import render_to_string
+from project.models import Project
 # Create your views here.
 def contact(request):
     if request.method=='POST':
@@ -29,6 +30,8 @@ def contact(request):
 def index(request):
     context={}
     context['form']=ContactForm()
+    project_all = Project.objects.filter(tags__name__in=['featured']).order_by('id')[:5]
+    context['featured'] = project_all
     return render(request, 'index.html',context)
 
 def alumni(request):
