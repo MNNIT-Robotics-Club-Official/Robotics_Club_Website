@@ -17,26 +17,12 @@ Robotics Club MNNIT
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
 
-    <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
-            <div class="col-xl-10">
-                <div class="row">
-                    <div class="col-xl-5">
-                        <h1>Robotics Club MNNIT</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="row">
-            <img src="{% static 'img/MNNIT.png' %}" alt="MNNIT Allahabad, Prayagraj" class="img-fluid">
-        </div> -->
-    </div>
-
-</section><!-- End Hero -->
+</section>
+<!-- End Hero -->
 
 <!-- Section Heading -->
 <!-- ======= Services Section ======= -->
-<section id="about" class="services section-bg mt-5">
+<section id="about" class="services section-bg">
     <div class="container wow fadeInUp">
         <div class="section-title">
             <h2>About Us</h2>
@@ -67,35 +53,37 @@ Robotics Club MNNIT
 
 <!-- Portfolio Section -->
 <section id="project">
-    <div class="container mt-5 wow fadeInLeft">
-        <div class="section-title mb-5">
+    <div class="container mt-5 wow fadeInRight">
+        <div class="section-title">
             <h2>Featured Projects</h2>
 
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
                     <div id="projects-slider" class="owl-carousel">
+                        {% for project in featured %}
                         <div class="projects">
-                            <a href="#">
+                            <a href="{% url 'project:overview' project.pk %}">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="card-img-top" src="{% static 'img/projects/wander2.jpg' %}" alt="">
+                                        {% if project.image %}
+                                        <img class="card-img-top" src="{{ project.image.url }}" alt="">
+                                        {% else %}
+                                        <img class="card-img-top" src="{% static 'img/defaults/default-project.png' %}" alt="">
+                                        {% endif %}
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title text-danger">
-                                            WanderBot
+                                            {{ project.title }}
                                         </h4>
-                                        <p class="card-text">Pybullet Simulation of a Robotic arm mounted on Ground
-                                            Robot
-                                            for Warehouse Automation Task. This Robot find the target using image
-                                            processing, avoids obstacles using path planning and performs various tasks
-                                            using forward and Inverse Kinematics.
+                                        <p class="card-text">{{ project.aim }}
                                         </p>
                                     </div>
                                 </div>
                             </a>
                         </div>
+                        {% endfor %}
 
-                        <div class="projects">
+                        <!-- <div class="projects">
                             <a href="#">
                                 <div class="card">
                                     <div class="card-image">
@@ -172,7 +160,7 @@ Robotics Club MNNIT
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -320,7 +308,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.7s">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.1s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">battery_charging_full</i>
                         <h4><p>Power Source</p></h4>
@@ -337,7 +325,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="elec icon-box wow fadeInUp" data-wow-delay="0.8s">
+                <div class="elec icon-box wow fadeInUp" data-wow-delay="0.2s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">memory</i>
                         <h4><p>Electronics</p></h4>
@@ -357,7 +345,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.9s">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.3s">
                     <div class="theme-title">
                         <i class="fas fa-laptop-code" aria-hidden="true"></i>
                         <h4><p>Softwares and Platforms</p></h4>
@@ -376,7 +364,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="icon-box wow fadeInUp" data-wow-delay="1.0s">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
                     <div class="theme-title">
                         <i class="material-icons" aria-hidden="true">print</i>
                         <h4><p>Design</p></h4>
@@ -396,7 +384,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="icon-box wow fadeInUp" data-wow-delay="1.1s">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.5s">
                     <div class="theme-title">
                         <i class="fa fa-tools" aria-hidden="true"></i>
                         <h4><p>Control</p></h4>
@@ -414,7 +402,7 @@ Robotics Club MNNIT
             </div>
 
             <div class="col-lg-4 col-md-6">
-                <div class="icon-box wow fadeInUp" data-wow-delay="1.2s">
+                <div class="icon-box wow fadeInUp" data-wow-delay="0.6s">
                     <div class="theme-title">
                         <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
                         <h4><p>Others</p></h4>
@@ -461,11 +449,11 @@ Robotics Club MNNIT
                             </p>
                         </div>
                         <div class="row testimonial-details">
-                            <div class="col-lg-4">
+                            <div class="col-sm-4">
                                 <img src="{% static 'img/testimonial/kishan.jpg' %}" class="rounded-circle carousel-img"
                                     alt="">
                             </div>
-                            <div class="col-lg-8" id="name">
+                            <div class="col-sm-8" id="name">
                                 <h3 class="title">Kishan Tiwari</h3>
                                 <span class="post batch">(Batch of 2019)</span>
                                 <span class="post">Founder and CEO at TSAW Drones</span>
@@ -492,11 +480,11 @@ Robotics Club MNNIT
                             </p>
                         </div>
                         <div class="row testimonial-details">
-                            <div class="col-lg-4">
+                            <div class="col-sm-4">
                                 <img src="{% static 'img/testimonial/gaurav1.jpg' %}"
                                     class="rounded-circle carousel-img" alt="">
                             </div>
-                            <div class="col-lg-8" id="name">
+                            <div class="col-sm-8" id="name">
                                 <h3 class="title">Gaurav Bansal</h3>
                                 <span class="post batch">(Batch of 2020)</span>
                                 <span class="post">Software Engineer at Visa INC.</span>
@@ -526,14 +514,15 @@ Robotics Club MNNIT
                                 Robotics club for everything.
                             </p>
                         </div>
-                        <div class="row testimonial-details">
-                            <div class="col-lg-4 col-sm-4">
+                        <div class="row testimonial-details" style="margin-top: -7px;">
+                            <div class="col-sm-4 col-sm-4">
                                 <img src="{% static 'img/testimonial/kalyan1.jpg' %}"
                                     class="rounded-circle carousel-img" alt="">
                             </div>
-                            <div class="col-lg-8 col-sm-8" id="name">
+                            <div class="col-sm-8 col-sm-8" id="name">
                                 <h3 class="title">Kalyan Prusty</h3>
                                 <span class="post batch">(Batch of 2020)</span>
+                                <span class="post">AIR 71 in GATE 2020</span>
                                 <span class="post">M.Tech. at IISc Bangalore</span>
                                 <span class="links">
                                     <a href="https://www.linkedin.com/in/kalyan-prusty-0a8b55141/?originalSubdomain=in"
@@ -766,5 +755,13 @@ Robotics Club MNNIT
             })
         })
     })
+</script>
+<script>
+    $(".jumbotron").css({ height: $(window).height() + "px" });
+
+    $(window).on("resize", function() {
+    $(".jumbotron").css({ height: $(window).height() + "px" });
+    });
+
 </script>
 {% endblock %}
