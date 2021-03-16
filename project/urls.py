@@ -13,4 +13,5 @@ urlpatterns=[
     path('access/<key>/',views.sharedPage,name='sharedPage'),
     path('createlink/<int:pk>/',views.createShare,name='createLink'),
     path('filter=<slug:tag>/',views.filter,name='filter'),
+    path('featured/',views.featured,name='featured'),
 ]

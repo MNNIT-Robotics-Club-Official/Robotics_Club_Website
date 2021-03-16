@@ -76,6 +76,9 @@ def spinoff(request):
 def error(request):
     return render(request, 'error.html')
 
+def error_404(request,exception):
+    return render(request, 'error.html')
+
 def achievement_2016(request):
     return render(request, 'achievement_2016.html')
 
