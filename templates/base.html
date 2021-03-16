@@ -70,9 +70,19 @@
           <!-- <li class="nav-item {% if request.resolver_match.view_name == 'home:index' %}active{% endif %} px-3">
               <a class="nav-link" href="{% url 'home:index' %}">Home<span class="sr-only">(current)</span></a>
             </li> -->
-          <li class="nav-item {% if request.resolver_match.view_name == 'project:list' %}active{% endif %} pr-7">
-            <a class="nav-link" href="{% url 'project:list' %}">Projects</a>
-          </li>
+            <li class="nav-item dropdown pr-7">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li class="{% if request.resolver_match.view_name == 'project:list' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'project:list' %}">All Projects</a>
+                </li>
+                <li class="{% if request.resolver_match.view_name == 'project:featured' %}active{% endif %}">
+                  <a class="dropdown-item" href="{% url 'project:featured' %}">Featured Projects</a>
+                </li>
+              </ul>
           <li class="nav-item {% if request.resolver_match.view_name == 'blog_list' %}active{% endif %} pr-7">
             <a class="nav-link" href="{% url 'blog_list' %}">Blogs</a>
           </li>
@@ -107,7 +117,7 @@
             <a class="nav-link" href="{% url 'home:spinoff' %}">Spinoff</a>
           </li>
           <li class="nav-item dropdown pr-7">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Team
             </a>
@@ -134,7 +144,7 @@
           </li>
 
           <li class="nav-item dropdown pr-7">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               More
             </a>
@@ -238,7 +248,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <ul>
               <li>
-                <h4 class="second">Robotics Lab</h4>
+                <h4 class="second">Robotics Club</h4>
               </li>
               <li>Near Boys' SAC</li>
               <li>MNNIT Allahabad</li>

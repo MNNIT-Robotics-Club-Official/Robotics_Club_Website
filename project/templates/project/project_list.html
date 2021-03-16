@@ -14,7 +14,7 @@ Projects | Robotics Club MNNIT
     <div class="container">
         <div class="section-title pb-2">
             <div class="d-flex justify-content-center my-3">
-                <h2 class="">OUR PROJECTS</h2>
+                <h2 class="">PROJECTS</h2>
             </div>
         </div>
         <br>
@@ -34,15 +34,14 @@ Projects | Robotics Club MNNIT
                         <div class="card-body">
                             <h5 class="card-title">{{ project.title }}</h5>
                             <p class="card-text">
-                                <b class="text-muted">AIM:</b>
+                                <!-- <b class="text-muted">AIM:</b> -->
                                 {{ project.aim }}
                             </p>
                             <p class="card-text">
                                 <small class="text-muted">
                                     <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}
                             </p>
-                            <p><i class="fa fa-tags"></i>Tags:
-                                {% for tag in project.tags.all %}
+                            <p><i class="fa fa-tags"></i> {% for tag in project.tags.all %}
                                 <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{tag}}</a>
                                 {% endfor %}
                             </p>
