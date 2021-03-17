@@ -135,16 +135,20 @@ Jigyasa | Robotics Club MNNIT
                         <p class="card-text">Download Brochure</p>
                     </a>
                     {% endif %}
-
                     <br>
+
                     <!-- Date of posting -->
-                    <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
-                    {% if user.profile.role > 1 %}
-                    <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"
-                        class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
-                    <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"
-                        class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
-                    {% endif %}
+                    <div class="row edits">
+                        <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
+                        <div class="ml-auto">
+                            {% if user.profile.role > 1 %}
+                            <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"
+                            class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                            <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"
+                            class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
