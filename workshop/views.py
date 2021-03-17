@@ -11,7 +11,7 @@ from RoboClub.decorators import has_role_head_or_coordinator
 
 def workshop(request):
     context = {}
-    context['upcoming'] = Workshop.objects.filter(status=1).order_by('-pk')
+    context['upcoming'] = Workshop.objects.filter(status=1).order_by('pk')
     context['past'] = Workshop.objects.filter(status=0).order_by('-pk')
     return render(request, "workshop/workshop.html", context)
 
