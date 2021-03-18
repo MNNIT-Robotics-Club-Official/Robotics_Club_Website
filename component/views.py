@@ -20,7 +20,7 @@ def test(request, id):
     context['component'] = Component.objects.get(pk=id)  # changed
     context['component_requests'] = component
     context['approved'] = othcomp
-    return render(request, 'component/test.html', context)
+    return render(request, 'component/component_issue_list.html', context)
 
 
 @login_required
@@ -107,7 +107,7 @@ def handlerequest(request):
         if status == '1':
             context['component'] = comp
             context['approved'] = Request.objects.filter(component=comp).filter(status=1)
-            html = render_to_string('Component/test_part.html', context, request=request)
+            html = render_to_string('Component/component_issue_list_update.html', context, request=request)
         elif status == '2':
             context['components'] = Request.objects.filter(request_user=request.user)
             html = render_to_string('user/user_comp.html',context,request=request)

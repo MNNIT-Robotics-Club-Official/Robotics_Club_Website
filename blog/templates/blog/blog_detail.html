@@ -29,7 +29,7 @@
                 <a href="#" class="badge badge-pill badge-danger">Tag2</a>
                 <a href="#" class="badge badge-pill badge-danger">Tag3</a> -->
                         {% for tag in blog.tags.all %}
-                        <a href="{% url 'filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                        <a href="{% url 'filter' tag.slug %}" class="badge badge-pill badge-danger">{{ tag }}</a>
                         {% endfor %}
                     </p>
                 </div>
