@@ -177,3 +177,5 @@ EMAIL_PORT = 587
 #django_heroku.settings(locals())
 
 handler404 = 'home.views.error_404'
+
+# TAGGIT_CASE_INSENSITIVE = True

@@ -103,7 +103,7 @@
   font-family: "Roboto", sans-serif;
   /* word-spacing: 10px; */
   letter-spacing: 2px;
-  line-height: 180%;
+  line-height: 140%;
 }
 
 #project a, a:hover{
@@ -283,6 +283,9 @@ input{
   text-decoration: none;
   color: black;
   transition: 0.3s;
+}
+.content{
+  padding-left: 0px;
 }
 .content img{
   max-width: 100%;

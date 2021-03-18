@@ -128,6 +128,7 @@ starts
   color: #5A3733;
   font-weight: 500;
   margin-bottom: 0;
+  padding-left: 20px;
 }
   
   /*
@@ -179,9 +180,9 @@ starts
 
 .workshopbtn{
   height: auto;
-  margin: 10px;
+  /* margin: 4px; */
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   /* padding: 2%; */
   background: #e03a3c;
   font-weight: 600;
@@ -223,6 +224,12 @@ starts
     margin-left: 1.5em;
     margin-right: 1.5em;
   }
+}
+.edits{
+  align-items: center;
+}
+.edits a{
+justify-content: end;
 }
 
   /* Workshop Form ends here */

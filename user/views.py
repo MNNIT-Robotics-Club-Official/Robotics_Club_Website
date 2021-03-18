@@ -89,6 +89,9 @@ def loginUser(request):
                 messages.info(request, "Please Confirm Your Email Id")
             elif user is not None:
                 login(request, user)
+                if user.profile.first_name is None:
+                    messages.info("Please Complete Your Profile")
+                    return redirect('user:profile_page',user=user)
                 return redirect('home:index')
             else:
                 messages.error(request,"Incorrect Password")

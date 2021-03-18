@@ -21,7 +21,7 @@ def list(request):
 
 def filter(request,tag) :
     context={}
-    project_all=Project.objects.filter(tags__name__in=[tag])
+    project_all=Project.objects.filter(tags__slug__in=[tag])
     page = request.GET.get('page')
     paginator = Paginator(project_all, 6)
     projects = paginator.get_page(page)
