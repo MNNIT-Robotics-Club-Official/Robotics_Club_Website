@@ -55,7 +55,7 @@
                           <div class="detail">
                             <i class="fa fa-tags"></i>Tags:
                             {% for tag in post.tags.all %}
-                                <a href="{% url 'filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                                <a href="{% url 'filter' tag.slug %}" class="badge badge-pill badge-danger">{{ tag }}</a>
                             {% endfor %}
                           </div>
                         </small>
