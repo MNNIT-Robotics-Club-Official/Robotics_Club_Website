@@ -35,7 +35,7 @@
                 {% endif %}
                 <p><i class="fa fa-tags"></i> Tags:
                     {% for tag in project.tags.all %}
-                    <a href="{% url 'project:filter' tag %}" class="badge badge-pill badge-danger">{{ tag }}</a>
+                    <a href="{% url 'project:filter' tag.slug %}" class="badge badge-pill badge-danger">{{ tag }}</a>
                     {% endfor %}
                 </p>
                 <hr>
