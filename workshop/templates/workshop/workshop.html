@@ -56,7 +56,7 @@ Jigyasa | Robotics Club MNNIT
     <div class="card mb-5 mx-4">
         <div class="row">
             <!-- Assigning column for image -->
-            <div class="col-md-4 image text-center">
+            <div class="col-md-2 image text-center px-0">
                 {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="img-fluid" alt="...">
                 {% else %}
@@ -65,70 +65,31 @@ Jigyasa | Robotics Club MNNIT
                 </a>
             </div>
             <!-- Details of Workshop -->
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card-body">
                     <!-- Workshop Title -->
                     <h5 class="card-title">{{workshop.title}}</h5>
                     <br>
-                    <!-- Table to maintain vertical alignment of date and venue -->
-                    <table>
-                        <tbody>
-                            <!-- for date -->
-                            {% if workshop.date %}
-                            <tr>
-                                <td>
-                                    <p class="card-text">Date</p>
-                                </td>
-                                <td>
-                                    <!-- Added a tab -->
-                                    <p>&emsp;: </p>
-                                </td>
 
-                                <td><span>&emsp; {{workshop.date}}</span></td>
+                    <!-- for date -->
+                    {% if workshop.date %}
+                    <span class="object">Date &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;</span>
+                    <div class="value">{{workshop.date}}</div><br>
+                    {% endif %}
 
-                            </tr>
-                            {% endif %}
+                    {% if workshop.venue %}
+                    <span class="object">Venue &emsp;&emsp;&emsp;&emsp;&emsp; :&emsp;</span>
+                    <div class="value">{{workshop.venue}}</div><br>
+                    {% endif %}
 
-                            {% if workshop.venue %}
-                            <tr>
-                                <td>
-                                    <p class="card-text">Venue</p>
-                                </td>
-                                <td>
-                                    <p>&emsp;: </p>
-                                </td>
+                    <span class="object">Target Audience&emsp;:&emsp;</span>
+                    <div class="value">{{workshop.target}}</div><br>
 
-                                <td><span>&emsp; {{workshop.venue}}</span></td>
+                    {% if workshop.description %}
+                    <span class="object">Description &emsp;&emsp;&emsp;:&emsp;</span><br>
+                    <div class="value">{{workshop.description}}</div><br>
+                    {% endif %}
 
-                            </tr>
-                            {% endif %}
-
-                            <tr>
-                                <td>
-                                    <p class="card-text">Target Audience</p>
-                                </td>
-                                <td>
-                                    <!-- Added a tab -->
-                                    <p>&emsp;: </p>
-                                </td>
-
-                                <td><span>&emsp; {{workshop.target}}</span></td>
-                            </tr>
-                            {% if workshop.description %}
-                            <tr>
-                                <td>
-                                    <p class="card-text">Description</p>
-                                </td>
-                                <td>
-                                    <!-- Added a tab -->
-                                    <p>&emsp;: </p>
-                                </td>
-
-                                <td style="padding-left: 20px;"><span>{{workshop.description}}</span></td>
-                            </tr>
-                            {% endif %}
-                        </tbody>
-                    </table>
                     <!-- Link for discription of Workshop -->
                     {% if workshop.link %}
                     <a href="{{workshop.link}}" download="{{workshop.link}}" target="_blank">
@@ -139,13 +100,13 @@ Jigyasa | Robotics Club MNNIT
 
                     <!-- Date of posting -->
                     <div class="row edits">
-                        <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
+                        <!-- <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p> -->
                         <div class="ml-auto">
                             {% if user.profile.role > 1 %}
                             <a href="{% url 'workshop:workshop_update' pk=workshop.pk %}"
-                            class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
+                                class="btn btn-primary btn-sm mx-2 workshopbtn">Update Workshop</a>
                             <a href="{% url 'workshop:workshop_delete' pk=workshop.pk %}"
-                            class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
+                                class="btn btn-primary btn-sm mx-2 workshopbtn">Delete Workshop</a>
                             {% endif %}
                         </div>
                     </div>

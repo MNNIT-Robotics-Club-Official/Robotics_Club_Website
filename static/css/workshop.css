@@ -56,9 +56,9 @@ starts
 
 /* Image of Workshop */
 #workshop .card .row img{
-  background-color: #f8f9fa;
-  width: 100%;
-  height: auto;
+  background-color: #f8f9fada;
+  width: auto;
+  min-height: 100%;
   object-fit: contain;
   overflow: hidden;
 }
@@ -82,7 +82,7 @@ starts
 }
 
 /* Date/Venue/: */
-#workshop .card .row .card-body p{
+#workshop .card .row .card-body .object{
   color: #e65658;
   font-weight: 600;
   margin-top: -4px;
@@ -93,15 +93,16 @@ starts
 }
 
 /* Date of Workshop and Location */
-#workshop .card .row .card-body table td>span{
+#workshop .card .row .card-body .value{
   color: #16324f;
   font-weight: 500;
   font-size: 15px;
+  display: inline;
 }
 
-#workshop .card .row .card-body table td{
+/* #workshop .card .row .card-body table td{
   vertical-align:text-top;
-}
+} */
 
 /* More details link */
 #workshop .card .row .card-body a>p{
@@ -111,10 +112,12 @@ starts
   font-size: 16px;
   margin-bottom: 0;
 }
+
 #workshop .card .row .card-body a>p:hover{
   color: black;
   transition: 0.3s;
 }
+
 /* More details link on hover*/
 #workshop .card .row .card-body a:hover{
   text-decoration: none;
