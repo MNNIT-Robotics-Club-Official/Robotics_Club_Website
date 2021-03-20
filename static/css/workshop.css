@@ -63,10 +63,6 @@ starts
   overflow: hidden;
 }
 
-#workshop .card .image{
-  background-color: #f8f9fa;
-}
-
 /* Workshop Title */
 #workshop .card .row h5{
   font-family: 'Poppins',sans-serif;
@@ -99,10 +95,6 @@ starts
   font-size: 15px;
   display: inline;
 }
-
-/* #workshop .card .row .card-body table td{
-  vertical-align:text-top;
-} */
 
 /* More details link */
 #workshop .card .row .card-body a>p{
