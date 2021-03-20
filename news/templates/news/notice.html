@@ -28,15 +28,21 @@ Notice | Robotics Club MNNIT
             {% if news.link != None %}
             <p><a href="{{news.link}}">Click Here for More Detail</a></p>
             {% endif %}
-            <p class="card-text"><small class="text-muted">Created on {{news.date}}</small></p>
-            {% if user.profile.role > 1 %}
-            <a href="{% url 'news:news_update' pk=news.pk %}">
-                <button type="button" class="noticebtn">Update Notice</button>
-            </a>
-            <a href="{% url 'news:news_delete' pk=news.pk %}">
-                <button type="button" class="noticebtn">Delete Notice</button>
-            </a>
-            {% endif %}
+            <div class="col-md-12">
+                <div class="row">
+                    <p class="card-text"><small class="text-muted">Created on {{news.date}}</small></p>
+                    {% if user.profile.role > 1 %}
+                    <div class="ml-auto">
+                        <a href="{% url 'news:news_update' pk=news.pk %}">
+                            <button type="button" class="noticebtn">Update Notice</button>
+                        </a>
+                        <a href="{% url 'news:news_delete' pk=news.pk %}">
+                            <button type="button" class="noticebtn">Delete Notice</button>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
         </div>
 
     </div>

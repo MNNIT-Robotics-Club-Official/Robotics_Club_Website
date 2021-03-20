@@ -15,7 +15,7 @@ Notice Starts
 
   #notice .card h5{
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     color: #16324f;
     font-weight: 900;
     line-height: 1;
@@ -24,7 +24,7 @@ Notice Starts
 
   #notice .card p{
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.2em;
     display: block;
     color: #333;
@@ -32,7 +32,7 @@ Notice Starts
 
   #notice .card p>a{
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
     display: block;
     color: #e03a3c;
@@ -79,7 +79,7 @@ Notice Ends
 
 .notice-form .text-muted{
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 0;
   display: inline;
 }
@@ -97,7 +97,7 @@ Notice Ends
 } */
 
 .noticebtn{
-  height: 45px;
+  height: 28px;
   margin: 3px;
   border: none;
   border-radius: 10px;
