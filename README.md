@@ -36,10 +36,13 @@ If already installed python follow next steps:
 6. [x] Achievement
 7. [x] Events
 
-1. [ ] Projects
+1. [x] Projects
 2. [x] Login
 3. [x] Donate
 4. [x] Blog
 5. [x] Workshop
 6. [x] Notice Board
-7. [ ] Components
+7. [x] Components
+8. [x] Teams
+
+We're in testing phase now
