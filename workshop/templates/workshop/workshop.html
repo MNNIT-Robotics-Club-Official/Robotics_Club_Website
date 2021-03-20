@@ -56,7 +56,7 @@ Jigyasa | Robotics Club MNNIT
     <div class="card mb-5 mx-4">
         <div class="row">
             <!-- Assigning column for image -->
-            <div class="col-md-2 image text-center px-0">
+            <div class="col-md-2 image text-center">
                 {% if workshop.image %}
                 <img src="{{workshop.image.url}}" class="img-fluid" alt="...">
                 {% else %}
@@ -96,7 +96,7 @@ Jigyasa | Robotics Club MNNIT
                         <p class="card-text">Download Brochure</p>
                     </a>
                     {% endif %}
-                    <br>
+                    <!-- <br> -->
 
                     <!-- Date of posting -->
                     <div class="row edits">
@@ -175,7 +175,7 @@ Jigyasa | Robotics Club MNNIT
                     </a>
                     {% endif %}
 
-                    <br>
+                    <!-- <br> -->
                     <!-- Date of posting -->
                     <p class="card-text"><small>Posted on {{workshop.date_posted}}</small></p>
                     {% if user.profile.role > 1 %}
