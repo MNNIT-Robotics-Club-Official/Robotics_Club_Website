@@ -92,7 +92,7 @@ Jigyasa | Robotics Club MNNIT
 
                     <!-- Link for discription of Workshop -->
                     {% if workshop.link %}
-                    <a href="{{workshop.link}}" download="{{workshop.link}}" target="_blank">
+                    <a href="{{workshop.link.url}}" download>
                         <p class="card-text">Download Brochure</p>
                     </a>
                     {% endif %}
@@ -170,7 +170,7 @@ Jigyasa | Robotics Club MNNIT
                     </table>
                     <!-- Link for discription of Workshop -->
                     {% if workshop.link %}
-                    <a href="{{workshop.link}}" download="{{workshop.link}}" target="_blank">
+                    <a href="{{ workshop.link.url }}" download>
                         <p class="card-text">Download Brochure</p>
                     </a>
                     {% endif %}
