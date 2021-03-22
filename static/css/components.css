@@ -47,13 +47,12 @@ starts
   /* Component Image */
 
   #features .feature-block img{
-    /* height: 90px; */
-    /* width: 90px; */
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
   }
   
 
-  /* Hovering Effect of Block */
   #features .feature-block:hover {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
     transition: all 0.5s ease-in-out 0s;
@@ -68,6 +67,7 @@ starts
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     color: #de1212;
+    padding-top: 10px;
   }
   
   /* Description of Component */
@@ -275,6 +275,8 @@ starts
 .comp-img{
   width: 180px;
   height: 108px;
+  /* max-width: 100%; */
+  /* height: auto; */
 }
 
 .test{
