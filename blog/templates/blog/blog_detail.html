@@ -44,8 +44,10 @@
                 </div>
                 <hr>
                 <div class="desc wow fadeInUp wow fadeInUp">
-                    {{blog.content | safe}}
-                    <br />
+                    <div class="container img-fluid content">
+                        <p>{{ blog.content |safe }}</p>
+                    </div>
+                    <br>
 
                 </div>
             </div>
