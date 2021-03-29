@@ -208,8 +208,8 @@
  
 
 .blog-image img{
-  max-width: 50%;
-  height: 40vh;
+  max-width: 100%;
+  height: auto;
 }
 
 .blog-image iframe{
@@ -343,4 +343,10 @@ text-align: center;
 .vid{
 padding: 20px;
 }
-
+.content{
+  padding-left: 0px;
+}
+.content img{
+  max-width: 100%;
+  height: auto;
+}
