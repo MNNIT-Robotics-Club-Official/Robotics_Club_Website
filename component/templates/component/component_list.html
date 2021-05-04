@@ -1,478 +1,758 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-Club Components | Robotics Club MNNIT
-{% endblock %}
-
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/components.css' %}">
-{% endblock %}
-
-{% block body %}
-<div id="message_container">
-    {% include 'spinnets/message.html' %}
-</div>
+{% extends "base.html" %} {% load static %} {% block title %} Club Components |
+Robotics Club MNNIT {% endblock %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/components.css' %}" />
+{% endblock %} {% block body %}
+<div id="message_container">{% include 'spinnets/message.html' %}</div>
 <section id="components">
-    <div class="d-flex justify-content-center my-3">
-        <h2 class="">COMPONENTS</h2>
-    </div>
+  <div class="d-flex justify-content-center my-3">
+    <h2 class="">COMPONENTS</h2>
+  </div>
 
-    <!-- ======= Components Section [components has been replaced by features] ======= -->
-    <section id="features" class="padd-section text-center">
-
-        <!-- Creating container for Tabs and Components -->
-        <div class="container mb-3" data-aos="fade-up">
-
-            <!-- Defining Tabs -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link tab-text active" id="battery-tab" data-toggle="tab" href="#battery" role="tab"
-                        aria-controls="battery" aria-selected="true">Development Boards
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="board-tab" data-toggle="tab" href="#board" role="tab"
-                        aria-controls="board" aria-selected="false">Sensors and Electronic Components
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="driver-tab" data-toggle="tab" href="#driver" role="tab"
-                        aria-controls="driver" aria-selected="false">Motors and Motor Drivers
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="etool-tab" data-toggle="tab" href="#etool" role="tab"
-                        aria-controls="etool" aria-selected="false">Tools
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="mtool-tab" data-toggle="tab" href="#mtool" role="tab"
-                        aria-controls="mtool" aria-selected="false">Power and Battery
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="kit-tab" data-toggle="tab" href="#kit" role="tab"
-                        aria-controls="kit" aria-selected="false">Transmitter and Receiver
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link tab-text" id="sensor-tab" data-toggle="tab" href="#sensor" role="tab"
-                        aria-controls="sensor" aria-selected="false">Miscellaneous
-                    </a>
-                </li>
-                <!-- <li class="nav-item">
+  <!-- ======= Components Section [components has been replaced by features] ======= -->
+  <section id="features" class="padd-section text-center">
+    <!-- Creating container for Tabs and Components -->
+    <div class="container mb-3" data-aos="fade-up">
+      <!-- Defining Tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text active"
+            id="battery-tab"
+            data-toggle="tab"
+            href="#battery"
+            role="tab"
+            aria-controls="battery"
+            aria-selected="true"
+            >Development Boards
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="board-tab"
+            data-toggle="tab"
+            href="#board"
+            role="tab"
+            aria-controls="board"
+            aria-selected="false"
+            >Sensors and Electronic Components
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="driver-tab"
+            data-toggle="tab"
+            href="#driver"
+            role="tab"
+            aria-controls="driver"
+            aria-selected="false"
+            >Motors and Motor Drivers
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="etool-tab"
+            data-toggle="tab"
+            href="#etool"
+            role="tab"
+            aria-controls="etool"
+            aria-selected="false"
+            >Tools
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="mtool-tab"
+            data-toggle="tab"
+            href="#mtool"
+            role="tab"
+            aria-controls="mtool"
+            aria-selected="false"
+            >Power and Battery
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="kit-tab"
+            data-toggle="tab"
+            href="#kit"
+            role="tab"
+            aria-controls="kit"
+            aria-selected="false"
+            >Transmitter and Receiver
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link tab-text"
+            id="sensor-tab"
+            data-toggle="tab"
+            href="#sensor"
+            role="tab"
+            aria-controls="sensor"
+            aria-selected="false"
+            >Miscellaneous
+          </a>
+        </li>
+        <!-- <li class="nav-item">
                     <a class="nav-link tab-text" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other"
                         aria-selected="false">Others</a>
                 </li> -->
-            </ul>
+      </ul>
 
-            <!-- Specifying contents of tabs -->
-            <div class="tab-content" id="myTabContent">
-
-                <!-- Specifing contents of each tab-->
-                <div class="tab-pane fade show active" id="battery" role="tabpanel" aria-labelledby="battery-tab">
-
-                    <!-- Declaring row class for placing components in grid -->
-                    <div class="row wow fadeInUp">
-
-                        {% for component in components_0 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+      <!-- Specifying contents of tabs -->
+      <div class="tab-content" id="myTabContent">
+        <!-- Specifing contents of each tab-->
+        <div
+          class="tab-pane fade show active"
+          id="battery"
+          role="tabpanel"
+          aria-labelledby="battery-tab"
+        >
+          <!-- Declaring row class for placing components in grid -->
+          <div class="row wow fadeInUp">
+            {% for component in components_0 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
                 </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
 
-                <div class="tab-pane fade" id="board" role="tabpanel" aria-labelledby="board-tab">
-                    <div class="row">
-                        {% for component in components_1 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
                     </div>
-                </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
 
-                <div class="tab-pane fade" id="driver" role="tabpanel" aria-labelledby="driver-tab">
-
-                    <div class="row">
-
-                        {% for component in components_2 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
                     </div>
+                    {% endif %}
+                  </form>
                 </div>
-
-                <div class="tab-pane fade" id="etool" role="tabpanel" aria-labelledby="etool-tab">
-
-                    <div class="row">
-
-                        {% for component in components_3 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="mtool" role="tabpanel" aria-labelledby="mtool-tab">
-
-                    <div class="row">
-
-                        {% for component in components_4 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="kit" role="tabpanel" aria-labelledby="kit-tab">
-
-                    <div class="row">
-
-                        {% for component in components_5 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="sensor" role="tabpanel" aria-labelledby="sensor-tab">
-
-                    <div class="row">
-                        {% for component in components_6 %}
-                        <div class="col-md-6 col-lg-4 mt-3">
-                            <div class="feature-block">
-                                <div class="comp-img mx-auto">
-                                    {% if component.image %}
-                                    <img src="{{ component.image.url }}" alt="img" class="img-fluid rounded pb-3">
-                                    {% else %}
-                                    <img src="{% static 'img/defaults/default-component.png' %}" alt="img" class="img-fluid rounded pb-3">
-                                    {% endif %}
-                                </div>
-                                <h4>{{ component.name }}</h4>
-                                <p>{{ component.detail }}</p>
-                                <p>Available : {{ component.available }}</p>
-
-                                <div class="form-inline mb-3 justify-content-center">
-                                    <form action="" cid="{{ component.pk }}">
-                                        {% csrf_token %}
-                                        <div class="form-group red-border my-2 row">
-                                            <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"
-                                                placeholder="Reason..."></textarea>
-                                        </div>
-                                        <input class="form-control-sm mr-2" type="number" min="1" placeholder="Quantity"
-                                            id="request_number" aria-label="Quantity" style="width: 100px;">
-                                        <button class="btn btn-danger my-sm-0 mr-2 test" type="submit">
-                                            Request
-                                        </button>
-
-                                        {% if request.user.profile.role > 1 %}
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle"
-                                                data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false"></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'update_component' component.pk %}">Update</a>
-                                                <a class="dropdown-item" href="{% url 'test' component.pk %}">Issued
-                                                    By</a>
-                                            </div>
-                                        </div>
-                                        {% endif %}
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-
+              </div>
             </div>
-
+            {% endfor %}
+          </div>
         </div>
-    </section>
-    <!-- End Components Section -->
 
+        <div
+          class="tab-pane fade"
+          id="board"
+          role="tabpanel"
+          aria-labelledby="board-tab"
+        >
+          <div class="row">
+            {% for component in components_1 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
 
-    <br>
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="driver"
+          role="tabpanel"
+          aria-labelledby="driver-tab"
+        >
+          <div class="row">
+            {% for component in components_2 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
+
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="etool"
+          role="tabpanel"
+          aria-labelledby="etool-tab"
+        >
+          <div class="row">
+            {% for component in components_3 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
+
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="mtool"
+          role="tabpanel"
+          aria-labelledby="mtool-tab"
+        >
+          <div class="row">
+            {% for component in components_4 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
+
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="kit"
+          role="tabpanel"
+          aria-labelledby="kit-tab"
+        >
+          <div class="row">
+            {% for component in components_5 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
+
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div
+          class="tab-pane fade"
+          id="sensor"
+          role="tabpanel"
+          aria-labelledby="sensor-tab"
+        >
+          <div class="row">
+            {% for component in components_6 %}
+            <div class="col-md-6 col-lg-4 mt-3 d-flex align-items-stretch">
+              <div class="feature-block">
+                <div class="comp-img mx-auto">
+                  {% if component.image %}
+                  <img
+                    src="{{ component.image.url }}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'img/defaults/default-component.png' %}"
+                    alt="img"
+                    class="img-fluid rounded pb-3"
+                  />
+                  {% endif %}
+                </div>
+                <h4>{{ component.name }}</h4>
+                <p>{{ component.detail }}</p>
+                <p>Available : {{ component.available }}</p>
+
+                <div class="form-inline mb-3 justify-content-center">
+                  <form action="" cid="{{ component.pk }}">
+                    {% csrf_token %}
+                    <div class="form-group red-border my-2 row">
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea4"
+                        rows="1"
+                        placeholder="Reason..."
+                      ></textarea>
+                    </div>
+                    <input
+                      class="form-control-sm mr-2"
+                      type="number"
+                      min="1"
+                      placeholder="Quantity"
+                      id="request_number"
+                      aria-label="Quantity"
+                      style="width: 100px"
+                    />
+                    <button
+                      class="btn btn-danger my-sm-0 mr-2 test"
+                      type="submit"
+                    >
+                      Request
+                    </button>
+
+                    {% if request.user.profile.role > 1 %}
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-danger dropdown-toggle"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      ></button>
+                      <div class="dropdown-menu">
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'update_component' component.pk %}"
+                          >Update</a
+                        >
+                        <a
+                          class="dropdown-item"
+                          href="{% url 'test' component.pk %}"
+                          >Issued By</a
+                        >
+                      </div>
+                    </div>
+                    {% endif %}
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Components Section -->
+
+  <br />
 </section>
 
-{% endblock %}
-{% block script %}
+{% endblock %} {% block script %}
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("form").on('submit', function (event) {
-            event.preventDefault();
-            var cid = $(this).attr('cid');
-            $.ajax({
-                url: '{% url "create_request" %}',
-                type: 'POST',
-                data: {
-                    'cid': cid,
-                    'req_num': $(this).children("#request_number").val(),
-                    'reason': $(this).children(".red-border").children("#exampleFormControlTextarea4").val(),
-                    'csrfmiddlewaretoken': '{{csrf_token}}'
-                },
-                success: function (data) {
-                    $(this).children("#request_number").val(0);
-                    $(this).children(".red-border").children("#exampleFormControlTextarea4").val("");
-                    $("#message_container").html(data['html']);
-                }
-            })
-        })
-    })
+  $(document).ready(function () {
+    $("form").on("submit", function (event) {
+      event.preventDefault();
+      var cid = $(this).attr("cid");
+      $.ajax({
+        url: '{% url "create_request" %}',
+        type: "POST",
+        data: {
+          cid: cid,
+          req_num: $(this).children("#request_number").val(),
+          reason: $(this)
+            .children(".red-border")
+            .children("#exampleFormControlTextarea4")
+            .val(),
+          csrfmiddlewaretoken: "{{csrf_token}}",
+        },
+        success: function (data) {
+          $(this).children("#request_number").val(0);
+          $(this)
+            .children(".red-border")
+            .children("#exampleFormControlTextarea4")
+            .val("");
+          $("#message_container").html(data["html"]);
+        },
+      });
+    });
+  });
 </script>
 {% endblock %}
