@@ -23,7 +23,7 @@ Projects | Robotics Club MNNIT
             {% for project in projects %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <a href="{% url 'project:overview' project.pk %}">
-                    <div class="card">
+                    <div class="card w-100">
                         <div class="card-image">
                             {% if project.image %}
                             <img class="card-img-top" src="{{ project.image.url }}" alt="">
@@ -42,7 +42,8 @@ Projects | Robotics Club MNNIT
                                     <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}
                             </p>
                             <p><i class="fa fa-tags"></i> {% for tag in project.tags.all %}
-                                <a href="{% url 'project:filter' tag.slug %}" class="badge badge-pill badge-danger">{{tag}}</a>
+                                <a href="{% url 'project:filter' tag.slug %}"
+                                    class="badge badge-pill badge-danger">{{tag}}</a>
                                 {% endfor %}
                             </p>
                             </small>
@@ -60,25 +61,26 @@ Projects | Robotics Club MNNIT
     <nav aria-label="pages" class="pagination-container">
         <div class="pagination d-flex justify-content-center">
             {% if projects.has_previous %}
-                 <a class="pagination-newer disabled" href="?page={{ projects.previous_page_number }}" tabindex="-1">&laquo;</a>
+            <a class="pagination-newer disabled" href="?page={{ projects.previous_page_number }}"
+                tabindex="-1">&laquo;</a>
             {% endif %}
 
             {% for i in projects.paginator.page_range %}
             <span class="pagination-inner">
                 {% if projects.number == i %}
-                    <a class="pagination-active">{{i}} <span class="sr-only">(current)</span></a>
+                <a class="pagination-active">{{i}} <span class="sr-only">(current)</span></a>
                 {% else %}
-                    <a href="?page={{ i }}">{{i}}</a>
+                <a href="?page={{ i }}">{{i}}</a>
                 {% endif %}
             </span>
             {% endfor %}
 
             {% if projects.has_next %}
-                 <a class="pagination-older disabled" href="?page={{ projects.next_page_number }}" tabindex="-1">&raquo;</a>
+            <a class="pagination-older disabled" href="?page={{ projects.next_page_number }}" tabindex="-1">&raquo;</a>
             {% endif %}
-    </div>
-</nav>
-{%endif%}
+        </div>
+    </nav>
+    {%endif%}
 
 
 
