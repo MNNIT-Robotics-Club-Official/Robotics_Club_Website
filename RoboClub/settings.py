@@ -41,7 +41,7 @@ SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['165.232.184.41','roboticslubmnnit.website']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
 
@@ -108,10 +108,15 @@ WSGI_APPLICATION = 'RoboClub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'robotics_db',
+        'USER': 'robot_admin',
+        'PASSWORD': 'admin_1234',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
