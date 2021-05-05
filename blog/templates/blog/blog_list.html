@@ -2,120 +2,123 @@
 {% load static %}
 
 {% block title %}
-    Blogs | Robotics Club MNNIT
+Blogs | Robotics Club MNNIT
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/blogs.css' %} " type="text/css">
+<link rel="stylesheet" href="{% static 'css/blogs.css' %} " type="text/css">
 {% endblock %}
 
 {% block body %}
-    <section class="blog" id="blog">
+<section class="blog" id="blog">
 
-        <div class="container">
-            <div class="section-title pb-2">
-                <div class="d-flex justify-content-center my-3">
-                    <h2 class="">BLOGS</h2>
-                </div>
-                <!-- <br> -->
+    <div class="container">
+        <div class="section-title pb-2">
+            <div class="d-flex justify-content-center my-3">
+                <h2 class="">BLOGS</h2>
             </div>
-            <br>
-            <div class="row">
+            <!-- <br> -->
+        </div>
+        <br>
 
-                <!--start for-->
-                {% for post in bloglist %}
-                <div class="col-lg-4 col-md-6">
-                  <a href="{% url 'blog_detail' pk=post.pk %}">
-                  <div class="card">
-                      <div class="hover-part">
-                          <div class="card-image">
-                              {% if post.image %}
-                              <img src="{{ post.image.url }}">
-                              {% else %}
-                              <img src="{% static 'img/defaults/default-blog.png' %}">
-                              {% endif %}
-                          </div>
-                          <div class="card-text">
-                              <h4>{{ post.title }}</h4>
-                              <div class="card-desc">
-                                  <p>{{post.content|safe|truncatewords_html:15}}</p>
-                                  <span class="more">Click to read more...</span>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="card-details">
-                        <h4>{{ post.title }}</h4>
-                        <small class="text-muted">
-                          <div class="detail">
-                             <span><i class="fa fa-user"></i> by <a href="{% url 'user:profile_page' post.author %}"> {{post.author.profile.first_name}}&nbsp;{{post.author.profile.last_name}}</a></span>
-                          </div>
-                          <div class="detail">
-                              <span><i class="fa fa-calendar"></i> {{ post.date }} </span>
-                          </div>
-                          <div class="detail">
-                            <i class="fa fa-tags"></i>Tags:
-                            {% for tag in post.tags.all %}
-                                <a href="{% url 'filter' tag.slug %}" class="badge badge-pill badge-danger">{{ tag }}</a>
-                            {% endfor %}
-                          </div>
-                        </small>
-                      </div>
-                  </div>
-                  </a>
-              </div>
-                {% endfor %}
-            </div>
+        <div class="row">
 
-            {% if bloglist %}
-                <nav aria-label="pages" class="pagination-container">
-                    <div class="pagination d-flex justify-content-center">
-                        {% if bloglist.has_previous %}
-                            <a class="pagination-newer" href="?page={{ bloglist.previous_page_number }}">
-                                &laquo;
-                            </a>
-                        {% endif %}
-
-                        {% for i in bloglist.paginator.page_range %}
-                            <span class="pagination-inner">
-                        {% if bloglist.number == i %}
-                            <a class="pagination-active">{{ i }} <span class="sr-only">(current)</span></a>
-                        {% else %}
-                            <a href="?page={{ i }}">{{ i }}</a>
-                        {% endif %}
-                        </span>
-                        {% endfor %}
-
-                        {% if bloglist.has_next %}
-                            <a class="pagination-older" href="?page={{ bloglist.next_page_number }}">
-                                &raquo;
-                            </a>
-                        {% endif %}
+            <!--start for-->
+            {% for post in bloglist %}
+            <div class="col-lg-4 col-md-6">
+                <a href="{% url 'blog_detail' pk=post.pk %}">
+                    <div class="card">
+                        <div class="hover-part">
+                            <div class="card-image">
+                                {% if post.image %}
+                                <img src="{{ post.image.url }}">
+                                {% else %}
+                                <img src="{% static 'img/defaults/default-blog.png' %}">
+                                {% endif %}
+                            </div>
+                            <div class="card-text">
+                                <h4>{{ post.title }}</h4>
+                                <div class="card-desc">
+                                    <p>{{post.content|safe|truncatewords_html:15}}</p>
+                                    <span class="more">Click to read more...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-details">
+                            <h4>{{ post.title }}</h4>
+                            <small class="text-muted">
+                                <div class="detail">
+                                    <span><i class="fa fa-user"></i> by <a
+                                            href="{% url 'user:profile_page' post.author %}">
+                                            {{post.author.profile.first_name}}&nbsp;{{post.author.profile.last_name}}</a></span>
+                                </div>
+                                <div class="detail">
+                                    <span><i class="fa fa-calendar"></i> {{ post.date }} </span>
+                                </div>
+                                <div class="detail">
+                                    <i class="fa fa-tags"></i>Tags:
+                                    {% for tag in post.tags.all %}
+                                    <a href="{% url 'filter' tag.slug %}" class="badge badge-pill badge-danger">{{ tag
+                                        }}</a>
+                                    {% endfor %}
+                                </div>
+                            </small>
+                        </div>
                     </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
 
-                    </ul>
-                </nav>
-            {% endif %}
-            <div>
-                <!-- <a class="d-flex justify-content-center" href="{% url 'blog_form' %}">
+        {% if bloglist %}
+        <nav aria-label="pages" class="pagination-container">
+            <div class="pagination d-flex justify-content-center">
+                {% if bloglist.has_previous %}
+                <a class="pagination-newer" href="?page={{ bloglist.previous_page_number }}">
+                    &laquo;
+                </a>
+                {% endif %}
+
+                {% for i in bloglist.paginator.page_range %}
+                <span class="pagination-inner">
+                    {% if bloglist.number == i %}
+                    <a class="pagination-active">{{ i }} <span class="sr-only">(current)</span></a>
+                    {% else %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                    {% endif %}
+                </span>
+                {% endfor %}
+
+                {% if bloglist.has_next %}
+                <a class="pagination-older" href="?page={{ bloglist.next_page_number }}">
+                    &raquo;
+                </a>
+                {% endif %}
+            </div>
+
+        </nav>
+        {% endif %}
+        <div>
+            <!-- <a class="d-flex justify-content-center" href="{% url 'blog_form' %}">
                     <button type="button" class="blogbtn" id="writebtn">Write a Blog</button>
                 </a> -->
-            </div>
         </div>
-    </section>
-    <br>
+    </div>
+</section>
+<br>
 
-    <script>
-        function show() {
-            document.getElementById("intro").style.display = "block";
-            document.getElementById("details").style.display = "none";
-            document.getElementById("pic").style.display = "none";
-        }
+<script>
+    function show() {
+        document.getElementById("intro").style.display = "block";
+        document.getElementById("details").style.display = "none";
+        document.getElementById("pic").style.display = "none";
+    }
 
-        function hide() {
-            document.getElementById("intro").style.display = "none";
-            document.getElementById("details").style.display = "block";
-            document.getElementById("pic").style.display = "block";
-        }
-    </script>
+    function hide() {
+        document.getElementById("intro").style.display = "none";
+        document.getElementById("details").style.display = "block";
+        document.getElementById("pic").style.display = "block";
+    }
+</script>
 
 {% endblock %}
