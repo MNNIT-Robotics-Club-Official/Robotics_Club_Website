@@ -41,7 +41,7 @@ SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['165.232.184.41','roboticslubmnnit.website']
+ALLOWED_HOSTS = ['165.232.184.41','roboticslubmnnit.websiteq']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
 
