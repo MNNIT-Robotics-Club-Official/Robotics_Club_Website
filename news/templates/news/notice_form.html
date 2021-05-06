@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Write the Notice...
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/notice.css' %} " type="text/css">
+{% endblock %}
+
+
+{% block body %}
+    <!-- <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">News Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form> -->
+
+        <section class="notice-form" id="notice-form">
+            <div class="container">
+                <div class="section-title pb-2">
+                    <div class="d-flex justify-content-center my-3">
+                        <h2 class="">Write The Notice...</h2>
+                    </div>
+                </div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                        <div class="form-group wow fadeInUp" data-wow-delay="0.1s">
+                            <label>Title*</label>
+                            {{form.title}}
+                        </div>
+                        <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
+                            <label>Content*<div class="text-muted">
+                                (Please write 2-3 lines of introductory paragraph)
+                            </div></label>
+                            <!-- {{form.content}} -->
+                            <!-- <textarea name="content" ></textarea> -->
+                            {{form.content}}
+
+                        </div>
+
+                        <div class="form-group wow fadeInUp" data-wow-delay="0.3s">
+                            <label>Link</label>
+                            {{form.link}}
+                        </div>
+                        <br>
+                         <div class="form-group wow fadeInUp" data-wow-delay="0.3s">
+                            <label style="margin-top: 0; padding-right: 30px;">Open?</label>
+                            {{form.is_open}}
+                        </div>
+
+                        <div class="form-group d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
+                            <button class="noticebtn" id="postbtn" type="submit">Post</button>
+                        </div>
+                </form>
+            </div>
+            <br>
+            <br>
+        </section>
+{% endblock %}
