@@ -76,7 +76,7 @@ Login | Robotics Club MNNIT
 
 <div class="container" id='signin'>
 	<div class="row">
-		<div class="col-md-12 col-lg-12">
+		<div class="col-12">
 			<div class="card">
 				<form class="box mx-auto" method="POST" action="">
 					{% csrf_token %}
@@ -84,12 +84,14 @@ Login | Robotics Club MNNIT
 					<p class="text-muted"> Please enter your login and password!</p>
 					<p class="text-muted"> (Only For MNNIT Students)</p>
 					<input type="text" name="username" placeholder="Username">
-					<input type="password" name="password" id="password" placeholder="Password">
-					<span toggle="#password" class="fa fa-eye toggle-password field-icon"></span>
+					<div class="passw mx-auto d-block" style="margin-bottom: -20px;">
+						<input type="password" name="password" id="password" placeholder="Password">
+						<span toggle="#password" class="fa fa-eye toggle-password field-icon"></span>
+					</div>
 					<a class="forgot" href="{% url 'password_reset' %}">Forgot password?</a>
 					<input type="submit" name="" value="Login">
-					<p class="forgot text-muted">Don't have an account? <a href="{% url 'user:register_page' %}"
-							class="signup">Sign Up</a></p>
+					<p class="forgot text-muted" style="line-height: 2.5em;">Don't have an account? <a
+							href="{% url 'user:register_page' %}" class="signup">Sign Up</a></p>
 				</form>
 			</div>
 		</div>
