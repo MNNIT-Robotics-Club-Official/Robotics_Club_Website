@@ -173,6 +173,7 @@
   border: 2px solid #e03a3c;
   padding: 10px 10px;
   width: 290px;
+  max-width: 100%;
   outline: none;
   color: white;
   border-radius: 24px;
@@ -188,6 +189,7 @@
 .box input[type="text"]:focus,
 .box input[type="password"]:focus {
   width: 300px;
+  max-width: 100%;
   border-color: #ff0105
 }
 
@@ -225,17 +227,22 @@
 .field-icon {
   position: relative;
   top: -57px;
-  left: 172px;
+  bottom: 0;
+  left: 35%;
   z-index: 2;
   color: red;
 }
+
+.passw{
+  display: flex;
+  width: 300px;
+  max-width: 100%;
+}
+
 .pass{
   margin-bottom: -40px;
 }
 
-.pass .field-icon{
-  left: 110px;
-}
 .signup{
   border: 0;
   background: none;
