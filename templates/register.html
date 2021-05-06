@@ -96,7 +96,7 @@ Register | Robotics Club MNNIT
 
 <div class="container" id='signin'>
     <div class="row">
-        <div class="col-md-12 col-lg-12">
+        <div class="col-12">
             <div class="card">
                 <form class="box mx-auto" method="POST" action="">
                     {% csrf_token %}
@@ -105,18 +105,24 @@ Register | Robotics Club MNNIT
                     <p class="text-muted"> (Only For MNNIT Students)</p>
                     <input type="text" name="username" placeholder="Username">
                     <input type="text" name="email" placeholder="Gsuite Email Id">
-                    <div class="pass" data-toggle="tooltip" data-placement="top">
-                        <input type="password" name="password1" id="password" placeholder="Password">
-                        <span toggle="#password" class="fa fa-eye toggle-password field-icon"></span>
+                    <div class="passw mx-auto d-block">
+                        <div class="pass" data-toggle="tooltip" data-placement="top">
+                            <input type="password" name="password1" id="password" placeholder="Password">
+                            <span toggle="#password" class="fa fa-eye toggle-password field-icon"></span>
+                        </div>
                     </div>
-                    <div class="pass">
-                        <input type="password" name="password2" id="password-confirm" placeholder="Confirm Password">
-                        <span toggle="#password-confirm" class="fa fa-eye toggle-password-confirm field-icon"></span>
+                    <div class="passw mx-auto d-block">
+                        <div class="pass">
+                            <input type="password" name="password2" id="password-confirm"
+                                placeholder="Confirm Password">
+                            <span toggle="#password-confirm"
+                                class="fa fa-eye toggle-password-confirm field-icon"></span>
 
+                        </div>
                     </div>
                     <input type="submit" name="" value="Register">
-                    <p class="forgot text-muted">Already have an account? <a href="{% url 'user:login_page' %}"
-                            class="signup">Login</a></p>
+                    <p class="forgot text-muted" style="line-height: 2.5em;">Already have an account? <a
+                            href="{% url 'user:login_page' %}" class="signup">Login</a></p>
                 </form>
             </div>
         </div>
