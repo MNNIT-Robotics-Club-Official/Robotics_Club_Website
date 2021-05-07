@@ -9,8 +9,8 @@ $(document).ready(function () {
         pagination: true,
         mouseDrag: false,
         navigation: false,
-        slideSpeed: 100000,
-        autoPlay: 800000
+        slideSpeed: 1000,
+        autoPlay: 8000
     });
 
     $("#sponsor-slider").owlCarousel({
@@ -22,8 +22,8 @@ $(document).ready(function () {
         pagination: true,
         mouseDrag: false,
         navigation: false,
-        slideSpeed: 100000,
-        autoPlay: 800000
+        slideSpeed: 1000,
+        autoPlay: 8000
     });
 
     $("#home-testimonial-slider").owlCarousel({
@@ -41,8 +41,8 @@ $(document).ready(function () {
         //         "<i class='icon-arrow-right icon-white'>></i>"
         //       ],
         // navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-        slideSpeed: 100000,
-        autoPlay: 800000
+        slideSpeed: 1000,
+        autoPlay: 8000
     });
 
     $("#projects-slider").owlCarousel({
@@ -54,7 +54,7 @@ $(document).ready(function () {
         pagination: true,
         mouseDrag: false,
         nav: false,
-        slideSpeed: 100000,
-        autoPlay: 800000
+        slideSpeed: 1000,
+        autoPlay: 8000
     });
 });
