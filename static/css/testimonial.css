@@ -46,7 +46,7 @@
     margin-bottom: 20px;
     position: relative;
     overflow-y: scroll;
-    max-height: 185px;
+    height: 185px;
 }
 /* .description::-webkit-scrollbar {
     display: none;
@@ -177,4 +177,8 @@
 .description {
     /* scrollbar-color:red yellow;
     scrollbar-width:5px; */
+}
+
+span{
+    margin: 0 -10px;
 }
