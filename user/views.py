@@ -89,8 +89,10 @@ def loginUser(request):
                 messages.info(request, "Please Confirm Your Email Id")
             elif user is not None:
                 login(request, user)
-                if user.profile.first_name is None:
-                    messages.info("Please Complete Your Profile")
+                print(user.profile.first_name)
+                if user.profile.first_name is '':
+                    print("Sd")
+                    messages.info(request,"Please Complete Your Profile")
                     return redirect('user:profile_page',user=user)
                 return redirect('home:index')
             else:
@@ -181,6 +183,7 @@ def userProfileCreation(request):
 @login_required
 def userProfile(request,user):
     context = {}
+    context['pro_page']=True
     try:
         if request.method=='GET':
             context['blogs'] = Blog.objects.filter(author__username=user).filter(approved=True).order_by('approved')

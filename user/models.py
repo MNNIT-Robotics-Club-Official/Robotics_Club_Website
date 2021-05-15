@@ -13,7 +13,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(blank=False, max_length=256, unique=False)
     last_name = models.CharField(blank=True, max_length=256, unique=False)
-    regnum = models.IntegerField(blank=True, null=True)
+    regnum = models.IntegerField(blank=True,unique=True, null=True)
     branch = models.IntegerField(choices=Branch, blank=True, null=True)
     role = models.IntegerField(choices=Rank, default=1)
     linkedin = models.URLField(blank=True,null=True)
