@@ -10,6 +10,7 @@ from RoboClub.decorators import has_role_head_or_coordinator
 def news(request):
     context={}
     context['newslist']=News.objects.filter(is_open=True).order_by('-pk')
+    context['newslistall'] = News.objects.all().order_by('-pk')
     return render(request,"news/notice.html",context)
 
 @login_required
