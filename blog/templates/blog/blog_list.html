@@ -39,7 +39,7 @@ Blogs | Robotics Club MNNIT
                             <div class="card-text">
                                 <h4>{{ post.title }}</h4>
                                 <div class="card-desc">
-                                    <p>{{post.content|safe|truncatewords_html:15}}</p>
+                                    <p style="font-size: medium;">{{post.content|striptags|truncatewords_html:15}}</p>
                                     <span class="more">Click to read more...</span>
                                 </div>
                             </div>
