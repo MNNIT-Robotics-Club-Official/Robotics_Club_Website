@@ -10,6 +10,7 @@ from RoboClub.decorators import has_role_head_or_coordinator
 def news(request):
     context={}
     context['newslist']=News.objects.filter(is_open=True).order_by('-pk')
+    context['newslistall'] = News.objects.all().order_by('-pk')
     return render(request,"news/notice.html",context)
 
 @login_required
@@ -33,7 +34,7 @@ def createNews(request):
 @has_role_head_or_coordinator
 def deleteNews(request,pk):
     news=News.objects.get(pk=pk)
-    if(request.user.is_superuser):
+    if(request.user.profile.role >1):
         news.delete()
     return redirect('news:news_page')
 
@@ -41,7 +42,7 @@ def deleteNews(request,pk):
 def updateNews(request,pk):
     context={}
     news = News.objects.get(pk=pk)
-    if (request.user.is_superuser):
+    if (request.user.profile.role >1):
         if request.method == "GET":
             form=NewsForm(instance=news)
             context['form']=form
