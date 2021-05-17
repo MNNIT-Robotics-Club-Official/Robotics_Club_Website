@@ -74,7 +74,7 @@
             <span class="dot"></span>
         </div>
         <hr>
-        {% if blog.author == request.user %}
+        {% if blog.author == request.user or request.user.is_authenticated and request.user.profile.role > 1  %}
         <div class="row">
             <div class="col-6">
                 <a href="{% url 'blog_update' pk=blog.pk %}" class="d-flex justify-content-start">
