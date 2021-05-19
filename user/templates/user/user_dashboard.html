@@ -261,12 +261,14 @@ Profile | Robotics Club MNNIT
         </div>
         {% endif %}
 
+        {% if cuser.user == request.user %}
         <div class="row py-2">
             <div class="col-md-12 grid-margin stretch-card">
                 <a href="{% url 'user:logout_page' %}" id="Create"
                     class="btn btn-danger float-right mb-sm-0 text-white">Logout</a>
             </div>
         </div>
+        {% endif %}
     </div>
     </div>
     </div>
