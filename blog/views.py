@@ -16,7 +16,7 @@ def list(request):
     blog_all=Blog.objects.filter(approved=True).order_by('-id')
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(blog_all, 6) 
+    paginator = Paginator(blog_all, 9) 
     blogs = paginator.page(page)
     context['bloglist']=blogs
 
@@ -24,9 +24,9 @@ def list(request):
 
 def filter(request,tag):
     context={}
-    blog_all = Blog.objects.filter(approved=True).filter(tags__name__in=[tag]).order_by('-id')
+    blog_all = Blog.objects.filter(approved=True).filter(tags__slug__in=[tag]).order_by('-id')
     page = request.GET.get('page', 1)
-    paginator = Paginator(blog_all, 6)
+    paginator = Paginator(blog_all, 9)
     blogs = paginator.page(page)
     context['bloglist'] = blogs
     return render(request, 'blog/blog_list.html', context)
