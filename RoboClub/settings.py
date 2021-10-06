@@ -36,7 +36,7 @@ TEMP_DIR_news = os.path.join(BASE_DIR,'news/templates')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=-f%d%xd$snga=*)d!_cz1p&eid@o!ya^08#*2d5c(de-@9p)m'
+SECRET_KEY = os.getenv('SKEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
