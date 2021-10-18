@@ -82,6 +82,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+robo/
 
 # mkdocs documentation
 /site
