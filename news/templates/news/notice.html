@@ -29,7 +29,7 @@ Notice | Robotics Club MNNIT
     <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
         <div class="card-body">
             <h5 class="card-title mb-2 mt-1">{{news.title}}</h5>
-            <p class="card-text mb-2">{{news.content}}</p>
+            <p class="card-text mb-2">{% autoescape off %}{{news.content}}{% endautoescape %}</p>
             {% if news.link != None %}
             <p><a href="{{news.link}}">Click Here for More Detail</a></p>
             {% endif %}
@@ -56,7 +56,7 @@ Notice | Robotics Club MNNIT
     <div class="card mb-3 mx-5" style="border-radius:15px; border: rgb(58, 58, 58) solid 1px;">
         <div class="card-body">
             <h5 class="card-title mb-2 mt-1">{{news.title}}</h5>
-            <p class="card-text mb-2">{{news.content}}</p>
+            <p class="card-text mb-2">{% autoescape off %}{{news.content}}{% endautoescape %}</p>
             {% if news.link != None %}
             <p><a href="{{news.link}}">Click Here for More Detail</a></p>
             {% endif %}

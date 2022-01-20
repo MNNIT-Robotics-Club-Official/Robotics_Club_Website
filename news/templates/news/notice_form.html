@@ -8,6 +8,7 @@ Write the Notice...
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/notice.css' %} " type="text/css">
+<script src="//cdn.ckeditor.com/4.16.0/full/ckeditor.js"></script>
 {% endblock %}
 
 
@@ -65,4 +66,5 @@ Write the Notice...
             <br>
             <br>
         </section>
+        <script> CKEDITOR.replace( 'content' ); </script>
 {% endblock %}
