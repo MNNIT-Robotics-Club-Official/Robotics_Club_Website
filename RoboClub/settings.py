@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 #import django_heroku
 import os
+from decouple import config
 from django.contrib.messages import constants as messages
 
 
@@ -32,11 +33,12 @@ TEMP_DIR_news = os.path.join(BASE_DIR,'news/templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+IS_LOCAL=config('DEBUG', default=False, cast=bool)
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ar4n33rnd^y^c!z8!*9dr8o2m5$n@5voqep&&0--h0ahszz&c#'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-dfv22x*65_x&xp_x@v$s*&ieo()*@3!*499lxdfaqgk$(gbw3x')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = IS_LOCAL
 
 ALLOWED_HOSTS = ['*']
 
@@ -105,12 +107,24 @@ WSGI_APPLICATION = 'RoboClub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+if IS_LOCAL:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME',default=''),
+            'USER': config('DB_USER',default=''),
+            'PASSWORD': config('DB_PASSWORD',default=''),
+            'HOST': config('DB_HOST',default=''),
+            'PORT': '',
+        }
+    }
 
 
 # Password validation
@@ -168,8 +182,8 @@ LOGOUT_REDIRECT_URL='home:index'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''                #enter your email
-EMAIL_HOST_PASSWORD = ''            #enter your app password (remove them before commiting)
+EMAIL_HOST_USER = config('EMAIL_USER',default='')                #enter your email
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD',default='')            #enter your app password (remove them before commiting)
 EMAIL_PORT = 587
 #django_heroku.settings(locals())
 
