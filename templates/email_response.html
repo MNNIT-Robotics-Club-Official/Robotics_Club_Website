@@ -19,7 +19,7 @@ Email Confirmation page
                     <img src="{% static 'img/svg_temp.png' %}" width="100" alt="Your Email has been verified!">
                 </div><br>
                 <p>Now you can login to your account!</p><br>
-            <a href="https://roboticsclub.mnnit.ac.in/user/login/" class=" my-1.5 px-1.5 py-1.5 text-white bg-red-500 rounded">Back to Login page</a>
+            <a href="{% url 'user:login_page' %}" class=" my-1.5 px-1.5 py-1.5 text-white bg-red-500 rounded">Back to Login page</a>
             </div>
         </div>
 {% endblock %}
