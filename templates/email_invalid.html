@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Email Confirmation page
+{% endblock %}
+
+{% block head %}
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="flex items-center justify-center min-h-screen p-5 bg-white min-w-screen">
+            <div class="max-w-xl p-8 text-center text-gray-800 bg-gray-200 shadow-xl lg:max-w-3xl rounded-3xl lg:p-12">
+                <div class="flex justify-center">
+                    <img src="{% static 'img/error_temp.png' %}" width="100" alt="Link is invalid!">
+                </div>
+	<br><h3 class="text-2xl">Activation link is invalid!</h3>
+
+            </div>
+        </div>
+{% endblock %}
