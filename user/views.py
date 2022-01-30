@@ -90,8 +90,7 @@ def loginUser(request):
             elif user is not None:
                 login(request, user)
                 print(user.profile.first_name)
-                if user.profile.first_name is '':
-                    print("Sd")
+                if user.profile.first_name == '':
                     messages.info(request,"Please Complete Your Profile")
                     return redirect('user:profile_page',user=user)
                 return redirect('home:index')

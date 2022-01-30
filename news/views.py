@@ -5,6 +5,10 @@ from .forms import NewsForm
 from .models import News
 from django.contrib import messages
 from RoboClub.decorators import has_role_head_or_coordinator
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
+from django.core.mail import EmailMessage
+from django.http import JsonResponse
 # Create your views here.
 
 def news(request):
@@ -30,6 +34,25 @@ def createNews(request):
         form=NewsForm()
         context['form']=form
     return render(request,'news/notice_form.html',context)
+
+@has_role_head_or_coordinator
+def broadCastNews(request,pk):
+    # news_id=request.POST.get('id')
+    news = News.objects.get(id=pk)
+    mail_subject = news.title
+    message = render_to_string('news/notice_email.html', context={'body': news.content})
+    to_users = []
+    for user in User.objects.all():
+        try:
+            email = EmailMessage(
+                subject=mail_subject, body=message,to=[user.email],
+            )
+            email.content_subtype = "html"
+            email.send()
+        except:
+            pass
+    messages.success(request, f'Notice has been broadcasted to all users')
+    return redirect('news:news_page')
 
 @has_role_head_or_coordinator
 def deleteNews(request,pk):
