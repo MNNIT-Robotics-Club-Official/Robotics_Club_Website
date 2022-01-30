@@ -7,7 +7,8 @@ from django.contrib import messages
 from RoboClub.decorators import has_role_head_or_coordinator
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage,send_mass_mail
+from django.conf.global_settings import EMAIL_HOST_USER
 from django.http import JsonResponse
 # Create your views here.
 
@@ -44,13 +45,17 @@ def broadCastNews(request,pk):
     to_users = []
     for user in User.objects.all():
         try:
-            email = EmailMessage(
-                subject=mail_subject, body=message,to=[user.email],
-            )
-            email.content_subtype = "html"
-            email.send()
+            to_users.append(user.email)
         except:
             pass
+    try:
+        email = EmailMessage(
+            subject=mail_subject, body=message, to=to_users,
+        )
+        email.content_subtype = "html"
+        email.send()
+    except:
+        pass
     messages.success(request, f'Notice has been broadcasted to all users')
     return redirect('news:news_page')
 
