@@ -45,7 +45,8 @@ def broadCastNews(request,pk):
     to_users = []
     for user in User.objects.all():
         try:
-            to_users.append(user.email)
+            if user.is_active and user.email is not EMAIL_HOST_USER:
+                to_users.append(user.email)
         except:
             pass
     try:
@@ -56,7 +57,7 @@ def broadCastNews(request,pk):
         email.send()
     except:
         pass
-    messages.success(request, f'Notice has been broadcasted to all users')
+    messages.success(request, f'Notice has been broadcast to all users')
     return redirect('news:news_page')
 
 @has_role_head_or_coordinator
