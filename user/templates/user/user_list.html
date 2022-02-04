@@ -52,7 +52,7 @@
               <div class="list-group-item list-group-item-action">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
+                    <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.first_name }} {{ user.profile.last_name }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
                   </div>
       
                   <div class="col-md-6">
@@ -83,7 +83,7 @@
           <div class="list-group-item list-group-item-action">
             <div class="row">
               <div class="col-md-6">
-                <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
+                <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.first_name }} {{ user.profile.last_name }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
               </div>
   
               <div class="col-md-6">
