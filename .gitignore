@@ -114,3 +114,9 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+#media files
+media/projects
+
+#extra files
+user/templates/user/abstract_submisssion.html

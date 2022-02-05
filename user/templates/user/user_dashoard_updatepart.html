@@ -18,8 +18,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="inputReg">Registration Number</label>
-                    <input type="number" class="form-control" id="inputreg"
-                           placeholder="{{ cuser.regnum }}">
+                    <input type="number" class="form-control" id="inputreg" placeholder="{{ cuser.regnum }}">
                 </div>
             </div>
         </fieldset>
@@ -29,13 +28,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputName">First Name</label>
-                    <input type="text" class="form-control" id="inputFirstName"
-                           placeholder="{{ cuser.first_name }}">
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="{{ cuser.first_name }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputName">Last Name</label>
-                    <input type="text" class="form-control" id="inputLastName"
-                           placeholder="{{ cuser.last_name }}">
+                    <input type="text" class="form-control" id="inputLastName" placeholder="{{ cuser.last_name }}">
                 </div>
             </div>
         </fieldset>
@@ -48,31 +45,28 @@
                     <fieldset disabled>
 
                         <label for="inputG">G-Suite ID</label>
-                        <input type="email" class="form-control" id="inputG"
-                               placeholder="{{ cuser.user.email }}">
+                        <input type="email" class="form-control" id="inputG" placeholder="{{ cuser.user.email }}">
 
                     </fieldset>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputBranch">Branch</label>
                     <input type="text" class="form-control" id="inputBranch"
-                           placeholder="{{ cuser.get_branch_display }}">
+                        placeholder="{{ cuser.get_branch_display }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputBranch">LinkedIn</label>
-                    <input type="text" class="form-control" id="inputBranch"
-                           placeholder="{{ cuser.linkedin }}">
+                    <input type="text" class="form-control" id="inputBranch" placeholder="{{ cuser.linkedin }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputBranch">Contact Number</label>
-                    <input type="text" class="form-control" id="inputBranch"
-                           placeholder="{{ cuser.phone }}">
+                    <input type="text" class="form-control" id="inputBranch" placeholder="{{ cuser.phone }}">
                 </div>
 
             </div>
 
         </fieldset>
-         {% if cuser.user == request.user %}
+        {% if cuser.user == request.user %}
         <button type="button" class="btn btn-primary gap" data-toggle="modal" data-target="#profilemodal">
             Edit Profile
         </button>
@@ -80,7 +74,7 @@
             Change Password
         </button>
         {% if user.profile.role > 1 %}
-        <a href="{% url 'user:admin_page' %}" id="Create" class="btn btn-warning mb-sm-0 text-white">Go to admin
+        <a href="{% url 'user:admin_page' %}" id="Create" class="btn btn-success mb-sm-0 text-white">Go to admin
             page</a>
         {% endif %}
         {% endif %}

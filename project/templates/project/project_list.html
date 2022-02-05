@@ -10,8 +10,9 @@ Projects | Robotics Club MNNIT
 {% endblock %}
 
 {% block body %}
+
 <section class="project" id="project">
-    <div class="container">
+    <div class="container px-5">
         <div class="section-title pb-2">
             <div class="d-flex justify-content-center my-3">
                 <h2 class="">PROJECTS</h2>
@@ -19,42 +20,130 @@ Projects | Robotics Club MNNIT
         </div>
         <br>
         <div class="row">
-            <!--start for-->
-            {% for project in projects %}
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <a href="{% url 'project:overview' project.pk %}">
-                    <div class="card w-100">
-                        <div class="card-image">
-                            {% if project.image %}
-                            <img class="card-img-top" src="{{ project.image.url }}" alt="">
-                            {% else %}
-                            <img class="card-img-top" src="{% static 'img/defaults/default-project.png' %}" alt="">
-                            {% endif %}
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ project.title }}</h5>
-                            <p class="card-text">
-                                <!-- <b class="text-muted">AIM:</b> -->
-                                {{ project.aim }}
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}
-                            </p>
-                            <p><i class="fa fa-tags"></i> {% for tag in project.tags.all %}
-                                <a href="{% url 'project:filter' tag.slug %}"
-                                    class="badge badge-pill badge-danger">{{tag}}</a>
-                                {% endfor %}
-                            </p>
-                            </small>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <div class="col-lg-3 col-12 mx-auto pb-3 mb-2" style="max-width: 500px;">
+                <section id="filter">
+                    <div class="filter-menu mobile">
+                        <form>
+                            <div class="panel panel-mobile">
+                                <div class="panel-heading " role="tab" id="headingFiltersMobile">
+                                    <a class="panel-title accordion-toggle" role="button" data-toggle="collapse"
+                                        href="#collapseFiltersMobile" aria-expanded="true"
+                                        aria-controls="collapseFiltersMobile">
+                                        Filter
+                                    </a>
+                                    <div class="panel-body pt-0 w-100 d-inline-block">
+                                        <hr />
+                                        <button class="btn btn-danger" type="submit">Apply Filters</button>
+                                        <a class="btn btn-md btn-link btn-outline-danger" href="#">Clear
+                                            Selections</a>
+                                    </div><!-- /.panel-body -->
+                                </div><!-- /.panel-heading -->
+                                <div id="collapseFiltersMobile" class="panel-collapse collapse show" role="tabpanel"
+                                    aria-labelledby="headingFiltersMobile">
+                                    <div class="panel-body">
+                                        <div class="panel-group" id="filter-menu-mobile" role="tablist"
+                                            aria-multiselectable="true">
+                                            <div class="panel panel-mobile">
+                                                <div class="panel-heading" role="tab" id="headingOneMobile">
+                                                    <a class="panel-title accordion-toggle" role="button"
+                                                        data-toggle="collapse" data-parent="#filter-menu-mobile"
+                                                        href="#collapseOneMobile" aria-expanded="true"
+                                                        aria-controls="collapseOneMobile">
+                                                        Tags
+                                                    </a><!-- /.panel-title -->
+                                                </div><!-- /.panel-heading -->
+                                                <div id="collapseOneMobile" class="panel-collapse collapse show"
+                                                    role="tabpanel" aria-labelledby="headingOneMobile">
+                                                    <div class="panel-body">
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="career_state[]" value="recent_graduate">
+                                                                Python</label></div>
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="career_state[]" value="imposter_syndrome">
+                                                                OpenCV</label>
+                                                        </div>
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="career_state[]" value="wise_old_head">
+                                                                ML</label></div>
+                                                    </div><!-- /.panel-body -->
+                                                </div><!-- /.panel-collapse -->
+                                            </div><!-- /.panel -->
 
-            <!--end for-->
-            {% endfor %}
+                                            <div class="panel panel-mobile">
+                                                <div class="panel-heading" role="tab" id="headingTwoMobile">
+                                                    <a class="panel-title accordion-toggle" role="button"
+                                                        data-toggle="collapse" data-parent="#filter-menu-mobile"
+                                                        href="#collapseTwoMobile" aria-expanded="true"
+                                                        aria-controls="collapseTwoMobile">
+                                                        Status
+                                                    </a><!-- /.panel-title -->
+                                                </div><!-- /.panel-heading -->
+                                                <div id="collapseTwoMobile" class="panel-collapse collapse show"
+                                                    role="tabpanel" aria-labelledby="headingTwoMobile">
+                                                    <div class="panel-body">
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="topic[]" value="politics"> Ongoing</label>
+                                                        </div>
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="topic[]" value="religion"> Completed</label>
+                                                        </div>
+                                                        <div class="checkbox"><label><input type="checkbox"
+                                                                    name="topic[]" value="music"> Abandoned</label>
+                                                        </div>
+                                                    </div><!-- /.panel-body -->
+                                                </div><!-- /.panel-collapse -->
+                                            </div><!-- /.panel -->
+                                        </div><!-- /.panel-group -->
+                                    </div><!-- /.panel-body -->
+                                </div><!-- /.panel-collapse -->
+                            </div><!-- /.panel -->
+                        </form>
+                    </div><!-- /.filter-menu -->
+                </section>
+            </div>
+            <div class="col-lg-9 col-12 mx-auto">
+                <div class="row">
+
+                    <!--start for-->
+                    {% for project in projects %}
+
+                    <div class="col-md-6 d-flex align-items-stretch mx-auto" style="max-width: 500px;">
+                        <a href="{% url 'project:overview' project.pk %}">
+                            <div class="card w-100">
+                                <div class="card-image">
+                                    {% if project.image %}
+                                    <img class="card-img-top" src="{{ project.image.url }}" alt="">
+                                    {% else %}
+                                    <img class="card-img-top" src="{% static 'img/defaults/default-project.png' %}"
+                                        alt="">
+                                    {% endif %}
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ project.title }}</h5>
+                                    <p class="card-text">
+                                        <!-- <b class="text-muted">AIM:</b> -->
+                                        {{ project.aim }}
+                                    </p>
+                                    <p class="card-text">
+                                        <small class="text-muted">
+                                            <i class="fa fa-calendar"></i> Status : {{ project.get_status_display }}
+                                    </p>
+                                    <p><i class="fa fa-tags"></i> {% for tag in project.tags.all %}
+                                        <a href="{% url 'project:filter' tag.slug %}"
+                                            class="badge badge-pill badge-danger">{{tag}}</a>
+                                        {% endfor %}
+                                    </p>
+                                    </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--end for-->
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
     {% if projects %}
@@ -88,5 +177,7 @@ Projects | Robotics Club MNNIT
 
 </section>
 <br>
+
+<script type="text/javascript" src="{% static 'js/project.js' %} "></script>
 
 {% endblock %}
