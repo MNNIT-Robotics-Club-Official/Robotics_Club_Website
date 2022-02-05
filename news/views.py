@@ -54,9 +54,9 @@ def createNews(request):
 def broadCastNews(request,pk):
     # news_id=request.POST.get('id')
     news = News.objects.get(id=pk)
-    if not news.allow_broadcast():
-        messages.success(request, f"Broadcast for this post has been recently done,try again after 5 minutes")
-        return redirect('news:news_page')
+    # if not news.allow_broadcast():
+    #     messages.success(request, f"Broadcast for this post has been recently done,try again after 5 minutes")
+    #     return redirect('news:news_page')
     mail_subject = news.title
     notice_body = render_to_string('news/notice_email.html', context={'body': news.content})
     to_users = []
@@ -67,8 +67,8 @@ def broadCastNews(request,pk):
         for i in range(0,len(to_users),100):
             EmailThread(mail_subject, notice_body, to_users[i:i+100]).start()
         messages.success(request, f'Notice has been broadcast to all users')
-        news.broadcast=timezone.now()
-        news.save()
+        # news.broadcast=timezone.now()
+        # news.save()
     except:
         messages.success(request, f'Notice was not broad casted')
     return redirect('news:news_page')

@@ -12,7 +12,7 @@ class News(models.Model):
     link = models.URLField(blank=True,null=True)
     date = models.DateField(blank=True,unique=False)
     is_open = models.BooleanField(default=False)
-    broadcast = models.DateTimeField(auto_now_add=timezone.now(),blank=True)
+    # broadcast = models.DateTimeField(auto_now_add=timezone.now(),blank=True)
 
     def __str__(self):
         return f'{self.title}'
@@ -22,10 +22,10 @@ class News(models.Model):
         super().save(args,kwargs)
 
     def allow_broadcast(self):
-        # return True
-        now = datetime.datetime.utcnow().replace(tzinfo=utc)
-        time_difference = now-self.broadcast
-        if time_difference.total_seconds() > 300:
-            return True
-        else:
-            return False
+        return True
+        # now = datetime.datetime.utcnow().replace(tzinfo=utc)
+        # time_difference = now-self.broadcast
+        # if time_difference.total_seconds() > 300:
+        #     return True
+        # else:
+        #     return False
