@@ -1,13 +1,24 @@
-const cleardiv = document.querySelector("#headingFiltersMobile > div");
-const wdth = cleardiv.clientWidth;  //checking width of apply filter and clear section div
-//console.log(wdth);
 let clearbtn = document.querySelector("#headingFiltersMobile > div > a");   //clear button to format accordingly
-if (wdth > 287) {
-    //console.log("true");
-    clearbtn.classList.add("float-right");
+
+function formatBtn() {
+    const cleardiv = document.querySelector("#headingFiltersMobile > div");
+    const wdth = cleardiv.clientWidth;  //checking width of apply filter and clear section div
+    //console.log(wdth);
+    if (wdth > 287) {
+        //console.log("true");
+        clearbtn.classList.add("float-right");
+        clearbtn.classList.remove("mt-2");
+    }
+    else {
+        clearbtn.classList.add("mt-2");
+        clearbtn.classList.remove("float-right");
+    }
 }
-else {
-    clearbtn.classList.add("mt-2");
+
+formatBtn();    //initial format
+
+window.onresize = () => {
+    formatBtn();
 }
 
 clearbtn.onclick = () => {
