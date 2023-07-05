@@ -33,7 +33,7 @@ TEMP_DIR_news = os.path.join(BASE_DIR,'news/templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-IS_LOCAL=config('DEBUG', default=False, cast=bool)
+IS_LOCAL=config('DEBUG', default=True, cast=bool)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-dfv22x*65_x&xp_x@v$s*&ieo()*@3!*499lxdfaqgk$(gbw3x')
 
