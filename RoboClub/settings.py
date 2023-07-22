@@ -33,7 +33,7 @@ TEMP_DIR_news = os.path.join(BASE_DIR,'news/templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-IS_LOCAL=config('DEBUG', default=False, cast=bool)
+IS_LOCAL=config('DEBUG', default=True, cast=bool)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-dfv22x*65_x&xp_x@v$s*&ieo()*@3!*499lxdfaqgk$(gbw3x')
 
@@ -107,24 +107,24 @@ WSGI_APPLICATION = 'RoboClub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if IS_LOCAL:
-    DATABASES = {
+# if IS_LOCAL:
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': config('DB_NAME',default=''),
-            'USER': config('DB_USER',default=''),
-            'PASSWORD': config('DB_PASSWORD',default=''),
-            'HOST': config('DB_HOST',default=''),
-            'PORT': '',
-        }
-    }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': config('DB_NAME',default=''),
+#             'USER': config('DB_USER',default=''),
+#             'PASSWORD': config('DB_PASSWORD',default=''),
+#             'HOST': config('DB_HOST',default=''),
+#             'PORT': '',
+#         }
+#     }
 
 
 # Password validation
@@ -182,9 +182,11 @@ LOGOUT_REDIRECT_URL='home:index'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = config('EMAIL_USER',default='')                #enter your email
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD',default='')            #enter your app password (remove them before commiting)
+EMAIL_HOST_USER = config('kk235964@gmail.com',default='')                #enter your email
+EMAIL_HOST_PASSWORD = config('qfyncywrhseebzev',default='')            #enter your app password (remove them before commiting)
 EMAIL_PORT = 587
 #django_heroku.settings(locals())
 
 handler404 = 'home.views.error_404'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
