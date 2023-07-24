@@ -1,41 +1,43 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-Team | Robotics Club MNNIT
-{% endblock %}
-
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/teams.css' %} " type="text/css">
-{% endblock %}
-
-{% block body %}
+{% extends "base.html" %} {% load static %} {% block title %} Team | Robotics
+Club MNNIT {% endblock %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/teams.css' %} " type="text/css" />
+{% endblock %} {% block body %}
 <div class="title container">
-    <div class="d-flex justify-content-center my-3">
-        <h2 class="">OTHER TEAMS</h2>
-    </div>
+  <div class="d-flex justify-content-center my-3">
+    <h2 class="">OTHER TEAMS</h2>
+  </div>
 </div>
 
 <div class="container-fluid bg-gray" id="accordion-style-1">
-    <div class="container">
-        <div class="row others">
-            <div class="col-12 mx-auto">
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="fa fa-html5 main"></i><i class="fa fa-angle-double-right mr-3"></i>Web
-                                    Team
-                                </button>
-                            </h5>
-                        </div>
+  <div class="container">
+    <div class="row others">
+      <div class="col-12 mx-auto">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  <i class="fa fa-html5 main"></i
+                  ><i class="fa fa-angle-double-right mr-3"></i>Web Team
+                </button>
+              </h5>
+            </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                            data-parent="#accordionExample">
-                            <div class="card-body team">
-                                <!-- <div class="row d-flex justify-content-center">
+            <div
+              id="collapseOne"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body team">
+                <!-- <div class="row d-flex justify-content-center">
                                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="member">
                                             <div class="member-img">
@@ -72,142 +74,174 @@ Team | Robotics Club MNNIT
 
 
                                 </div> -->
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/ishu.jpg' %}" class="img-fluid" alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/ir2010/"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Ishu Raj</h4>
-                                                <span><i>Batch of 22'</i></span>
-                                                <span><i>Computer Science and Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/coordinator/anurag.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/anurag-gupta-806a161aa/"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Anurag Gupta</h4>
-                                                <span><i>Batch of 23'</i></span>
-                                                <span><i>Electronics and Communication Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/divyansh.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/divyansh-upadhyay-81b5a31a3/?originalSubdomain=in"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Divyansh Upadhyay</h4>
-                                                <span><i>Batch of 23'</i></span>
-                                                <span><i>Information Technology</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/hardik.jpg' %}" class="img-fluid" alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/hardik-mittal-87687a1a1/"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Hardik Mittal</h4>
-                                                <span><i>Batch of 23'</i></span>
-                                                <span><i>Information Technology</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/ishu.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a href="https://www.linkedin.com/in/ir2010/"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Ishu Raj</h4>
+                        <span><i>Batch of 22'</i></span>
+                        <span><i>Computer Science and Engineering</i></span>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed btn-block text-left" type="button"
-                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                    <i class="fa fa-pencil-square-o main"></i><i
-                                        class="fa fa-angle-double-right mr-3"></i>Content Team
-                                </button>
-                            </h5>
+                  </div>
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/coordinator/anurag.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/anurag-gupta-806a161aa/"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                            data-parent="#accordionExample">
-                            <div class="card-body team">
-                                <div class="row d-flex justify-content-center">
-                                    
-                                    
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Anurag Gupta</h4>
+                        <span><i>Batch of 23'</i></span>
+                        <span
+                          ><i
+                            >Electronics and Communication Engineering</i
+                          ></span
+                        >
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/divyansh.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/divyansh-upadhyay-81b5a31a3/?originalSubdomain=in"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Divyansh Upadhyay</h4>
+                        <span><i>Batch of 23'</i></span>
+                        <span><i>Information Technology</i></span>
+                      </div>
+                    </div>
+                  </div>
 
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/bipulkarna.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/bipulkarna97/"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Bipul Karna</h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Civil Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/AnshikaPattnaik1.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/anshika-pattnaik-6a9800210"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Anshika Pattnaik </h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    
-                                    
-                                    
-                                   
-                                    
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/hardik.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/hardik-mittal-87687a1a1/"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Hardik Mittal</h4>
+                        <span><i>Batch of 23'</i></span>
+                        <span><i>Information Technology</i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed btn-block text-left"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  <i class="fa fa-pencil-square-o main"></i
+                  ><i class="fa fa-angle-double-right mr-3"></i>Content Team
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body team">
+                <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/bipulkarna.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a href="https://www.linkedin.com/in/bipulkarna97/"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Bipul Karna</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Civil Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
 
-                                </div>
-                                <!-- <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/AnshikaPattnaik1.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/anshika-pattnaik-6a9800210"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Anshika Pattnaik</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="row d-flex justify-content-center">
                                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="member">
                                             <div class="member-img">
@@ -262,111 +296,126 @@ Team | Robotics Club MNNIT
 
                                     </div>
                                 </div> -->
-
-
-
-                            </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed btn-block text-left"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  <i class="fa fa-paint-brush main"></i
+                  ><i class="fa fa-angle-double-right mr-3"></i>Design & Media
+                  Team
+                </button>
+              </h5>
+            </div>
+            <div
+              id="collapseThree"
+              class="collapse"
+              aria-labelledby="headingThree"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body team">
+                <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/AbhishekHanotiya.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a href="http://linkedin.com/in/abhishek-hanotiya"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Abhishek Hanotiya</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed btn-block text-left" type="button"
-                                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    <i class="fa fa-paint-brush main"></i><i
-                                        class="fa fa-angle-double-right mr-3"></i>Design & Media Team
-                                </button>
-                            </h5>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/IshikaAgrawal.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a href="http://www.linkedin.com/in/ishika555agrawal"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                            data-parent="#accordionExample">
-                            <div class="card-body team">
-                                <div class="row d-flex justify-content-center">
-                                    
-                                    
-                                    
-                                    
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/AbhishekHanotiya.jpg' %}" class="img-fluid" alt="">
-                                                <div class="social">
-                                                    <a href="http://linkedin.com/in/abhishek-hanotiya"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Abhishek Hanotiya</h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Ishika Agrawal</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>BioTechnology Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/PrinceYadav.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/prince-yadav00785"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Prince Yadav</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Electrical Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/AdityaJain.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/aditya-jain-852755210"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Aditya Jain</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/IshikaAgrawal.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="http://www.linkedin.com/in/ishika555agrawal"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Ishika Agrawal</h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>BioTechnology Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/PrinceYadav.jpg' %}" class="img-fluid" alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/prince-yadav00785"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Prince Yadav </h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Electrical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/AdityaJain.jpg' %}" class="img-fluid" alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/aditya-jain-852755210"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Aditya Jain </h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                                <!-- <div class="row d-flex justify-content-center">
+                <!-- <div class="row d-flex justify-content-center">
                                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="member">
                                             <div class="member-img">
@@ -418,108 +467,128 @@ Team | Robotics Club MNNIT
                                         </div>
                                     </div>
                                 </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h5 class="mb-0">
+                <button
+                  class="btn btn-link collapsed btn-block text-left"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  <i class="fa fa-volume-control-phone main"></i
+                  ><i class="fa fa-angle-double-right mr-3"></i>Outreach Team
+                </button>
+              </h5>
+            </div>
 
-
-
-                            </div>
+            <div
+              id="collapseFour"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body team">
+                <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/GautamKumar.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/gautam-kumar-aa7a82223"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Gautam Kumar</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingFour">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed btn-block text-left" type="button"
-                                    data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                    <i class="fa fa-volume-control-phone main"></i><i
-                                        class="fa fa-angle-double-right mr-3"></i>Outreach Team
-                                </button>
-                            </h5>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/StutiJain1.jpeg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/stuti-jain-20b318219"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
                         </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Stuti Jain</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          src="{% static 'img/teams/OmkarJuvatkar.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a href="http://www.linkedin.com/in/omkar-juvatkar"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Omkar Juvatkar</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Mechanical Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
 
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                            data-parent="#accordionExample">
-                            <div class="card-body team">
-                                <div class="row d-flex justify-content-center">
+                  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                      <div class="member-img">
+                        <img
+                          style="height: 20.5rem; width: 16rem"
+                          src="{% static 'img/teams/KandukuriYaswanth.jpg' %}"
+                          class="img-fluid"
+                          alt=""
+                        />
+                        <div class="social">
+                          <a
+                            href="https://www.linkedin.com/in/kandukuri-yaswanth"
+                            ><i class="fa fa-linkedin"></i
+                          ></a>
+                        </div>
+                      </div>
+                      <div class="member-info text-center">
+                        <h4>Kandukuri Yaswanth</h4>
+                        <span><i>Final Year</i></span>
+                        <span><i>Civil Engineering</i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/GautamKumar.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/gautam-kumar-aa7a82223"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Gautam Kumar</h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/StutiJain1.jpeg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/stuti-jain-20b318219"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Stuti Jain</h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/OmkarJuvatkar.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="http://www.linkedin.com/in/omkar-juvatkar"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Omkar Juvatkar </h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Mechanical Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                        <div class="member">
-                                            <div class="member-img">
-                                                <img src="{% static 'img/teams/KandukuriYaswanth.jpg' %}" class="img-fluid"
-                                                    alt="">
-                                                <div class="social">
-                                                    <a href="https://www.linkedin.com/in/kandukuri-yaswanth"><i
-                                                            class="fa fa-linkedin"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="member-info text-center">
-                                                <h4>Kandukuri Yaswanth </h4>
-                                                <span><i>Final Year</i></span>
-                                                <span><i>Civil Engineering</i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
-                                <!-- <div class="row d-flex justify-content-center">
+                <!-- <div class="row d-flex justify-content-center">
                                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="member">
                                             <div class="member-img">
@@ -535,7 +604,7 @@ Team | Robotics Club MNNIT
                                             </div>
                                         </div>
                                     </div> -->
-<!-- 
+                <!-- 
                                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="member">
                                             <div class="member-img">
@@ -572,17 +641,12 @@ Team | Robotics Club MNNIT
                                     </div>
                                 </div>
  -->
-
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
