@@ -24,13 +24,11 @@
                 <div class="list-group-item list-group-item-action">
                   <div class="row">
                     <div class="col-md-6">
-                        <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
+                        <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.first_name }} {{ user.profile.last_name }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
                     </div>
         
                     <div class="col-md-6">
-                        <button type="button" id="appbtn" class="userbtn" user="{{user.pk}}"  r_type=1>
-                            Demote &nbsp; &nbsp;<i class="fa fa-caret-down"></i>
-                        </button>
+
                     </div>
                   </div>
               </div>
@@ -52,7 +50,7 @@
               <div class="list-group-item list-group-item-action">
                 <div class="row">
                   <div class="col-md-6">
-                    <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
+                    <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.first_name }} {{ user.profile.last_name }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
                   </div>
       
                   <div class="col-md-6">
@@ -83,16 +81,14 @@
           <div class="list-group-item list-group-item-action">
             <div class="row">
               <div class="col-md-6">
-                <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
+                <a href="{% url 'user:profile_page' user%}"><b class="issuer"> {{ user }} &nbsp;|  {{ user.profile.first_name }} {{ user.profile.last_name }} &nbsp;|  {{ user.profile.regnum }}&nbsp;</b> </a>
               </div>
   
               <div class="col-md-6">
                 <button type="button" id="appbtn" class="userbtn promotebtn" user="{{user.pk}}"  r_type=0>
                     Promote &nbsp; &nbsp;<i class="fa fa-caret-up"></i>
                 </button>
-                  <button type="button" id="appbtn" class="userbtn" user="{{user.pk}}"  r_type=1>
-                      Demote &nbsp; &nbsp;<i class="fa fa-caret-down"></i>
-                  </button>
+
               </div>
             </div>
         </div>
